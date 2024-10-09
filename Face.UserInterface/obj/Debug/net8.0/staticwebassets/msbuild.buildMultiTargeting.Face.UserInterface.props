@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Face.UserInterface.props" />
+</Project>

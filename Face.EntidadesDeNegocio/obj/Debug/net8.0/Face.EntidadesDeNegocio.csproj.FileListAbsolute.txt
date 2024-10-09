@@ -1,0 +1,24 @@
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.deps.json
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.csproj.AssemblyReference.cache
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.AssemblyInfoInputs.cache
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.AssemblyInfo.cs
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\obj\Debug\net8.0\refint\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.EntidadesDeNegocio\obj\Debug\net8.0\ref\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.deps.json
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.csproj.AssemblyReference.cache
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.AssemblyInfoInputs.cache
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.AssemblyInfo.cs
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\refint\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\ref\Face.EntidadesDeNegocio.dll

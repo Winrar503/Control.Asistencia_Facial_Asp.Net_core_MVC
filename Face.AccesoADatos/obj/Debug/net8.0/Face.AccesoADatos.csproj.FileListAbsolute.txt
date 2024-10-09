@@ -1,0 +1,30 @@
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\bin\Debug\net8.0\Face.AccesoADatos.deps.json
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\bin\Debug\net8.0\Face.AccesoADatos.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\bin\Debug\net8.0\Face.AccesoADatos.pdb
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\bin\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\bin\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.csproj.AssemblyReference.cache
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.AssemblyInfoInputs.cache
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.AssemblyInfo.cs
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.csproj.CoreCompileInputs.cache
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\Face.Acc.E22179C4.Up2Date
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\refint\Face.AccesoADatos.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.pdb
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.AccesoADatos\obj\Debug\net8.0\ref\Face.AccesoADatos.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\bin\Debug\net8.0\Face.AccesoADatos.deps.json
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\bin\Debug\net8.0\Face.AccesoADatos.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\bin\Debug\net8.0\Face.AccesoADatos.pdb
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\bin\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\bin\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.csproj.AssemblyReference.cache
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.AssemblyInfoInputs.cache
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.AssemblyInfo.cs
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.csproj.CoreCompileInputs.cache
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.Acc.E22179C4.Up2Date
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\refint\Face.AccesoADatos.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.pdb
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\ref\Face.AccesoADatos.dll

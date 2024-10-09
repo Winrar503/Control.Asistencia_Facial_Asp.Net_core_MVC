@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BED06A74-612E-4B02-986E-B06993C4B9C7}|Face.UserInterface\\Face.UserInterface.csproj|c:\\users\\darwi\\onedrive\\escritorio\\proyectos personales\\reconocimientofacial(asp.net mvc)\\face.userinterface\\controllers\\empleadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BED06A74-612E-4B02-986E-B06993C4B9C7}|Face.UserInterface\\Face.UserInterface.csproj|solutionrelative:face.userinterface\\controllers\\empleadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BED06A74-612E-4B02-986E-B06993C4B9C7}|Face.UserInterface\\Face.UserInterface.csproj|c:\\users\\darwi\\onedrive\\escritorio\\proyectos personales\\reconocimientofacial(asp.net mvc)\\face.userinterface\\views\\empleados\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BED06A74-612E-4B02-986E-B06993C4B9C7}|Face.UserInterface\\Face.UserInterface.csproj|solutionrelative:face.userinterface\\views\\empleados\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE35DC-7F9B-40FC-A37D-2BB6064CCC63}|Face.AccesoADatos\\Face.AccesoADatos.csproj|c:\\users\\darwi\\onedrive\\escritorio\\proyectos personales\\reconocimientofacial(asp.net mvc)\\face.accesoadatos\\empleadosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE35DC-7F9B-40FC-A37D-2BB6064CCC63}|Face.AccesoADatos\\Face.AccesoADatos.csproj|solutionrelative:face.accesoadatos\\empleadosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA7EEB9E-CFA1-4A36-9904-A9A2A5449432}|Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj|c:\\users\\darwi\\onedrive\\escritorio\\proyectos personales\\reconocimientofacial(asp.net mvc)\\face.logicadenegocio\\empleadosbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA7EEB9E-CFA1-4A36-9904-A9A2A5449432}|Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj|solutionrelative:face.logicadenegocio\\empleadosbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmpleadosController.cs",
+              "DocumentMoniker": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.UserInterface\\Controllers\\EmpleadosController.cs",
+              "RelativeDocumentMoniker": "Face.UserInterface\\Controllers\\EmpleadosController.cs",
+              "ToolTip": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.UserInterface\\Controllers\\EmpleadosController.cs",
+              "RelativeToolTip": "Face.UserInterface\\Controllers\\EmpleadosController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowGcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T18:15:41.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.UserInterface\\Views\\Empleados\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Face.UserInterface\\Views\\Empleados\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.UserInterface\\Views\\Empleados\\Edit.cshtml",
+              "RelativeToolTip": "Face.UserInterface\\Views\\Empleados\\Edit.cshtml",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAYwE0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T18:12:30.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmpleadosBL.cs",
+              "DocumentMoniker": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.LogicaDeNegocio\\EmpleadosBL.cs",
+              "RelativeDocumentMoniker": "Face.LogicaDeNegocio\\EmpleadosBL.cs",
+              "ToolTip": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.LogicaDeNegocio\\EmpleadosBL.cs",
+              "RelativeToolTip": "Face.LogicaDeNegocio\\EmpleadosBL.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvzAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T18:06:39.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmpleadosDAL.cs",
+              "DocumentMoniker": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.AccesoADatos\\EmpleadosDAL.cs",
+              "RelativeDocumentMoniker": "Face.AccesoADatos\\EmpleadosDAL.cs",
+              "ToolTip": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.AccesoADatos\\EmpleadosDAL.cs",
+              "RelativeToolTip": "Face.AccesoADatos\\EmpleadosDAL.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAiwGMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T18:06:21.471Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

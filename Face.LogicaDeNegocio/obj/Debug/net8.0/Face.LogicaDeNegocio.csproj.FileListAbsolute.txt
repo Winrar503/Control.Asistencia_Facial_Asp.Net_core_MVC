@@ -1,0 +1,34 @@
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.csproj.AssemblyReference.cache
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.AssemblyInfoInputs.cache
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.AssemblyInfo.cs
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.LogicaDeNegocio.deps.json
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.LogicaDeNegocio.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.LogicaDeNegocio.pdb
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.AccesoADatos.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.AccesoADatos.pdb
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.Log.4CF9B331.Up2Date
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\refint\Face.LogicaDeNegocio.dll
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.pdb
+C:\Users\darwi\source\repos\ReconocimientoFacial\Face.LogicaDeNegocio\obj\Debug\net8.0\ref\Face.LogicaDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.LogicaDeNegocio.deps.json
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.LogicaDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.LogicaDeNegocio.pdb
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.AccesoADatos.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.AccesoADatos.pdb
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.csproj.AssemblyReference.cache
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.AssemblyInfoInputs.cache
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.AssemblyInfo.cs
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.Log.4CF9B331.Up2Date
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\refint\Face.LogicaDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\Face.LogicaDeNegocio.pdb
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.LogicaDeNegocio\obj\Debug\net8.0\ref\Face.LogicaDeNegocio.dll

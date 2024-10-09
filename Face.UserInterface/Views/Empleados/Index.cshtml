@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Face.EntidadesDeNegocio.Empleados>
+@using Face.EntidadesDeNegocio
+@{
+    ViewData["Title"] = "Index";
+     int numPage = 1;
+    int numRegistros = 0;
+    int numRegistrosPorPage = 10;
+    int[] tops = { 10, 20, 50, 100, 500, 1000, 10000, -1 };
+    int topActual = Convert.ToInt32(ViewBag.Top);
+    List<Reportes> reportes = ViewBag.Reportes as List<Reportes>;
+    List<Asistencias> asistencias = ViewBag.Asistencias as List<Asistencias>;
+    List<Horarios> horarios = ViewBag.Horarios as List<Horarios>;
+}
+
+<h1 class="letras">Crear Empleados</h1>
+<div class="row">
+    <div class="col-md-12">
+
+            <form asp-action="Index" method="get">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">Título</label>
+                        <input type="text" class="form-control" id="searchTitle" name="searchTitle" placeholder="Buscar por empledo..." />
+
+                        </div>
+                    </div>
+                    <div class="form-group m-2">
+                        <input type="submit" value="Buscar" class="btn btn-outline-info" />
+                        <a asp-action="Crear" class="btn btn-outline-primary">Nuevo empleado</a>
+                    </div>
+                </div>
+            </form>
+
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+             <td>
+                    @Html.ActionLink("Modificar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info" })
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-outline-secondary" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-outline-danger" })
+                    @Html.ActionLink("Calificar", "Calificar", new { id = item.Id }, new { @class = "btn btn-outline-primary" })
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+@if (numPage > 1)
+{
+        <div class="row" style="overflow:auto">
+            <div class="col-md-12">
+                <ul class="pagination paginationjs" data-numpage="@numPage" data-pageactive="1">
+                    <li class="page-item" data-typepage="Previous"><a class="page-link" href="#">Previous</a></li>
+                @for (var i = 1; i <= numPage; i++)
+                {
+                            <li class="page-item" data-page="@i" data-typepage="Item"><a class="page-link" href="#">@i</a></li>
+                }
+                    <li class="page-item" data-typepage="Next"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+}
