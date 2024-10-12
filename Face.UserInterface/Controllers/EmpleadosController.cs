@@ -68,8 +68,13 @@ namespace Face.UserInterface.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var empleadosDb = await empleadosBL.ModificarAsync(new Empleados { Id = id });
-            return View(empleadosDb);
+            var empleado = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
+            if (empleado == null)
+            {
+                return NotFound();
+            }
+
+            return View(empleado);
         }
 
         [HttpPost]
@@ -81,20 +86,21 @@ namespace Face.UserInterface.Controllers
                 if (string.IsNullOrWhiteSpace(pEmpleados.Cargo))
                 {
                     ModelState.AddModelError("Cargo", "El campo Cargo es obligatorio.");
-                    return View(pEmpleados);  // Devuelve la vista con los mensajes de error
+                    return View(pEmpleados);
                 }
 
                 if (ModelState.IsValid)
                 {
+                    // Actualiza los datos del empleado
                     int result = await empleadosBL.ModificarAsync(pEmpleados);
-                    return RedirectToAction(nameof(Index));  // Redirige si es exitoso
+                    return RedirectToAction(nameof(Index));
                 }
                 return View(pEmpleados);
             }
             catch (Exception ex)
             {
                 ViewBag.error = ex.Message;
-                return View(pEmpleados);  // Devuelve el modelo a la vista en caso de error
+                return View(pEmpleados);
             }
         }
 

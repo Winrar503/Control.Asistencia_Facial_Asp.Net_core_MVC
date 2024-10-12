@@ -1,6 +1,7 @@
 ﻿using Emgu.CV.Stitching;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -40,6 +41,6 @@ namespace Face.EntidadesDeNegocio
         public int Top_Aux { get; set; }
         public ICollection<Asistencias> Asistencias { get; set; }
         public ICollection<Horarios> Horarios { get; set; }
-        public ICollection<Reportes> Reportes { get; set; } = new HashSet<Reportes>();
+        public ICollection<Reportes> Reportes { get; set; } = new List<Reportes>();
     }
 }

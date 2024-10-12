@@ -22,3 +22,4 @@ C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\refint\Face.EntidadesDeNegocio.dll
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.pdb
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\ref\Face.EntidadesDeNegocio.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.sourcelink.json

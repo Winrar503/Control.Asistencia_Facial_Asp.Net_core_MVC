@@ -28,3 +28,4 @@ C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\refint\Face.AccesoADatos.dll
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.pdb
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\ref\Face.AccesoADatos.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.sourcelink.json
