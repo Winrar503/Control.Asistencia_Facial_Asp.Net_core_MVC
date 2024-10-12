@@ -78,21 +78,17 @@ namespace Face.UserInterface.Controllers
         {
             try
             {
-                // Verifica si el campo Cargo está vacío o nulo
                 if (string.IsNullOrWhiteSpace(pEmpleados.Cargo))
                 {
                     ModelState.AddModelError("Cargo", "El campo Cargo es obligatorio.");
                     return View(pEmpleados);  // Devuelve la vista con los mensajes de error
                 }
 
-                // Si el modelo es válido, intenta modificar
                 if (ModelState.IsValid)
                 {
                     int result = await empleadosBL.ModificarAsync(pEmpleados);
                     return RedirectToAction(nameof(Index));  // Redirige si es exitoso
                 }
-
-                // Si el modelo no es válido, vuelve a mostrar la vista con el modelo actual
                 return View(pEmpleados);
             }
             catch (Exception ex)
