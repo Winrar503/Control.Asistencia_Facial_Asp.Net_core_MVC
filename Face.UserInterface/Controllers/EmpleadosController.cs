@@ -91,7 +91,6 @@ namespace Face.UserInterface.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    // Actualiza los datos del empleado
                     int result = await empleadosBL.ModificarAsync(pEmpleados);
                     return RedirectToAction(nameof(Index));
                 }
