@@ -26,27 +26,56 @@ namespace Face.AccesoADatos
                 throw new Exception("Error al crear el empleado", ex);
             }
         }
+
         public static async Task<int> ModificarAsync(Empleados pEmpleados)
         {
-            int result = 0;
             using (var bdContexto = new BDContexto())
             {
-                var empleado = await bdContexto.Empleados.FirstOrDefaultAsync(s => s.Id == pEmpleados.Id);
-                if (empleado == null) return 0;
+                var empleadosBD = await bdContexto.Empleados.FirstOrDefaultAsync(l => l.Id == pEmpleados.Id);
+                if (empleadosBD != null)
+                {
+                    empleadosBD.Nombre = pEmpleados.Nombre;
+                    empleadosBD.Edad = pEmpleados.Edad;
+                    empleadosBD.Email = pEmpleados.Email;
+                    empleadosBD.Cargo = pEmpleados.Cargo;
+                    empleadosBD.Telefono = pEmpleados.Telefono;
+                    empleadosBD.Foto = pEmpleados.Foto;
+                    empleadosBD.Estado = pEmpleados.Estado;
+                    empleadosBD.FechaRegistro = pEmpleados.FechaRegistro;
 
-                empleado.Nombre = pEmpleados.Nombre;
-                empleado.Edad = pEmpleados.Edad;
-                empleado.Email = pEmpleados.Email;
-                empleado.Cargo = pEmpleados.Cargo;
-                empleado.Telefono = pEmpleados.Telefono;
-                empleado.Foto = pEmpleados.Foto;
-                empleado.Estado = pEmpleados.Estado;
-                empleado.FechaRegistro = pEmpleados.FechaRegistro;
-                bdContexto.Update(empleado);
-                result = await bdContexto.SaveChangesAsync();
+                    // Indica a EF que la entidad fue modificada
+                    bdContexto.Entry(empleadosBD).State = EntityState.Modified;
+
+                    return await bdContexto.SaveChangesAsync();
+                }
+                return 0;  // Si no se encuentra el empleado, retorna 0
             }
-            return result;
         }
+
+
+
+
+        //public static async Task<int> ModificarAsync(Empleados pEmpleados)
+        //{
+        //    int result = 0;
+        //    using (var bdContexto = new BDContexto())
+        //    {
+        //        var empleado = await bdContexto.Empleados.FirstOrDefaultAsync(s => s.Id == pEmpleados.Id);
+        //        if (empleado == null) return 0;
+
+        //        empleado.Nombre = pEmpleados.Nombre;
+        //        empleado.Edad = pEmpleados.Edad;
+        //        empleado.Email = pEmpleados.Email;
+        //        empleado.Cargo = pEmpleados.Cargo;
+        //        empleado.Telefono = pEmpleados.Telefono;
+        //        empleado.Foto = pEmpleados.Foto;
+        //        empleado.Estado = pEmpleados.Estado;
+        //        empleado.FechaRegistro = pEmpleados.FechaRegistro;
+        //        bdContexto.Update(empleado);
+        //        result = await bdContexto.SaveChangesAsync();
+        //    }
+        //    return result;
+        //}
 
         public static async Task<int> EliminarAsync(Empleados pEmpleados)
         {

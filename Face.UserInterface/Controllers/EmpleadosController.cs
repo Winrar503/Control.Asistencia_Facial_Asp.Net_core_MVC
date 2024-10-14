@@ -81,28 +81,22 @@ namespace Face.UserInterface.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Empleados pEmpleados)
         {
+            if (id != pEmpleados.Id)
+            {
+                return NotFound();
+            }
             try
             {
-                if (string.IsNullOrWhiteSpace(pEmpleados.Cargo))
-                {
-                    ModelState.AddModelError("Cargo", "El campo Cargo es obligatorio.");
-                    return View(pEmpleados);
-                }
-
-                if (ModelState.IsValid)
-                {
-                    int result = await empleadosBL.ModificarAsync(pEmpleados);
-                    return RedirectToAction(nameof(Index));
-                }
-                return View(pEmpleados);
+                await empleadosBL.ModificarAsync(pEmpleados);
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-                ViewBag.error = ex.Message;
-                return View(pEmpleados);
+                ModelState.AddModelError("", "Error al guardar los cambios: " + ex.Message);
             }
-        }
 
+            return View(pEmpleados);
+        }
 
         // GET: LibrosController/Delete/5
         public async Task<ActionResult> Delete(int id)

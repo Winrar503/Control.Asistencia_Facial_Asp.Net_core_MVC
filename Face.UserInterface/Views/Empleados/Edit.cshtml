@@ -3,6 +3,9 @@
 
 @{
     ViewData["Title"] = "Edit";
+    List<Reportes> reportes = ViewBag.Reportes as List<Reportes>;
+    List<Asistencias> asistencias = ViewBag.Asistencias as List<Asistencias>;
+    List<Horarios> horarios = ViewBag.Horarios as List<Horarios>;
 }
 
 <h1>Edit</h1>
@@ -11,8 +14,10 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit" enctype="multipart/form-data">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
 
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
@@ -56,8 +61,10 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar cambios" class="btn btn-primary" />
+                <a asp-action="Index">Regresar a la lista</a>
             </div>
+            <span class="text-danger">@ViewBag.Error</span>
         </form>
     </div>
 </div>
@@ -67,5 +74,7 @@
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
