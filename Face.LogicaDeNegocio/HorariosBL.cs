@@ -29,6 +29,11 @@ namespace Face.LogicaDeNegocio
             return await HorariosDAL.ObtenerPorIdAsync(pHorarios);
         }
 
+        public async Task<Horarios> ObtenerPorIdConRelacionesAsync(int empleadoId)
+        {
+            return await HorariosDAL.ObtenerPorIdConRelacionesAsync(empleadoId);
+        }
+
         public async Task<List<Horarios>> ObtenerTodosAsync()
         {
             return await HorariosDAL.ObtenerTodosAsync();

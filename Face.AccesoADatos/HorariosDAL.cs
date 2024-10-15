@@ -68,6 +68,16 @@ namespace Face.AccesoADatos
                 return await bdContexto.Horarios.ToListAsync();
             }
         }
+        public static async Task<Horarios> ObtenerPorIdConRelacionesAsync(int horariosId)
+        {
+            using (var bdContexto = new BDContexto())
+            {
+                return await bdContexto.Horarios
+                    .Include(e => e.Empleados) // Incluye las relaciones con empleados
+                    .FirstOrDefaultAsync(h => h.Id == horariosId); // Filtra por el Id de horarios
+            }
+        }
+
 
         internal static IQueryable<Horarios> QuerySelect(IQueryable<Horarios> pQuery, Horarios pHorario)
         {

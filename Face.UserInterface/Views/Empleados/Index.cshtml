@@ -2,7 +2,7 @@
 @using Face.EntidadesDeNegocio
 @{
     ViewData["Title"] = "Index";
-     int numPage = 1;
+    int numPage = 1;
     int numRegistros = 0;
     int numRegistrosPorPage = 10;
     int[] tops = { 10, 20, 50, 100, 500, 1000, 10000, -1 };
@@ -95,7 +95,7 @@
                     @Html.ActionLink("Modificar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info" })
                     @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-outline-secondary" })
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-outline-danger" })
-                </td>
+             </td>
         </tr>
 }
     </tbody>

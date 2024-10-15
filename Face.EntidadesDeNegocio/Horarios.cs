@@ -14,8 +14,8 @@ namespace Face.EntidadesDeNegocio
         public int Id { get; set; }
         [ForeignKey("Empleados")]
         public int EmpleadosId { get; set; }
-        public TimeSpan HoraEntrada { get; set; }
-        public TimeSpan HoraSalida { get; set; }
+        public DateTime HoraEntrada { get; set; }
+        public DateTime HoraSalida { get; set; }
 
         [NotMapped]
         public int Top_Aux { get; set; }

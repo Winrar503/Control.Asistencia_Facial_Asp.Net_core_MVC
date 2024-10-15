@@ -334,3 +334,5 @@ C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.UserInterface\obj\Debug\net8.0\Face.UserInterface.genruntimeconfig.cache
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.UserInterface\obj\Debug\net8.0\ref\Face.UserInterface.dll
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.UserInterface\obj\Debug\net8.0\Face.UserInterface.sourcelink.json
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.UserInterface\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.UserInterface\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
