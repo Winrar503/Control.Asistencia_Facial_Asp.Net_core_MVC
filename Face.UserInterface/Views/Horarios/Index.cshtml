@@ -1,52 +1,42 @@
-﻿@model IEnumerable<Face.EntidadesDeNegocio.Asistencias>
+﻿@model IEnumerable<Face.EntidadesDeNegocio.Horarios>
 @using Face.EntidadesDeNegocio
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Horarios";
     int numPage = 1;
     int numRegistros = 0;
     int numRegistrosPorPage = 10;
     int[] tops = { 10, 20, 50, 100, 500, 1000, 10000, -1 };
     int topActual = Convert.ToInt32(ViewBag.Top);
-    List<Horarios> horarios = ViewBag.Horarios as List<Horarios>;
+    List<Empleados> empleados = ViewBag.Empleados as List<Empleados>;
 }
-<h1>Index</h1>
+
+<h1>Horarios</h1>
+
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear Nuevo Horario</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.EmpleadosId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Comentarios)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fecha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstadoReconocimiento)
-            </th>
+            <th>@Html.DisplayNameFor(model => model.EmpleadosId)</th>
+            <th>@Html.DisplayNameFor(model => model.HoraEntrada)</th>
+            <th>@Html.DisplayNameFor(model => model.HoraSalida)</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-
-        @if (Model != null)
+        @if (Model != null && empleados != null)
         {
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => item.EmpleadosId)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Comentarios)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
-                    <td>@Html.DisplayFor(modelItem => item.EstadoReconocimiento)</td>
+                    <td>
+                        @empleados.FirstOrDefault(e => e.Id == item.EmpleadosId)?.Nombre
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.HoraEntrada)</td>
+                    <td>@Html.DisplayFor(modelItem => item.HoraSalida)</td>
                     <td>
                         @Html.ActionLink("Modificar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info" })
                         @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-outline-secondary" })
@@ -57,22 +47,9 @@
         }
         else
         {
-            <p>No hay datos disponibles.</p>
+            <tr>
+                <td colspan="4">No se encontraron horarios o empleados.</td>
+            </tr>
         }
     </tbody>
 </table>
-@if (numPage > 1)
-{
-    <div class="row" style="overflow:auto">
-        <div class="col-md-12">
-            <ul class="pagination paginationjs" data-numpage="@numPage" data-pageactive="1">
-                <li class="page-item" data-typepage="Previous"><a class="page-link" href="#">Previous</a></li>
-                @for (var i = 1; i <= numPage; i++)
-                {
-                    <li class="page-item" data-page="@i" data-typepage="Item"><a class="page-link" href="#">@i</a></li>
-                }
-                <li class="page-item" data-typepage="Next"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </div>
-    </div>
-}

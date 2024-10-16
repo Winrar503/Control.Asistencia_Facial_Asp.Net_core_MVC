@@ -17,8 +17,6 @@
         <form asp-action="Edit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-
-
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
                 <input asp-for="Nombre" class="form-control" />
@@ -59,7 +57,6 @@
                 <input asp-for="FechaRegistro" type="date" class="form-control" />
                 <span asp-validation-for="FechaRegistro" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <input type="submit" value="Guardar cambios" class="btn btn-primary" />
                 <a asp-action="Index">Regresar a la lista</a>

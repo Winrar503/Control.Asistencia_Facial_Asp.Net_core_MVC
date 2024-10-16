@@ -13,19 +13,19 @@ namespace Face.UserInterface.Controllers
         // GET: HorariosController
         public async Task<IActionResult> Index(Horarios horarios = null)
         {
-            return View(); if (horarios == null)
+            if (horarios == null)
                 horarios = new Horarios();
             if (horarios.Top_Aux == 0)
                 horarios.Top_Aux = 0;
             else if (horarios.Top_Aux == -1)
                 horarios.Top_Aux = 0;
 
-            var reserva = await horariosBL.BuscarAsync(horarios);
+            var lisHorarios = await horariosBL.BuscarAsync(horarios);
             var empleados = await empleadosBL.ObtenerTodosAsync();
+
             ViewBag.Empleados = empleados;
             ViewBag.Top = horarios.Top_Aux;
-            return View(horarios);
-
+            return View(lisHorarios);
         }
         public async Task<IActionResult> Details(int id)
         {
@@ -38,28 +38,32 @@ namespace Face.UserInterface.Controllers
         }
         public async Task<IActionResult> Create()
         {
-            ViewBag.Error = "";
+            var empleados = await empleadosBL.ObtenerTodosAsync();
+            ViewBag.Empleados = empleados;
             return View();
         }
 
-        // POST: HorariosController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Horarios horarios, IFormFile imagen )
+        public async Task<IActionResult> Create(Horarios horarios)
         {
             try
             {
-                horarios.HoraEntrada = DateTime.Now;
-                horarios.HoraSalida = DateTime.Now;
+                // Lógica para crear el horario
                 int result = await horariosBL.CrearAsync(horarios);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-                ViewBag.error = ex.Message;
+                // En caso de error, recarga los empleados y muestra el error
+                ViewBag.Error = ex.Message;
+                var empleados = await empleadosBL.ObtenerTodosAsync();
+                ViewBag.Empleados = empleados;
                 return View(horarios);
             }
         }
+
+       
 
         // GET: HorariosController/Edit/5
         public async Task<IActionResult> Edit(int id)

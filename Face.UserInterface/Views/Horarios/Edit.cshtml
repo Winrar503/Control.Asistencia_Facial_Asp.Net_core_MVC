@@ -1,0 +1,44 @@
+﻿@model Face.EntidadesDeNegocio.Horarios
+@using Face.EntidadesDeNegocio
+@{
+    ViewData["Title"] = "Edit";
+    List<Empleados> empleados = ViewBag.Empleados as List<Empleados>;
+}
+
+<h1>Edit</h1>
+
+<h4>Horarios</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmpleadosId" class="control-label"></label>
+                <input asp-for="EmpleadosId" class="form-control" />
+                <span asp-validation-for="EmpleadosId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraEntrada" class="control-label"></label>
+                <input asp-for="HoraEntrada" class="form-control" />
+                <span asp-validation-for="HoraEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraSalida" class="control-label"></label>
+                <input asp-for="HoraSalida" class="form-control" />
+                <span asp-validation-for="HoraSalida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
