@@ -54,7 +54,6 @@ namespace Face.AccesoADatos
                 return await bdContexto.SaveChangesAsync();
             }
         }
-
         public static async Task<Asistencias> ObtenerPorIdAsync(Asistencias pAsistencia)
         {
             using (var bdContexto = new BDContexto())
@@ -63,7 +62,6 @@ namespace Face.AccesoADatos
             }
 
         }
-
         public static async Task<List<Asistencias>> ObtenerTodosAsync()
         {
             using (var bdContexto = new BDContexto())
@@ -71,7 +69,6 @@ namespace Face.AccesoADatos
                 return await bdContexto.Asistencias.ToListAsync();
             }
         }
-
         internal static IQueryable<Asistencias> QuerySelect(IQueryable<Asistencias> pQuery, Asistencias pAsistencias)
         {
             if (pAsistencias.Id > 0)
@@ -83,13 +80,11 @@ namespace Face.AccesoADatos
 
             pQuery = pQuery.OrderBy(s => s.Id);
 
-
             if (pAsistencias.Top_Aux > 0)
                 pQuery = pQuery.Take(pAsistencias.Top_Aux).AsQueryable();
 
             return pQuery;
         }
-
         public static async Task<List<Asistencias>> BuscarAsync(Asistencias pAsistencias)
         {
             using (var bdContexto = new BDContexto())

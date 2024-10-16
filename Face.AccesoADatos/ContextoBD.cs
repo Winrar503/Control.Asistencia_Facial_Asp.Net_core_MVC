@@ -14,7 +14,6 @@ namespace Face.AccesoADatos
         public DbSet<Asistencias> Asistencias {  get; set; }
         public DbSet<Horarios> Horarios { get; set; }
         public DbSet<Reportes> Reportes { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=DARWIN;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");

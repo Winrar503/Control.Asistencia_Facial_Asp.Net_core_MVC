@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="~/Face.UserInterface.styles.css" asp-append-version="true" />
 </head>
 <body>
+
+  @*   <div id="loading" class="loading-overlay">
+        <div class="honeycomb">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> *@
+
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -54,5 +68,16 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+   @*  <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                var loadingOverlay = document.getElementById('loading');
+                if (loadingOverlay) {
+                    loadingOverlay.style.display = 'none';
+                }
+            }, 2000);S
+        });
+    </script> *@
 </body>
 </html>

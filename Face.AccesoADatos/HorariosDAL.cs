@@ -30,14 +30,12 @@ namespace Face.AccesoADatos
             using (var bdContexto = new BDContexto())
             {
                 var horarios = await bdContexto.Horarios.FirstOrDefaultAsync(h => h.Id == pHorario.Id);
-                if (horarios == null) return 0; // Si no se encuentra, retorna 0
+                if (horarios == null) return 0;
 
-                // Modifica los campos necesarios
                 horarios.HoraEntrada = pHorario.HoraEntrada;
                 horarios.HoraSalida = pHorario.HoraSalida;
-                horarios.EmpleadosId = pHorario.EmpleadosId; // Asegúrate de actualizar el empleado si es necesario
+                horarios.EmpleadosId = pHorario.EmpleadosId;
 
-                // Guarda los cambios en la base de datos
                 return await bdContexto.SaveChangesAsync();
             }
         }
@@ -73,8 +71,8 @@ namespace Face.AccesoADatos
             using (var bdContexto = new BDContexto())
             {
                 return await bdContexto.Horarios
-                    .Include(e => e.Empleados) // Incluye las relaciones con empleados
-                    .FirstOrDefaultAsync(h => h.Id == horariosId); // Filtra por el Id de horarios
+                    .Include(e => e.Empleados)
+                    .FirstOrDefaultAsync(h => h.Id == horariosId);
             }
         }
 
@@ -84,18 +82,16 @@ namespace Face.AccesoADatos
                 pQuery = pQuery.Where(s => s.Id == pHorario.Id);
 
             if (pHorario.EmpleadosId > 0)
-                pQuery = pQuery.Where(s => s.EmpleadosId == pHorario.EmpleadosId);  // Filtra por empleado
+                pQuery = pQuery.Where(s => s.EmpleadosId == pHorario.EmpleadosId);
 
-            if (pHorario.HoraEntrada != TimeSpan.MinValue) // Si hay un filtro de fecha de entrada
+            if (pHorario.HoraEntrada != TimeSpan.MinValue)
                 pQuery = pQuery.Where(s => s.HoraEntrada >= pHorario.HoraEntrada);
 
-            if (pHorario.HoraSalida != TimeSpan.MinValue) // Si hay un filtro de fecha de salida
+            if (pHorario.HoraSalida != TimeSpan.MinValue)
                 pQuery = pQuery.Where(s => s.HoraSalida <= pHorario.HoraSalida);
 
-            // Ordena por Id de horario
             pQuery = pQuery.OrderBy(s => s.Id);
 
-            // Limita los resultados si Top_Aux está definido
             if (pHorario.Top_Aux > 0)
                 pQuery = pQuery.Take(pHorario.Top_Aux).AsQueryable();
 
@@ -108,7 +104,6 @@ namespace Face.AccesoADatos
             {
                 var select = bdContexto.Horarios.AsQueryable();
 
-                // Filtra según sea necesario
                 if (pHorario.Id > 0)
                     select = select.Where(s => s.Id == pHorario.Id);
 

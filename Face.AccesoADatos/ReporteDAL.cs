@@ -53,7 +53,6 @@ namespace Face.AccesoADatos
                 return await bdContexto.SaveChangesAsync();
             }
         }
-
         public static async Task<Reportes> ObtenerPorIdAsync(Reportes pReporte)
         {
             using (var bdContexto = new BDContexto())
@@ -61,7 +60,6 @@ namespace Face.AccesoADatos
                 return await bdContexto.Reportes.FirstOrDefaultAsync(r => r.Id == pReporte.Id);
             }
         }
-
         public static async Task<List<Reportes>> ObtenerTodosAsync()
         {
             using (var bdContexto = new BDContexto())
@@ -69,7 +67,6 @@ namespace Face.AccesoADatos
                 return await bdContexto.Reportes.ToListAsync();
             }
         }
-
         internal static IQueryable<Reportes> QuerySelect(IQueryable<Reportes> pQuery, Reportes pReporte)
         {
             if (pReporte.Id > 0)
@@ -88,7 +85,6 @@ namespace Face.AccesoADatos
 
             return pQuery;
         }
-
         public static async Task<List<Reportes>> BuscarAsync(Reportes pHorario)
         {
             using (var bdContexto = new BDContexto())
