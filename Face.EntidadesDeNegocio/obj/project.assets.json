@@ -65,6 +65,23 @@
           }
         }
       },
+      "EmguCV.221.x86/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Emgu.CV.GPU.dll": {},
+          "lib/Emgu.CV.ML.dll": {},
+          "lib/Emgu.CV.UI.dll": {},
+          "lib/Emgu.CV.dll": {},
+          "lib/Emgu.Util.dll": {}
+        },
+        "runtime": {
+          "lib/Emgu.CV.GPU.dll": {},
+          "lib/Emgu.CV.ML.dll": {},
+          "lib/Emgu.CV.UI.dll": {},
+          "lib/Emgu.CV.dll": {},
+          "lib/Emgu.Util.dll": {}
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -559,30 +576,27 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/6.0.0": {
+      "Microsoft.Win32.SystemEvents/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
         }
-      },
-      "OpenCV/2.4.11": {
-        "type": "package"
       },
       "runtime.native.System/4.3.0": {
         "type": "package",
@@ -636,33 +650,23 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Drawing.Common/6.0.0": {
+      "System.Drawing.Common/8.0.10": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "6.0.0"
+          "Microsoft.Win32.SystemEvents": "8.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.Drawing.Common.dll": {
-            "related": ".xml"
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/net6.0/System.Drawing.Common.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Drawing.Primitives/4.3.0": {
@@ -731,7 +735,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {
+          "ref/netstandard1.5/System.IO.dll": {
             "related": ".xml"
           }
         }
@@ -1183,7 +1187,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
+          "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
         }
@@ -1284,6 +1288,49 @@
         "lib/netstandard2.0/Emgu.CV.xml",
         "lib/xamarinios10/Emgu.CV.dll",
         "lib/xamarinios10/Emgu.CV.xml"
+      ]
+    },
+    "EmguCV.221.x86/1.0.0": {
+      "sha512": "TiBgbLeDzw82GHnr1U9rfsIKYCfQZjUTrIaZQYS7fTrC0JLwsFcwSB2Q4fqyGvehXBqdlyyCxpEYf9zrD+uu2g==",
+      "type": "package",
+      "path": "emgucv.221.x86/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "emgucv.221.x86.1.0.0.nupkg.sha512",
+        "emgucv.221.x86.nuspec",
+        "haarcascades/haarcascade_eye.xml",
+        "haarcascades/haarcascade_frontalface_alt.xml",
+        "haarcascades/haarcascade_frontalface_alt2.xml",
+        "haarcascades/haarcascade_frontalface_alt_tree.xml",
+        "haarcascades/haarcascade_frontalface_default.xml",
+        "haarcascades/haarcascade_lefteye_2splits.xml",
+        "haarcascades/haarcascade_mcs_lefteye.xml",
+        "haarcascades/haarcascade_mcs_mouth.xml",
+        "haarcascades/haarcascade_mcs_nose.xml",
+        "haarcascades/haarcascade_mcs_righteye.xml",
+        "haarcascades/haarcascade_profileface.xml",
+        "haarcascades/haarcascade_righteye_2splits.xml",
+        "lib/Emgu.CV.GPU.dll",
+        "lib/Emgu.CV.ML.dll",
+        "lib/Emgu.CV.UI.dll",
+        "lib/Emgu.CV.dll",
+        "lib/Emgu.Util.dll",
+        "opencv/ZedGraph.dll",
+        "opencv/cvextern.dll",
+        "opencv/opencv_calib3d220.dll",
+        "opencv/opencv_contrib220.dll",
+        "opencv/opencv_core220.dll",
+        "opencv/opencv_features2d220.dll",
+        "opencv/opencv_ffmpeg220.dll",
+        "opencv/opencv_flann220.dll",
+        "opencv/opencv_gpu220.dll",
+        "opencv/opencv_highgui220.dll",
+        "opencv/opencv_imgproc220.dll",
+        "opencv/opencv_legacy220.dll",
+        "opencv/opencv_ml220.dll",
+        "opencv/opencv_objdetect220.dll",
+        "opencv/opencv_video220.dll"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -2103,216 +2150,39 @@
         "microsoft.sqlserver.server.nuspec"
       ]
     },
-    "Microsoft.Win32.SystemEvents/6.0.0": {
-      "sha512": "hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
+    "Microsoft.Win32.SystemEvents/8.0.0": {
+      "sha512": "9opKRyOKMCi2xJ7Bj7kxtZ1r9vbzosMvRrdEhVhDz8j8MoBGgB+WmC94yH839NPH+BclAjtQ/pyagvi/8gDLkw==",
       "type": "package",
-      "path": "microsoft.win32.systemevents/6.0.0",
+      "path": "microsoft.win32.systemevents/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Win32.SystemEvents.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/Microsoft.Win32.SystemEvents.dll",
-        "lib/net461/Microsoft.Win32.SystemEvents.xml",
+        "lib/net462/Microsoft.Win32.SystemEvents.dll",
+        "lib/net462/Microsoft.Win32.SystemEvents.xml",
         "lib/net6.0/Microsoft.Win32.SystemEvents.dll",
         "lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
-        "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
+        "lib/net7.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net7.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.xml",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+        "microsoft.win32.systemevents.8.0.0.nupkg.sha512",
         "microsoft.win32.systemevents.nuspec",
         "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt"
-      ]
-    },
-    "OpenCV/2.4.11": {
-      "sha512": "1W5nlWqWx82FI6q6ISqLUj3paH5DpbfXqnNrFi9eOCeChr59I0d0xklDtMMNsGt8JLlZTMu6IW2Pyp7IMnGVAA==",
-      "type": "package",
-      "path": "opencv/2.4.11",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "NuGet-Overlay.cmd",
-        "build/configurations.autopkg",
-        "build/native/OpenCV.props",
-        "build/native/OpenCV.targets",
-        "build/native/default-propertiesui.xml",
-        "build/native/docs/LICENSE",
-        "build/native/include/opencv/cv.h",
-        "build/native/include/opencv/cv.hpp",
-        "build/native/include/opencv/cvaux.h",
-        "build/native/include/opencv/cvaux.hpp",
-        "build/native/include/opencv/cvwimage.h",
-        "build/native/include/opencv/cxcore.h",
-        "build/native/include/opencv/cxcore.hpp",
-        "build/native/include/opencv/cxeigen.hpp",
-        "build/native/include/opencv/cxmisc.h",
-        "build/native/include/opencv/highgui.h",
-        "build/native/include/opencv/ml.h",
-        "build/native/include/opencv2/calib3d/calib3d.hpp",
-        "build/native/include/opencv2/contrib/contrib.hpp",
-        "build/native/include/opencv2/contrib/detection_based_tracker.hpp",
-        "build/native/include/opencv2/contrib/hybridtracker.hpp",
-        "build/native/include/opencv2/contrib/openfabmap.hpp",
-        "build/native/include/opencv2/contrib/retina.hpp",
-        "build/native/include/opencv2/core/affine.hpp",
-        "build/native/include/opencv2/core/core.hpp",
-        "build/native/include/opencv2/core/core_c.h",
-        "build/native/include/opencv2/core/cuda_devptrs.hpp",
-        "build/native/include/opencv2/core/devmem2d.hpp",
-        "build/native/include/opencv2/core/eigen.hpp",
-        "build/native/include/opencv2/core/gpumat.hpp",
-        "build/native/include/opencv2/core/internal.hpp",
-        "build/native/include/opencv2/core/mat.hpp",
-        "build/native/include/opencv2/core/opengl_interop.hpp",
-        "build/native/include/opencv2/core/opengl_interop_deprecated.hpp",
-        "build/native/include/opencv2/core/operations.hpp",
-        "build/native/include/opencv2/core/types_c.h",
-        "build/native/include/opencv2/core/version.hpp",
-        "build/native/include/opencv2/core/wimage.hpp",
-        "build/native/include/opencv2/features2d/features2d.hpp",
-        "build/native/include/opencv2/flann/all_indices.h",
-        "build/native/include/opencv2/flann/allocator.h",
-        "build/native/include/opencv2/flann/any.h",
-        "build/native/include/opencv2/flann/autotuned_index.h",
-        "build/native/include/opencv2/flann/composite_index.h",
-        "build/native/include/opencv2/flann/config.h",
-        "build/native/include/opencv2/flann/defines.h",
-        "build/native/include/opencv2/flann/dist.h",
-        "build/native/include/opencv2/flann/dummy.h",
-        "build/native/include/opencv2/flann/dynamic_bitset.h",
-        "build/native/include/opencv2/flann/flann.hpp",
-        "build/native/include/opencv2/flann/flann_base.hpp",
-        "build/native/include/opencv2/flann/general.h",
-        "build/native/include/opencv2/flann/ground_truth.h",
-        "build/native/include/opencv2/flann/hdf5.h",
-        "build/native/include/opencv2/flann/heap.h",
-        "build/native/include/opencv2/flann/hierarchical_clustering_index.h",
-        "build/native/include/opencv2/flann/index_testing.h",
-        "build/native/include/opencv2/flann/kdtree_index.h",
-        "build/native/include/opencv2/flann/kdtree_single_index.h",
-        "build/native/include/opencv2/flann/kmeans_index.h",
-        "build/native/include/opencv2/flann/linear_index.h",
-        "build/native/include/opencv2/flann/logger.h",
-        "build/native/include/opencv2/flann/lsh_index.h",
-        "build/native/include/opencv2/flann/lsh_table.h",
-        "build/native/include/opencv2/flann/matrix.h",
-        "build/native/include/opencv2/flann/miniflann.hpp",
-        "build/native/include/opencv2/flann/nn_index.h",
-        "build/native/include/opencv2/flann/object_factory.h",
-        "build/native/include/opencv2/flann/params.h",
-        "build/native/include/opencv2/flann/random.h",
-        "build/native/include/opencv2/flann/result_set.h",
-        "build/native/include/opencv2/flann/sampling.h",
-        "build/native/include/opencv2/flann/saving.h",
-        "build/native/include/opencv2/flann/simplex_downhill.h",
-        "build/native/include/opencv2/flann/timer.h",
-        "build/native/include/opencv2/gpu/device/block.hpp",
-        "build/native/include/opencv2/gpu/device/border_interpolate.hpp",
-        "build/native/include/opencv2/gpu/device/color.hpp",
-        "build/native/include/opencv2/gpu/device/common.hpp",
-        "build/native/include/opencv2/gpu/device/datamov_utils.hpp",
-        "build/native/include/opencv2/gpu/device/detail/color_detail.hpp",
-        "build/native/include/opencv2/gpu/device/detail/reduce.hpp",
-        "build/native/include/opencv2/gpu/device/detail/reduce_key_val.hpp",
-        "build/native/include/opencv2/gpu/device/detail/transform_detail.hpp",
-        "build/native/include/opencv2/gpu/device/detail/type_traits_detail.hpp",
-        "build/native/include/opencv2/gpu/device/detail/vec_distance_detail.hpp",
-        "build/native/include/opencv2/gpu/device/dynamic_smem.hpp",
-        "build/native/include/opencv2/gpu/device/emulation.hpp",
-        "build/native/include/opencv2/gpu/device/filters.hpp",
-        "build/native/include/opencv2/gpu/device/funcattrib.hpp",
-        "build/native/include/opencv2/gpu/device/functional.hpp",
-        "build/native/include/opencv2/gpu/device/limits.hpp",
-        "build/native/include/opencv2/gpu/device/reduce.hpp",
-        "build/native/include/opencv2/gpu/device/saturate_cast.hpp",
-        "build/native/include/opencv2/gpu/device/scan.hpp",
-        "build/native/include/opencv2/gpu/device/simd_functions.hpp",
-        "build/native/include/opencv2/gpu/device/static_check.hpp",
-        "build/native/include/opencv2/gpu/device/transform.hpp",
-        "build/native/include/opencv2/gpu/device/type_traits.hpp",
-        "build/native/include/opencv2/gpu/device/utility.hpp",
-        "build/native/include/opencv2/gpu/device/vec_distance.hpp",
-        "build/native/include/opencv2/gpu/device/vec_math.hpp",
-        "build/native/include/opencv2/gpu/device/vec_traits.hpp",
-        "build/native/include/opencv2/gpu/device/warp.hpp",
-        "build/native/include/opencv2/gpu/device/warp_reduce.hpp",
-        "build/native/include/opencv2/gpu/device/warp_shuffle.hpp",
-        "build/native/include/opencv2/gpu/devmem2d.hpp",
-        "build/native/include/opencv2/gpu/gpu.hpp",
-        "build/native/include/opencv2/gpu/gpumat.hpp",
-        "build/native/include/opencv2/gpu/stream_accessor.hpp",
-        "build/native/include/opencv2/highgui/cap_ios.h",
-        "build/native/include/opencv2/highgui/highgui.hpp",
-        "build/native/include/opencv2/highgui/highgui_c.h",
-        "build/native/include/opencv2/highgui/ios.h",
-        "build/native/include/opencv2/imgproc/imgproc.hpp",
-        "build/native/include/opencv2/imgproc/imgproc_c.h",
-        "build/native/include/opencv2/imgproc/types_c.h",
-        "build/native/include/opencv2/legacy/blobtrack.hpp",
-        "build/native/include/opencv2/legacy/compat.hpp",
-        "build/native/include/opencv2/legacy/legacy.hpp",
-        "build/native/include/opencv2/legacy/streams.hpp",
-        "build/native/include/opencv2/ml/ml.hpp",
-        "build/native/include/opencv2/nonfree/features2d.hpp",
-        "build/native/include/opencv2/nonfree/gpu.hpp",
-        "build/native/include/opencv2/nonfree/nonfree.hpp",
-        "build/native/include/opencv2/nonfree/ocl.hpp",
-        "build/native/include/opencv2/objdetect/objdetect.hpp",
-        "build/native/include/opencv2/ocl/matrix_operations.hpp",
-        "build/native/include/opencv2/ocl/ocl.hpp",
-        "build/native/include/opencv2/opencv.hpp",
-        "build/native/include/opencv2/opencv_modules.hpp",
-        "build/native/include/opencv2/photo/photo.hpp",
-        "build/native/include/opencv2/photo/photo_c.h",
-        "build/native/include/opencv2/stitching/detail/autocalib.hpp",
-        "build/native/include/opencv2/stitching/detail/blenders.hpp",
-        "build/native/include/opencv2/stitching/detail/camera.hpp",
-        "build/native/include/opencv2/stitching/detail/exposure_compensate.hpp",
-        "build/native/include/opencv2/stitching/detail/matchers.hpp",
-        "build/native/include/opencv2/stitching/detail/motion_estimators.hpp",
-        "build/native/include/opencv2/stitching/detail/seam_finders.hpp",
-        "build/native/include/opencv2/stitching/detail/util.hpp",
-        "build/native/include/opencv2/stitching/detail/util_inl.hpp",
-        "build/native/include/opencv2/stitching/detail/warpers.hpp",
-        "build/native/include/opencv2/stitching/detail/warpers_inl.hpp",
-        "build/native/include/opencv2/stitching/stitcher.hpp",
-        "build/native/include/opencv2/stitching/warpers.hpp",
-        "build/native/include/opencv2/superres/optical_flow.hpp",
-        "build/native/include/opencv2/superres/superres.hpp",
-        "build/native/include/opencv2/ts/gpu_perf.hpp",
-        "build/native/include/opencv2/ts/gpu_test.hpp",
-        "build/native/include/opencv2/ts/ts.hpp",
-        "build/native/include/opencv2/ts/ts_gtest.h",
-        "build/native/include/opencv2/ts/ts_perf.hpp",
-        "build/native/include/opencv2/video/background_segm.hpp",
-        "build/native/include/opencv2/video/tracking.hpp",
-        "build/native/include/opencv2/video/video.hpp",
-        "build/native/include/opencv2/videostab/deblurring.hpp",
-        "build/native/include/opencv2/videostab/fast_marching.hpp",
-        "build/native/include/opencv2/videostab/fast_marching_inl.hpp",
-        "build/native/include/opencv2/videostab/frame_source.hpp",
-        "build/native/include/opencv2/videostab/global_motion.hpp",
-        "build/native/include/opencv2/videostab/inpainting.hpp",
-        "build/native/include/opencv2/videostab/log.hpp",
-        "build/native/include/opencv2/videostab/motion_stabilizing.hpp",
-        "build/native/include/opencv2/videostab/optical_flow.hpp",
-        "build/native/include/opencv2/videostab/stabilizer.hpp",
-        "build/native/include/opencv2/videostab/videostab.hpp",
-        "build/native/pivot-list.txt",
-        "build/native/private/CoApp.NuGetNativeExtensions.dll",
-        "build/native/private/CoApp.NuGetNativeMSBuildTasks.dll.orig",
-        "build/native/private/nuget.exe",
-        "build/publisher-info.txt",
-        "opencv.2.4.11.nupkg.sha512",
-        "opencv.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -2379,41 +2249,42 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Drawing.Common/6.0.0": {
-      "sha512": "NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+    "System.Drawing.Common/8.0.10": {
+      "sha512": "MdajRp3P+FOlThgY6FBjAqnmLiVl5t2yWEC/2AsDMqx1zYbJG3G5TnscFBQ4obqcaGqvN5UnhQHSFaJFG2HftQ==",
       "type": "package",
-      "path": "system.drawing.common/6.0.0",
+      "path": "system.drawing.common/8.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Drawing.Common.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
-        "buildTransitive/netcoreapp3.1/_._",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
-        "lib/net461/System.Drawing.Common.dll",
-        "lib/net461/System.Drawing.Common.xml",
+        "lib/net462/System.Drawing.Common.dll",
+        "lib/net462/System.Drawing.Common.pdb",
+        "lib/net462/System.Drawing.Common.xml",
         "lib/net6.0/System.Drawing.Common.dll",
+        "lib/net6.0/System.Drawing.Common.pdb",
         "lib/net6.0/System.Drawing.Common.xml",
-        "lib/netcoreapp3.1/System.Drawing.Common.dll",
-        "lib/netcoreapp3.1/System.Drawing.Common.xml",
+        "lib/net7.0/System.Drawing.Common.dll",
+        "lib/net7.0/System.Drawing.Common.pdb",
+        "lib/net7.0/System.Drawing.Common.xml",
+        "lib/net8.0/System.Drawing.Common.dll",
+        "lib/net8.0/System.Drawing.Common.pdb",
+        "lib/net8.0/System.Drawing.Common.xml",
         "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.pdb",
         "lib/netstandard2.0/System.Drawing.Common.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
-        "runtimes/unix/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll",
-        "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.xml",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.xml",
-        "system.drawing.common.6.0.0.nupkg.sha512",
+        "system.drawing.common.8.0.10.nupkg.sha512",
         "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4071,9 +3942,11 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Emgu.CV >= 4.9.0.5494",
+      "EmguCV.221.x86 >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.8",
-      "OpenCV >= 2.4.11"
+      "System.Drawing.Common >= 8.0.10",
+      "System.IO >= 4.3.0"
     ]
   },
   "packageFolders": {
@@ -4130,6 +4003,10 @@
             "target": "Package",
             "version": "[4.9.0.5494, )"
           },
+          "EmguCV.221.x86": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.8, )"
@@ -4138,9 +4015,13 @@
             "target": "Package",
             "version": "[8.0.8, )"
           },
-          "OpenCV": {
+          "System.Drawing.Common": {
             "target": "Package",
-            "version": "[2.4.11, )"
+            "version": "[8.0.10, )"
+          },
+          "System.IO": {
+            "target": "Package",
+            "version": "[4.3.0, )"
           }
         },
         "imports": [
@@ -4162,5 +4043,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"EmguCV.221.x86 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "EmguCV.221.x86",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

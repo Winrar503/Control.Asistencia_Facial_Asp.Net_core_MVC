@@ -32,7 +32,7 @@ namespace Face.EntidadesDeNegocio
         [Required(ErrorMessage = "El numero telefonico es requerido")]
         [Display(Name = "Telefono")]
         public string Telefono { get; set; }
-        public string Foto { get; set; }
+        public byte[] Foto { get; set; }
         [Display(Name = "Estado")]
         public bool Estado {  get; set; }
         public DateTime FechaRegistro { get; set; }

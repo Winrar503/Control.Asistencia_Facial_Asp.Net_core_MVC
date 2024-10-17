@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Face.EntidadesDeNegocio", "Face.EntidadesDeNegocio\Face.EntidadesDeNegocio.csproj", "{136BAE76-69C3-4960-9ADA-B35AE3641AAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Face.EntidadesDeNegocio", "Face.EntidadesDeNegocio\Face.EntidadesDeNegocio.csproj", "{136BAE76-69C3-4960-9ADA-B35AE3641AAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Face.LogicaDeNegocio", "Face.LogicaDeNegocio\Face.LogicaDeNegocio.csproj", "{DA7EEB9E-CFA1-4A36-9904-A9A2A5449432}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Face.LogicaDeNegocio", "Face.LogicaDeNegocio\Face.LogicaDeNegocio.csproj", "{DA7EEB9E-CFA1-4A36-9904-A9A2A5449432}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Face.AccesoADatos", "Face.AccesoADatos\Face.AccesoADatos.csproj", "{C0AE35DC-7F9B-40FC-A37D-2BB6064CCC63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Face.AccesoADatos", "Face.AccesoADatos\Face.AccesoADatos.csproj", "{C0AE35DC-7F9B-40FC-A37D-2BB6064CCC63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Face.UserInterface", "Face.UserInterface\Face.UserInterface.csproj", "{BED06A74-612E-4B02-986E-B06993C4B9C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Face.UserInterface", "Face.UserInterface\Face.UserInterface.csproj", "{BED06A74-612E-4B02-986E-B06993C4B9C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

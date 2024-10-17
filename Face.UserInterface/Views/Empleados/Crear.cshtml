@@ -43,9 +43,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Foto" class="control-label"></label>
-                <input asp-for="Foto" class="form-control" />
+                <a href="@Url.Action("Capturar", "Empleados")" class="btn btn-primary">Tomar Fotos</a>
                 <span asp-validation-for="Foto" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Estado" class="control-label">Estado</label>
                 <select asp-for="Estado" class="form-control">

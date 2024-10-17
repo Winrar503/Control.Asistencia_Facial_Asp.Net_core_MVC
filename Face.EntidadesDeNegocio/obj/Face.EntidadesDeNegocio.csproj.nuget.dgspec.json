@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[4.9.0.5494, )"
             },
+            "EmguCV.221.x86": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -62,9 +66,13 @@
               "target": "Package",
               "version": "[8.0.8, )"
             },
-            "OpenCV": {
+            "System.Drawing.Common": {
               "target": "Package",
-              "version": "[2.4.11, )"
+              "version": "[8.0.10, )"
+            },
+            "System.IO": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

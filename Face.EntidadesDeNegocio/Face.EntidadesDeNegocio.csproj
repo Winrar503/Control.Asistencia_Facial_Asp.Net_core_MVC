@@ -8,9 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="Emgu.CV" Version="4.9.0.5494" />
+    <PackageReference Include="EmguCV.221.x86" Version="1.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
-    <PackageReference Include="OpenCV" Version="2.4.11" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

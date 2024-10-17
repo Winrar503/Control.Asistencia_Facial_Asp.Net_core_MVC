@@ -9,12 +9,14 @@
       "Face.UserInterface/1.0.0": {
         "dependencies": {
           "Emgu.CV": "4.9.0.5494",
+          "EmguCV.221.x86": "1.0.0",
           "Face.EntidadesDeNegocio": "1.0.0",
           "Face.LogicaDeNegocio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.6",
-          "OpenCV": "2.4.11"
+          "System.Drawing.Common": "8.0.10",
+          "System.IO": "4.3.0"
         },
         "runtime": {
           "Face.UserInterface.dll": {}
@@ -65,6 +67,26 @@
           "lib/netstandard2.0/Emgu.CV.dll": {
             "assemblyVersion": "4.9.0.5494",
             "fileVersion": "4.9.0.5494"
+          }
+        }
+      },
+      "EmguCV.221.x86/1.0.0": {
+        "runtime": {
+          "lib/Emgu.CV.GPU.dll": {
+            "assemblyVersion": "2.2.1.1150",
+            "fileVersion": "2.2.1.1150"
+          },
+          "lib/Emgu.CV.ML.dll": {
+            "assemblyVersion": "2.2.1.1150",
+            "fileVersion": "2.2.1.1150"
+          },
+          "lib/Emgu.CV.UI.dll": {
+            "assemblyVersion": "2.2.1.1150",
+            "fileVersion": "2.2.1.1150"
+          },
+          "lib/Emgu.Util.dll": {
+            "assemblyVersion": "2.2.1.1150",
+            "fileVersion": "2.2.1.1150"
           }
         }
       },
@@ -1470,19 +1492,19 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/7.0.0": {
+      "Microsoft.Win32.SystemEvents/8.0.0": {
         "runtime": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
@@ -1605,7 +1627,6 @@
           }
         }
       },
-      "OpenCV/2.4.11": {},
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -1701,22 +1722,14 @@
         }
       },
       "System.Diagnostics.EventLog/7.0.0": {},
-      "System.Drawing.Common/7.0.0": {
+      "System.Drawing.Common/8.0.10": {
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
+          "Microsoft.Win32.SystemEvents": "8.0.0"
         },
         "runtime": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46803"
           }
         }
       },
@@ -1967,7 +1980,7 @@
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "System.Windows.Extensions/7.0.0": {
         "dependencies": {
-          "System.Drawing.Common": "7.0.0"
+          "System.Drawing.Common": "8.0.10"
         },
         "runtime": {
           "lib/net7.0/System.Windows.Extensions.dll": {
@@ -1987,10 +2000,12 @@
       "Face.AccesoADatos/1.0.0": {
         "dependencies": {
           "Emgu.CV": "4.9.0.5494",
+          "EmguCV.221.x86": "1.0.0",
           "Face.EntidadesDeNegocio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
-          "OpenCV": "2.4.11"
+          "System.Drawing.Common": "8.0.10",
+          "System.IO": "4.3.0"
         },
         "runtime": {
           "Face.AccesoADatos.dll": {
@@ -2002,9 +2017,11 @@
       "Face.EntidadesDeNegocio/1.0.0": {
         "dependencies": {
           "Emgu.CV": "4.9.0.5494",
+          "EmguCV.221.x86": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
-          "OpenCV": "2.4.11"
+          "System.Drawing.Common": "8.0.10",
+          "System.IO": "4.3.0"
         },
         "runtime": {
           "Face.EntidadesDeNegocio.dll": {
@@ -2016,11 +2033,13 @@
       "Face.LogicaDeNegocio/1.0.0": {
         "dependencies": {
           "Emgu.CV": "4.9.0.5494",
+          "EmguCV.221.x86": "1.0.0",
           "Face.AccesoADatos": "1.0.0",
           "Face.EntidadesDeNegocio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
-          "OpenCV": "2.4.11"
+          "System.Drawing.Common": "8.0.10",
+          "System.IO": "4.3.0"
         },
         "runtime": {
           "Face.LogicaDeNegocio.dll": {
@@ -2057,6 +2076,13 @@
       "sha512": "sha512-arnHdpnI14Ov98BmiWOsijAO3qvs2Z5+nBD2uavJI24CRTRSvkCXKZoMmhJVA48QdCdWO8HkO4wMqEezL4Bz/A==",
       "path": "emgu.cv/4.9.0.5494",
       "hashPath": "emgu.cv.4.9.0.5494.nupkg.sha512"
+    },
+    "EmguCV.221.x86/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TiBgbLeDzw82GHnr1U9rfsIKYCfQZjUTrIaZQYS7fTrC0JLwsFcwSB2Q4fqyGvehXBqdlyyCxpEYf9zrD+uu2g==",
+      "path": "emgucv.221.x86/1.0.0",
+      "hashPath": "emgucv.221.x86.1.0.0.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",
@@ -2786,12 +2812,12 @@
       "path": "microsoft.visualstudio.web.codegenerators.mvc/8.0.6",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.8.0.6.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/7.0.0": {
+    "Microsoft.Win32.SystemEvents/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
-      "path": "microsoft.win32.systemevents/7.0.0",
-      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
+      "sha512": "sha512-9opKRyOKMCi2xJ7Bj7kxtZ1r9vbzosMvRrdEhVhDz8j8MoBGgB+WmC94yH839NPH+BclAjtQ/pyagvi/8gDLkw==",
+      "path": "microsoft.win32.systemevents/8.0.0",
+      "hashPath": "microsoft.win32.systemevents.8.0.0.nupkg.sha512"
     },
     "Mono.TextTemplating/2.3.1": {
       "type": "package",
@@ -2869,13 +2895,6 @@
       "sha512": "sha512-v/GGlIj2dd7svplFmASWEueu62veKW0MrMtBaZ7QG8aJTSGv2yE+pgUGhXRcQ4nxNOEq/wLBrz1vkth/1SND7A==",
       "path": "nuget.versioning/6.11.0",
       "hashPath": "nuget.versioning.6.11.0.nupkg.sha512"
-    },
-    "OpenCV/2.4.11": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1W5nlWqWx82FI6q6ISqLUj3paH5DpbfXqnNrFi9eOCeChr59I0d0xklDtMMNsGt8JLlZTMu6IW2Pyp7IMnGVAA==",
-      "path": "opencv/2.4.11",
-      "hashPath": "opencv.2.4.11.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",
@@ -2968,12 +2987,12 @@
       "path": "system.diagnostics.eventlog/7.0.0",
       "hashPath": "system.diagnostics.eventlog.7.0.0.nupkg.sha512"
     },
-    "System.Drawing.Common/7.0.0": {
+    "System.Drawing.Common/8.0.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
-      "path": "system.drawing.common/7.0.0",
-      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+      "sha512": "sha512-MdajRp3P+FOlThgY6FBjAqnmLiVl5t2yWEC/2AsDMqx1zYbJG3G5TnscFBQ4obqcaGqvN5UnhQHSFaJFG2HftQ==",
+      "path": "system.drawing.common/8.0.10",
+      "hashPath": "system.drawing.common.8.0.10.nupkg.sha512"
     },
     "System.Drawing.Primitives/4.3.0": {
       "type": "package",

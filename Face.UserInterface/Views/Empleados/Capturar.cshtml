@@ -1,0 +1,54 @@
+﻿@model Face.EntidadesDeNegocio.Empleados
+@using Face.EntidadesDeNegocio
+
+@{
+    ViewData["Title"] = "Capturar Fotos";
+}
+
+<h2>Capturar Fotos</h2>
+
+<video id="video" width="320" height="240" autoplay></video>
+<button id="capture">Capturar</button>
+<canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
+<img id="photo" src="#" alt="Foto capturada" />
+
+<form asp-action="GuardarFotos" method="post">
+    <input type="hidden" id="image1" name="image1" />
+    <input type="hidden" id="image2" name="image2" />
+    <input type="hidden" id="image3" name="image3" />
+    <button type="submit">Guardar Fotos</button>
+</form>
+
+@section Scripts {
+    <script>
+        var video = document.getElementById('video');
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var photo = document.getElementById('photo');
+        var imageCount = 1;
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                video.srcObject = stream;
+            })
+            .catch(function (err) {
+                console.log("Error: " + err);
+            });
+
+        document.getElementById('capture').addEventListener('click', function () {
+            context.drawImage(video, 0, 0, 320, 240);
+            var data = canvas.toDataURL('image/png');
+
+            if (imageCount == 1) {
+                document.getElementById('image1').value = data;
+            } else if (imageCount == 2) {
+                document.getElementById('image2').value = data;
+            } else if (imageCount == 3) {
+                document.getElementById('image3').value = data;
+            }
+
+            photo.setAttribute('src', data);
+            imageCount++;
+        });
+    </script>
+}
