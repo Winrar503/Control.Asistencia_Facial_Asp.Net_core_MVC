@@ -1,5 +1,4 @@
 ﻿@model Face.EntidadesDeNegocio.Empleados
-@using Face.EntidadesDeNegocio
 
 @{
     ViewData["Title"] = "Capturar Fotos";
@@ -7,16 +6,31 @@
 
 <h2>Capturar Fotos</h2>
 
+
 <video id="video" width="320" height="240" autoplay></video>
 <button id="capture">Capturar</button>
 <canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
-<img id="photo" src="#" alt="Foto capturada" />
 
-<form asp-action="GuardarFotos" method="post">
+<div class="row mt-3">
+    <div class="col-md-4">
+        <h4>Foto 1</h4>
+        <img id="photo1" width="320" height="240" src="#" alt="Foto 1" />
+    </div>
+    <div class="col-md-4">
+        <h4>Foto 2</h4>
+        <img id="photo2" width="320" height="240" src="#" alt="Foto 2" />
+    </div>
+    <div class="col-md-4">
+        <h4>Foto 3</h4>
+        <img id="photo3" width="320" height="240" src="#" alt="Foto 3" />
+    </div>
+</div>
+
+<form asp-action="GuardarFotos" method="post" id="photoForm">
     <input type="hidden" id="image1" name="image1" />
     <input type="hidden" id="image2" name="image2" />
     <input type="hidden" id="image3" name="image3" />
-    <button type="submit">Guardar Fotos</button>
+    <button type="submit" class="btn btn-success mt-3" id="savePhotos">Guardar Fotos</button>
 </form>
 
 @section Scripts {
@@ -24,9 +38,14 @@
         var video = document.getElementById('video');
         var canvas = document.getElementById('canvas');
         var context = canvas.getContext('2d');
-        var photo = document.getElementById('photo');
         var imageCount = 1;
 
+        // Referencias a las imágenes donde se mostrarán las fotos capturadas
+        var photo1 = document.getElementById('photo1');
+        var photo2 = document.getElementById('photo2');
+        var photo3 = document.getElementById('photo3');
+
+        // Acceder a la cámara
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(function (stream) {
                 video.srcObject = stream;
@@ -35,20 +54,29 @@
                 console.log("Error: " + err);
             });
 
+        // Capturar imagen de la cámara
         document.getElementById('capture').addEventListener('click', function () {
             context.drawImage(video, 0, 0, 320, 240);
             var data = canvas.toDataURL('image/png');
 
+            // Guardar la imagen en el campo oculto correspondiente y mostrarla
             if (imageCount == 1) {
                 document.getElementById('image1').value = data;
+                photo1.setAttribute('src', data); // Mostrar foto 1
             } else if (imageCount == 2) {
                 document.getElementById('image2').value = data;
+                photo2.setAttribute('src', data); // Mostrar foto 2
             } else if (imageCount == 3) {
                 document.getElementById('image3').value = data;
+                photo3.setAttribute('src', data); // Mostrar foto 3
             }
 
-            photo.setAttribute('src', data);
             imageCount++;
+
+            // Reiniciar el contador después de capturar 3 fotos
+            if (imageCount > 3) {
+                imageCount = 1;
+            }
         });
     </script>
 }

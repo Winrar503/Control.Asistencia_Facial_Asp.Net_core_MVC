@@ -26,6 +26,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.UserInterface
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/darwi/OneDrive/Escritorio/Proyectos Personales/ReconocimientoFacial(ASP.NET MVC)/Face.UserInterface/Views/Asistencias/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darwi/OneDrive/Escritorio/Proyectos Personales/ReconocimientoFacial(ASP.NET MVC)/Face.UserInterface/Views/Asistencias/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darwi/OneDrive/Escritorio/Proyectos Personales/ReconocimientoFacial(ASP.NET MVC)/Face.UserInterface/Views/Asistencias/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darwi/OneDrive/Escritorio/Proyectos Personales/ReconocimientoFacial(ASP.NET MVC)/Face.UserInterface/Views/Asistencias/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/darwi/OneDrive/Escritorio/Proyectos Personales/ReconocimientoFacial(ASP.NET MVC)/Face.UserInterface/Views/Asistencias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/darwi/OneDrive/Escritorio/Proyectos Personales/ReconocimientoFacial(ASP.NET MVC)/Face.UserInterface/Views/Empleados/Capturar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXENhcHR1cmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,10 +64,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/darwi/OneDrive/Escritorio/Proyectos Personales/ReconocimientoFacial(ASP.NET MVC)/Face.UserInterface/Views/Empleados/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/darwi/OneDrive/Escritorio/Proyectos Personales/ReconocimientoFacial(ASP.NET MVC)/Face.UserInterface/Views/Empleados/GuardarFotos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEd1YXJkYXJGb3Rvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/darwi/OneDrive/Escritorio/Proyectos Personales/ReconocimientoFacial(ASP.NET MVC)/Face.UserInterface/Views/Empleados/Index.cshtml]

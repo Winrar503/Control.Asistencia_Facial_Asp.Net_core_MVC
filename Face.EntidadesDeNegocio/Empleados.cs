@@ -32,15 +32,15 @@ namespace Face.EntidadesDeNegocio
         [Required(ErrorMessage = "El numero telefonico es requerido")]
         [Display(Name = "Telefono")]
         public string Telefono { get; set; }
-        public byte[] Foto { get; set; }
         [Display(Name = "Estado")]
         public bool Estado {  get; set; }
         public DateTime FechaRegistro { get; set; }
 
         [NotMapped]
         public int Top_Aux { get; set; }
-        public ICollection<Asistencias> Asistencias { get; set; }
-        public ICollection<Horarios> Horarios { get; set; }
+        public ICollection<Asistencias> Asistencias { get; set; } = new List<Asistencias>();
+        public ICollection<Fotos> Fotos { get; set; } = new List<Fotos>();
+        public ICollection<Horarios> Horarios { get; set; } = new List<Horarios>();
         public ICollection<Reportes> Reportes { get; set; } = new List<Reportes>();
     }
 }

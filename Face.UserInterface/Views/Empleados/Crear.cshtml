@@ -6,6 +6,7 @@
     List<Asistencias> asistencias = ViewBag.Asistencias as List<Asistencias>;
     List<Reportes> reportes = ViewBag.Reportes as List<Reportes>;
     List<Horarios> horarios = ViewBag.Horarios as List<Horarios>;
+    List<Fotos> fotos = ViewBag.Fotos as List<Fotos>;
 }
 
 <h1>Crear</h1>
@@ -42,10 +43,23 @@
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Foto" class="control-label"></label>
+                <label>Tomar Fotos</label>
                 <a href="@Url.Action("Capturar", "Empleados")" class="btn btn-primary">Tomar Fotos</a>
-                <span asp-validation-for="Foto" class="text-danger"></span>
             </div>
+
+            <!-- Aquí solo se mostrarán los campos ocultos si ya existen fotos -->
+            @if (ViewBag.Foto1Id != null)
+            {
+                <input type="hidden" name="foto1Id" value="@ViewBag.Foto1Id" />
+            }
+            @if (ViewBag.Foto2Id != null)
+            {
+                <input type="hidden" name="foto2Id" value="@ViewBag.Foto2Id" />
+            }
+            @if (ViewBag.Foto3Id != null)
+            {
+                <input type="hidden" name="foto3Id" value="@ViewBag.Foto3Id" />
+            }
 
             <div class="form-group">
                 <label asp-for="Estado" class="control-label">Estado</label>
@@ -73,8 +87,6 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
@@ -89,4 +101,3 @@
         });
     </script>
 }
-

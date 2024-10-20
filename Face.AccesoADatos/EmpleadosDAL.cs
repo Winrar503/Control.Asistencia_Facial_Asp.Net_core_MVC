@@ -38,7 +38,6 @@ namespace Face.AccesoADatos
                     empleadosBD.Email = pEmpleados.Email;
                     empleadosBD.Cargo = pEmpleados.Cargo;
                     empleadosBD.Telefono = pEmpleados.Telefono;
-                    empleadosBD.Foto = pEmpleados.Foto;
                     empleadosBD.Estado = pEmpleados.Estado;
                     empleadosBD.FechaRegistro = pEmpleados.FechaRegistro;
 
@@ -103,6 +102,7 @@ namespace Face.AccesoADatos
                     .Include(e => e.Asistencias)  // Incluye las Asistencias
                     .Include(e => e.Horarios)     // Incluye los Horarios
                     .Include(e => e.Reportes)     // Incluye los Reportes
+                    .Include(e => e.Fotos)
                     .FirstOrDefaultAsync(e => e.Id == empleadoId);
             }
         }

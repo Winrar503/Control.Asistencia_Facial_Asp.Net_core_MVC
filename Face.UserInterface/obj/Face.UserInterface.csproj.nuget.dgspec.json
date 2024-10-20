@@ -58,9 +58,13 @@
               "target": "Package",
               "version": "[4.9.0.5494, )"
             },
-            "EmguCV.221.x86": {
+            "Emgu.CV.Bitmap": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[4.9.0.5494, )"
+            },
+            "Emgu.CV.runtime.windows": {
+              "target": "Package",
+              "version": "[4.9.0.5494, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -149,9 +153,13 @@
               "target": "Package",
               "version": "[4.9.0.5494, )"
             },
-            "EmguCV.221.x86": {
+            "Emgu.CV.Bitmap": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[4.9.0.5494, )"
+            },
+            "Emgu.CV.runtime.windows": {
+              "target": "Package",
+              "version": "[4.9.0.5494, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -247,9 +255,13 @@
               "target": "Package",
               "version": "[4.9.0.5494, )"
             },
-            "EmguCV.221.x86": {
+            "Emgu.CV.Bitmap": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[4.9.0.5494, )"
+            },
+            "Emgu.CV.runtime.windows": {
+              "target": "Package",
+              "version": "[4.9.0.5494, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -345,9 +357,13 @@
               "target": "Package",
               "version": "[4.9.0.5494, )"
             },
-            "EmguCV.221.x86": {
+            "Emgu.CV.Bitmap": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[4.9.0.5494, )"
+            },
+            "Emgu.CV.runtime.windows": {
+              "target": "Package",
+              "version": "[4.9.0.5494, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

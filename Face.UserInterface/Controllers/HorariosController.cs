@@ -57,8 +57,8 @@ namespace Face.UserInterface.Controllers
             {
                 // En caso de error, recarga los empleados y muestra el error
                 ViewBag.Error = ex.Message;
-                var empleados = await empleadosBL.ObtenerTodosAsync();
-                ViewBag.Empleados = empleados;
+                var horario = await empleadosBL.ObtenerTodosAsync();
+                ViewBag.Empleados = horario;
                 return View(horarios);
             }
         }
@@ -84,7 +84,7 @@ namespace Face.UserInterface.Controllers
         {
             if (id != pHorarios.Id)
             {
-                return NotFound();
+                return NotFound(); 
             }
             try
             {

@@ -11,6 +11,7 @@ namespace Face.AccesoADatos
     public class BDContexto : DbContext
     {
         public DbSet<Empleados> Empleados { get; set; }
+        public DbSet<Fotos> Fotos { get; set; }
         public DbSet<Asistencias> Asistencias {  get; set; }
         public DbSet<Horarios> Horarios { get; set; }
         public DbSet<Reportes> Reportes { get; set; }

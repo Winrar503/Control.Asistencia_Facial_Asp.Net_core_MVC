@@ -25,7 +25,7 @@ namespace Face.AccesoADatos
                 throw new Exception("Error al crear el Asistencia", ex);
             }
         }
-        public static async Task<int> ModificarAsyn(Asistencias pAsistencia)
+        public static async Task<int> ModificarAsync(Asistencias pAsistencia)
         {
             int result = 0;
             using (var bdContexto = new BDContexto())
@@ -92,6 +92,15 @@ namespace Face.AccesoADatos
                 var select = bdContexto.Asistencias.AsQueryable();
                 select = QuerySelect(select, pAsistencias);
                 return await select.ToListAsync();
+            }
+        }
+        public static async Task<Asistencias> ObtenerPorIdConRelacionesAsync(int asistenciaId)
+        {
+            using (var bdContexto = new BDContexto())
+            {
+                return await bdContexto.Asistencias
+                    .Include(e => e.Empleados)  // Incluye las Asistencias
+                    .FirstOrDefaultAsync(e => e.Id == asistenciaId);
             }
         }
 

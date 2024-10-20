@@ -15,9 +15,9 @@ namespace Face.LogicaDeNegocio
         {
             return await AsistenciasDAL.CrearAsync(pAsistencias); 
         }
-        public async Task<int> ModificarAsyn(Asistencias pAsistencias)
+        public async Task<int> ModificarAsync(Asistencias pAsistencias)
         {
-            return await AsistenciasDAL.ModificarAsyn(pAsistencias);
+            return await AsistenciasDAL.ModificarAsync(pAsistencias);
         }
         public async Task<int> EliminarAsync(Asistencias pAsistencias)
         {
@@ -26,6 +26,10 @@ namespace Face.LogicaDeNegocio
         public async Task<Asistencias> ObtenerPorIdAsync(Asistencias pAsistencias)
         {
             return await AsistenciasDAL.ObtenerPorIdAsync(pAsistencias);
+        }
+        public async Task<Asistencias> ObtenerPorIdConRelacionesAsync(int asistenciaId)
+        {
+            return await AsistenciasDAL.ObtenerPorIdConRelacionesAsync(asistenciaId);
         }
 
         public async Task<List<Asistencias>> ObtenerTodosAsync()

@@ -65,21 +65,167 @@
           }
         }
       },
-      "EmguCV.221.x86/1.0.0": {
+      "Emgu.CV.Bitmap/4.9.0.5494": {
         "type": "package",
+        "dependencies": {
+          "Emgu.CV": "4.9.0.5494",
+          "System.Drawing.Common": "8.0.1"
+        },
         "compile": {
-          "lib/Emgu.CV.GPU.dll": {},
-          "lib/Emgu.CV.ML.dll": {},
-          "lib/Emgu.CV.UI.dll": {},
-          "lib/Emgu.CV.dll": {},
-          "lib/Emgu.Util.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/Emgu.CV.GPU.dll": {},
-          "lib/Emgu.CV.ML.dll": {},
-          "lib/Emgu.CV.UI.dll": {},
-          "lib/Emgu.CV.dll": {},
-          "lib/Emgu.Util.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Emgu.CV.runtime.windows/4.9.0.5494": {
+        "type": "package",
+        "dependencies": {
+          "Emgu.CV": "4.9.0.5494",
+          "Emgu.runtime.windows.msvc.rt.arm64": "19.39.33523",
+          "Emgu.runtime.windows.msvc.rt.x64": "19.39.33523",
+          "Emgu.runtime.windows.msvc.rt.x86": "19.39.33523"
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/cvextern.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/cvextern.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libusb-1.0.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg490_64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/cvextern.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libusb-1.0.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/opencv_videoio_ffmpeg490.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Emgu.runtime.windows.msvc.rt.arm64/19.39.33523": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/concrt140.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/msvcp140.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/msvcp140_1.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/msvcp140_2.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/msvcp140_atomic_wait.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/msvcp140_codecvt_ids.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/vcruntime140.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/vcruntime140_1.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          }
+        }
+      },
+      "Emgu.runtime.windows.msvc.rt.x64/19.39.33523": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/win-x64/native/concrt140.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140_1.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140_2.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140_atomic_wait.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140_codecvt_ids.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/vcruntime140.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/vcruntime140_1.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "Emgu.runtime.windows.msvc.rt.x86/19.39.33523": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/win-x86/native/concrt140.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140_1.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140_2.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140_atomic_wait.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140_codecvt_ids.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/vcruntime140.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
         }
       },
       "Humanizer/2.14.1": {
@@ -2949,7 +3095,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Emgu.CV": "4.9.0.5494",
-          "EmguCV.221.x86": "1.0.0",
+          "Emgu.CV.Bitmap": "4.9.0.5494",
+          "Emgu.CV.runtime.windows": "4.9.0.5494",
           "Face.EntidadesDeNegocio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
@@ -2968,7 +3115,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Emgu.CV": "4.9.0.5494",
-          "EmguCV.221.x86": "1.0.0",
+          "Emgu.CV.Bitmap": "4.9.0.5494",
+          "Emgu.CV.runtime.windows": "4.9.0.5494",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "System.Drawing.Common": "8.0.10",
@@ -2986,7 +3134,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Emgu.CV": "4.9.0.5494",
-          "EmguCV.221.x86": "1.0.0",
+          "Emgu.CV.Bitmap": "4.9.0.5494",
+          "Emgu.CV.runtime.windows": "4.9.0.5494",
           "Face.AccesoADatos": "1.0.0",
           "Face.EntidadesDeNegocio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
@@ -3068,47 +3217,106 @@
         "lib/xamarinios10/Emgu.CV.xml"
       ]
     },
-    "EmguCV.221.x86/1.0.0": {
-      "sha512": "TiBgbLeDzw82GHnr1U9rfsIKYCfQZjUTrIaZQYS7fTrC0JLwsFcwSB2Q4fqyGvehXBqdlyyCxpEYf9zrD+uu2g==",
+    "Emgu.CV.Bitmap/4.9.0.5494": {
+      "sha512": "0ukJNIRXF5RXffF3ly0ujLtX0ojQGIHM7jmKkZuuvLSu2ubhVHZdZeqIBVa95/P7B6YDyC10vkGFhMSiFUeoOw==",
       "type": "package",
-      "path": "emgucv.221.x86/1.0.0",
+      "path": "emgu.cv.bitmap/4.9.0.5494",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "emgucv.221.x86.1.0.0.nupkg.sha512",
-        "emgucv.221.x86.nuspec",
-        "haarcascades/haarcascade_eye.xml",
-        "haarcascades/haarcascade_frontalface_alt.xml",
-        "haarcascades/haarcascade_frontalface_alt2.xml",
-        "haarcascades/haarcascade_frontalface_alt_tree.xml",
-        "haarcascades/haarcascade_frontalface_default.xml",
-        "haarcascades/haarcascade_lefteye_2splits.xml",
-        "haarcascades/haarcascade_mcs_lefteye.xml",
-        "haarcascades/haarcascade_mcs_mouth.xml",
-        "haarcascades/haarcascade_mcs_nose.xml",
-        "haarcascades/haarcascade_mcs_righteye.xml",
-        "haarcascades/haarcascade_profileface.xml",
-        "haarcascades/haarcascade_righteye_2splits.xml",
-        "lib/Emgu.CV.GPU.dll",
-        "lib/Emgu.CV.ML.dll",
-        "lib/Emgu.CV.UI.dll",
-        "lib/Emgu.CV.dll",
-        "lib/Emgu.Util.dll",
-        "opencv/ZedGraph.dll",
-        "opencv/cvextern.dll",
-        "opencv/opencv_calib3d220.dll",
-        "opencv/opencv_contrib220.dll",
-        "opencv/opencv_core220.dll",
-        "opencv/opencv_features2d220.dll",
-        "opencv/opencv_ffmpeg220.dll",
-        "opencv/opencv_flann220.dll",
-        "opencv/opencv_gpu220.dll",
-        "opencv/opencv_highgui220.dll",
-        "opencv/opencv_imgproc220.dll",
-        "opencv/opencv_legacy220.dll",
-        "opencv/opencv_ml220.dll",
-        "opencv/opencv_objdetect220.dll",
-        "opencv/opencv_video220.dll"
+        "LICENSE.txt",
+        "docs/README.md",
+        "emgu.cv.bitmap.4.9.0.5494.nupkg.sha512",
+        "emgu.cv.bitmap.nuspec",
+        "lib/netstandard2.0/Emgu.CV.Bitmap.dll",
+        "lib/netstandard2.0/Emgu.CV.Bitmap.xml",
+        "nuget_icon.png"
+      ]
+    },
+    "Emgu.CV.runtime.windows/4.9.0.5494": {
+      "sha512": "sByLvyNCzQCScjKHLRm1NrghPUOClXRxVibCav3ou8scflQA28aWB1P+nBMjyBE1qIQ1CGA+h5UB9XGtBSf5xg==",
+      "type": "package",
+      "path": "emgu.cv.runtime.windows/4.9.0.5494",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "docs/README.md",
+        "docs/build_info_arm64.inc",
+        "docs/build_info_x64.inc",
+        "docs/build_info_x86.inc",
+        "emgu.cv.runtime.windows.4.9.0.5494.nupkg.sha512",
+        "emgu.cv.runtime.windows.nuspec",
+        "icon.png",
+        "runtimes/win-arm64/native/cvextern.dll",
+        "runtimes/win-x64/native/cvextern.dll",
+        "runtimes/win-x64/native/libusb-1.0.dll",
+        "runtimes/win-x64/native/opencv_videoio_ffmpeg490_64.dll",
+        "runtimes/win-x86/native/cvextern.dll",
+        "runtimes/win-x86/native/libusb-1.0.dll",
+        "runtimes/win-x86/native/opencv_videoio_ffmpeg490.dll"
+      ]
+    },
+    "Emgu.runtime.windows.msvc.rt.arm64/19.39.33523": {
+      "sha512": "idtjLwgIM9eSdOSv9vB320N+5ha647ByAD20cx9mQ5bf1/pqOPg4+YIVy2Z5Yh/S1DxfIfn8kWHA9QbtKjDeCQ==",
+      "type": "package",
+      "path": "emgu.runtime.windows.msvc.rt.arm64/19.39.33523",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "emgu.runtime.windows.msvc.rt.arm64.19.39.33523.nupkg.sha512",
+        "emgu.runtime.windows.msvc.rt.arm64.nuspec",
+        "icon.png",
+        "runtimes/win-arm64/native/concrt140.dll",
+        "runtimes/win-arm64/native/msvcp140.dll",
+        "runtimes/win-arm64/native/msvcp140_1.dll",
+        "runtimes/win-arm64/native/msvcp140_2.dll",
+        "runtimes/win-arm64/native/msvcp140_atomic_wait.dll",
+        "runtimes/win-arm64/native/msvcp140_codecvt_ids.dll",
+        "runtimes/win-arm64/native/vcruntime140.dll",
+        "runtimes/win-arm64/native/vcruntime140_1.dll"
+      ]
+    },
+    "Emgu.runtime.windows.msvc.rt.x64/19.39.33523": {
+      "sha512": "P6ibPhYDbQbDykWrgpvelZRjdc0tU6F6YcdRe3DEtKfdi5A+QXNuyg0HcMsUcQBvZMIVzezjohHhWbwamTDGLw==",
+      "type": "package",
+      "path": "emgu.runtime.windows.msvc.rt.x64/19.39.33523",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "emgu.runtime.windows.msvc.rt.x64.19.39.33523.nupkg.sha512",
+        "emgu.runtime.windows.msvc.rt.x64.nuspec",
+        "icon.png",
+        "runtimes/win-x64/native/concrt140.dll",
+        "runtimes/win-x64/native/msvcp140.dll",
+        "runtimes/win-x64/native/msvcp140_1.dll",
+        "runtimes/win-x64/native/msvcp140_2.dll",
+        "runtimes/win-x64/native/msvcp140_atomic_wait.dll",
+        "runtimes/win-x64/native/msvcp140_codecvt_ids.dll",
+        "runtimes/win-x64/native/vcruntime140.dll",
+        "runtimes/win-x64/native/vcruntime140_1.dll"
+      ]
+    },
+    "Emgu.runtime.windows.msvc.rt.x86/19.39.33523": {
+      "sha512": "WwCxayYRgG+o7sZ16NEaIsOajRytEtjJ8/bnqKziomZahp9LkWUwxfeSvttAYSCKNFCMQUoDS90Fa0NaIm10Pg==",
+      "type": "package",
+      "path": "emgu.runtime.windows.msvc.rt.x86/19.39.33523",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "emgu.runtime.windows.msvc.rt.x86.19.39.33523.nupkg.sha512",
+        "emgu.runtime.windows.msvc.rt.x86.nuspec",
+        "icon.png",
+        "runtimes/win-x86/native/concrt140.dll",
+        "runtimes/win-x86/native/msvcp140.dll",
+        "runtimes/win-x86/native/msvcp140_1.dll",
+        "runtimes/win-x86/native/msvcp140_2.dll",
+        "runtimes/win-x86/native/msvcp140_atomic_wait.dll",
+        "runtimes/win-x86/native/msvcp140_codecvt_ids.dll",
+        "runtimes/win-x86/native/vcruntime140.dll"
       ]
     },
     "Humanizer/2.14.1": {
@@ -8849,7 +9057,8 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Emgu.CV >= 4.9.0.5494",
-      "EmguCV.221.x86 >= 1.0.0",
+      "Emgu.CV.Bitmap >= 4.9.0.5494",
+      "Emgu.CV.runtime.windows >= 4.9.0.5494",
       "Face.EntidadesDeNegocio >= 1.0.0",
       "Face.LogicaDeNegocio >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.8",
@@ -8920,9 +9129,13 @@
             "target": "Package",
             "version": "[4.9.0.5494, )"
           },
-          "EmguCV.221.x86": {
+          "Emgu.CV.Bitmap": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[4.9.0.5494, )"
+          },
+          "Emgu.CV.runtime.windows": {
+            "target": "Package",
+            "version": "[4.9.0.5494, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -8967,17 +9180,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"EmguCV.221.x86 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "libraryId": "EmguCV.221.x86",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }
