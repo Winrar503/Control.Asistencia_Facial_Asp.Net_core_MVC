@@ -4,11 +4,11 @@
     ViewData["Title"] = "Capturar Fotos";
 }
 
-<h2>Capturar Fotos</h2>
-
+<h2>Capturar Fotos para @Model.Nombre</h2>
 
 <video id="video" width="320" height="240" autoplay></video>
 <button id="capture">Capturar</button>
+
 <canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
 
 <div class="row mt-3">
@@ -27,6 +27,7 @@
 </div>
 
 <form asp-action="GuardarFotos" method="post" id="photoForm">
+    <input type="hidden" id="empleadoId" name="empleadoId" value="@Model.Id" />
     <input type="hidden" id="image1" name="image1" />
     <input type="hidden" id="image2" name="image2" />
     <input type="hidden" id="image3" name="image3" />
@@ -39,11 +40,6 @@
         var canvas = document.getElementById('canvas');
         var context = canvas.getContext('2d');
         var imageCount = 1;
-
-        // Referencias a las imágenes donde se mostrarán las fotos capturadas
-        var photo1 = document.getElementById('photo1');
-        var photo2 = document.getElementById('photo2');
-        var photo3 = document.getElementById('photo3');
 
         // Acceder a la cámara
         navigator.mediaDevices.getUserMedia({ video: true })
@@ -59,23 +55,28 @@
             context.drawImage(video, 0, 0, 320, 240);
             var data = canvas.toDataURL('image/png');
 
-            // Guardar la imagen en el campo oculto correspondiente y mostrarla
             if (imageCount == 1) {
                 document.getElementById('image1').value = data;
-                photo1.setAttribute('src', data); // Mostrar foto 1
+                document.getElementById('photo1').setAttribute('src', data); // Mostrar foto 1
             } else if (imageCount == 2) {
                 document.getElementById('image2').value = data;
-                photo2.setAttribute('src', data); // Mostrar foto 2
+                document.getElementById('photo2').setAttribute('src', data); // Mostrar foto 2
             } else if (imageCount == 3) {
                 document.getElementById('image3').value = data;
-                photo3.setAttribute('src', data); // Mostrar foto 3
+                document.getElementById('photo3').setAttribute('src', data); // Mostrar foto 3
             }
 
             imageCount++;
-
-            // Reiniciar el contador después de capturar 3 fotos
             if (imageCount > 3) {
                 imageCount = 1;
+            }
+        });
+
+        // Validar que se capturen las tres fotos antes de guardar
+        document.getElementById('photoForm').addEventListener('submit', function (e) {
+            if (!document.getElementById('image1').value || !document.getElementById('image2').value || !document.getElementById('image3').value) {
+                alert('Debe capturar las tres fotos antes de guardar.');
+                e.preventDefault();
             }
         });
     </script>

@@ -43,25 +43,6 @@
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Tomar Fotos</label>
-                <a href="@Url.Action("Capturar", "Empleados")" class="btn btn-primary">Tomar Fotos</a>
-            </div>
-
-            <!-- Aquí solo se mostrarán los campos ocultos si ya existen fotos -->
-            @if (ViewBag.Foto1Id != null)
-            {
-                <input type="hidden" name="foto1Id" value="@ViewBag.Foto1Id" />
-            }
-            @if (ViewBag.Foto2Id != null)
-            {
-                <input type="hidden" name="foto2Id" value="@ViewBag.Foto2Id" />
-            }
-            @if (ViewBag.Foto3Id != null)
-            {
-                <input type="hidden" name="foto3Id" value="@ViewBag.Foto3Id" />
-            }
-
-            <div class="form-group">
                 <label asp-for="Estado" class="control-label">Estado</label>
                 <select asp-for="Estado" class="form-control">
                     <option value="true">Activo</option>

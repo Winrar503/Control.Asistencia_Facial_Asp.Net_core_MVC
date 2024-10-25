@@ -17,7 +17,7 @@ namespace Face.AccesoADatos
         public DbSet<Reportes> Reportes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DARWIN;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-18G9CNA;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");
         }
     }
 }

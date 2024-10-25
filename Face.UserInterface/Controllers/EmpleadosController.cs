@@ -34,8 +34,13 @@ namespace Face.UserInterface.Controllers
                 empleados.Top_Aux = 0;
 
             var empleado = await empleadosBL.BuscarAsync(empleados);
+            foreach (var emp in empleado)
+            {
+                emp.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(emp.Id); // Obtiene las fotos de cada empleado
+            }
             var asistencias = await asistenciasBL.ObtenerTodosAsync();
             var horarios = await horariosBL.ObtenerTodosAsync();
+            var fotos = await fotosBL.ObtenerTodosAsync();
             var reportes = await reportesBL.ObtenerTodosAsync();
             ViewBag.Top = empleados.Top_Aux;
             return View(empleado);
@@ -52,12 +57,8 @@ namespace Face.UserInterface.Controllers
 
             return View(empleado);
         }
-        public async Task<IActionResult> Crear(int? foto1Id, int? foto2Id, int? foto3Id)
+        public async Task<IActionResult> Crear()
         {
-            ViewBag.Foto1Id = foto1Id;
-            ViewBag.Foto2Id = foto2Id;
-            ViewBag.Foto3Id = foto3Id;
-
             ViewBag.Error = "";
             return View();
         }
@@ -65,7 +66,7 @@ namespace Face.UserInterface.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Crear(Empleados empleados, int? foto1Id, int? foto2Id, int? foto3Id)
+        public async Task<IActionResult> Crear(Empleados empleados)
         {
             try
             {
@@ -74,26 +75,11 @@ namespace Face.UserInterface.Controllers
 
                 if (result > 0)
                 {
-                    if (foto1Id.HasValue && foto2Id.HasValue && foto3Id.HasValue)
-                    {
-                        var foto1 = await fotosBL.ObtenerPorIdAsync(new Fotos { Id = foto1Id.Value });
-                        var foto2 = await fotosBL.ObtenerPorIdAsync(new Fotos { Id = foto2Id.Value });
-                        var foto3 = await fotosBL.ObtenerPorIdAsync(new Fotos { Id = foto3Id.Value });
-
-                        if (foto1 != null && foto2 != null && foto3 != null)
-                        {
-                            foto1.EmpleadosId = empleados.Id;
-                            foto2.EmpleadosId = empleados.Id;
-                            foto3.EmpleadosId = empleados.Id;
-
-                            await fotosBL.ModificarAsyn(foto1);
-                            await fotosBL.ModificarAsyn(foto2);
-                            await fotosBL.ModificarAsyn(foto3);
-                        }
-                    }
+                    return RedirectToAction(nameof(Index));
                 }
 
-                return RedirectToAction(nameof(Index));
+                ViewBag.Error = "No se pudo crear el empleado.";
+                return View(empleados);
             }
             catch (Exception ex)
             {
@@ -101,7 +87,6 @@ namespace Face.UserInterface.Controllers
                 return View(empleados);
             }
         }
-
 
         public async Task<IActionResult> Edit(int id)
         {
@@ -164,16 +149,21 @@ namespace Face.UserInterface.Controllers
                 return View(empleadoDb);
             }
         }
-        // Métodos para capturar fotos y realizar reconocimiento facial
-
-        public IActionResult Capturar()
+        // Acción para cargar la vista de captura de fotos
+        public async Task<IActionResult> CapturarFotos(int empleadoId)
         {
-            var modelo = new Empleados();
-            return View(modelo);
+            var empleado = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = empleadoId });
+            if (empleado == null)
+            {
+                return NotFound();
+            }
+            var fotos = empleado.Fotos;
+            return View(empleado);
         }
 
+        // Acción para guardar las fotos capturadas
         [HttpPost]
-        public async Task<IActionResult> GuardarFotos(string image1, string image2, string image3)
+        public async Task<IActionResult> GuardarFotos(int empleadoId, string image1, string image2, string image3)
         {
             try
             {
@@ -193,15 +183,16 @@ namespace Face.UserInterface.Controllers
                     return View("Error");
                 }
 
-                var nuevaFoto1 = new Fotos { Foto = foto1Bytes };
-                var nuevaFoto2 = new Fotos { Foto = foto2Bytes };
-                var nuevaFoto3 = new Fotos { Foto = foto3Bytes };
+                // Guardar las fotos en la base de datos asociadas al empleado
+                var nuevaFoto1 = new Fotos { EmpleadosId = empleadoId, Foto = foto1Bytes, NombreFoto = "lado izquierdo" };
+                var nuevaFoto2 = new Fotos { EmpleadosId = empleadoId, Foto = foto2Bytes, NombreFoto = "centro" };
+                var nuevaFoto3 = new Fotos { EmpleadosId = empleadoId, Foto = foto3Bytes, NombreFoto = "lado derecho" };
 
                 await fotosBL.CrearAsync(nuevaFoto1);
                 await fotosBL.CrearAsync(nuevaFoto2);
                 await fotosBL.CrearAsync(nuevaFoto3);
 
-                return RedirectToAction("Crear", new { foto1Id = nuevaFoto1.Id, foto2Id = nuevaFoto2.Id, foto3Id = nuevaFoto3.Id });
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
@@ -209,74 +200,12 @@ namespace Face.UserInterface.Controllers
                 return View("Error");
             }
         }
+
+        // Conversión de Base64 a byte[]
         private byte[] ConvertBase64ToByteArray(string base64Image)
         {
-            try
-            {
-                var base64Data = base64Image.Split(',')[1];
-                return Convert.FromBase64String(base64Data);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al convertir la imagen Base64 a byte array", ex);
-            }
+            var base64Data = base64Image.Split(',')[1];
+            return Convert.FromBase64String(base64Data);
         }
-        // Reconocimiento facial
-        private async Task<Empleados> RealizarReconocimientoFacial(byte[] fotoCapturada)
-        {
-            var recognizer = new Emgu.CV.Face.LBPHFaceRecognizer();
-            var empleados = await empleadosBL.ObtenerTodosAsync();
-
-            foreach (var empleado in empleados)
-            {
-                var fotoEmpleado = empleado.Fotos.FirstOrDefault();
-                if (fotoEmpleado != null)
-                {
-                    using (var msEmpleado = new MemoryStream(fotoEmpleado.Foto))
-                    {
-                        using (var bitmapEmpleado = new Bitmap(msEmpleado))
-                        {
-                            var fotoBase = BitmapToMat(bitmapEmpleado);
-                        }
-                    }
-
-                    using (var msCapturada = new MemoryStream(fotoCapturada))
-                    {
-                        using (var bitmapCapturada = new Bitmap(msCapturada))
-                        {
-                            var fotoComparar = BitmapToMat(bitmapCapturada);
-
-                            var result = recognizer.Predict(fotoComparar);
-
-                            if (result.Label == empleado.Id)
-                            {
-                                return empleado;
-                            }
-                        }
-                    }
-                }
-            }
-            return null;
-        }
-
-        private Mat BitmapToMat(Bitmap bitmap)
-        {
-            Mat mat = new Mat(); 
-            BitmapData bitmapData = bitmap.LockBits(
-                new Rectangle(0, 0, bitmap.Width, bitmap.Height),
-                ImageLockMode.ReadOnly,
-                bitmap.PixelFormat);
-
-            int bytes = Math.Abs(bitmapData.Stride) * bitmap.Height;
-            byte[] buffer = new byte[bytes]; 
-            System.Runtime.InteropServices.Marshal.Copy(bitmapData.Scan0, buffer, 0, bytes);
-
-            bitmap.UnlockBits(bitmapData);
-
-            CvInvoke.Imdecode(buffer, ImreadModes.Color, mat);
-
-            return mat;
-        }
-
     }
 }

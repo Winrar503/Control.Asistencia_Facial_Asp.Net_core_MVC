@@ -9069,23 +9069,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\darwi\\.nuget\\packages\\": {},
+    "C:\\Users\\Darwin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.UserInterface\\Face.UserInterface.csproj",
+      "projectUniqueName": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj",
       "projectName": "Face.UserInterface",
-      "projectPath": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.UserInterface\\Face.UserInterface.csproj",
-      "packagesPath": "C:\\Users\\darwi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.UserInterface\\obj\\",
+      "projectPath": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj",
+      "packagesPath": "C:\\Users\\Darwin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\darwi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Darwin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -9101,11 +9101,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
-              "projectPath": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
+            "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
+              "projectPath": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
             },
-            "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj": {
-              "projectPath": "C:\\Users\\darwi\\OneDrive\\Escritorio\\Proyectos Personales\\ReconocimientoFacial(ASP.NET MVC)\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj"
+            "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj": {
+              "projectPath": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj"
             }
           }
         }

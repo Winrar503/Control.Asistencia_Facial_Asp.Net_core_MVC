@@ -29,3 +29,19 @@ C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.pdb
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\ref\Face.AccesoADatos.dll
 C:\Users\darwi\OneDrive\Escritorio\Proyectos Personales\ReconocimientoFacial(ASP.NET MVC)\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.sourcelink.json
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\bin\Debug\net8.0\Face.AccesoADatos.deps.json
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\bin\Debug\net8.0\Face.AccesoADatos.dll
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\bin\Debug\net8.0\Face.AccesoADatos.pdb
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\bin\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\bin\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.csproj.AssemblyReference.cache
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.AssemblyInfoInputs.cache
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.AssemblyInfo.cs
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.csproj.CoreCompileInputs.cache
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.sourcelink.json
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\Face.Acc.E22179C4.Up2Date
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.dll
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\refint\Face.AccesoADatos.dll
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\Face.AccesoADatos.pdb
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.AccesoADatos\obj\Debug\net8.0\ref\Face.AccesoADatos.dll
