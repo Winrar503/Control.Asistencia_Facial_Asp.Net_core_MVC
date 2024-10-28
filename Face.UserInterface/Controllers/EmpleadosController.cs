@@ -34,10 +34,13 @@ namespace Face.UserInterface.Controllers
                 empleados.Top_Aux = 0;
 
             var empleado = await empleadosBL.BuscarAsync(empleados);
-            foreach (var emp in empleado)
+
+            foreach (var empleadoss in empleado)
             {
-                emp.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(emp.Id); // Obtiene las fotos de cada empleado
+                // Obtén las fotos del empleado y asigna la lista a la propiedad Fotos
+                empleadoss.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(empleadoss.Id);
             }
+
             var asistencias = await asistenciasBL.ObtenerTodosAsync();
             var horarios = await horariosBL.ObtenerTodosAsync();
             var fotos = await fotosBL.ObtenerTodosAsync();
@@ -128,8 +131,7 @@ namespace Face.UserInterface.Controllers
         }
 
         // POST: LibrosController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        // Controlador EmpleadosController
         public async Task<IActionResult> Delete(int id, Empleados empleados)
         {
             try
@@ -139,7 +141,8 @@ namespace Face.UserInterface.Controllers
                 {
                     return NotFound();
                 }
-                int result = await empleadosBL.EliminarAsync(empleado);
+
+                int result = await empleadosBL.EliminarAsync(empleado); // Esto elimina fotos y empleado
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -149,6 +152,28 @@ namespace Face.UserInterface.Controllers
                 return View(empleadoDb);
             }
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Delete(int id, Empleados empleados)
+        //{
+        //    try
+        //    {
+        //        var empleado = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
+        //        if (empleado == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        int result = await empleadosBL.EliminarAsync(empleado);
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ViewBag.Error = "Ocurrió un error al eliminar el empleado: " + ex.Message;
+        //        var empleadoDb = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
+        //        return View(empleadoDb);
+        //    }
+        //}
         // Acción para cargar la vista de captura de fotos
         public async Task<IActionResult> CapturarFotos(int empleadoId)
         {

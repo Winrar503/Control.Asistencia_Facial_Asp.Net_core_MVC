@@ -109,5 +109,14 @@ namespace Face.AccesoADatos
                 return await select.ToListAsync();
             }
         }
+        public static async Task<List<Fotos>> ObtenerPorEmpleadoIdAsync(int empleadoId)
+        {
+            using (var bdContexto = new BDContexto())
+            {
+                return await bdContexto.Fotos
+                    .Where(f => f.EmpleadosId == empleadoId)
+                    .ToListAsync();
+            }
+        }
     }
 }

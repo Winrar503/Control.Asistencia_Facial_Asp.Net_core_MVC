@@ -36,5 +36,9 @@ namespace Face.LogicaDeNegocio
         {
             return await FotosDAL.BuscarAsync(pFotos);
         }
+        public async Task<List<Fotos>> ObtenerPorEmpleadoIdAsync(int empleadoId)
+        {
+            return await FotosDAL.ObtenerPorEmpleadoIdAsync(empleadoId);
+        }
     }
 }

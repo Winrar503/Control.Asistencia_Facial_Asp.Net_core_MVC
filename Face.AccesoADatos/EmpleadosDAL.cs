@@ -52,13 +52,29 @@ namespace Face.AccesoADatos
         {
             using (var bdContexto = new BDContexto())
             {
+                var fotosEmpleado = await bdContexto.Fotos.Where(f => f.EmpleadosId == pEmpleados.Id).ToListAsync();
+                bdContexto.Fotos.RemoveRange(fotosEmpleado);
+
                 var empleados = await bdContexto.Empleados.FirstOrDefaultAsync(s => s.Id == pEmpleados.Id);
                 if (empleados == null) return 0;
-               
+
                 bdContexto.Empleados.Remove(empleados);
+
                 return await bdContexto.SaveChangesAsync();
             }
         }
+
+        //public static async Task<int> EliminarAsync(Empleados pEmpleados)
+        //{
+        //    using (var bdContexto = new BDContexto())
+        //    {
+        //        var empleados = await bdContexto.Empleados.FirstOrDefaultAsync(s => s.Id == pEmpleados.Id);
+        //        if (empleados == null) return 0;
+
+        //        bdContexto.Empleados.Remove(empleados);
+        //        return await bdContexto.SaveChangesAsync();
+        //    }
+        //}
 
         public static async Task<Empleados> ObtenerPorIdAsync(Empleados pEmpleados)
         {
