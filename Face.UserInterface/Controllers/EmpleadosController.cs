@@ -123,16 +123,19 @@ namespace Face.UserInterface.Controllers
             return View(pEmpleados);
         }
 
-        // GET: LibrosController/Delete/5
+        // Controlador EmpleadosController
+
+        // Método GET para mostrar la vista de confirmación de eliminación
         public async Task<ActionResult> Delete(int id)
         {
             var empleados = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
             return View(empleados);
         }
 
-        // POST: LibrosController/Delete/5
-        // Controlador EmpleadosController
-        public async Task<IActionResult> Delete(int id, Empleados empleados)
+        // Método POST para realizar la eliminación (renombrado a DeleteConfirmed)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             try
             {
@@ -152,6 +155,37 @@ namespace Face.UserInterface.Controllers
                 return View(empleadoDb);
             }
         }
+
+
+        //// GET: LibrosController/Delete/5
+        //public async Task<ActionResult> Delete(int id)
+        //{
+        //    var empleados = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
+        //    return View(empleados);
+        //}
+
+        //// POST: LibrosController/Delete/5
+        //// Controlador EmpleadosController
+        //public async Task<IActionResult> Delete(int id, Empleados empleados)
+        //{
+        //    try
+        //    {
+        //        var empleado = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
+        //        if (empleado == null)
+        //        {
+        //            return NotFound();
+        //        }
+
+        //        int result = await empleadosBL.EliminarAsync(empleado); // Esto elimina fotos y empleado
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ViewBag.Error = "Ocurrió un error al eliminar el empleado: " + ex.Message;
+        //        var empleadoDb = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
+        //        return View(empleadoDb);
+        //    }
+        //}
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]
