@@ -25,7 +25,6 @@ namespace Face.UserInterface.Controllers
         FotosBL fotosBL = new FotosBL();
         public async Task<IActionResult> Index(Empleados empleados = null)
         {
-            //var reportes = await reportesBL.ObtenerTodosAsync();
             if (empleados == null)
                 empleados = new Empleados();
             if (empleados.Top_Aux == 0)
@@ -37,7 +36,6 @@ namespace Face.UserInterface.Controllers
 
             foreach (var empleadoss in empleado)
             {
-                // Obtén las fotos del empleado y asigna la lista a la propiedad Fotos
                 empleadoss.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(empleadoss.Id);
             }
 
@@ -123,8 +121,6 @@ namespace Face.UserInterface.Controllers
             return View(pEmpleados);
         }
 
-        // Controlador EmpleadosController
-
         // Método GET para mostrar la vista de confirmación de eliminación
         public async Task<ActionResult> Delete(int id)
         {
@@ -145,7 +141,7 @@ namespace Face.UserInterface.Controllers
                     return NotFound();
                 }
 
-                int result = await empleadosBL.EliminarAsync(empleado); // Esto elimina fotos y empleado
+                int result = await empleadosBL.EliminarAsync(empleado);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -155,59 +151,6 @@ namespace Face.UserInterface.Controllers
                 return View(empleadoDb);
             }
         }
-
-
-        //// GET: LibrosController/Delete/5
-        //public async Task<ActionResult> Delete(int id)
-        //{
-        //    var empleados = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
-        //    return View(empleados);
-        //}
-
-        //// POST: LibrosController/Delete/5
-        //// Controlador EmpleadosController
-        //public async Task<IActionResult> Delete(int id, Empleados empleados)
-        //{
-        //    try
-        //    {
-        //        var empleado = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
-        //        if (empleado == null)
-        //        {
-        //            return NotFound();
-        //        }
-
-        //        int result = await empleadosBL.EliminarAsync(empleado); // Esto elimina fotos y empleado
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ViewBag.Error = "Ocurrió un error al eliminar el empleado: " + ex.Message;
-        //        var empleadoDb = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
-        //        return View(empleadoDb);
-        //    }
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Delete(int id, Empleados empleados)
-        //{
-        //    try
-        //    {
-        //        var empleado = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
-        //        if (empleado == null)
-        //        {
-        //            return NotFound();
-        //        }
-        //        int result = await empleadosBL.EliminarAsync(empleado);
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ViewBag.Error = "Ocurrió un error al eliminar el empleado: " + ex.Message;
-        //        var empleadoDb = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
-        //        return View(empleadoDb);
-        //    }
-        //}
         // Acción para cargar la vista de captura de fotos
         public async Task<IActionResult> CapturarFotos(int empleadoId)
         {
@@ -242,7 +185,6 @@ namespace Face.UserInterface.Controllers
                     return View("Error");
                 }
 
-                // Guardar las fotos en la base de datos asociadas al empleado
                 var nuevaFoto1 = new Fotos { EmpleadosId = empleadoId, Foto = foto1Bytes, NombreFoto = "lado izquierdo" };
                 var nuevaFoto2 = new Fotos { EmpleadosId = empleadoId, Foto = foto2Bytes, NombreFoto = "centro" };
                 var nuevaFoto3 = new Fotos { EmpleadosId = empleadoId, Foto = foto3Bytes, NombreFoto = "lado derecho" };
@@ -266,5 +208,7 @@ namespace Face.UserInterface.Controllers
             var base64Data = base64Image.Split(',')[1];
             return Convert.FromBase64String(base64Data);
         }
+
+
     }
 }

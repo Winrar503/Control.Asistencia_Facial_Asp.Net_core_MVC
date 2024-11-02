@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Face.UserInterface.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\empleado\\index.css",
+      "PackagePath": "staticwebassets\\css\\empleado\\index.css"
+    },
+    {
       "Id": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

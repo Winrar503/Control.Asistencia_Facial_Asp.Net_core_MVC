@@ -7,22 +7,121 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Face.UserInterface.styles.css" asp-append-version="true" />
+    <style>
+        /* Estilos para el menú y el pie de página */
+        .hidden-menu {
+            display: none;
+        }
+
+        .show-menu {
+            display: block;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            padding: 1rem;
+            text-align: center;
+        }
+
+            .footer a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                .footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
 </head>
 <body>
+    <header>
+        <!-- Botón para mostrar el menú en otras vistas -->
+        @if (!(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Index"))
+        {
+            <div class="container mt-2">
+                <button id="toggleMenuBtn" class="btn btn-primary">Mostrar Menú</button>
+            </div>
+        }
 
-  @*   <div id="loading" class="loading-overlay">
-        <div class="honeycomb">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div> *@
+        <!-- Menú de navegación solo en la página de inicio o cuando esté visible -->
+        <nav id="mainMenu" class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "" : "hidden-menu")">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Face.UserInterface</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Empleados" asp-action="Index">Empleados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Horarios" asp-action="Index">Horarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Asistencias" asp-action="Index">Asistencia</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Reconocimiento" asp-action="Index">Reconocer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Pie de página solo en la página de inicio -->
+    @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Index")
+    {
+        <footer class="footer mt-auto border-top text-muted">
+            <div class="container">
+                <span>&copy; 2024 - Face.UserInterface</span>
+                <a class="ms-2" asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidad</a>
+            </div>
+        </footer>
+    }
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Script para mostrar el menú con el botón -->
+    <script>
+        document.getElementById('toggleMenuBtn')?.addEventListener('click', function () {
+            const menu = document.getElementById('mainMenu');
+            menu.classList.toggle('show-menu');
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
 
 
+
+@* <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Face.UserInterface</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Face.UserInterface.styles.css" asp-append-version="true" />
+</head>
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -72,15 +171,6 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
-   @*  <script>
-        window.addEventListener('load', function () {
-            setTimeout(function () {
-                var loadingOverlay = document.getElementById('loading');
-                if (loadingOverlay) {
-                    loadingOverlay.style.display = 'none';
-                }
-            }, 2000);S
-        });
-    </script> *@
 </body>
 </html>
+ *@

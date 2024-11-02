@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5U472R6OQNGtkz0loUrV78PGjMKZonX6YG3B9gvq4GQ=",
+  "Hash": "E0B/QZSVt7XNvcJ2iOA2OeGHt/1/kt1zqJZKkurqGtY=",
   "Source": "Face.UserInterface",
   "BasePath": "_content/Face.UserInterface",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Face.UserInterface.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\empleado\\index.css",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "css/empleado/index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\empleado\\index.css"
     },
     {
       "Identity": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\site.css",

@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Reconocimiento Facial";
+}
+
+<h2>Reconocimiento Facial en Tiempo Real</h2>
+<video id="video" width="320" height="240" autoplay></video>
+<button id="capture" class="btn btn-primary mt-3">Iniciar Reconocimiento</button>
+<p id="result"></p>
+
+<canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
+
+@section Scripts {
+        <script>
+            const video = document.getElementById('video');
+            const canvas = document.getElementById('canvas');
+            const context = canvas.getContext('2d');
+            const resultElement = document.getElementById('result');
+
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => video.srcObject = stream)
+                .catch(err => console.error("Error al acceder a la cámara: ", err));
+
+            document.getElementById('capture').addEventListener('click', function () {
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                const dataUrl = canvas.toDataURL('image/png');
+                reconocerEmpleado(dataUrl);
+            });
+
+            function reconocerEmpleado(imageBase64) {
+                fetch('/Reconocimiento/IdentificarEmpleado', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(imageBase64)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            resultElement.innerHTML = `Empleado reconocido: ${data.empleado}`;
+                        } else {
+                            resultElement.innerHTML = `Error: ${data.message}`;
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        </script>
+}
