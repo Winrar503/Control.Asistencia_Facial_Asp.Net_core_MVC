@@ -68,8 +68,20 @@ namespace Face.UserInterface.Controllers
         {
             var ahora = DateTime.Now;
             var tipo = ahora.Hour < 12 ? "Entrada" : "Salida";
+
             var horario = await horariosBL.ObtenerPorIdAsync(new Horarios { EmpleadosId = empleadoId });
-            string comentarios = tipo == "Entrada" && ahora.TimeOfDay > horario.HoraEntrada ? "Entrada tardía" : "";
+
+           string comentarios = "";
+            if (horario != null)
+            {
+                comentarios = tipo == "Entrada" && ahora.TimeOfDay > horario.HoraEntrada
+                    ? "Entrada tardía"
+                    : "";
+            }
+            else
+            {
+                comentarios = "Horario no definido";
+            }
 
             var nuevaAsistencia = new Asistencias
             {
@@ -79,7 +91,9 @@ namespace Face.UserInterface.Controllers
                 Tipo = tipo,
                 EstadoReconocimiento = "Exitoso"
             };
+
             await asistenciasBL.CrearAsync(nuevaAsistencia);
         }
+
     }
 }

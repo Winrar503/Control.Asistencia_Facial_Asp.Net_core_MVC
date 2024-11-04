@@ -11,9 +11,6 @@ using System.Drawing;
 using System.IO;
 using System.Drawing.Imaging;
 
-
-
-
 namespace Face.UserInterface.Controllers
 {
     public class EmpleadosController : Controller

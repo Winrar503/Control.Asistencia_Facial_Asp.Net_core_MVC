@@ -1,16 +1,11 @@
 ﻿@model Face.EntidadesDeNegocio.Empleados
-
 @{
     ViewData["Title"] = "Capturar Fotos";
 }
-
 <h2>Capturar Fotos para @Model.Nombre</h2>
-
 <video id="video" width="320" height="240" autoplay></video>
 <button id="capture">Capturar</button>
-
 <canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
-
 <div class="row mt-3">
     <div class="col-md-4">
         <h4>Foto 1</h4>
@@ -25,7 +20,6 @@
         <img id="photo3" width="320" height="240" src="#" alt="Foto 3" />
     </div>
 </div>
-
 <form asp-action="GuardarFotos" method="post" id="photoForm">
     <input type="hidden" id="empleadoId" name="empleadoId" value="@Model.Id" />
     <input type="hidden" id="image1" name="image1" />
@@ -33,7 +27,6 @@
     <input type="hidden" id="image3" name="image3" />
     <button type="submit" class="btn btn-success mt-3" id="savePhotos">Guardar Fotos</button>
 </form>
-
 @section Scripts {
     <script>
         var video = document.getElementById('video');
@@ -41,7 +34,6 @@
         var context = canvas.getContext('2d');
         var imageCount = 1;
 
-        // Acceder a la cámara
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(function (stream) {
                 video.srcObject = stream;
@@ -50,29 +42,25 @@
                 console.log("Error: " + err);
             });
 
-        // Capturar imagen de la cámara
         document.getElementById('capture').addEventListener('click', function () {
             context.drawImage(video, 0, 0, 320, 240);
             var data = canvas.toDataURL('image/png');
 
             if (imageCount == 1) {
                 document.getElementById('image1').value = data;
-                document.getElementById('photo1').setAttribute('src', data); // Mostrar foto 1
+                document.getElementById('photo1').setAttribute('src', data);
             } else if (imageCount == 2) {
                 document.getElementById('image2').value = data;
-                document.getElementById('photo2').setAttribute('src', data); // Mostrar foto 2
+                document.getElementById('photo2').setAttribute('src', data);
             } else if (imageCount == 3) {
                 document.getElementById('image3').value = data;
-                document.getElementById('photo3').setAttribute('src', data); // Mostrar foto 3
+                document.getElementById('photo3').setAttribute('src', data);
             }
-
             imageCount++;
             if (imageCount > 3) {
                 imageCount = 1;
             }
         });
-
-        // Validar que se capturen las tres fotos antes de guardar
         document.getElementById('photoForm').addEventListener('submit', function (e) {
             if (!document.getElementById('image1').value || !document.getElementById('image2').value || !document.getElementById('image3').value) {
                 alert('Debe capturar las tres fotos antes de guardar.');
