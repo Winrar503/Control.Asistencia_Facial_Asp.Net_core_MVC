@@ -1,6 +1,120 @@
 ﻿@model Face.EntidadesDeNegocio.Empleados
 
 @{
+    ViewData["Title"] = "Detalles del Empleado";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h2 class="m-0">Detalles del Empleado</h2>
+        </div>
+        <div class="card-body p-5">
+            <!-- Mostrar fotos adicionales del empleado -->
+            <div class="text-center mb-4">
+                <h4>Fotos del Empleado</h4>
+                <div class="d-flex justify-content-center">
+                    @foreach (var foto in Model.Fotos)
+                    {
+                        <div class="m-2">
+                            <img src="data:image/jpeg;base64,@Convert.ToBase64String(foto.Foto)"
+                                 alt="Foto del Empleado"
+                                 class="img-thumbnail"
+                                 width="120"
+                                 height="120" />
+                            <p class="text-muted">@foto.NombreFoto</p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <hr />
+
+            <!-- Información del empleado en formato de lista detallada -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Edad:</strong>
+                            <span>@Model.Edad años</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Email:</strong>
+                            <span>@Model.Email</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Teléfono:</strong>
+                            <span>@Model.Telefono</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Estado:</strong>
+                            <span>@(Model.Estado ? "Activo" : "Inactivo")</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Fecha de Registro:</strong>
+                            <span>@Model.FechaRegistro.ToString("dd/MM/yyyy")</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="d-flex justify-content-center mt-4">
+                @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary rounded-pill px-4 me-2" })
+                <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4">Volver a la Lista</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Estilos personalizados para la tarjeta de detalles */
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .card-body h3 {
+        font-weight: bold;
+    }
+
+    .list-group-item {
+        background-color: #f9f9f9;
+        font-size: 1rem;
+        border: none;
+    }
+
+    .btn-primary {
+        font-weight: bold;
+        color: white;
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .btn-outline-secondary {
+        color: #6c757d;
+        border-color: #6c757d;
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .btn-outline-secondary:hover {
+        color: white;
+        background-color: #6c757d;
+    }
+</style>
+
+
+
+@* @model Face.EntidadesDeNegocio.Empleados
+
+@{
     ViewData["Title"] = "Details";
 }
 
@@ -41,12 +155,6 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Telefono)
         </dd>
-        @* <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Foto)
-        </dd> *@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Estado)
         </dt>
@@ -66,3 +174,4 @@
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
 </div>
+ *@

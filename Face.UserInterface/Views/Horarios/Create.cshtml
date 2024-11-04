@@ -1,5 +1,118 @@
 ﻿@model Face.EntidadesDeNegocio.Horarios
 @using Face.EntidadesDeNegocio
+
+@{
+    ViewData["Title"] = "Crear Horario";
+    List<Empleados> empleados = ViewBag.Empleados as List<Empleados>;
+}
+
+<h1 class="text-center text-primary">Crear Horario</h1>
+<hr />
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-lg">
+                <div class="card-body p-5">
+                    <h4 class="card-title text-center mb-4">Información del Horario</h4>
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <!-- Selección de Empleado -->
+                        <div class="form-group mb-3 position-relative">
+                            <label asp-for="EmpleadosId" class="form-label">Empleado</label>
+                            <select asp-for="EmpleadosId" class="form-control rounded-pill">
+                                <option value="">Seleccione un empleado</option>
+                                @if (empleados != null)
+                                {
+                                    @foreach (var empleado in empleados)
+                                    {
+                                        <option value="@empleado.Id">@empleado.Nombre</option>
+                                    }
+                                }
+                            </select>
+                            <span asp-validation-for="EmpleadosId" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                        </div>
+
+                        <!-- Hora de Entrada y Salida en una fila -->
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group position-relative">
+                                <label asp-for="HoraEntrada" class="form-label">Hora de Entrada</label>
+                                <input asp-for="HoraEntrada" class="form-control rounded-pill" type="time" />
+                                <span asp-validation-for="HoraEntrada" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                            </div>
+                            <div class="col-md-6 form-group position-relative">
+                                <label asp-for="HoraSalida" class="form-label">Hora de Salida</label>
+                                <input asp-for="HoraSalida" class="form-control rounded-pill" type="time" />
+                                <span asp-validation-for="HoraSalida" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                            </div>
+                        </div>
+
+                        <!-- Botón de Crear Horario -->
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary rounded-pill px-4 py-2">Crear Horario</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 py-2">Volver a la Lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    /* Estilos personalizados */
+    .card-header {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .card-body h4 {
+        font-weight: bold;
+    }
+
+    .list-group-item {
+        background-color: #f9f9f9;
+        font-size: 0.9rem;
+        border: none;
+    }
+
+    .btn-primary {
+        font-weight: bold;
+        color: white;
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-outline-secondary {
+        color: #6c757d;
+        border: 1px solid #6c757d;
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .btn-outline-secondary:hover {
+        color: white;
+        background-color: #6c757d;
+    }
+</style>
+
+
+@* @model Face.EntidadesDeNegocio.Horarios
+@using Face.EntidadesDeNegocio
 @{
     ViewData["Title"] = "Create";
     List<Empleados> empleados = ViewBag.Empleados as List<Empleados>;
@@ -55,3 +168,4 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+ *@

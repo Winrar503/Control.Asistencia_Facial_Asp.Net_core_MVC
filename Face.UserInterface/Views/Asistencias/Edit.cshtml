@@ -1,6 +1,122 @@
 ﻿@model Face.EntidadesDeNegocio.Asistencias
 
 @{
+    ViewData["Title"] = "Editar Asistencia";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-lg">
+        <div class="card-header bg-warning text-white text-center">
+            <h2 class="m-0">Modificar Asistencia</h2>
+        </div>
+        <div class="card-body p-5">
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <!-- ID de la Asistencia -->
+                <input type="hidden" asp-for="Id" />
+
+                <!-- Empleado ID -->
+                <div class="form-group mb-3 position-relative">
+                    <label asp-for="EmpleadosId" class="form-label">ID de Empleado</label>
+                    <input asp-for="EmpleadosId" class="form-control rounded-pill" placeholder="Ingrese el ID del empleado" />
+                    <span asp-validation-for="EmpleadosId" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                </div>
+
+                <!-- Comentarios -->
+                <div class="form-group mb-3 position-relative">
+                    <label asp-for="Comentarios" class="form-label">Comentarios</label>
+                    <input asp-for="Comentarios" class="form-control rounded-pill" placeholder="Ingrese comentarios opcionales" />
+                    <span asp-validation-for="Comentarios" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                </div>
+
+                <!-- Fecha -->
+                <div class="form-group mb-3 position-relative">
+                    <label asp-for="Fecha" class="form-label">Fecha</label>
+                    <input asp-for="Fecha" type="date" class="form-control rounded-pill" />
+                    <span asp-validation-for="Fecha" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                </div>
+
+                <!-- Tipo de Asistencia -->
+                <div class="form-group mb-3 position-relative">
+                    <label asp-for="Tipo" class="form-label">Tipo de Asistencia</label>
+                    <input asp-for="Tipo" class="form-control rounded-pill" placeholder="Ej. Presencial, Remoto" />
+                    <span asp-validation-for="Tipo" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                </div>
+
+                <!-- Estado de Reconocimiento -->
+                <div class="form-group mb-3 position-relative">
+                    <label asp-for="EstadoReconocimiento" class="form-label">Estado de Reconocimiento</label>
+                    <input asp-for="EstadoReconocimiento" class="form-control rounded-pill" placeholder="Ej. Aprobado, Pendiente" />
+                    <span asp-validation-for="EstadoReconocimiento" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="d-flex justify-content-center mt-4">
+                    <button type="submit" class="btn btn-success rounded-pill px-4 me-3">Guardar Cambios</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    /* Estilos personalizados para el formulario de edición */
+    .card-header {
+        background-color: #ffc107;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .list-group-item {
+        background-color: #f9f9f9;
+        font-size: 1rem;
+        border: none;
+    }
+
+    .btn-success {
+        font-weight: bold;
+        color: white;
+        background-color: #28a745;
+        border-color: #28a745;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+    .btn-outline-secondary {
+        color: #6c757d;
+        border-color: #6c757d;
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+        .btn-outline-secondary:hover {
+            color: white;
+            background-color: #6c757d;
+        }
+</style>
+
+
+
+@* @model Face.EntidadesDeNegocio.Asistencias
+
+@{
     ViewData["Title"] = "Edit";
 }
 
@@ -58,3 +174,4 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+ *@

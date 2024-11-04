@@ -2,6 +2,139 @@
 @using Face.EntidadesDeNegocio
 
 @{
+    ViewData["Title"] = "Editar Empleado";
+    List<Reportes> reportes = ViewBag.Reportes as List<Reportes>;
+    List<Asistencias> asistencias = ViewBag.Asistencias as List<Asistencias>;
+    List<Horarios> horarios = ViewBag.Horarios as List<Horarios>;
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-lg">
+        <div class="card-header bg-info text-white text-center">
+            <h2 class="m-0">Modificar Información del Empleado</h2>
+        </div>
+        <div class="card-body p-5">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <!-- Nombre -->
+                <div class="form-group mb-3 position-relative">
+                    <label asp-for="Nombre" class="form-label">Nombre</label>
+                    <input asp-for="Nombre" class="form-control rounded-pill" placeholder="Ej. Juan Pérez" />
+                    <span asp-validation-for="Nombre" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                </div>
+
+                <!-- Edad y Cargo en una fila -->
+                <div class="row mb-3">
+                    <div class="col-md-6 form-group position-relative">
+                        <label asp-for="Edad" class="form-label">Edad</label>
+                        <input asp-for="Edad" class="form-control rounded-pill" placeholder="Ej. 30" />
+                        <span asp-validation-for="Edad" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                    </div>
+                    <div class="col-md-6 form-group position-relative">
+                        <label asp-for="Cargo" class="form-label">Cargo</label>
+                        <input asp-for="Cargo" class="form-control rounded-pill" placeholder="Ej. Desarrollador" />
+                        <span asp-validation-for="Cargo" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group mb-3 position-relative">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control rounded-pill" placeholder="Ej. ejemplo@dominio.com" />
+                    <span asp-validation-for="Email" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="form-group mb-3 position-relative">
+                    <label asp-for="Telefono" class="form-label">Teléfono</label>
+                    <input asp-for="Telefono" class="form-control rounded-pill" placeholder="Ej. 1234-5678" />
+                    <span asp-validation-for="Telefono" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                </div>
+
+                <!-- Estado como checkbox -->
+                <div class="form-group form-check mb-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Estado" /> Activo
+                    </label>
+                </div>
+
+                <!-- Fecha de Registro -->
+                <div class="form-group mb-3 position-relative">
+                    <label asp-for="FechaRegistro" class="form-label">Fecha de Registro</label>
+                    <input asp-for="FechaRegistro" type="date" class="form-control rounded-pill" />
+                    <span asp-validation-for="FechaRegistro" class="text-danger position-absolute top-0 end-0 pe-2"></span>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="d-flex justify-content-center mt-4">
+                    <button type="submit" class="btn btn-success rounded-pill px-4 me-3">Guardar Cambios</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4">Cancelar</a>
+                </div>
+
+                <!-- Mensaje de error si existe -->
+                <span class="text-danger mt-3 d-block text-center">@ViewBag.Error</span>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    /* Estilos personalizados para el formulario de edición */
+    .card-header {
+        background-color: #17a2b8;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .list-group-item {
+        background-color: #f9f9f9;
+        font-size: 1rem;
+        border: none;
+    }
+
+    .btn-success {
+        font-weight: bold;
+        color: white;
+        background-color: #28a745;
+        border-color: #28a745;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+    .btn-outline-secondary {
+        color: #6c757d;
+        border-color: #6c757d;
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+        .btn-outline-secondary:hover {
+            color: white;
+            background-color: #6c757d;
+        }
+</style>
+
+
+@* @model Face.EntidadesDeNegocio.Empleados
+@using Face.EntidadesDeNegocio
+
+@{
     ViewData["Title"] = "Edit";
     List<Reportes> reportes = ViewBag.Reportes as List<Reportes>;
     List<Asistencias> asistencias = ViewBag.Asistencias as List<Asistencias>;
@@ -42,11 +175,7 @@
                 <input asp-for="Telefono" class="form-control" />
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
-            @* <div class="form-group">
-                <label asp-for="Foto" class="control-label"></label>
-                <input asp-for="Foto" class="form-control" />
-                <span asp-validation-for="Foto" class="text-danger"></span>
-            </div> *@
+
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
@@ -74,4 +203,4 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
+} *@
