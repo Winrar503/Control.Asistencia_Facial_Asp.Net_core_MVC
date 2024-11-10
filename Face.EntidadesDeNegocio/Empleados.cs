@@ -42,5 +42,8 @@ namespace Face.EntidadesDeNegocio
         public ICollection<Fotos> Fotos { get; set; } = new List<Fotos>();
         public ICollection<Horarios> Horarios { get; set; } = new List<Horarios>();
         public ICollection<Reportes> Reportes { get; set; } = new List<Reportes>();
+        public ICollection<EmpleadoHorario> EmpleadoHorarios { get; set; }
+
+
     }
 }

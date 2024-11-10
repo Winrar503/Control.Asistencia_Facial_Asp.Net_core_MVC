@@ -8,18 +8,13 @@ using System.Threading.Tasks;
 
 namespace Face.EntidadesDeNegocio
 {
-    public class Horarios
+    public class EmpleadoHorario
     {
-        [Key]
-        public int Id { get; set; }
         [ForeignKey("Empleados")]
         public int EmpleadosId { get; set; }
-        public TimeSpan HoraEntrada { get; set; }
-        public TimeSpan HoraSalida { get; set; }
-
-        [NotMapped]
-        public int Top_Aux { get; set; }
         public Empleados Empleados { get; set; }
-        public ICollection<EmpleadoHorario> EmpleadoHorarios { get; set; }
+        [ForeignKey("Horarios")]
+        public int HorariosId { get; set; }
+        public Horarios Horarios { get; set; }
     }
 }

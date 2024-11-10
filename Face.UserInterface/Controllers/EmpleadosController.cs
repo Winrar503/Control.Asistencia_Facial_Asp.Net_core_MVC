@@ -135,6 +135,7 @@ namespace Face.UserInterface.Controllers
                 return View(empleadoDb);
             }
         }
+
         public async Task<IActionResult> CapturarFotos(int empleadoId)
         {
             var empleado = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = empleadoId });

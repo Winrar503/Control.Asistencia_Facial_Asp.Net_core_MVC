@@ -61,7 +61,9 @@
             <div class="d-flex justify-content-center mt-4">
                 @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary rounded-pill px-4 me-2" })
                 <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4">Volver a la Lista</a>
+                @Html.ActionLink("Ver Rendimiento", "Index", "RendimientoEmpleados", new { empleadoId = Model.Id }, new { @class = "btn btn-info rounded-pill px-4 ms-2" })
             </div>
+
         </div>
     </div>
 </div>

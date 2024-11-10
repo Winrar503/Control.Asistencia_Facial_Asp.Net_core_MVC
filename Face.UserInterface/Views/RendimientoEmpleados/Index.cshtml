@@ -1,0 +1,117 @@
+﻿@model List<Face.EntidadesDeNegocio.RendimientoEmpleados>
+@{
+    ViewData["Title"] = "Rendimiento del Empleado";
+    var empleadoNombre = ViewBag.EmpleadoNombre as string;
+    var empleadoFoto = ViewBag.EmpleadoFoto as byte[];
+    var rendimientoHoy = ViewBag.RendimientoHoy as Face.EntidadesDeNegocio.RendimientoEmpleados;
+    var rendimientoSemana = ViewBag.RendimientoSemana as List<Face.EntidadesDeNegocio.RendimientoEmpleados>;
+}
+
+<h2>Rendimiento de @empleadoNombre</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-info text-center">
+        <p>@ViewBag.ErrorMessage</p>
+    </div>
+}
+else
+{
+    <div class="text-center mb-4">
+        @if (empleadoFoto != null)
+        {
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(empleadoFoto)" alt="Foto del Empleado" width="150" class="img-thumbnail mb-3" />
+        }
+
+        <h4>Rendimiento de Hoy</h4>
+        @if (rendimientoHoy != null)
+        {
+            <ul class="list-group mb-4">
+                <li class="list-group-item">Asistencias Totales: @rendimientoHoy.AsistenciasTotales</li>
+                <li class="list-group-item">Asistencias Tardías: @rendimientoHoy.AsistenciasTardias</li>
+                <li class="list-group-item">Asistencias Exitosas: @rendimientoHoy.AsistenciasExitosas</li>
+                <li class="list-group-item">Asistencias Fallidas: @rendimientoHoy.AsistenciasFallidas</li>
+                <li class="list-group-item">Ausencias: @rendimientoHoy.Ausencias</li>
+            </ul>
+        }
+        else
+        {
+            <p class="text-muted">No hay datos de rendimiento para hoy.</p>
+        }
+
+        <h4>Rendimiento de la Semana (Lunes a Viernes)</h4>
+        @if (rendimientoSemana != null && rendimientoSemana.Any())
+        {
+            <ul class="list-group mb-4">
+                <li class="list-group-item">Asistencias Totales: @rendimientoSemana.Sum(r => r.AsistenciasTotales)</li>
+                <li class="list-group-item">Asistencias Tardías: @rendimientoSemana.Sum(r => r.AsistenciasTardias)</li>
+                <li class="list-group-item">Asistencias Exitosas: @rendimientoSemana.Sum(r => r.AsistenciasExitosas)</li>
+                <li class="list-group-item">Asistencias Fallidas: @rendimientoSemana.Sum(r => r.AsistenciasFallidas)</li>
+                <li class="list-group-item">Ausencias: @rendimientoSemana.Sum(r => r.Ausencias)</li>
+            </ul>
+        }
+        else
+        {
+            <p class="text-muted">No hay datos de rendimiento para esta semana.</p>
+        }
+
+        <!-- Gráfica del rendimiento total -->
+        <canvas id="rendimientoChart" width="400" height="200"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('rendimientoChart').getContext('2d');
+        const rendimientoData = {
+            labels: ["Totales", "Tardías", "Exitosas", "Fallidas", "Ausencias"],
+            datasets: [{
+                label: 'Rendimiento Total',
+                data: [
+                    @Model.Sum(r => r.AsistenciasTotales),
+                    @Model.Sum(r => r.AsistenciasTardias),
+                    @Model.Sum(r => r.AsistenciasExitosas),
+                    @Model.Sum(r => r.AsistenciasFallidas),
+                    @Model.Sum(r => r.Ausencias)
+                ],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const rendimientoChart = new Chart(ctx, {
+            type: 'bar',
+            data: rendimientoData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Desglose del Rendimiento del Empleado'
+                    }
+                }
+            }
+        });
+    </script>
+}
