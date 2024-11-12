@@ -657,3 +657,4 @@ C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\F
 C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\obj\Debug\net8.0\Face.UserInterface.pdb
 C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\obj\Debug\net8.0\Face.UserInterface.genruntimeconfig.cache
 C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\obj\Debug\net8.0\ref\Face.UserInterface.dll
+C:\Users\Darwin\Desktop\Universidad\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\itextsharp.dll

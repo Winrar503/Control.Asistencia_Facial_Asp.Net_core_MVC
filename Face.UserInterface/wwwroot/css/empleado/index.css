@@ -1,32 +1,88 @@
-﻿h1.display-4 {
-    font-weight: bold;
-    color: #007bff;
+﻿/* Colores principales */
+.text-dark-blue {
+    color: #34495e;
 }
 
-.table {
+.btn-dark-blue {
+    background-color: #34495e;
+    color: white;
     border: none;
 }
 
-.table-hover tbody tr:hover {
-    background-color: #f9f9f9;
+    .btn-dark-blue:hover, .btn-outline-dark-blue:hover {
+        background-color: #2c3e50;
+        color: white;
+    }
+
+/* Barra de búsqueda */
+.search-bar .form-control {
+    border-radius: 0.25rem;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
 }
 
-.table thead {
-    border-bottom: 2px solid #007bff;
+    .search-bar .form-control:focus {
+        box-shadow: none;
+        border-color: #34495e;
+    }
+
+/* Tabla */
+.table {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: white;
+    color: #4d4d4d;
+}
+
+.table-header {
+    background-color: #34495e;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.table-row {
+    transition: background-color 0.3s ease;
+}
+
+    .table-row:hover {
+        background-color: #f1f4f9;
+    }
+
+/* Imagen de perfil */
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #34495e;
+    transition: transform 0.3s ease;
+}
+
+    .profile-img:hover {
+        transform: scale(1.05);
+    }
+
+/* Botones de acción */
+.btn-group .btn {
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+    .btn-group .btn:hover {
+        transform: scale(1.05);
+    }
+
+/* Paginación */
+.pagination .page-link {
+    color: #34495e;
+    border: none;
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #34495e;
     color: white;
+    border: none;
 }
 
-.btn-outline-info {
-    color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-outline-info:hover {
-    background-color: #007bff;
+.pagination .page-link:hover {
+    background-color: #2c3e50;
     color: white;
 }

@@ -106,6 +106,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVuZGltaWVudG9FbXBsZWFkb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Darwin/Desktop/Universidad/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Darwin/Desktop/Universidad/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Darwin/Desktop/Universidad/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Darwin/Desktop/Universidad/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Darwin/Desktop/Universidad/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

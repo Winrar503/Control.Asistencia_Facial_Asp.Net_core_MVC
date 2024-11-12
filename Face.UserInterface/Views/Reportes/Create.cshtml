@@ -1,0 +1,24 @@
+﻿@model Face.EntidadesDeNegocio.Reportes
+@{
+    ViewData["Title"] = "Generar Reporte de Empleado";
+}
+
+<h2>Generar Reporte para @ViewBag.EmpleadoNombre</h2>
+
+<form asp-action="Create">
+    <input type="hidden" asp-for="EmpleadosId" />
+
+    <div class="form-group">
+        <label asp-for="FechaInicio"></label>
+        <input asp-for="FechaInicio" class="form-control" type="date" />
+        <span asp-validation-for="FechaInicio" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaFin"></label>
+        <input asp-for="FechaFin" class="form-control" type="date" />
+        <span asp-validation-for="FechaFin" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Generar Reporte</button>
+</form>

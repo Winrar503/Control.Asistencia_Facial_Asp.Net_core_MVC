@@ -17,7 +17,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.6",
           "System.Drawing.Common": "8.0.10",
-          "System.IO": "4.3.0"
+          "System.IO": "4.3.0",
+          "iTextSharp": "5.5.13.1"
         },
         "runtime": {
           "Face.UserInterface.dll": {}
@@ -792,6 +793,14 @@
         "resources": {
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "iTextSharp/5.5.13.1": {
+        "runtime": {
+          "lib/itextsharp.dll": {
+            "assemblyVersion": "5.5.13.1",
+            "fileVersion": "5.5.13.1"
           }
         }
       },
@@ -2629,6 +2638,13 @@
       "sha512": "sha512-VIXB7HCUC34OoaGnO3HJVtSv2/wljPhjV7eKH4+TFPgQdJj2lvHNKY41Dtg0Bphu7X5UaXFR4zrYYyo+GNOjbA==",
       "path": "humanizer.core.zh-hant/2.14.1",
       "hashPath": "humanizer.core.zh-hant.2.14.1.nupkg.sha512"
+    },
+    "iTextSharp/5.5.13.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xqzsYEYW/nMDjCtAXM5cl9fWil/Ju3HEGbsmoTKtltJc3M/9HNJzg++bCIOHm5uZITvRmZJWMO+S2u1yNG0gQg==",
+      "path": "itextsharp/5.5.13.1",
+      "hashPath": "itextsharp.5.5.13.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.24": {
       "type": "package",

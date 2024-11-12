@@ -1,0 +1,21 @@
+﻿@model Face.EntidadesDeNegocio.Reportes
+@{
+    ViewData["Title"] = "Eliminar Reporte";
+}
+
+<h2>Eliminar Reporte</h2>
+
+<div class="alert alert-danger">
+    <p>¿Estás seguro de que deseas eliminar este reporte?</p>
+    <p><strong>Fecha de Inicio:</strong> @Model.FechaInicio.ToShortDateString()</p>
+    <p><strong>Fecha de Fin:</strong> @Model.FechaFin.ToShortDateString()</p>
+    <p><strong>Resumen:</strong> @Model.Resumen</p>
+</div>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="EmpleadosId" />
+
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" asp-route-empleadoId="@Model.EmpleadosId" class="btn btn-secondary">Cancelar</a>
+</form>

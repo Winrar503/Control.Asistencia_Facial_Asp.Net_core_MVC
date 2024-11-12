@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Face.EntidadesDeNegocio.Reportes>
+@{
+    ViewData["Title"] = "Reportes de Empleado";
+}
+
+<h2>Reportes de @ViewBag.EmpleadoNombre</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Fin</th>
+            <th>Resumen</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reporte in Model)
+        {
+            <tr>
+                <td>@reporte.FechaInicio.ToShortDateString()</td>
+                <td>@reporte.FechaFin.ToShortDateString()</td>
+                <td>@reporte.Resumen</td>
+                <td>
+                    <a asp-action="DescargarPDF" asp-route-id="@reporte.Id" class="btn btn-secondary">Descargar PDF</a>
+                    <a asp-action="Delete" asp-route-id="@reporte.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" asp-route-empleadoId="@ViewBag.EmpleadoId" class="btn btn-primary">Generar Nuevo Reporte</a>

@@ -1,0 +1,32 @@
+﻿@model Face.EntidadesDeNegocio.Reportes
+@{
+    ViewData["Title"] = "Editar Reporte";
+}
+
+<h2>Editar Reporte</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="EmpleadosId" />
+
+    <div class="form-group">
+        <label asp-for="FechaInicio"></label>
+        <input asp-for="FechaInicio" class="form-control" />
+        <span asp-validation-for="FechaInicio" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaFin"></label>
+        <input asp-for="FechaFin" class="form-control" />
+        <span asp-validation-for="FechaFin" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Resumen"></label>
+        <textarea asp-for="Resumen" class="form-control"></textarea>
+        <span asp-validation-for="Resumen" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a asp-action="Index" asp-route-empleadoId="@Model.EmpleadosId" class="btn btn-secondary">Cancelar</a>
+</form>
