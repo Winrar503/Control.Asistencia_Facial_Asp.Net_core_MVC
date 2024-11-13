@@ -89,7 +89,7 @@ namespace Face.UserInterface.Controllers
 
             return View(reportesEmpleado);
         }
-
+ 
 
         // Eliminar reporte
         public async Task<IActionResult> Delete(int id)
