@@ -131,5 +131,13 @@ namespace Face.AccesoADatos
                 return await select.ToListAsync();
             }
         }
+        public static async Task<Empleados> ObtenerPorNombreAsync(string nombre)
+        {
+            using (var bdContexto = new BDContexto())
+            {
+                return await bdContexto.Empleados
+                    .FirstOrDefaultAsync(e => e.Nombre == nombre);
+            }
+        }
     }
 }

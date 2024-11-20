@@ -44,5 +44,10 @@ namespace Face.LogicaDeNegocio
         {
             return await EmpleadosDAL.BuscarAsync(pEmpleados);
         }
+
+        public async Task<Empleados> ObtenerPorNombreAsync(string nombre)
+        {
+            return await EmpleadosDAL.ObtenerPorNombreAsync(nombre);
+        }
     }
 }

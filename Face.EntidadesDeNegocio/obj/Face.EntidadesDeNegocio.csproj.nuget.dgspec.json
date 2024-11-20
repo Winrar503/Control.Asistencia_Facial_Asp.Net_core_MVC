@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
         "projectName": "Face.EntidadesDeNegocio",
-        "projectPath": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
-        "packagesPath": "C:\\Users\\Darwin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Darwin\\Desktop\\Universidad\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Darwin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,8 +43,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -64,11 +65,11 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[9.0.0, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
@@ -77,6 +78,10 @@
             "System.IO": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.4, )"
             }
           },
           "imports": [
@@ -95,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

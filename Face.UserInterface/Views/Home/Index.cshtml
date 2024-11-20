@@ -2,7 +2,163 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Sección de Bienvenida -->
+<div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-center">
+        <h1 class="display-4 text-white mb-4 animate__animated animate__fadeInDown">Bienvenido a WinFaceTrack</h1>
+        <p class="text-white mb-4 animate__animated animate__fadeIn animate__delay-1s">Explora nuestras herramientas avanzadas para la gestión y reconocimiento de empleados.</p>
+        <a href="@Url.Action("Inicio", "Home")" class="btn btn-primary btn-lg mt-3">Inicio</a>
+    </div>
 </div>
+
+<!-- Sección "Acerca de" -->
+<section class="container text-center my-5" data-aos="fade-up">
+    <h2>Acerca de WinFaceTracke</h2>
+    <p>WinFaceTrack es una plataforma que facilita la gestión de empleados, asistencia y control de horarios de manera eficiente. Diseñada para optimizar el flujo de trabajo y proporcionar información en tiempo real.</p>
+</section>
+
+<!-- Sección de Funcionalidades Principales -->
+<section class="container text-center my-5" data-aos="fade-up">
+    <h2>Funcionalidades Principales</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <i class="fas fa-users fa-3x text-primary mb-3"></i>
+            <h4>Gestión de Empleados</h4>
+            <p>Administra los datos de los empleados y controla su información de manera segura.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-calendar-check fa-3x text-success mb-3"></i>
+            <h4>Control de Asistencia</h4>
+            <p>Registra y consulta la asistencia del personal en tiempo real.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-chart-line fa-3x text-info mb-3"></i>
+            <h4>Reportes y Estadísticas</h4>
+            <p>Obtén reportes detallados y estadísticas sobre el rendimiento del equipo.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Testimonios -->
+<section class="container text-center my-5 bg-light py-5" data-aos="fade-up">
+    <h2 class="mb-5">Opiniones de Nuestros Usuarios</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <blockquote class="blockquote">
+                <p class="text-muted">"WinFaceTracke nos ha ayudado a reducir el tiempo de gestión en un 50%."</p>
+                <footer class="blockquote-footer">Empresa XYZ</footer>
+            </blockquote>
+        </div>
+        <div class="col-md-4">
+            <blockquote class="blockquote">
+                <p class="text-muted">"La mejor herramienta para mantener la información de empleados organizada."</p>
+                <footer class="blockquote-footer">Juan Pérez, Gerente de Recursos Humanos</footer>
+            </blockquote>
+        </div>
+        <div class="col-md-4">
+            <blockquote class="blockquote">
+                <p class="text-muted">"Gracias a WinFaceTracke, podemos tomar decisiones basadas en datos precisos."</p>
+                <footer class="blockquote-footer">Ana Gómez, Directora de Operaciones</footer>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Contacto -->
+<section class="container text-center my-5" data-aos="fade-up">
+    <h2>¿Necesitas Ayuda?</h2>
+    <p>Estamos aquí para ayudarte. Si tienes alguna pregunta, no dudes en contactarnos.</p>
+    <a href="/Contacto" class="btn btn-primary btn-lg mt-3">Contáctanos</a>
+</section>
+
+<!-- Pie de Página -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Enlaces Rápidos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/Empleados" class="text-white">Empleados</a></li>
+                    <li><a href="/Asistencia" class="text-white">Asistencia</a></li>
+                    <li><a href="/Reportes" class="text-white">Reportes</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Síguenos</h5>
+                <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-md-4">
+                <h5>Políticas</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/Privacidad" class="text-white">Política de Privacidad</a></li>
+                    <li><a href="/Terminos" class="text-white">Términos de Servicio</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="mt-4">© 2024 - WinFaceTracke. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- Estilos CSS -->
+<style>
+    /* Estilo del Hero */
+    .hero {
+        background-image: url('your-image.jpg'); /* Coloca aquí la ruta de la imagen de fondo */
+        background-size: cover;
+        background-position: center;
+        padding: 150px 20px;
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Iconos de funcionalidades */
+    .fa-users, .fa-calendar-check, .fa-chart-line {
+        transition: transform 0.3s ease;
+    }
+
+    .col-md-4:hover .fa-users,
+    .col-md-4:hover .fa-calendar-check,
+    .col-md-4:hover .fa-chart-line {
+        transform: scale(1.2);
+    }
+
+    /* Footer */
+    footer a {
+        color: #bbb;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            color: #fff;
+        }
+</style>
+
+<!-- Librerías y Animaciones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+

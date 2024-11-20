@@ -21,7 +21,7 @@ namespace Face.AccesoADatos
                 }
             }
             catch (Exception ex)
-            { 
+            {
                 throw new Exception("Error al crear el Asistencia", ex);
             }
         }
@@ -66,7 +66,9 @@ namespace Face.AccesoADatos
         {
             using (var bdContexto = new BDContexto())
             {
-                return await bdContexto.Asistencias.ToListAsync();
+                return await bdContexto.Asistencias
+                     .Include(a => a.Empleados)
+                     .ToListAsync();
             }
         }
         internal static IQueryable<Asistencias> QuerySelect(IQueryable<Asistencias> pQuery, Asistencias pAsistencias)
@@ -89,9 +91,12 @@ namespace Face.AccesoADatos
         {
             using (var bdContexto = new BDContexto())
             {
-                var select = bdContexto.Asistencias.AsQueryable();
-                select = QuerySelect(select, pAsistencias);
-                return await select.ToListAsync();
+                var query = bdContexto.Asistencias
+           .Include(a => a.Empleados) // Incluimos la relación
+           .AsQueryable();
+
+                query = QuerySelect(query, pAsistencias);
+                return await query.ToListAsync();
             }
         }
         public static async Task<Asistencias> ObtenerPorIdConRelacionesAsync(int asistenciaId)

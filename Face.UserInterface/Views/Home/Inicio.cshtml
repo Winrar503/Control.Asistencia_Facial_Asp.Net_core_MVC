@@ -1,0 +1,111 @@
+﻿@using Face.EntidadesDeNegocio
+@{
+    ViewData["Title"] = "Home Page";
+    List<Empleados> empleados = ViewBag.Empleados as List<Empleados>;
+    List<Asistencias> asistencias = ViewBag.Asistencias as List<Asistencias>;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="~/css/home.css" />
+</head>
+<body>
+
+    <div class="container mt-5">
+        <!-- Métricas Principales -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="metric-card red">
+                    <h5>Total de Empleados</h5>
+                    <p class="h3" id="totalEmpleados">Cargando...</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card blue">
+                    <h5>Total de Asistencias</h5>
+                    <p class="h3" id="totalAsistencias">Cargando...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de Registros de Comentarios -->
+        <h4>Tabla de comentarios</h4>
+        <div class="table-container">
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Empleado</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaComentarios">
+                    <!-- Datos cargados dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            // Función para actualizar el conteo de empleados y asistencias con animación
+            function actualizarMetricas() {
+                fetch('/Home/GetDashboardMetrics')
+                    .then(response => response.json())
+                    .then(data => {
+                        const totalEmpleadosEl = document.getElementById('totalEmpleados');
+                        const totalAsistenciasEl = document.getElementById('totalAsistencias');
+
+                        // Añade clase de animación solo si el valor ha cambiado
+                        if (totalEmpleadosEl.innerText != data.totalEmpleados) {
+                            totalEmpleadosEl.innerText = data.totalEmpleados;
+                            totalEmpleadosEl.classList.add('animate-metric');
+                            setTimeout(() => totalEmpleadosEl.classList.remove('animate-metric'), 500);
+                        }
+
+                        if (totalAsistenciasEl.innerText != data.totalAsistencias) {
+                            totalAsistenciasEl.innerText = data.totalAsistencias;
+                            totalAsistenciasEl.classList.add('animate-metric');
+                            setTimeout(() => totalAsistenciasEl.classList.remove('animate-metric'), 500);
+                        }
+                    })
+                    .catch(error => console.error('Error al obtener métricas:', error));
+            }
+
+            // Función para actualizar la tabla de comentarios con animación
+            function actualizarTablaComentarios() {
+                fetch('/Home/ObtenerComentarios')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tbody = document.getElementById('tablaComentarios');
+                        tbody.innerHTML = ''; // Limpiar contenido actual
+
+                        data.forEach(item => {
+                            const empleado = item.empleado || "Desconocido";
+                            const comentario = item.comentario || "Sin comentario";
+
+                            const row = document.createElement('tr');
+                            row.classList.add('new-row'); // Añade clase para animación
+                            row.innerHTML = `<td>${empleado}</td><td>${comentario}</td>`;
+                            tbody.appendChild(row);
+                        });
+                    })
+                    .catch(error => console.error('Error al actualizar la tabla de comentarios:', error));
+            }
+
+            // Llama a las funciones de actualización inicialmente y después cada 5 segundos
+            actualizarMetricas();
+            actualizarTablaComentarios();
+            setInterval(actualizarMetricas, 5000); // Actualización de métricas cada 5 segundos
+            setInterval(actualizarTablaComentarios, 5000); // Actualización de tabla de comentarios cada 5 segundos
+        </script>
+    </div>
+
+    <!-- Librerías Necesarias -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
