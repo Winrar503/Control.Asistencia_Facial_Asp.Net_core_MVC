@@ -93,13 +93,13 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-        <script>
-            document.getElementById("Telefono").addEventListener("input", function (e) {
-                var value = e.target.value.replace(/\D/g, ""); // Remueve caracteres que no sean dígitos
-                if (value.length > 4) {
-                    value = value.slice(0, 4) + "-" + value.slice(4);
-                }
-                e.target.value = value;
-            });
-        </script>
+    <script>
+        document.getElementById("Telefono").addEventListener("input", function (e) {
+            var value = e.target.value.replace(/\D/g, ""); // Remueve caracteres que no sean dígitos
+            if (value.length > 4) {
+                value = value.slice(0, 4) + "-" + value.slice(4);
+            }
+            e.target.value = value;
+        });
+    </script>
 }

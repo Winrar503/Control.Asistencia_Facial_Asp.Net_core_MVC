@@ -1,28 +1,72 @@
 ﻿@model IEnumerable<Face.EntidadesDeNegocio.Empleados>
 @using Face.EntidadesDeNegocio
 @{
-    ViewData["Title"] = "Gestión de Empleados";
+    ViewData["Title"] = "Gestión de Talento";
 }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
 
-<div class="container-fluid py-5 px-4">
+<div class="container-fluid py-5">
     <!-- Encabezado -->
     <header class="text-center mb-5">
-        <h1 class="display-2 fw-bold text-gradient mb-3">Gestión de Empleados</h1>
-        <p class="lead text-muted">Administra tu equipo con estilo y eficiencia</p>
+        <h1 class="display-4 fw-bold text-gradient mb-2">Gestión de Talento</h1>
+        <p class="lead text-muted">Optimiza tu equipo con nuestra plataforma de gestión avanzada</p>
     </header>
 
+    <!-- Panel de control -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Total Empleados</h5>
+                    <p class="card-text display-6 fw-bold">@Model.Count()</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-user-check fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Empleados Activos</h5>
+                    <p class="card-text display-6 fw-bold">@Model.Count(e => e.Estado)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-user-clock fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title">Promedio de Edad</h5>
+                    <p class="card-text display-6 fw-bold">
+                        @(Model.Any() ? Math.Round(Model.Average(e => e.Edad)) : 0)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-briefcase fa-3x text-info mb-3"></i>
+                    <h5 class="card-title">Cargos Únicos</h5>
+                    <p class="card-text display-6 fw-bold">
+                        @(Model.Any() ? Model.Select(e => e.Cargo).Distinct().Count() : 0)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Barra de búsqueda y botón de acción -->
-    <div class="d-flex justify-content-between align-items-center mb-5">
-        <form asp-action="Index" method="get" class="search-form d-flex w-75">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <form asp-action="Index" method="get" class="search-form d-flex flex-grow-1 me-3">
             <div class="input-group">
                 <span class="input-group-text bg-transparent border-0">
                     <i class="fas fa-search text-muted"></i>
                 </span>
-                <input type="text" class="form-control form-control-lg border-0 shadow-none" id="searchTitle" name="searchTitle" placeholder="Buscar empleado por nombre, cargo o email..." />
+                <input type="text" class="form-control form-control-lg border-0 shadow-none" id="searchTitle" name="searchTitle" placeholder="Buscar por nombre, cargo o email..." />
             </div>
             <button type="submit" class="btn btn-primary btn-lg ms-3 px-4 rounded-pill">
                 Buscar
@@ -34,7 +78,7 @@
     </div>
 
     <!-- Tabla de empleados -->
-    <div class="card shadow-lg rounded-4 overflow-hidden">
+    <div class="card shadow-sm rounded-3 overflow-hidden">
         <div class="card-body p-0">
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
@@ -44,62 +88,73 @@
                             <th class="py-3 px-4">Cargo</th>
                             <th class="py-3 px-4">Contacto</th>
                             <th class="py-3 px-4">Estado</th>
-                            <th class="py-3 px-4">Fecha de Registro</th>
+                            <th class="py-3 px-4">Fecha de Ingreso</th>
                             <th class="py-3 px-4 text-center">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @if (Model != null && Model.Any())
                         {
-                            <tr class="hover-row">
-                                <td class="py-3 px-4">
-                                    <div class="d-flex align-items-center">
-                                        @{
-                                            string imageSrc = "/images/default-profile.png";
-                                            if (item.Fotos != null && item.Fotos.Any(f => f.Foto != null))
-                                            {
-                                                var foto = item.Fotos.FirstOrDefault(f => f.NombreFoto == "centro");
-                                                if (foto != null && foto.Foto.Length > 0)
+                            @foreach (var item in Model)
+                            {
+                                <tr class="hover-row">
+                                    <td class="py-3 px-4">
+                                        <div class="d-flex align-items-center">
+                                            @{
+                                                string imageSrc = "/images/default-profile.png";
+                                                if (item.Fotos != null && item.Fotos.Any(f => f.Foto != null))
                                                 {
-                                                    string imageBase64 = Convert.ToBase64String(foto.Foto);
-                                                    imageSrc = $"data:image/png;base64,{imageBase64}";
+                                                    var foto = item.Fotos.FirstOrDefault(f => f.NombreFoto == "centro");
+                                                    if (foto != null && foto.Foto.Length > 0)
+                                                    {
+                                                        string imageBase64 = Convert.ToBase64String(foto.Foto);
+                                                        imageSrc = $"data:image/png;base64,{imageBase64}";
+                                                    }
                                                 }
                                             }
-                                        }
-                                        <img src="@imageSrc" alt="Foto de perfil" class="rounded-circle me-3" style="width: 48px; height: 48px; object-fit: cover;" />
-                                        <div>
-                                            <h6 class="fw-bold mb-0">@item.Nombre</h6>
-                                            <small class="text-muted">@item.Email</small>
+                                            <img src="@imageSrc" alt="Foto de @item.Nombre" class="rounded-circle me-3" style="width: 48px; height: 48px; object-fit: cover;" />
+                                            <div>
+                                                <h6 class="fw-semibold mb-0">@item.Nombre</h6>
+                                                <small class="text-muted">@item.Email</small>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-4">@item.Cargo</td>
-                                <td class="py-3 px-4">
-                                    <div>@item.Telefono</div>
-                                    <small class="text-muted">@item.Edad años</small>
-                                </td>
-                                <td class="py-3 px-4">
-                                    <span class="badge rounded-pill @(item.Estado ? "bg-success-subtle text-success" : "bg-danger-subtle text-danger")">
-                                        @(item.Estado ? "Activo" : "Inactivo")
-                                    </span>
-                                </td>
-                                <td class="py-3 px-4">@item.FechaRegistro.ToString("dd MMM, yyyy")</td>
-                                <td class="py-3 px-4">
-                                    <div class="d-flex justify-content-center">
-                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary mx-1" data-bs-toggle="tooltip" title="Editar">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info mx-1" data-bs-toggle="tooltip" title="Detalles">
-                                            <i class="fas fa-eye"></i>
-                                        </a>
-                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger mx-1" data-bs-toggle="tooltip" title="Eliminar">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                        <a asp-action="CapturarFotos" asp-route-empleadoId="@item.Id" class="btn btn-sm btn-outline-secondary mx-1" data-bs-toggle="tooltip" title="Capturar Fotos">
-                                            <i class="fas fa-camera"></i>
-                                        </a>
-                                    </div>
-                                </td>
+                                    </td>
+                                    <td class="py-3 px-4">
+                                        <span class="badge bg-light text-dark">@item.Cargo</span>
+                                    </td>
+                                    <td class="py-3 px-4">
+                                        <div>@item.Telefono</div>
+                                        <small class="text-muted">@item.Edad años</small>
+                                    </td>
+                                    <td class="py-3 px-4">
+                                        <span class="badge rounded-pill @(item.Estado ? "bg-success-subtle text-success" : "bg-danger-subtle text-danger")">
+                                            @(item.Estado ? "Activo" : "Inactivo")
+                                        </span>
+                                    </td>
+                                    <td class="py-3 px-4">@item.FechaRegistro.ToString("dd MMM, yyyy")</td>
+                                    <td class="py-3 px-4">
+                                        <div class="d-flex justify-content-center">
+                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary mx-1" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info mx-1" title="Detalles">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger mx-1" title="Eliminar">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                            <a asp-action="CapturarFotos" asp-route-empleadoId="@item.Id" class="btn btn-sm btn-outline-secondary mx-1" title="Capturar Fotos">
+                                                <i class="fas fa-camera"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" class="text-center py-4">No hay empleados registrados.</td>
                             </tr>
                         }
                     </tbody>
@@ -107,162 +162,36 @@
             </div>
         </div>
     </div>
-
-    <!-- Paginación -->
-    <nav aria-label="Paginación" class="mt-4">
-        <ul class="pagination justify-content-center">
-            <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
-                <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1, searchTitle = ViewBag.CurrentFilter })">
-                    <i class="fas fa-chevron-left"></i>
-                </a>
-            </li>
-            @for (int i = 1; i <= ViewBag.TotalPages; i++)
-            {
-                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
-                    <a class="page-link" href="@Url.Action("Index", new { page = i, searchTitle = ViewBag.CurrentFilter })">@i</a>
-                </li>
-            }
-            <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
-                <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1, searchTitle = ViewBag.CurrentFilter })">
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
 </div>
 
 <style>
     body {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Inter', sans-serif;
         background-color: #f8f9fa;
         color: #333;
     }
 
     .text-gradient {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(120deg, #1a237e, #4a148c);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        text-fill-color: transparent;
     }
 
-    .search-form {
-        background-color: #fff;
-        border-radius: 50px;
-        padding: 10px 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
     }
 
-        .search-form .form-control {
-            border: none;
-            box-shadow: none;
-            font-size: 1rem;
-        }
-
-            .search-form .form-control:focus {
-                box-shadow: none;
-            }
-
-    .btn-primary, .btn-success {
-        padding: 12px 30px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-primary {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border: none;
-    }
-
-    .btn-success {
-        background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
-        border: none;
-    }
-
-        .btn-primary:hover, .btn-success:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
-        }
-
-    .table th {
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        letter-spacing: 0.5px;
-    }
-
-    .table td {
+    .table th, .table td {
         vertical-align: middle;
     }
 
     .hover-row:hover {
         background-color: #f8f9fa;
-        transition: background-color 0.3s ease-in-out;
-    }
-
-    .badge {
-        font-weight: 500;
-        padding: 0.5em 1em;
-    }
-
-    .pagination .page-link {
-        color: #667eea;
-        border: none;
-        font-weight: 600;
-        padding: 0.5rem 0.75rem;
-        margin: 0 3px;
-        border-radius: 50%;
-    }
-
-    .pagination .page-item.active .page-link {
-        background-color: #667eea;
-        color: #fff;
-    }
-
-    .btn-sm {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.875rem;
-        line-height: 1.5;
-        border-radius: 0.2rem;
+        transition: 0.3s;
     }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // Inicializar tooltips
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-
-        // Animación suave al cargar la página
-        document.body.style.opacity = 0;
-        let opacity = 0;
-        let intervalID = setInterval(function() {
-            if (opacity < 1) {
-                opacity = opacity + 0.1;
-                document.body.style.opacity = opacity;
-            } else {
-                clearInterval(intervalID);
-            }
-        }, 30);
-
-        // Efecto de hover en las filas de la tabla
-        const rows = document.querySelectorAll('.hover-row');
-        rows.forEach(row => {
-            row.addEventListener('mouseenter', () => {
-                row.style.transform = 'scale(1.02)';
-                row.style.transition = 'transform 0.3s ease';
-            });
-            row.addEventListener('mouseleave', () => {
-                row.style.transform = 'scale(1)';
-            });
-        });
-    });
-</script>
 
 
 
