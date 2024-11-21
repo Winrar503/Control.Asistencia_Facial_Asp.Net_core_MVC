@@ -1,0 +1,59 @@
+﻿body {
+    background-color: #f4f6f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+.metric-card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .metric-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .metric-card h5 {
+        font-size: 1.2rem;
+    }
+
+    .metric-card p {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.animate-metric {
+    animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+    0%
+
+{
+    transform: scale(1);
+}
+
+50% {
+    transform: scale(1.1);
+}
+
+100% {
+    transform: scale(1);
+}
+
+}
+
+.chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

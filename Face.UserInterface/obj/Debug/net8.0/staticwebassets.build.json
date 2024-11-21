@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sf8DRkK47GegKTjLbZVKavcrRyA2J00t7wc0O3hjWBU=",
+  "Hash": "nr2mroR+v0IXNiAxBQLyF5winGnH5jjnToJaP4XBdlI=",
   "Source": "Face.UserInterface",
   "BasePath": "_content/Face.UserInterface",
   "Mode": "Default",
@@ -78,6 +78,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\empleado\\index.css"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\home.css",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "css/home#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lto3hms3lh",
+      "Integrity": "lxbGY37uwefPBuSPU/iYlj6Pc+Uq/c7Gq6Qkp3dhtME=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\site.css",
@@ -1420,6 +1441,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-cD6nI8laiHsva3PEINrrPDiHvogWyuuy1gOkrtHjFpo="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.css",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "939"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lxbGY37uwefPBuSPU/iYlj6Pc+Uq/c7Gq6Qkp3dhtME=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Nov 2024 22:10:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lxbGY37uwefPBuSPU/iYlj6Pc+Uq/c7Gq6Qkp3dhtME="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.lto3hms3lh.css",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "939"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lxbGY37uwefPBuSPU/iYlj6Pc+Uq/c7Gq6Qkp3dhtME=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Nov 2024 22:10:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lto3hms3lh"
+        },
+        {
+          "Name": "label",
+          "Value": "css/home.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lxbGY37uwefPBuSPU/iYlj6Pc+Uq/c7Gq6Qkp3dhtME="
         }
       ]
     },

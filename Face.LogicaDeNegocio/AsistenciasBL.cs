@@ -41,5 +41,10 @@ namespace Face.LogicaDeNegocio
         {
             return await AsistenciasDAL.BuscarAsync(pAsistencias);
         }
+        public async Task<List<Asistencias>> ObtenerTodosConRelacionesAsync()
+        {
+            return await AsistenciasDAL.ObtenerTodosConRelacionesAsync();
+        }
+
     }
 }

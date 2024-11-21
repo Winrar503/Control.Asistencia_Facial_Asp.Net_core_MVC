@@ -3,7 +3,7 @@ using Face.UserInterface.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Face.EntidadesDeNegocio;
-
+using System.Linq;
 
 namespace Face.UserInterface.Controllers
 {
@@ -18,25 +18,32 @@ namespace Face.UserInterface.Controllers
         {
             var totalEmpleados = (await _empleadosBL.ObtenerTodosAsync()).Count;
             var totalAsistencias = (await _asistenciasBL.ObtenerTodosAsync()).Count;
+            var totalComentarios = (await _asistenciasBL.ObtenerTodosAsync())
+                .Count(a => !string.IsNullOrEmpty(a.Comentarios)); // Solo asistencias con comentarios
 
-            return Json(new { totalEmpleados, totalAsistencias });
+            return Json(new
+            {
+                totalEmpleados,
+                totalAsistencias,
+                totalComentarios
+            });
         }
-
 
         [HttpGet]
         public async Task<IActionResult> ObtenerComentarios()
         {
-            // Usamos ObtenerTodosAsync para incluir empleados
-            var comentarios = await _asistenciasBL.ObtenerTodosAsync();
+            var comentarios = await _asistenciasBL.ObtenerTodosConRelacionesAsync();
 
             var datos = comentarios.Select(c => new
             {
-                Empleado = c.Empleados?.Nombre ?? "Desconocido", // Aseguramos que Empleados no sea null
-                Comentario = c.Comentarios ?? "Sin comentario"
+                Empleado = c.Empleados != null ? c.Empleados.Nombre : "Desconocido", // Asegúrate de verificar null
+                Comentario = !string.IsNullOrEmpty(c.Comentarios) ? c.Comentarios : "Sin comentario"
             }).ToList();
 
             return Json(datos);
         }
+
+
 
 
 
@@ -63,6 +70,7 @@ namespace Face.UserInterface.Controllers
             return Json(new { success = true });
         }
 
+
         public class ComentarioDto
         {
             public string Empleado { get; set; }
@@ -73,6 +81,7 @@ namespace Face.UserInterface.Controllers
         {
             return View();
         }
+
         public IActionResult Index()
         {
             return View();

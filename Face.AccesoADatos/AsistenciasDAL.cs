@@ -108,6 +108,17 @@ namespace Face.AccesoADatos
                     .FirstOrDefaultAsync(e => e.Id == asistenciaId);
             }
         }
+        public static async Task<List<Asistencias>> ObtenerTodosConRelacionesAsync()
+        {
+            using (var bdContexto = new BDContexto())
+            {
+                return await bdContexto.Asistencias
+                    .Include(a => a.Empleados) // Asegúrate de cargar la relación
+                    .ToListAsync();
+            }
+        }
+
+
 
     }
 }
