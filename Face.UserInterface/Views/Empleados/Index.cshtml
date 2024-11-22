@@ -51,9 +51,9 @@
                 <div class="card-body text-center">
                     <i class="fas fa-briefcase fa-3x text-info mb-3"></i>
                     <h5 class="card-title">Cargos Únicos</h5>
-                    <p class="card-text display-6 fw-bold">
+                  @*   <p class="card-text display-6 fw-bold">
                         @(Model.Any() ? Model.Select(e => e.Cargo).Distinct().Count() : 0)
-                    </p>
+                    </p> *@
                 </div>
             </div>
         </div>
@@ -119,9 +119,9 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="py-3 px-4">
+                                   @*  <td class="py-3 px-4">
                                         <span class="badge bg-light text-dark">@item.Cargo</span>
-                                    </td>
+                                    </td> *@
                                     <td class="py-3 px-4">
                                         <div>@item.Telefono</div>
                                         <small class="text-muted">@item.Edad años</small>

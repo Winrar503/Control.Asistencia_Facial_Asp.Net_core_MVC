@@ -17,9 +17,13 @@ namespace Face.AccesoADatos
         public DbSet<Asistencias> Asistencias {  get; set; }
         public DbSet<Horarios> Horarios { get; set; }
         public DbSet<Reportes> Reportes { get; set; }
+        public DbSet<Cargo> Cargos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-F5QN69J\SQLEXPRESS01;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");
+            //Darwin
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-G786A4S\SQLEXPRESS;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");
+            //Adrian
+            //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-F5QN69J\SQLEXPRESS01;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -36,7 +36,7 @@ namespace Face.AccesoADatos
                     empleadosBD.Nombre = pEmpleados.Nombre;
                     empleadosBD.Edad = pEmpleados.Edad;
                     empleadosBD.Email = pEmpleados.Email;
-                    empleadosBD.Cargo = pEmpleados.Cargo;
+                    //empleadosBD.Cargo = pEmpleados.Cargo;
                     empleadosBD.Telefono = pEmpleados.Telefono;
                     empleadosBD.Estado = pEmpleados.Estado;
                     empleadosBD.FechaRegistro = pEmpleados.FechaRegistro;

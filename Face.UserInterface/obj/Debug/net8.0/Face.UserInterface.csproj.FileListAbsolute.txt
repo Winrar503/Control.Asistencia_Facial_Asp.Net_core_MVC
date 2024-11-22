@@ -1268,3 +1268,4 @@ C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_A
 C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\obj\Debug\net8.0\Face.Use.645D2C14.Up2Date
 C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\obj\Debug\net8.0\Face.UserInterface.genruntimeconfig.cache
 C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\obj\Debug\net8.0\ref\Face.UserInterface.dll
+C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\System.Private.Windows.Core.dll

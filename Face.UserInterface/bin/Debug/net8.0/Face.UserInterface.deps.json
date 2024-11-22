@@ -16,7 +16,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.0",
-          "System.Drawing.Common": "8.0.10",
+          "System.Drawing.Common": "9.0.0",
           "System.IO": "4.3.0",
           "iTextSharp": "5.5.13.4"
         },
@@ -84,7 +84,7 @@
       "Emgu.CV.Bitmap/4.9.0.5494": {
         "dependencies": {
           "Emgu.CV": "4.9.0.5494",
-          "System.Drawing.Common": "8.0.10"
+          "System.Drawing.Common": "9.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {
@@ -1853,19 +1853,19 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/8.0.0": {
+      "Microsoft.Win32.SystemEvents/9.0.0": {
         "runtime": {
           "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
           }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
           }
         }
       },
@@ -2097,14 +2097,18 @@
         }
       },
       "System.Diagnostics.EventLog/8.0.0": {},
-      "System.Drawing.Common/8.0.10": {
+      "System.Drawing.Common/9.0.0": {
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "8.0.0"
+          "Microsoft.Win32.SystemEvents": "9.0.0"
         },
         "runtime": {
           "lib/net8.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1024.46803"
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52901"
+          },
+          "lib/net8.0/System.Private.Windows.Core.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52901"
           }
         }
       },
@@ -2366,12 +2370,16 @@
           "Face.EntidadesDeNegocio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
-          "System.Drawing.Common": "8.0.10",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.0",
+          "System.Drawing.Common": "9.0.0",
           "System.IO": "4.3.0",
           "iTextSharp": "5.5.13.4"
         },
         "runtime": {
-          "Face.AccesoADatos.dll": {}
+          "Face.AccesoADatos.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Face.EntidadesDeNegocio/1.0.0": {
@@ -2381,12 +2389,16 @@
           "Emgu.CV.runtime.windows": "4.9.0.5494",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
-          "System.Drawing.Common": "8.0.10",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.0",
+          "System.Drawing.Common": "9.0.0",
           "System.IO": "4.3.0",
           "iTextSharp": "5.5.13.4"
         },
         "runtime": {
-          "Face.EntidadesDeNegocio.dll": {}
+          "Face.EntidadesDeNegocio.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Face.LogicaDeNegocio/1.0.0": {
@@ -2398,12 +2410,16 @@
           "Face.EntidadesDeNegocio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
-          "System.Drawing.Common": "8.0.10",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.0",
+          "System.Drawing.Common": "9.0.0",
           "System.IO": "4.3.0",
           "iTextSharp": "5.5.13.4"
         },
         "runtime": {
-          "Face.LogicaDeNegocio.dll": {}
+          "Face.LogicaDeNegocio.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -3212,12 +3228,12 @@
       "path": "microsoft.visualstudio.web.codegenerators.mvc/9.0.0",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.9.0.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/8.0.0": {
+    "Microsoft.Win32.SystemEvents/9.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9opKRyOKMCi2xJ7Bj7kxtZ1r9vbzosMvRrdEhVhDz8j8MoBGgB+WmC94yH839NPH+BclAjtQ/pyagvi/8gDLkw==",
-      "path": "microsoft.win32.systemevents/8.0.0",
-      "hashPath": "microsoft.win32.systemevents.8.0.0.nupkg.sha512"
+      "sha512": "sha512-z8FfGIaoeALdD+KF44A2uP8PZIQQtDGiXsOLuN8nohbKhkyKt7zGaZb+fKiCxTuBqG22Q7myIAioSWaIcOOrOw==",
+      "path": "microsoft.win32.systemevents/9.0.0",
+      "hashPath": "microsoft.win32.systemevents.9.0.0.nupkg.sha512"
     },
     "Mono.TextTemplating/3.0.0": {
       "type": "package",
@@ -3394,12 +3410,12 @@
       "path": "system.diagnostics.eventlog/8.0.0",
       "hashPath": "system.diagnostics.eventlog.8.0.0.nupkg.sha512"
     },
-    "System.Drawing.Common/8.0.10": {
+    "System.Drawing.Common/9.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MdajRp3P+FOlThgY6FBjAqnmLiVl5t2yWEC/2AsDMqx1zYbJG3G5TnscFBQ4obqcaGqvN5UnhQHSFaJFG2HftQ==",
-      "path": "system.drawing.common/8.0.10",
-      "hashPath": "system.drawing.common.8.0.10.nupkg.sha512"
+      "sha512": "sha512-uoozjI3+dlgKh2onFJcz8aNLh6TRCPlLSh8Dbuljc8CdvqXrxHOVysJlrHvlsOCqceqGBR1wrMPxlnzzhynktw==",
+      "path": "system.drawing.common/9.0.0",
+      "hashPath": "system.drawing.common.9.0.0.nupkg.sha512"
     },
     "System.Drawing.Primitives/4.3.0": {
       "type": "package",

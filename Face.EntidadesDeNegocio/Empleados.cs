@@ -25,10 +25,10 @@ namespace Face.EntidadesDeNegocio
         [Display(Name = "Email")]
         [MaxLength(255, ErrorMessage = "El largo máximo es 255 caracteres")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "El cargo es requerido")]
-        [Display(Name = "Cargo")]
-        [MaxLength(100, ErrorMessage = "El largo maximo es 100 caracteres")]
-        public string Cargo { get; set; } 
+        //[Required(ErrorMessage = "El cargo es requerido")]
+        //[Display(Name = "Cargo")]
+        //[MaxLength(100, ErrorMessage = "El largo maximo es 100 caracteres")]
+        //public string Cargo { get; set; } 
         [Required(ErrorMessage = "El numero telefonico es requerido")]
         [Display(Name = "Telefono")]
         public string Telefono { get; set; }
@@ -36,6 +36,8 @@ namespace Face.EntidadesDeNegocio
         public bool Estado {  get; set; }
         public DateTime FechaRegistro { get; set; }
 
+        [ForeignKey("Cargo")]
+        public int CargoId { get; set; }
         [NotMapped]
         public int Top_Aux { get; set; }
         public ICollection<Asistencias> Asistencias { get; set; } = new List<Asistencias>();
@@ -43,7 +45,6 @@ namespace Face.EntidadesDeNegocio
         public ICollection<Horarios> Horarios { get; set; } = new List<Horarios>();
         public ICollection<Reportes> Reportes { get; set; } = new List<Reportes>();
         public ICollection<EmpleadoHorario> EmpleadoHorarios { get; set; }
-
-
+        public Cargo Cargo { get; set; }
     }
 }

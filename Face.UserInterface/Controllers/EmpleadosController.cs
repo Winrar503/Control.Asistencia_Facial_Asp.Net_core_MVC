@@ -53,6 +53,7 @@ namespace Face.UserInterface.Controllers
         }
         public async Task<IActionResult> Crear()
         {
+            ViewBag.Cargos = await new CargosBL().ObtenerTodosAsync();
             ViewBag.Error = "";
             return View();
         }
