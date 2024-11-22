@@ -2371,10 +2371,7 @@
           "iTextSharp": "5.5.13.4"
         },
         "runtime": {
-          "Face.AccesoADatos.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Face.AccesoADatos.dll": {}
         }
       },
       "Face.EntidadesDeNegocio/1.0.0": {
@@ -2389,10 +2386,7 @@
           "iTextSharp": "5.5.13.4"
         },
         "runtime": {
-          "Face.EntidadesDeNegocio.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Face.EntidadesDeNegocio.dll": {}
         }
       },
       "Face.LogicaDeNegocio/1.0.0": {
@@ -2409,10 +2403,7 @@
           "iTextSharp": "5.5.13.4"
         },
         "runtime": {
-          "Face.LogicaDeNegocio.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Face.LogicaDeNegocio.dll": {}
         }
       }
     }

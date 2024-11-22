@@ -946,10 +946,7 @@
           "iTextSharp": "5.5.13.4"
         },
         "runtime": {
-          "Face.EntidadesDeNegocio.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Face.EntidadesDeNegocio.dll": {}
         }
       }
     }

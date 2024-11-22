@@ -17,137 +17,135 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Face.UserInterface
 build_property.RootNamespace = Face.UserInterface
-build_property.ProjectDir = C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\
+build_property.ProjectDir = C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface
+build_property.MSBuildProjectDirectory = C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Create.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Delete.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Details.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Edit.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Index.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Asistencias/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/CapturarFotos.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/CapturarFotos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXENhcHR1cmFyRm90b3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Crear.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Crear.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXENyZWFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Delete.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Details.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Edit.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Index.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Empleados/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Home/Index.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Home/Inicio.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Home/Inicio.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmljaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Home/Privacy.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Create.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Delete.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Details.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Edit.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Index.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Horarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reconocimiento/Index.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reconocimiento/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb25vY2ltaWVudG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/RendimientoEmpleados/Index.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/RendimientoEmpleados/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVuZGltaWVudG9FbXBsZWFkb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Create.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Delete.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Edit.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Index.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Reportes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Shared/Error.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Shared/LayoutLanding.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Shared/LayoutLanding.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dExhbmRpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/_ViewImports.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/_ViewStart.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Universy/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Shared/_Layout.cshtml]
+[C:/Users/arosa/OneDrive/Escritorio/AsistenciaProyect/Control.Asistencia_Facial_Asp.Net_core_MVC/Face.UserInterface/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-0r6d02171w

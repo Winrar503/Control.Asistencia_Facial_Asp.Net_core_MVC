@@ -2,70 +2,198 @@
 @{
     ViewData["Title"] = "Capturar Fotos";
 }
-<h2>Capturar Fotos para @Model.Nombre</h2>
-<video id="video" width="320" height="240" autoplay></video>
-<button id="capture">Capturar</button>
-<canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
-<div class="row mt-3">
-    <div class="col-md-4">
-        <h4>Foto 1</h4>
-        <img id="photo1" width="320" height="240" src="#" alt="Foto 1" />
+
+<div class="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+    <!-- Header Section -->
+    <div class="max-w-4xl mx-auto text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+            Capturar Fotos para <span class="text-blue-600">@Model.Nombre</span>
+        </h2>
+        <p class="mt-2 text-gray-600">Por favor, capture tres fotos siguiendo las instrucciones de orientación.</p>
     </div>
-    <div class="col-md-4">
-        <h4>Foto 2</h4>
-        <img id="photo2" width="320" height="240" src="#" alt="Foto 2" />
-    </div>
-    <div class="col-md-4">
-        <h4>Foto 3</h4>
-        <img id="photo3" width="320" height="240" src="#" alt="Foto 3" />
+
+    <div class="max-w-5xl mx-auto">
+        <!-- Video Preview Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="flex flex-col items-center">
+                <div class="relative w-[320px] h-[240px] bg-gray-900 rounded-lg overflow-hidden mb-4">
+                    <video id="video" class="w-full h-full object-cover" autoplay></video>
+                    <!-- Overlay Guide -->
+                    <div id="orientationGuide" class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold bg-black bg-opacity-50">
+                        Mire hacia la izquierda
+                    </div>
+                </div>
+                <button id="capture" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    Capturar Foto
+                </button>
+            </div>
+        </div>
+
+        <!-- Photos Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Foto 1 -->
+            <div class="relative bg-white rounded-lg shadow-lg p-4">
+                <div class="absolute -top-3 left-4 bg-blue-600 text-white px-2 py-1 rounded text-sm">
+                    Mirando a la izquierda
+                </div>
+                <div class="aspect-w-4 aspect-h-3 mb-2">
+                    <img id="photo1" class="w-full h-full object-cover rounded" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Foto 1" />
+                </div>
+                <div class="text-center text-sm text-gray-500">Foto 1</div>
+            </div>
+
+            <!-- Foto 2 -->
+            <div class="relative bg-white rounded-lg shadow-lg p-4">
+                <div class="absolute -top-3 left-4 bg-green-600 text-white px-2 py-1 rounded text-sm">
+                    Mirando al centro
+                </div>
+                <div class="aspect-w-4 aspect-h-3 mb-2">
+                    <img id="photo2" class="w-full h-full object-cover rounded" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Foto 2" />
+                </div>
+                <div class="text-center text-sm text-gray-500">Foto 2</div>
+            </div>
+
+            <!-- Foto 3 -->
+            <div class="relative bg-white rounded-lg shadow-lg p-4">
+                <div class="absolute -top-3 left-4 bg-purple-600 text-white px-2 py-1 rounded text-sm">
+                    Mirando a la derecha
+                </div>
+                <div class="aspect-w-4 aspect-h-3 mb-2">
+                    <img id="photo3" class="w-full h-full object-cover rounded" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Foto 3" />
+                </div>
+                <div class="text-center text-sm text-gray-500">Foto 3</div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-gray-700">Progreso de captura</span>
+                <span class="text-sm font-medium text-gray-700" id="progressText">0/3 fotos</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%" id="progressBar"></div>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <form asp-action="GuardarFotos" method="post" id="photoForm" class="text-center">
+            <input type="hidden" id="empleadoId" name="empleadoId" value="@Model.Id" />
+            <input type="hidden" id="image1" name="image1" />
+            <input type="hidden" id="image2" name="image2" />
+            <input type="hidden" id="image3" name="image3" />
+            <button type="submit" id="savePhotos" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Guardar Fotos
+            </button>
+        </form>
     </div>
 </div>
-<form asp-action="GuardarFotos" method="post" id="photoForm">
-    <input type="hidden" id="empleadoId" name="empleadoId" value="@Model.Id" />
-    <input type="hidden" id="image1" name="image1" />
-    <input type="hidden" id="image2" name="image2" />
-    <input type="hidden" id="image3" name="image3" />
-    <button type="submit" class="btn btn-success mt-3" id="savePhotos">Guardar Fotos</button>
-</form>
+
+<canvas id="canvas" width="320" height="240" class="hidden"></canvas>
+
 @section Scripts {
     <script>
-        var video = document.getElementById('video');
-        var canvas = document.getElementById('canvas');
-        var context = canvas.getContext('2d');
-        var imageCount = 1;
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        const orientationGuide = document.getElementById('orientationGuide');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const saveButton = document.getElementById('savePhotos');
+        let imageCount = 1;
 
+        // Deshabilitar el botón de guardar inicialmente
+        saveButton.disabled = true;
+
+        const orientations = [
+            'Mire hacia la izquierda',
+            'Mire hacia el centro',
+            'Mire hacia la derecha'
+        ];
+
+        // Iniciar la cámara
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(function (stream) {
                 video.srcObject = stream;
             })
             .catch(function (err) {
                 console.log("Error: " + err);
+                alert('Error al acceder a la cámara. Por favor, asegúrese de que tiene una cámara conectada y ha dado los permisos necesarios.');
             });
 
-        document.getElementById('capture').addEventListener('click', function () {
-            context.drawImage(video, 0, 0, 320, 240);
-            var data = canvas.toDataURL('image/png');
+        // Actualizar la guía de orientación
+        function updateOrientationGuide() {
+            orientationGuide.textContent = orientations[imageCount - 1];
+            orientationGuide.classList.add('animate-pulse');
+            setTimeout(() => orientationGuide.classList.remove('animate-pulse'), 1000);
+        }
 
-            if (imageCount == 1) {
+        // Actualizar la barra de progreso
+        function updateProgress() {
+            const progress = ((imageCount - 1) / 3) * 100;
+            progressBar.style.width = `${progress}%`;
+            progressText.textContent = `${imageCount - 1}/3 fotos`;
+        }
+
+        // Manejar la captura de fotos
+        document.getElementById('capture').addEventListener('click', function () {
+            // Efecto de flash
+            const flash = document.createElement('div');
+            flash.className = 'absolute inset-0 bg-white opacity-0';
+            video.parentElement.appendChild(flash);
+
+            // Animación de flash
+            requestAnimationFrame(() => {
+                flash.style.opacity = '0.8';
+                flash.style.transition = 'opacity 100ms ease-out';
+                setTimeout(() => {
+                    flash.style.opacity = '0';
+                    setTimeout(() => flash.remove(), 100);
+                }, 50);
+            });
+
+            context.drawImage(video, 0, 0, 320, 240);
+            const data = canvas.toDataURL('image/png');
+
+            if (imageCount === 1) {
                 document.getElementById('image1').value = data;
                 document.getElementById('photo1').setAttribute('src', data);
-            } else if (imageCount == 2) {
+            } else if (imageCount === 2) {
                 document.getElementById('image2').value = data;
                 document.getElementById('photo2').setAttribute('src', data);
-            } else if (imageCount == 3) {
+            } else if (imageCount === 3) {
                 document.getElementById('image3').value = data;
                 document.getElementById('photo3').setAttribute('src', data);
+                saveButton.disabled = false;
             }
+
             imageCount++;
             if (imageCount > 3) {
                 imageCount = 1;
             }
+
+            updateOrientationGuide();
+            updateProgress();
         });
+
+        // Validación del formulario
         document.getElementById('photoForm').addEventListener('submit', function (e) {
-            if (!document.getElementById('image1').value || !document.getElementById('image2').value || !document.getElementById('image3').value) {
-                alert('Debe capturar las tres fotos antes de guardar.');
+            if (!document.getElementById('image1').value || 
+                !document.getElementById('image2').value || 
+                !document.getElementById('image3').value) {
                 e.preventDefault();
+                alert('Debe capturar las tres fotos antes de guardar.');
             }
         });
+
+        // Inicializar la guía de orientación
+        updateOrientationGuide();
     </script>
 }

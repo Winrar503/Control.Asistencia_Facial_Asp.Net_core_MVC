@@ -7,101 +7,89 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Face.UserInterface.styles.css" asp-append-version="true" />
-    <style>
-        /* Estilos para el menú y el pie de página */
-        .hidden-menu {
-            display: none;
-        }
-
-        .show-menu {
-            display: block;
-        }
-
-        .footer {
-            background-color: #f1f1f1;
-            padding: 1rem;
-            text-align: center;
-        }
-
-            .footer a {
-                color: #007bff;
-                text-decoration: none;
-            }
-
-                .footer a:hover {
-                    text-decoration: underline;
-                }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="min-h-screen flex flex-col bg-gray-50">
     <header>
-        <!-- Barra de navegación (solo aparece si no estamos en el Home Index) -->
         @if (!(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Index"))
         {
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
-                <div class="container-fluid">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Face.UserInterface</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Empleados" asp-action="Index">Empleados</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Horarios" asp-action="Index">Horarios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Asistencias" asp-action="Index">Asistencia</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Reportes" asp-action="Index">Reportes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Reconocimiento" asp-action="Index">Reconocer</a>
-                            </li>
-                        </ul>
+            <nav class="bg-white shadow-lg">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16">
+                        <div class="flex items-center">
+                            <a class="flex-shrink-0 flex items-center text-blue-600 font-bold text-xl" asp-area="" asp-controller="Home" asp-action="Index">
+                                WinFaceTrack
+                            </a>
+                        </div>
+                        
+                        <!-- Mobile menu button -->
+                        <div class="flex items-center sm:hidden">
+                            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                                <span class="sr-only">Abrir menú principal</span>
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Desktop menu -->
+                        <div class="hidden sm:flex sm:items-center sm:ml-6">
+                            <div class="flex space-x-4">
+                                <a class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                                <a class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
+                                <a class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Empleados" asp-action="Index">Empleados</a>
+                                <a class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Horarios" asp-action="Index">Horarios</a>
+                                <a class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Asistencias" asp-action="Index">Asistencia</a>
+                                <a class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Reportes" asp-action="Index">Reportes</a>
+                                <a class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Reconocimiento" asp-action="Index">Reconocer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu -->
+                <div class="sm:hidden collapse" id="navbarNav">
+                    <div class="px-2 pt-2 pb-3 space-y-1">
+                        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
+                        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Empleados" asp-action="Index">Empleados</a>
+                        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Horarios" asp-action="Index">Horarios</a>
+                        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Asistencias" asp-action="Index">Asistencia</a>
+                        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Reportes" asp-action="Index">Reportes</a>
+                        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 ease-in-out" asp-area="" asp-controller="Reconocimiento" asp-action="Index">Reconocer</a>
                     </div>
                 </div>
             </nav>
         }
     </header>
 
-    <div class="container">
+    <div class="container flex-grow">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <!-- Pie de página solo en la página de inicio -->
-    @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Index")
+    @* @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Index")
     {
-        <footer class="footer mt-auto border-top text-muted">
-            <div class="container">
-                <span>&copy; 2024 - Face.UserInterface</span>
-                <a class="ms-2" asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidad</a>
+        <footer class="bg-white shadow-inner">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                    <div class="text-gray-500 text-sm">
+                        &copy; @DateTime.Now.Year - Face.UserInterface
+                    </div>
+                    <div class="flex space-x-6">
+                        <a class="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-300" asp-area="" asp-controller="Home" asp-action="Privacy">
+                            Política de Privacidad
+                        </a>
+                    </div>
+                </div>
             </div>
         </footer>
-    }
+    } *@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
-    <!-- Script para mostrar el menú con el botón -->
-    <script>
-        document.getElementById('toggleMenuBtn')?.addEventListener('click', function () {
-            const menu = document.getElementById('mainMenu');
-            menu.classList.toggle('show-menu');
-        });
-    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

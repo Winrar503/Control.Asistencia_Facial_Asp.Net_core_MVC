@@ -11,45 +11,83 @@
     List<Empleados> empleados = ViewBag.Empleados as List<Empleados>;
 }
 
-<h1>Horarios</h1>
+<div class="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header Section -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl">Horarios</h1>
+            <p class="mt-2 text-sm text-gray-700">Gestiona los horarios de los empleados</p>
+        </div>
 
-<p>
-    <a asp-action="Create">Crear Nuevo Horario</a>
-</p>
+        <!-- Action Button -->
+        <div class="mb-6">
+            <a asp-action="Create" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                </svg>
+                Crear Nuevo Horario
+            </a>
+        </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.EmpleadosId)</th>
-            <th>@Html.DisplayNameFor(model => model.HoraEntrada)</th>
-            <th>@Html.DisplayNameFor(model => model.HoraSalida)</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model != null && empleados != null)
-        {
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @empleados.FirstOrDefault(e => e.Id == item.EmpleadosId)?.Nombre
-                    </td>
-                    <td>@Html.DisplayFor(modelItem => item.HoraEntrada)</td>
-                    <td>@Html.DisplayFor(modelItem => item.HoraSalida)</td>
-                    <td>
-                        @Html.ActionLink("Modificar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info" })
-                        @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-outline-secondary" })
-                        @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-outline-danger" })
-                    </td>
-                </tr>
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="4">No se encontraron horarios o empleados.</td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <!-- Horarios Table -->
+        <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            @Html.DisplayNameFor(model => model.EmpleadosId)
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            @Html.DisplayNameFor(model => model.HoraEntrada)
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            @Html.DisplayNameFor(model => model.HoraSalida)
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Acciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    @if (Model != null && empleados != null)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    @empleados.FirstOrDefault(e => e.Id == item.EmpleadosId)?.Nombre
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    @Html.DisplayFor(modelItem => item.HoraEntrada)
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    @Html.DisplayFor(modelItem => item.HoraSalida)
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="text-indigo-600 hover:text-indigo-900 mr-2">Modificar</a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="text-blue-600 hover:text-blue-900 mr-2">Detalles</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-600 hover:text-red-900">Eliminar</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                                No se encontraron horarios o empleados.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination (placeholder, implement as needed) -->
+        <div class="mt-6">
+            <nav class="flex items-center justify-between border-t border-gray-200 px-4 sm:px-0">
+                <!-- Add pagination controls here -->
+            </nav>
+        </div>
+    </div>
+</div>

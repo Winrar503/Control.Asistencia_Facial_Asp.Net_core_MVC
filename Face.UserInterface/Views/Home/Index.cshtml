@@ -2,163 +2,251 @@
     ViewData["Title"] = "Home Page";
 }
 
-<!-- Sección de Bienvenida -->
-<div class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content text-center">
-        <h1 class="display-4 text-white mb-4 animate__animated animate__fadeInDown">Bienvenido a WinFaceTrack</h1>
-        <p class="text-white mb-4 animate__animated animate__fadeIn animate__delay-1s">Explora nuestras herramientas avanzadas para la gestión y reconocimiento de empleados.</p>
-        <a href="@Url.Action("Inicio", "Home")" class="btn btn-primary btn-lg mt-3">Inicio</a>
-    </div>
-</div>
-
-<!-- Sección "Acerca de" -->
-<section class="container text-center my-5" data-aos="fade-up">
-    <h2>Acerca de WinFaceTracke</h2>
-    <p>WinFaceTrack es una plataforma que facilita la gestión de empleados, asistencia y control de horarios de manera eficiente. Diseñada para optimizar el flujo de trabajo y proporcionar información en tiempo real.</p>
-</section>
-
-<!-- Sección de Funcionalidades Principales -->
-<section class="container text-center my-5" data-aos="fade-up">
-    <h2>Funcionalidades Principales</h2>
-    <div class="row mt-4">
-        <div class="col-md-4">
-            <i class="fas fa-users fa-3x text-primary mb-3"></i>
-            <h4>Gestión de Empleados</h4>
-            <p>Administra los datos de los empleados y controla su información de manera segura.</p>
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinFaceTrack - Gestión de Empleados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="font-sans antialiased">
+    <!-- Hero Section - Modernizado y menos invasivo -->
+    <div class="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">
+        <!-- Patrón de fondo decorativo -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%239C92AC\" fill-opacity=\"0.4\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
         </div>
-        <div class="col-md-4">
-            <i class="fas fa-calendar-check fa-3x text-success mb-3"></i>
-            <h4>Control de Asistencia</h4>
-            <p>Registra y consulta la asistencia del personal en tiempo real.</p>
-        </div>
-        <div class="col-md-4">
-            <i class="fas fa-chart-line fa-3x text-info mb-3"></i>
-            <h4>Reportes y Estadísticas</h4>
-            <p>Obtén reportes detallados y estadísticas sobre el rendimiento del equipo.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Sección de Testimonios -->
-<section class="container text-center my-5 bg-light py-5" data-aos="fade-up">
-    <h2 class="mb-5">Opiniones de Nuestros Usuarios</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <blockquote class="blockquote">
-                <p class="text-muted">"WinFaceTracke nos ha ayudado a reducir el tiempo de gestión en un 50%."</p>
-                <footer class="blockquote-footer">Empresa XYZ</footer>
-            </blockquote>
-        </div>
-        <div class="col-md-4">
-            <blockquote class="blockquote">
-                <p class="text-muted">"La mejor herramienta para mantener la información de empleados organizada."</p>
-                <footer class="blockquote-footer">Juan Pérez, Gerente de Recursos Humanos</footer>
-            </blockquote>
-        </div>
-        <div class="col-md-4">
-            <blockquote class="blockquote">
-                <p class="text-muted">"Gracias a WinFaceTracke, podemos tomar decisiones basadas en datos precisos."</p>
-                <footer class="blockquote-footer">Ana Gómez, Directora de Operaciones</footer>
-            </blockquote>
-        </div>
-    </div>
-</section>
-
-<!-- Sección de Contacto -->
-<section class="container text-center my-5" data-aos="fade-up">
-    <h2>¿Necesitas Ayuda?</h2>
-    <p>Estamos aquí para ayudarte. Si tienes alguna pregunta, no dudes en contactarnos.</p>
-    <a href="/Contacto" class="btn btn-primary btn-lg mt-3">Contáctanos</a>
-</section>
-
-<!-- Pie de Página -->
-<footer class="bg-dark text-white text-center py-4 mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>Enlaces Rápidos</h5>
-                <ul class="list-unstyled">
-                    <li><a href="/Empleados" class="text-white">Empleados</a></li>
-                    <li><a href="/Asistencia" class="text-white">Asistencia</a></li>
-                    <li><a href="/Reportes" class="text-white">Reportes</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h5>Síguenos</h5>
-                <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div class="col-md-4">
-                <h5>Políticas</h5>
-                <ul class="list-unstyled">
-                    <li><a href="/Privacidad" class="text-white">Política de Privacidad</a></li>
-                    <li><a href="/Terminos" class="text-white">Términos de Servicio</a></li>
-                </ul>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+                Bienvenido a 
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+                    WinFaceTrack
+                </span>
+            </h1>
+            <p class="mt-6 text-xl text-gray-300 max-w-2xl mx-auto">
+                Explora nuestras herramientas avanzadas para la gestión y reconocimiento de empleados.
+            </p>
+            <div class="mt-10">
+                <a href="@Url.Action("Inicio", "Home")" 
+                   class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 ease-in-out transform hover:scale-105">
+                    Inicio
+                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
             </div>
         </div>
-        <p class="mt-4">© 2024 - WinFaceTracke. Todos los derechos reservados.</p>
     </div>
-</footer>
 
-<!-- Estilos CSS -->
-<style>
-    /* Estilo del Hero */
-    .hero {
-        background-image: url('your-image.jpg'); /* Coloca aquí la ruta de la imagen de fondo */
-        background-size: cover;
-        background-position: center;
-        padding: 150px 20px;
-        color: white;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
+    <!-- Sección Acerca de -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+                    Acerca de WinFaceTrack
+                </h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    WinFaceTrack es una plataforma que facilita la gestión de empleados, asistencia y control de horarios de manera eficiente. Diseñada para optimizar el flujo de trabajo y proporcionar información en tiempo real.
+                </p>
+            </div>
+        </div>
+    </section>
 
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-    }
+    <!-- Sección de Funcionalidades -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-16">
+                Funcionalidades Principales
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Gestión de Empleados -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative p-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex flex-col items-center">
+                        <i class="fas fa-users text-4xl text-blue-600 mb-4 transform transition-transform group-hover:scale-110"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Gestión de Empleados</h3>
+                        <p class="text-gray-600 text-center">
+                            Administra los datos de los empleados y controla su información de manera segura.
+                        </p>
+                    </div>
+                </div>
 
-    .hero-content {
-        position: relative;
-        z-index: 1;
-    }
+                <!-- Control de Asistencia -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative p-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex flex-col items-center">
+                        <i class="fas fa-calendar-check text-4xl text-green-600 mb-4 transform transition-transform group-hover:scale-110"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Control de Asistencia</h3>
+                        <p class="text-gray-600 text-center">
+                            Registra y consulta la asistencia del personal en tiempo real.
+                        </p>
+                    </div>
+                </div>
 
-    /* Iconos de funcionalidades */
-    .fa-users, .fa-calendar-check, .fa-chart-line {
-        transition: transform 0.3s ease;
-    }
+                <!-- Reportes y Estadísticas -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-purple-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative p-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex flex-col items-center">
+                        <i class="fas fa-chart-line text-4xl text-purple-600 mb-4 transform transition-transform group-hover:scale-110"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Reportes y Estadísticas</h3>
+                        <p class="text-gray-600 text-center">
+                            Obtén reportes detallados y estadísticas sobre el rendimiento del equipo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    .col-md-4:hover .fa-users,
-    .col-md-4:hover .fa-calendar-check,
-    .col-md-4:hover .fa-chart-line {
-        transform: scale(1.2);
-    }
+    <!-- Sección de Testimonios -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-16">
+                Opiniones de Nuestros Usuarios
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="h-full flex flex-col justify-between">
+                        <div>
+                            <svg class="h-8 w-8 text-gray-400 mb-4" fill="currentColor" viewBox="0 0 32 32">
+                                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
+                            </svg>
+                            <p class="text-gray-600 mb-4">WinFaceTracke nos ha ayudado a reducir el tiempo de gestión en un 50%.</p>
+                        </div>
+                        <footer class="mt-4">
+                            <p class="text-gray-900 font-semibold">Empresa XYZ</p>
+                        </footer>
+                    </div>
+                </div>
 
-    /* Footer */
-    footer a {
-        color: #bbb;
-        text-decoration: none;
-    }
+                <!-- Testimonio 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="h-full flex flex-col justify-between">
+                        <div>
+                            <svg class="h-8 w-8 text-gray-400 mb-4" fill="currentColor" viewBox="0 0 32 32">
+                                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
+                            </svg>
+                            <p class="text-gray-600 mb-4">La mejor herramienta para mantener la información de empleados organizada.</p>
+                        </div>
+                        <footer class="mt-4">
+                            <p class="text-gray-900 font-semibold">Juan Pérez</p>
+                            <p class="text-gray-600 text-sm">Gerente de Recursos Humanos</p>
+                        </footer>
+                    </div>
+                </div>
 
-        footer a:hover {
-            color: #fff;
-        }
-</style>
+                <!-- Testimonio 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="h-full flex flex-col justify-between">
+                        <div>
+                            <svg class="h-8 w-8 text-gray-400 mb-4" fill="currentColor" viewBox="0 0 32 32">
+                                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
+                            </svg>
+                            <p class="text-gray-600 mb-4">Gracias a WinFaceTracke, podemos tomar decisiones basadas en datos precisos.</p>
+                        </div>
+                        <footer class="mt-4">
+                            <p class="text-gray-900 font-semibold">Ana Gómez</p>
+                            <p class="text-gray-600 text-sm">Directora de Operaciones</p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Librerías y Animaciones -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
+    <!-- Sección de Contacto -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+                ¿Necesitas Ayuda?
+            </h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Estamos aquí para ayudarte. Si tienes alguna pregunta, no dudes en contactarnos.
+            </p>
+            <a href="/Contacto" 
+               class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 ease-in-out transform hover:scale-105">
+                Contáctanos
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </section>
 
+    <!-- Footer Moderno -->
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Enlaces Rápidos -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/Empleados" class="text-gray-400 hover:text-white transition-colors duration-200">
+                                Empleados
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Asistencia" class="text-gray-400 hover:text-white transition-colors duration-200">
+                                Asistencia
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Reportes" class="text-gray-400 hover:text-white transition-colors duration-200">
+                                Reportes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
+                <!-- Redes Sociales -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Síguenos</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <span class="sr-only">Facebook</span>
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <span class="sr-only">Twitter</span>
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <span class="sr-only">LinkedIn</span>
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Políticas -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Políticas</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/Privacidad" class="text-gray-400 hover:text-white transition-colors duration-200">
+                                Política de Privacidad
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Terminos" class="text-gray-400 hover:text-white transition-colors duration-200">
+                                Términos de Servicio
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Separador -->
+            <div class="border-t border-gray-800 mt-8 pt-8">
+                <p class="text-center text-gray-400">
+                    © 2024 - WinFaceTracke. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
