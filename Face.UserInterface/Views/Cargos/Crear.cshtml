@@ -1,38 +1,12 @@
 ﻿@model Face.EntidadesDeNegocio.Cargo
 
-@{
-    ViewData["Title"] = "Crear Cargo";
-}
-
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h1 class="text-center mb-4">Crear Nuevo Cargo</h1>
-            <div class="card shadow-lg">
-                <div class="card-body">
-                    <form asp-action="Crear">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="Nombre" class="form-label">Nombre del Cargo</label>
-                            <input asp-for="Nombre" class="form-control rounded-pill" placeholder="Ejemplo: Desarrollador" />
-                            <span asp-validation-for="Nombre" class="text-danger"></span>
-                        </div>
-
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary rounded-pill">
-                                Guardar Cargo
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="text-center mt-4">
-                <a asp-action="Index" class="btn btn-outline-secondary rounded-pill">
-                    <i class="fas fa-arrow-left"></i> Volver
-                </a>
-            </div>
-        </div>
+<h1>Crear Nuevo Cargo</h1>
+<form asp-action="Crear">
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
     </div>
-</div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

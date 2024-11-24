@@ -1,52 +1,28 @@
 ﻿@model IEnumerable<Face.EntidadesDeNegocio.Cargo>
 
-@{
-    ViewData["Title"] = "Gestión de Cargos";
-}
-
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center mb-4">Gestión de Cargos</h1>
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <p class="text-muted">Lista de todos los cargos disponibles en el sistema.</p>
-                <a asp-action="Crear" class="btn btn-success rounded-pill">
-                    <i class="fas fa-plus me-2"></i> Nuevo Cargo
-                </a>
-            </div>
-
-            <div class="table-responsive">
-                <table class="table table-bordered table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Fecha de Creación</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (!Model.Any())
-                        {
-                            <tr>
-                                <td colspan="3" class="text-center">No hay cargos disponibles</td>
-                            </tr>
-                        }
-                        else
-                        {
-                            @foreach (var cargo in Model)
-                            {
-                                <tr>
-                                    <td>@cargo.Id</td>
-                                    <td>@cargo.Nombre</td>
-                                    <td>@cargo.FechaCreacion.ToString("dd/MM/yyyy")</td>
-                                </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<h1>Gestión de Cargos</h1>
+<a asp-action="Crear" class="btn btn-success">Crear Nuevo Cargo</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Fecha de Creación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cargo in Model)
+        {
+            <tr>
+                <td>@cargo.Id</td>
+                <td>@cargo.Nombre</td>
+                <td>@cargo.FechaCreacion.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@cargo.Id" class="btn btn-primary btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@cargo.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

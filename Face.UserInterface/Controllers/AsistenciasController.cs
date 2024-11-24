@@ -10,7 +10,6 @@ namespace Face.UserInterface.Controllers
     {
         AsistenciasBL asistenciasBL = new AsistenciasBL();
         EmpleadosBL empleadosBL = new EmpleadosBL();
-        // GET: AsistenciasController
         public async Task<IActionResult> Index(Asistencias asistencias = null)
         {
             if (asistencias == null)
@@ -19,7 +18,6 @@ namespace Face.UserInterface.Controllers
                 asistencias.Top_Aux = 10;
             else if (asistencias.Top_Aux == -1)
                 asistencias.Top_Aux = 0;
-
             var lisAsistencia = await asistenciasBL.BuscarAsync(asistencias);
             var empleados = await empleadosBL.ObtenerTodosAsync();
 
@@ -27,8 +25,6 @@ namespace Face.UserInterface.Controllers
             ViewBag.Top = asistencias.Top_Aux;
             return View(lisAsistencia);
         }
-
-        // GET: AsistenciasController/Details/5
         public async Task<IActionResult> Details(int id)
         {
             var asistencia = await asistenciasBL.ObtenerPorIdConRelacionesAsync(id);
@@ -38,39 +34,29 @@ namespace Face.UserInterface.Controllers
             }
             return View(asistencia);
         }
-
-        // GET: AsistenciasController/Create
         public async Task<IActionResult> Create()
         {
             var empleados = await empleadosBL.ObtenerTodosAsync();
             ViewBag.Empleados = empleados;
             return View();
         }
-
-        // POST: AsistenciasController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Asistencias asistencias)
         {
             try
             {
-                // Lógica para crear el horario
                 int result = await asistenciasBL.CrearAsync(asistencias);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-                // En caso de error, recarga los empleados y muestra el error
                 ViewBag.Error = ex.Message;
                 var empleados = await empleadosBL.ObtenerTodosAsync();
                 ViewBag.Empleados = empleados;
                 return View(asistencias);
             }
         }
-
-
-
-        // GET: AsistenciasController/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
             var asistencia = await asistenciasBL.ObtenerPorIdAsync(new Asistencias { Id = id });
@@ -81,8 +67,6 @@ namespace Face.UserInterface.Controllers
 
             return View(asistencia);
         }
-
-        // POST: AsistenciasController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Asistencias pAsistencias)
@@ -103,15 +87,11 @@ namespace Face.UserInterface.Controllers
 
             return View(pAsistencias);
         }
-
-        // GET: AsistenciasController/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
             var asistencia = await asistenciasBL.ObtenerPorIdAsync(new Asistencias { Id = id });
             return View(asistencia);
         }
-
-        // POST: AsistenciasController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async  Task<IActionResult> Delete(int id, Asistencias asistencias)
@@ -121,7 +101,7 @@ namespace Face.UserInterface.Controllers
                 var asistencia = await asistenciasBL.ObtenerPorIdAsync(new Asistencias { Id = id });
                 if (asistencia == null)
                 {
-                    return NotFound();  // Si no se encuentra el empleado, retorna NotFound
+                    return NotFound();
                 }
                 int result = await asistenciasBL.EliminarAsync(asistencia);
                 return RedirectToAction(nameof(Index));

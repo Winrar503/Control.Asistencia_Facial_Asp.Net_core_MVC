@@ -9,6 +9,7 @@ namespace Face.UserInterface.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly CargosBL _cargosBL;
         private readonly ILogger<HomeController> _logger;
         private readonly EmpleadosBL _empleadosBL = new EmpleadosBL();
         private readonly AsistenciasBL _asistenciasBL = new AsistenciasBL();
@@ -84,6 +85,7 @@ namespace Face.UserInterface.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 

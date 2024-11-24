@@ -1,0 +1,37 @@
+﻿@model Face.EntidadesDeNegocio.Cargo
+
+@{
+    ViewData["Title"] = "Eliminar Cargo";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center text-danger mb-4">Eliminar Cargo</h1>
+            <div class="alert alert-warning text-center">
+                <strong>¿Estás seguro que deseas eliminar este cargo?</strong>
+                <p>Esta acción no se puede deshacer.</p>
+            </div>
+            <form asp-action="DeleteConfirmed" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-sm-4">ID</dt>
+                            <dd class="col-sm-8">@Model.Id</dd>
+                            <dt class="col-sm-4">Nombre</dt>
+                            <dd class="col-sm-8">@Model.Nombre</dd>
+                            <dt class="col-sm-4">Fecha de Creación</dt>
+                            <dd class="col-sm-8">@Model.FechaCreacion.ToString("dd/MM/yyyy")</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="mt-4 d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

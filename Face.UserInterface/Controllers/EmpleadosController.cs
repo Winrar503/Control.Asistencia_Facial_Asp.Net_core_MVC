@@ -20,6 +20,7 @@ namespace Face.UserInterface.Controllers
         HorariosBL horariosBL = new HorariosBL();
         ReportesBL reportesBL = new ReportesBL();
         FotosBL fotosBL = new FotosBL();
+        CargosBL cargosBL = new CargosBL();
         public async Task<IActionResult> Index(Empleados empleados = null)
         {
             if (empleados == null)
@@ -33,11 +34,15 @@ namespace Face.UserInterface.Controllers
             foreach (var empleadoss in empleado)
             {
                 empleadoss.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(empleadoss.Id);
+                empleadoss.Cargo = await cargosBL.ObtenerPorIdAsync(empleadoss.CargoId);
             }
             var asistencias = await asistenciasBL.ObtenerTodosAsync();
             var horarios = await horariosBL.ObtenerTodosAsync();
             var fotos = await fotosBL.ObtenerTodosAsync();
+            var cargos = await cargosBL.ObtenerTodosAsync();
             var reportes = await reportesBL.ObtenerTodosAsync();
+
+            ViewBag.TotalCargos = cargos.Count;
             ViewBag.Top = empleados.Top_Aux;
             return View(empleado);
         }
@@ -53,7 +58,7 @@ namespace Face.UserInterface.Controllers
         }
         public async Task<IActionResult> Crear()
         {
-            ViewBag.Cargos = await new CargosBL().ObtenerTodosAsync();
+            ViewBag.Cargos = await cargosBL.ObtenerTodosAsync(); 
             ViewBag.Error = "";
             return View();
         }
@@ -76,6 +81,7 @@ namespace Face.UserInterface.Controllers
             }
             catch (Exception ex)
             {
+                ViewBag.Cargos = await cargosBL.ObtenerTodosAsync();
                 ViewBag.Error = ex.Message;
                 return View(empleados);
             }

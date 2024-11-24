@@ -38,6 +38,7 @@ namespace Face.EntidadesDeNegocio
 
         [ForeignKey("Cargo")]
         public int CargoId { get; set; }
+        public Cargo Cargo { get; set; }
         [NotMapped]
         public int Top_Aux { get; set; }
         public ICollection<Asistencias> Asistencias { get; set; } = new List<Asistencias>();
@@ -45,6 +46,6 @@ namespace Face.EntidadesDeNegocio
         public ICollection<Horarios> Horarios { get; set; } = new List<Horarios>();
         public ICollection<Reportes> Reportes { get; set; } = new List<Reportes>();
         public ICollection<EmpleadoHorario> EmpleadoHorarios { get; set; }
-        public Cargo Cargo { get; set; }
+       
     }
 }
