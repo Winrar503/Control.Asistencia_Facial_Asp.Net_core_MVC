@@ -59,39 +59,6 @@ namespace Face.LogicaDeNegocio
         }
 
 
-        //public void EntrenarModelo(List<Empleados> empleadosConFotos)
-        //{
-        //    var images = new List<Mat>();
-        //    var labels = new List<int>();
-
-        //    foreach (var empleado in empleadosConFotos)
-        //    {
-        //        foreach (var foto in empleado.Fotos)
-        //        {
-        //            using (var ms = new MemoryStream(foto.Foto))
-        //            {
-        //                using (var bitmap = new Bitmap(ms))
-        //                {
-        //                    Mat matImage = PreprocessImage(bitmap);
-        //                    images.Add(matImage);
-        //                    labels.Add(empleado.Id);
-
-
-        //                    images.AddRange(AugmentData(matImage));
-        //                    labels.AddRange(new int[] { empleado.Id, empleado.Id, empleado.Id });
-
-        //                    _empleadoLabels[empleado.Id] = empleado.Nombre;
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //    if (images.Count > 0)
-        //    {
-        //        _recognizer.Train(images.ToArray(), labels.ToArray());
-        //    }
-        //}
-
         public string IdentificarEmpleado(byte[] fotoCapturada)
         {
             using (var ms = new MemoryStream(fotoCapturada))
@@ -154,27 +121,6 @@ namespace Face.LogicaDeNegocio
         }
 
 
-        //private List<Mat> AugmentData(Mat originalImage)
-        //{
-        //    var augmentedImages = new List<Mat>();
-
-        //    Mat rotatedImage = new Mat();
-        //    CvInvoke.Transpose(originalImage, rotatedImage);
-        //    CvInvoke.Flip(rotatedImage, rotatedImage, FlipType.Horizontal);
-        //    augmentedImages.Add(rotatedImage);
-
-        //    rotatedImage = new Mat();
-        //    CvInvoke.Transpose(originalImage, rotatedImage);
-        //    CvInvoke.Flip(rotatedImage, rotatedImage, FlipType.Vertical);
-        //    augmentedImages.Add(rotatedImage);
-
-        //    rotatedImage = new Mat();
-        //    CvInvoke.Flip(originalImage, rotatedImage, FlipType.Horizontal);
-        //    CvInvoke.Flip(rotatedImage, rotatedImage, FlipType.Vertical);
-        //    augmentedImages.Add(rotatedImage);
-
-        //    return augmentedImages;
-        //}
 
     }
 }

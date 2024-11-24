@@ -68,6 +68,7 @@ namespace Face.AccesoADatos
                 return await bdContexto.Fotos.ToListAsync();
             }
         }
+
         public static async Task<Fotos> ObtenerPorIdConRelacionesAsync(int fotosId)
         {
             using (var bdContexto = new BDContexto())

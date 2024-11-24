@@ -27,27 +27,21 @@ namespace Face.AccesoADatos
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configuración de la relación entre Cargo y Empleados
             modelBuilder.Entity<Cargo>()
                 .HasMany(c => c.Empleados)
                 .WithOne(e => e.Cargo)
                 .HasForeignKey(e => e.CargoId);
-
-            // Configuración de la clave compuesta en EmpleadoHorario
             modelBuilder.Entity<EmpleadoHorario>()
                 .HasKey(eh => new { eh.EmpleadosId, eh.HorariosId });
-
             modelBuilder.Entity<EmpleadoHorario>()
                 .HasOne(eh => eh.Empleados)
                 .WithMany(e => e.EmpleadoHorarios)
                 .HasForeignKey(eh => eh.EmpleadosId);
-
             modelBuilder.Entity<EmpleadoHorario>()
                 .HasOne(eh => eh.Horarios)
                 .WithMany(h => h.EmpleadoHorarios)
                 .HasForeignKey(eh => eh.HorariosId);
-
-            base.OnModelCreating(modelBuilder); // Mueve esta línea al final
+            base.OnModelCreating(modelBuilder); 
         }
 
     }

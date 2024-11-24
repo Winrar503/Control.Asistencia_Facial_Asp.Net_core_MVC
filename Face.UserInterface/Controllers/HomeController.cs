@@ -9,23 +9,25 @@ namespace Face.UserInterface.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly CargosBL _cargosBL;
-        private readonly ILogger<HomeController> _logger;
+        private readonly CargosBL _cargosBL = new CargosBL();
         private readonly EmpleadosBL _empleadosBL = new EmpleadosBL();
         private readonly AsistenciasBL _asistenciasBL = new AsistenciasBL();
+        private readonly ILogger<HomeController> _logger;
 
         [HttpGet]
         public async Task<IActionResult> GetDashboardMetrics()
         {
             var totalEmpleados = (await _empleadosBL.ObtenerTodosAsync()).Count;
             var totalAsistencias = (await _asistenciasBL.ObtenerTodosAsync()).Count;
+            var totalCargos = await _cargosBL.ObtenerCantidadAsync();
             var totalComentarios = (await _asistenciasBL.ObtenerTodosAsync())
-                .Count(a => !string.IsNullOrEmpty(a.Comentarios)); // Solo asistencias con comentarios
+                .Count(a => !string.IsNullOrEmpty(a.Comentarios));
 
             return Json(new
             {
                 totalEmpleados,
                 totalAsistencias,
+                totalCargos,
                 totalComentarios
             });
         }
@@ -37,16 +39,12 @@ namespace Face.UserInterface.Controllers
 
             var datos = comentarios.Select(c => new
             {
-                Empleado = c.Empleados != null ? c.Empleados.Nombre : "Desconocido", // Asegúrate de verificar null
+                Empleado = c.Empleados != null ? c.Empleados.Nombre : "Desconocido",
                 Comentario = !string.IsNullOrEmpty(c.Comentarios) ? c.Comentarios : "Sin comentario"
             }).ToList();
 
             return Json(datos);
         }
-
-
-
-
 
         [HttpPost]
         public async Task<IActionResult> GuardarComentario([FromBody] ComentarioDto comentarioDto)
@@ -71,7 +69,6 @@ namespace Face.UserInterface.Controllers
             return Json(new { success = true });
         }
 
-
         public class ComentarioDto
         {
             public string Empleado { get; set; }
@@ -85,7 +82,6 @@ namespace Face.UserInterface.Controllers
 
         public IActionResult Index()
         {
-
             return View();
         }
 

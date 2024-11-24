@@ -25,6 +25,7 @@ namespace Face.AccesoADatos
                 throw new Exception("Error al crear el Asistencia", ex);
             }
         }
+
         public static async Task<int> ModificarAsync(Asistencias pAsistencia)
         {
             int result = 0;
@@ -32,17 +33,15 @@ namespace Face.AccesoADatos
             {
                 var asistencias = await bdContexto.Asistencias.FirstOrDefaultAsync(a => a.Id == pAsistencia.Id);
                 if (asistencias != null) return 0;
-
                 asistencias.Comentarios = pAsistencia.Comentarios;
                 asistencias.Fecha = pAsistencia.Fecha;
                 asistencias.Tipo = pAsistencia.Tipo;
                 asistencias.EstadoReconocimiento = pAsistencia.EstadoReconocimiento;
-
                 result = await bdContexto.SaveChangesAsync();
-
             }
             return result;
         }
+
         public static async Task<int> EliminarAsync(Asistencias pAsistencia)
         {
             using (var bdContexto = new BDContexto())
@@ -54,6 +53,7 @@ namespace Face.AccesoADatos
                 return await bdContexto.SaveChangesAsync();
             }
         }
+
         public static async Task<Asistencias> ObtenerPorIdAsync(Asistencias pAsistencia)
         {
             using (var bdContexto = new BDContexto())
@@ -62,6 +62,7 @@ namespace Face.AccesoADatos
             }
 
         }
+
         public static async Task<List<Asistencias>> ObtenerTodosAsync()
         {
             using (var bdContexto = new BDContexto())
@@ -71,6 +72,7 @@ namespace Face.AccesoADatos
                      .ToListAsync();
             }
         }
+
         internal static IQueryable<Asistencias> QuerySelect(IQueryable<Asistencias> pQuery, Asistencias pAsistencias)
         {
             if (pAsistencias.Id > 0)
@@ -78,8 +80,6 @@ namespace Face.AccesoADatos
 
             if (!string.IsNullOrWhiteSpace(pAsistencias.Tipo))
                 pQuery = pQuery.Where(s => s.Tipo.Contains(pAsistencias.Tipo));
-
-
             pQuery = pQuery.OrderBy(s => s.Id);
 
             if (pAsistencias.Top_Aux > 0)
@@ -87,38 +87,37 @@ namespace Face.AccesoADatos
 
             return pQuery;
         }
+
         public static async Task<List<Asistencias>> BuscarAsync(Asistencias pAsistencias)
         {
             using (var bdContexto = new BDContexto())
             {
                 var query = bdContexto.Asistencias
-           .Include(a => a.Empleados) // Incluimos la relación
-           .AsQueryable();
-
+                    .Include(a => a.Empleados)
+                    .AsQueryable();
                 query = QuerySelect(query, pAsistencias);
                 return await query.ToListAsync();
             }
         }
+
         public static async Task<Asistencias> ObtenerPorIdConRelacionesAsync(int asistenciaId)
         {
             using (var bdContexto = new BDContexto())
             {
                 return await bdContexto.Asistencias
-                    .Include(e => e.Empleados)  // Incluye las Asistencias
+                    .Include(e => e.Empleados)
                     .FirstOrDefaultAsync(e => e.Id == asistenciaId);
             }
         }
+
         public static async Task<List<Asistencias>> ObtenerTodosConRelacionesAsync()
         {
             using (var bdContexto = new BDContexto())
             {
                 return await bdContexto.Asistencias
-                    .Include(a => a.Empleados) // Asegúrate de cargar la relación
+                    .Include(a => a.Empleados)
                     .ToListAsync();
             }
         }
-
-
-
     }
 }

@@ -26,7 +26,6 @@ namespace Face.AccesoADatos
             }
         }
 
-
         public static async Task<int> ModificarAsync(Cargo cargo)
         {
             using (var dbContext = new BDContexto())
@@ -84,11 +83,9 @@ namespace Face.AccesoADatos
             using (var dbContext = new BDContexto())
             {
                 return await dbContext.Cargos
-                    .Include(c => c.Empleados) // Incluye la relación con empleados
+                    .Include(c => c.Empleados)
                     .ToListAsync();
             }
         }
-
-
     }
 }

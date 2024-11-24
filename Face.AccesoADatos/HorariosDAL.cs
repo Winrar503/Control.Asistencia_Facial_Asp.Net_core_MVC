@@ -25,13 +25,13 @@ namespace Face.AccesoADatos
                 throw new Exception("Error al crear el Horario", ex); 
             }
         }
+
         public static async Task<int> ModificarAsync(Horarios pHorario)
         {
             using (var bdContexto = new BDContexto())
             {
                 var horarios = await bdContexto.Horarios.FirstOrDefaultAsync(h => h.Id == pHorario.Id);
                 if (horarios == null) return 0;
-
                 horarios.HoraEntrada = pHorario.HoraEntrada;
                 horarios.HoraSalida = pHorario.HoraSalida;
                 horarios.EmpleadosId = pHorario.EmpleadosId;
@@ -39,6 +39,7 @@ namespace Face.AccesoADatos
                 return await bdContexto.SaveChangesAsync();
             }
         }
+
         public static async Task<int> EliminarAsync(Horarios pHorario)
         {
             using (var bdContexto = new BDContexto())
@@ -66,6 +67,7 @@ namespace Face.AccesoADatos
                 return await bdContexto.Horarios.ToListAsync();
             }
         }
+
         public static async Task<Horarios> ObtenerPorIdConRelacionesAsync(int horariosId)
         {
             using (var bdContexto = new BDContexto())

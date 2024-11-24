@@ -36,7 +36,6 @@ namespace Face.AccesoADatos
                     empleadosBD.Nombre = pEmpleados.Nombre;
                     empleadosBD.Edad = pEmpleados.Edad;
                     empleadosBD.Email = pEmpleados.Email;
-                    //empleadosBD.Cargo = pEmpleados.Cargo;
                     empleadosBD.Telefono = pEmpleados.Telefono;
                     empleadosBD.Estado = pEmpleados.Estado;
                     empleadosBD.FechaRegistro = pEmpleados.FechaRegistro;
@@ -48,6 +47,7 @@ namespace Face.AccesoADatos
                 return 0;
             }
         }
+
         public static async Task<int> EliminarAsync(Empleados pEmpleados)
         {
             using (var bdContexto = new BDContexto())
@@ -63,18 +63,6 @@ namespace Face.AccesoADatos
                 return await bdContexto.SaveChangesAsync();
             }
         }
-
-        //public static async Task<int> EliminarAsync(Empleados pEmpleados)
-        //{
-        //    using (var bdContexto = new BDContexto())
-        //    {
-        //        var empleados = await bdContexto.Empleados.FirstOrDefaultAsync(s => s.Id == pEmpleados.Id);
-        //        if (empleados == null) return 0;
-
-        //        bdContexto.Empleados.Remove(empleados);
-        //        return await bdContexto.SaveChangesAsync();
-        //    }
-        //}
 
         public static async Task<Empleados> ObtenerPorIdAsync(Empleados pEmpleados)
         {
@@ -100,28 +88,25 @@ namespace Face.AccesoADatos
 
             if (!string.IsNullOrWhiteSpace(pEmpleados.Nombre))
                 pQuery = pQuery.Where(s => s.Nombre.Contains(pEmpleados.Nombre));
-
-
             pQuery = pQuery.OrderBy(s => s.Id);
-
-
             if (pEmpleados.Top_Aux > 0)
                 pQuery = pQuery.Take(pEmpleados.Top_Aux).AsQueryable();
-
             return pQuery;
         }
+
         public static async Task<Empleados> ObtenerPorIdConRelacionesAsync(int empleadoId)
         {
             using (var bdContexto = new BDContexto())
             {
                 return await bdContexto.Empleados
-                    .Include(e => e.Asistencias)  // Incluye las Asistencias
-                    .Include(e => e.Horarios)     // Incluye los Horarios
-                    .Include(e => e.Reportes)     // Incluye los Reportes
+                    .Include(e => e.Asistencias)
+                    .Include(e => e.Horarios)
+                    .Include(e => e.Reportes)
                     .Include(e => e.Fotos)
                     .FirstOrDefaultAsync(e => e.Id == empleadoId);
             }
         }
+
         public static async Task<List<Empleados>> BuscarAsync(Empleados pEmpleados)
         {
           using (var bdContexto = new BDContexto())
@@ -131,6 +116,7 @@ namespace Face.AccesoADatos
                 return await select.ToListAsync();
             }
         }
+
         public static async Task<Empleados> ObtenerPorNombreAsync(string nombre)
         {
             using (var bdContexto = new BDContexto())

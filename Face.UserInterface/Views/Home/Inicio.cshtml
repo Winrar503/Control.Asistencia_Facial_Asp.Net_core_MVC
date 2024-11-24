@@ -1,4 +1,4 @@
-﻿@using Face.EntidadesDeNegocio
+﻿@* @using Face.EntidadesDeNegocio
 
 @{
     ViewData["Title"] = "Dashboard Mejorado";
@@ -281,16 +281,12 @@
     </script>
 
 </body>
-</html>
+</html> *@
 
-
-
-
-@* @using Face.EntidadesDeNegocio
-<link rel="stylesheet" href="~/css/" />
+@using Face.EntidadesDeNegocio
 
 @{
-    ViewData["Title"] = "Dashboard";
+    ViewData["Title"] = "Dashboard Mejorado";
 }
 
 <!DOCTYPE html>
@@ -298,101 +294,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard Mejorado</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        .metric-card {
+        body {
+            background: #f7f8fc;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .dashboard-container {
+            max-width: 1300px;
+            margin: 0 auto;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            .dashboard-header h1 {
+                font-size: 3rem;
+                color: #4a90e2;
+                font-weight: bold;
+            }
+
+            .dashboard-header p {
+                font-size: 1.2rem;
+                color: #666;
+            }
+
+        .metric-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 15px;
+            background: #fff;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
             .metric-card:hover {
                 transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             }
 
+            .metric-card h5 {
+                font-size: 1.3rem;
+                font-weight: bold;
+            }
+
+            .metric-card p {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+
+        .metric-icon {
+            font-size: 3rem;
+            color: #4a90e2;
+        }
+
         .chart-container {
-            background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #4a90e2;
         }
 
         .table-container {
-            background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
         }
 
-        .action-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
+        .btn-modern {
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 20px;
+            background: #4a90e2;
+            color: #fff;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
         }
+
+            .btn-modern:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(74, 144, 226, 0.6);
+            }
+
+        .action-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        table {
+            color: #333;
+        }
+
+            table thead {
+                background: #4a90e2;
+                color: #fff;
+            }
     </style>
 </head>
 <body>
 
-    <div class="container mt-5">
-        <!-- Título -->
-        <div class="text-center mb-5">
-            <h1 class="display-4" style="color: #3d72b4;">Información General</h1>
-            <p class="text-muted">Resumen de métricas y datos clave</p>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="dashboard-header">
+            <h1>Informacion General</h1>
+            <p>Controla tu plataforma con datos y gráficos dinámicos.</p>
         </div>
 
         <!-- Métricas Principales -->
-        <div class="row text-center mb-4">
-            <div class="col-md-4">
-                <div class="metric-card bg-primary text-white">
-                    <h5>Total de Empleados</h5>
-                    <p id="totalEmpleados">0</p>
+        <div class="row text-center mb-5">
+            <div class="col-md-3">
+                <a asp-controller="Empleados" asp-action="Index" class="text-decoration-none">
+                <div class="metric-card">
+                    <div>
+                        <h5>Total de Empleados</h5>
+                        <p id="totalEmpleados">0</p>
+                    </div>
+                    <i class="fas fa-users metric-icon"></i>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a asp-controller="Asistencias" asp-action="Index" class="text-decoration-none">
+                <div class="metric-card">
+                    <div>
+                        <h5>Total de Asistencias</h5>
+                        <p id="totalAsistencias">0</p>
+                    </div>
+                    <i class="fas fa-check-circle metric-icon"></i>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card">
+                    <div>
+                        <h5>Comentarios Registrados</h5>
+                        <p id="totalComentarios">0</p>
+                    </div>
+                    <i class="fas fa-comment-alt metric-icon"></i>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="metric-card bg-success text-white">
-                    <h5>Total de Asistencias</h5>
-                    <p id="totalAsistencias">0</p>
+            <div class="col-md-3">
+                <a asp-controller="Cargos" asp-action="Index" class="text-decoration-none">
+                <div class="metric-card">
+                    <div>
+                        <h5>Total de Cargos</h5>
+                        <p id="totalCargos">0</p>
+                    </div>
+                    <i class="fas fa-briefcase metric-icon"></i>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="metric-card bg-warning text-white">
-                    <h5>Comentarios Registrados</h5>
-                    <p id="totalComentarios">0</p>
-                </div>
+                </a>
             </div>
         </div>
 
         <!-- Botones de Acción -->
         <div class="action-buttons">
-            <button class="btn btn-info" onclick="mostrarReporte()">Ver Reporte Completo</button>
-            <button class="btn btn-primary" onclick="nuevaFuncionalidad()">Nueva Función</button>
+            <button class="btn-modern" onclick="mostrarReporte()">Ver Reporte Completo</button>
+            <button class="btn-modern" onclick="nuevaFuncionalidad()">Nueva Función</button>
         </div>
 
         <!-- Gráficos -->
         <div class="row mb-4">
             <div class="col-md-6">
                 <div class="chart-container">
-                    <h5>Asistencias Mensuales</h5>
+                    <div class="chart-title">Asistencias Mensuales</div>
                     <canvas id="asistenciasChart"></canvas>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="chart-container">
-                    <h5>Distribución de Empleados</h5>
+                    <div class="chart-title">Distribución de Empleados</div>
                     <canvas id="empleadosChart"></canvas>
                 </div>
             </div>
         </div>
 
         <!-- Tabla de Registros de Comentarios -->
-        <h4>Tabla de Comentarios</h4>
         <div class="table-container mt-3">
-            <table class="table table-striped table-bordered">
-                <thead class="table-light">
+            <h4 class="mb-4">Tabla de Comentarios</h4>
+            <table class="table table-striped table-hover">
+                <thead>
                     <tr>
                         <th>Empleado</th>
                         <th>Comentario</th>
@@ -408,27 +512,16 @@
     <script>
         async function obtenerDatos() {
             try {
-                // Obtener métricas principales
                 const metricsResponse = await fetch('/Home/GetDashboardMetrics');
                 const metrics = await metricsResponse.json();
+
                 document.getElementById('totalEmpleados').innerText = metrics.totalEmpleados;
                 document.getElementById('totalAsistencias').innerText = metrics.totalAsistencias;
+                document.getElementById('totalCargos').innerText = metrics.totalCargos; // Mostrar Total de Cargos
                 document.getElementById('totalComentarios').innerText = metrics.totalComentarios;
 
-                // Actualizar tabla de comentarios
-                const commentsResponse = await fetch('/Home/ObtenerComentarios');
-                const comments = await commentsResponse.json();
-                const tbody = document.getElementById('tablaComentarios');
-                tbody.innerHTML = '';
-                comments.forEach(item => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `<td>${item.Empleado}</td><td>${item.Comentario}</td>`;
-                    tbody.appendChild(row);
-                });
-
-                // Actualizar gráficos
-                actualizarAsistenciasChart(metrics.asistenciasMensuales);
-                actualizarEmpleadosChart(metrics.empleadosPorDepartamento);
+                actualizarAsistenciasChart(metrics.asistenciasMensuales || [5, 10, 15]);
+                actualizarEmpleadosChart(metrics.empleadosPorDepartamento || { "TI": 5, "RH": 3 });
             } catch (error) {
                 console.error('Error al obtener datos:', error);
             }
@@ -443,17 +536,12 @@
                     datasets: [{
                         label: 'Asistencias',
                         data: data,
-                        backgroundColor: 'rgba(61, 114, 180, 0.7)',
-                        borderColor: 'rgba(61, 114, 180, 1)',
+                        backgroundColor: '#4a90e2',
+                        borderColor: '#307ed1',
                         borderWidth: 1
                     }]
                 },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false }
-                    }
-                }
+                options: { responsive: true }
             });
         }
 
@@ -468,122 +556,21 @@
                         backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0']
                     }]
                 },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { position: 'bottom' }
-                    }
-                }
+                options: { responsive: true }
             });
         }
 
         function mostrarReporte() {
-            alert('Función para mostrar reporte completo en desarrollo.');
+            alert('Función de reporte en desarrollo...');
         }
 
         function nuevaFuncionalidad() {
-            alert('Aquí se puede agregar una nueva funcionalidad en el futuro.');
+            alert('Nueva funcionalidad próximamente...');
         }
 
-        // Llamar a la función al cargar la página
         obtenerDatos();
-
-        // Refrescar datos cada 5 segundos
         setInterval(obtenerDatos, 5000);
     </script>
+
 </body>
 </html>
- *@
-
-@* @using Face.EntidadesDeNegocio
-@{
-    ViewData["Title"] = "Home Page";
-    List<Empleados> empleados = ViewBag.Empleados as List<Empleados>;
-    List<Asistencias> asistencias = ViewBag.Asistencias as List<Asistencias>;
-}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="~/css/home.css" />
-</head>
-<body>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="metric-card red">
-                    <h5>Total de Empleados</h5>
-                    <p class="h3" id="totalEmpleados">Cargando...</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="metric-card blue">
-                    <h5>Total de Asistencias</h5>
-                    <p class="h3" id="totalAsistencias">Cargando...</p>
-                </div>
-            </div>
-        </div>
-        <h4>Tabla de comentarios</h4>
-        <div class="table-container">
-            <table class="table table-bordered">
-                <thead class="thead-light">
-                    <tr>
-                        <th>Empleado</th>
-                        <th>Comentario</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaComentarios">
-                </tbody>
-            </table>
-        </div>
-        <script>
-            function actualizarMetricas() {
-                fetch('/Home/GetDashboardMetrics')
-                    .then(response => response.json())
-                    .then(data => {
-                        const totalEmpleadosEl = document.getElementById('totalEmpleados');
-                        const totalAsistenciasEl = document.getElementById('totalAsistencias');
-                        if (totalEmpleadosEl.innerText != data.totalEmpleados) {
-                            totalEmpleadosEl.innerText = data.totalEmpleados;
-                            totalEmpleadosEl.classList.add('animate-metric');
-                            setTimeout(() => totalEmpleadosEl.classList.remove('animate-metric'), 500);
-                        }
-                        if (totalAsistenciasEl.innerText != data.totalAsistencias) {
-                            totalAsistenciasEl.innerText = data.totalAsistencias;
-                            totalAsistenciasEl.classList.add('animate-metric');
-                            setTimeout(() => totalAsistenciasEl.classList.remove('animate-metric'), 500);
-                        }
-                    })
-                    .catch(error => console.error('Error al obtener métricas:', error));
-            }
-            function actualizarTablaComentarios() {
-                fetch('/Home/ObtenerComentarios')
-                    .then(response => response.json())
-                    .then(data => {
-                        const tbody = document.getElementById('tablaComentarios');
-                        tbody.innerHTML = '';
-                        data.forEach(item => {
-                            const empleado = item.empleado || "Desconocido";
-                            const comentario = item.comentario || "Sin comentario";
-                            const row = document.createElement('tr');
-                            row.classList.add('new-row');
-                            row.innerHTML = `<td>${empleado}</td><td>${comentario}</td>`;
-                            tbody.appendChild(row);
-                        });
-                    })
-                    .catch(error => console.error('Error al actualizar la tabla de comentarios:', error));
-            }
-            actualizarMetricas();
-            actualizarTablaComentarios();
-            setInterval(actualizarMetricas, 5000);
-            setInterval(actualizarTablaComentarios, 5000);
-        </script>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-</body>
-</html> *@
