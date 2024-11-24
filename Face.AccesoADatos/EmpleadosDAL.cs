@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Face.AccesoADatos
 {
@@ -83,8 +84,17 @@ namespace Face.AccesoADatos
 
         internal static IQueryable<Empleados> QuerySelect(IQueryable<Empleados> pQuery, Empleados pEmpleados)
         {
+            if (pEmpleados.CargoId > 0)
+            {
+                pQuery = pQuery.Where(e => e.CargoId == pEmpleados.CargoId);
+            }
+            if (!string.IsNullOrWhiteSpace(pEmpleados.Nombre))
+            {
+                pQuery = pQuery.Where(e => e.Nombre.Contains(pEmpleados.Nombre));
+            }
             if (pEmpleados.Id > 0)
                 pQuery = pQuery.Where(s => s.Id == pEmpleados.Id);
+
 
             if (!string.IsNullOrWhiteSpace(pEmpleados.Nombre))
                 pQuery = pQuery.Where(s => s.Nombre.Contains(pEmpleados.Nombre));
@@ -106,16 +116,24 @@ namespace Face.AccesoADatos
                     .FirstOrDefaultAsync(e => e.Id == empleadoId);
             }
         }
-
-        public static async Task<List<Empleados>> BuscarAsync(Empleados pEmpleados)
+        public static async Task<List<Empleados>> BuscarAsync(Empleados empleado)
         {
-          using (var bdContexto = new BDContexto())
+            using (var dbContext = new BDContexto())
             {
-                var select = bdContexto.Empleados.AsQueryable();
-                select = QuerySelect(select, pEmpleados);
-                return await select.ToListAsync();
+                var query = dbContext.Empleados.AsQueryable();
+                query = QuerySelect(query, empleado); // Usamos el filtro aquí
+                return await query.ToListAsync();
             }
         }
+        //public static async Task<List<Empleados>> BuscarAsync(Empleados pEmpleados)
+        //{
+        //  using (var bdContexto = new BDContexto())
+        //    {
+        //        var select = bdContexto.Empleados.AsQueryable();
+        //        select = QuerySelect(select, pEmpleados);
+        //        return await select.ToListAsync();
+        //    }
+        //}
 
         public static async Task<Empleados> ObtenerPorNombreAsync(string nombre)
         {

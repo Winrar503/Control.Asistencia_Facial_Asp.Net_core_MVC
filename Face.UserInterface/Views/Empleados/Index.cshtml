@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<Face.EntidadesDeNegocio.Empleados>
 @using Face.EntidadesDeNegocio
+
 @{
     ViewData["Title"] = "Gestión de Talento";
+    var cargos = ViewBag.Cargos as List<Cargo>;
+    int cargoSeleccionado = ViewBag.CargoSeleccionado ?? 0;
 }
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -52,7 +55,6 @@
                     <div class="card-body text-center">
                         <i class="fas fa-briefcase fa-3x text-info mb-3"></i>
                         <h5 class="card-title">Cargos Únicos</h5>
-                        <!-- Total de cargos desde ViewBag -->
                         <p class="card-text display-6 fw-bold">@ViewBag.TotalCargos</p>
                     </div>
                 </a>
@@ -60,9 +62,41 @@
         </div>
     </div>
 
-    <!-- Barra de búsqueda y botón de acción -->
+    <!-- Filtro de cargos y barra de búsqueda -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <form asp-action="Index" method="get" class="search-form d-flex flex-grow-1 me-3">
+        <div class="dropdown">
+            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                @if (cargoSeleccionado == 0)
+                {
+                    @:Todos los Empleados
+                }
+                else
+                {
+                    @(cargos?.FirstOrDefault(c => c.Id == cargoSeleccionado)?.Nombre ?? "Seleccionar Cargo")
+                }
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item @(cargoSeleccionado == 0 ? "active" : "")" asp-action="Index" asp-route-cargoId="0">
+                        Todos los Empleados
+                    </a>
+                </li>
+                @if (cargos != null)
+                {
+                    foreach (var cargo in cargos)
+                    {
+                        <li>
+                            <a class="dropdown-item @(cargoSeleccionado == cargo.Id ? "active" : "")" asp-action="Index" asp-route-cargoId="@cargo.Id">
+                                @cargo.Nombre
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+        <!-- Barra de búsqueda -->
+        <form asp-action="Index" method="get" class="search-form d-flex flex-grow-1 ms-3">
             <div class="input-group">
                 <span class="input-group-text bg-transparent border-0">
                     <i class="fas fa-search text-muted"></i>
@@ -73,7 +107,9 @@
                 Buscar
             </button>
         </form>
-        <a asp-action="Crear" class="btn btn-success btn-lg rounded-pill">
+
+        <!-- Botón nuevo empleado -->
+        <a asp-action="Crear" class="btn btn-success btn-lg rounded-pill ms-3">
             <i class="fas fa-user-plus me-2"></i> Nuevo Empleado
         </a>
     </div>
@@ -81,21 +117,21 @@
     <!-- Tabla de empleados -->
     <div class="card shadow-sm rounded-3 overflow-hidden">
         <div class="card-body p-0">
-            <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
-                    <thead>
-                        <tr class="bg-light">
-                            <th class="py-3 px-4">Empleado</th>
-                            <th class="py-3 px-4">Cargo</th>
-                            <th class="py-3 px-4">Contacto</th>
-                            <th class="py-3 px-4">Estado</th>
-                            <th class="py-3 px-4">Fecha de Ingreso</th>
-                            <th class="py-3 px-4 text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (Model != null && Model.Any())
-                        {
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead>
+                            <tr class="bg-light">
+                                <th class="py-3 px-4">Empleado</th>
+                                <th class="py-3 px-4">Cargo</th>
+                                <th class="py-3 px-4">Contacto</th>
+                                <th class="py-3 px-4">Estado</th>
+                                <th class="py-3 px-4">Fecha de Ingreso</th>
+                                <th class="py-3 px-4 text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             @foreach (var item in Model)
                             {
                                 <tr class="hover-row">
@@ -121,13 +157,9 @@
                                         </div>
                                     </td>
                                     <td class="py-3 px-4">
-                                        <span class="badge bg-light text-dark">@item.Cargo.Nombre</span>
+                                        <span class="badge bg-light text-dark">@item.Cargo?.Nombre</span>
                                     </td>
-
-                                    <td class="py-3 px-4">
-                                        <div>@item.Telefono</div>
-                                        <small class="text-muted">@item.Edad años</small>
-                                    </td>
+                                    <td class="py-3 px-4">@item.Telefono</td>
                                     <td class="py-3 px-4">
                                         <span class="badge rounded-pill @(item.Estado ? "bg-success-subtle text-success" : "bg-danger-subtle text-danger")">
                                             @(item.Estado ? "Activo" : "Inactivo")
@@ -145,27 +177,23 @@
                                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger mx-1" title="Eliminar">
                                                 <i class="fas fa-trash"></i>
                                             </a>
-                                            <a asp-action="CapturarFotos" asp-route-empleadoId="@item.Id" class="btn btn-sm btn-outline-secondary mx-1" title="Capturar Fotos">
-                                                <i class="fas fa-camera"></i>
-                                            </a>
                                         </div>
                                     </td>
                                 </tr>
                             }
-                        }
-                        else
-                        {
-                            <tr>
-                                <td colspan="6" class="text-center py-4">No hay empleados registrados.</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-4">
+                    <h5>No hay empleados registrados para este cargo.</h5>
+                </div>
+            }
         </div>
     </div>
 </div>
-
 <style>
     body {
         font-family: 'Inter', sans-serif;
