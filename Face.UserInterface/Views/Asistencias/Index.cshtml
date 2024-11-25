@@ -1,84 +1,4 @@
-﻿@* @model IEnumerable<Face.EntidadesDeNegocio.Asistencias>
-@using Face.EntidadesDeNegocio
-
-@{
-    ViewData["Title"] = "Index";
-    int numPage = 1;
-    int numRegistros = 0;
-    int numRegistrosPorPage = 10;
-    int[] tops = { 10, 20, 50, 100, 500, 1000, 10000, -1 };
-    int topActual = Convert.ToInt32(ViewBag.Top);
-    List<Empleados> empleados = ViewBag.Empleados as List<Empleados>;
-}
-
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.EmpleadosId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Comentarios)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fecha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstadoReconocimiento)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmpleadosId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comentarios)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstadoReconocimiento)
-            </td>
-                <td>
-                    @Html.ActionLink("Modificar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info" })
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-outline-danger" })
-                </td>
-        </tr>
-}
-    </tbody>
-</table>
-@if (numPage > 1)
-{
-    <div class="row" style="overflow:auto">
-        <div class="col-md-12">
-            <ul class="pagination paginationjs" data-numpage="@numPage" data-pageactive="1">
-                <li class="page-item" data-typepage="Previous"><a class="page-link" href="#">Previous</a></li>
-                @for (var i = 1; i <= numPage; i++)
-                {
-                    <li class="page-item" data-page="@i" data-typepage="Item"><a class="page-link" href="#">@i</a></li>
-                }
-                <li class="page-item" data-typepage="Next"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </div>
-    </div>
-} *@
-@model IEnumerable<Face.EntidadesDeNegocio.Asistencias>
+﻿@model IEnumerable<Face.EntidadesDeNegocio.Asistencias>
 @using Face.EntidadesDeNegocio
 
 @{
@@ -114,6 +34,7 @@
                     <th class="p-3">Comentarios</th>
                     <th class="p-3">Fecha</th>
                     <th class="p-3">Tipo</th>
+                    <th class="p-3">Horas Extras</th>
                     <th class="p-3">Estado</th>
                     <th class="p-3">Acciones</th>
                 </tr>
@@ -130,6 +51,16 @@
                             <span class="badge rounded-pill bg-info text-dark">
                                 @Html.DisplayFor(modelItem => item.Tipo)
                             </span>
+                        </td>
+                        <td class="p-3">
+                            @if (item.HorasExtras.HasValue && item.HorasExtras > 0)
+                            {
+                                <span class="badge bg-success">@item.HorasExtras.Value.ToString("F2") hrs</span>
+                            }
+                            else
+                            {
+                                <span class="text-muted">N/A</span>
+                            }
                         </td>
                         <td class="p-3">
                             <span class="badge rounded-pill @(item.EstadoReconocimiento == "Exitoso" ? "bg-success" : "bg-danger")">

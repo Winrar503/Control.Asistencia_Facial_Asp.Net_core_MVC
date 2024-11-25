@@ -21,6 +21,7 @@ namespace Face.EntidadesDeNegocio
         [Required(ErrorMessage = "Es requerido si es de salida oh entrada")]
         [MaxLength(50, ErrorMessage = "El largo maximo es 100 caracteres")]
         public string Tipo { get; set; }
+        public decimal? HorasExtras { get; set; } // Nuevo campo
         public string EstadoReconocimiento { get; set; }
 
         [NotMapped]
