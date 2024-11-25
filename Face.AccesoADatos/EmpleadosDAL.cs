@@ -71,7 +71,7 @@ namespace Face.AccesoADatos
             {
                 return await bdContexto.Empleados.FirstOrDefaultAsync(s => s.Id == pEmpleados.Id);
             }
-            
+
         }
 
         public static async Task<List<Empleados>> ObtenerTodosAsync()
@@ -142,6 +142,19 @@ namespace Face.AccesoADatos
                 return await bdContexto.Empleados
                     .FirstOrDefaultAsync(e => e.Nombre == nombre);
             }
+        }
+
+
+        public static async Task<List<Empleados>> ObtenerTodosConRelacionesAsync()
+        {
+            using (var bdContexto = new BDContexto())
+            {
+                return await bdContexto.Empleados
+                    .Include(e => e.Cargo) // Relación con Cargo
+                    .Include(e => e.Fotos) // Relación con Fotos
+                    .ToListAsync();
+            }
+
         }
     }
 }

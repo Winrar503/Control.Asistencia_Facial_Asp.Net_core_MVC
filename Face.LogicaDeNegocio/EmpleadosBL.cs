@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Face.LogicaDeNegocio
 {
     public class EmpleadosBL
@@ -49,5 +50,12 @@ namespace Face.LogicaDeNegocio
         {
             return await EmpleadosDAL.ObtenerPorNombreAsync(nombre);
         }
+
+        public async Task<List<Empleados>> ObtenerTodosConRelacionesAsync()
+        {
+            return await EmpleadosDAL.ObtenerTodosConRelacionesAsync(); // Llamar directamente al método estático
+        }
+
+
     }
 }

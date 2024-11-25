@@ -95,5 +95,36 @@ namespace Face.UserInterface.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetAsistenciasMensuales()
+        {
+            var asistencias = await _asistenciasBL.ObtenerTodosAsync();
+            var asistenciasPorMes = asistencias
+                .Where(a => a.Fecha.Year == DateTime.Now.Year) // Filtrar asistencias del año actual
+                .GroupBy(a => a.Fecha.Month)
+                .Select(g => new { Mes = g.Key, Total = g.Count() })
+                .ToDictionary(g => g.Mes, g => g.Total);
+
+            // Rellenar los meses faltantes con 0 asistencias
+            var asistenciasMensuales = Enumerable.Range(1, 12).Select(m => asistenciasPorMes.ContainsKey(m) ? asistenciasPorMes[m] : 0).ToArray();
+
+            return Json(asistenciasMensuales);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetDistribucionEmpleados()
+        {
+            var empleados = await _empleadosBL.ObtenerTodosConRelacionesAsync();
+            var distribucionPorCargo = empleados
+                .GroupBy(e => e.Cargo?.Nombre ?? "Sin Cargo")
+                .Select(g => new { Cargo = g.Key, Total = g.Count() })
+                .ToDictionary(g => g.Cargo, g => g.Total);
+
+            return Json(distribucionPorCargo);
+        }
+
+
     }
 }
