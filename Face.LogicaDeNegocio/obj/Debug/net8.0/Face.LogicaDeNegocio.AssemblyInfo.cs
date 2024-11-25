@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Face.LogicaDeNegocio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92a0aed0b385f89878a34eec0cd411d2e7eb7ebc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ce1574bd1bae5f87600e3a5b688452033590250")]
 [assembly: System.Reflection.AssemblyProductAttribute("Face.LogicaDeNegocio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Face.LogicaDeNegocio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

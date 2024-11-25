@@ -165,10 +165,12 @@
             </div>
             <div class="col-md-3">
                 <div class="metric-card">
+                     <a asp-controller="Asistencias" asp-action="Index" class="text-decoration-none">
                     <div>
                         <h5>Comentarios Registrados</h5>
                         <p id="totalComentarios">0</p>
                     </div>
+                    </a>
                     <i class="fas fa-comment-alt metric-icon"></i>
                 </div>
             </div>
@@ -218,13 +220,17 @@
                     </tr>
                 </thead>
                 <tbody id="tablaComentarios">
-                    <!-- Datos cargados dinámicamente -->
+                    <tr>
+                        <td colspan="2" class="text-center">Cargando comentarios...</td>
+                    </tr>
                 </tbody>
+
             </table>
         </div>
     </div>
 
     <script>
+
         async function obtenerDatos() {
             try {
                 // Métricas principales
@@ -309,6 +315,35 @@
 
         obtenerDatos();
         setInterval(obtenerDatos, 5000);
+
+        async function actualizarTablaComentarios() {
+            try {
+                const response = await fetch('/Home/ObtenerComentarios');
+                const comentarios = await response.json();
+
+                const tablaComentarios = document.getElementById('tablaComentarios');
+                tablaComentarios.innerHTML = ''; // Limpiar tabla
+
+                if (comentarios.length === 0) {
+                    tablaComentarios.innerHTML = `<tr><td colspan="2" class="text-center">No hay comentarios disponibles</td></tr>`;
+                } else {
+                    comentarios.forEach(item => {
+                        const fila = document.createElement('tr');
+                        fila.innerHTML = `
+                            <td>${item.Empleado || 'Desconocido'}</td>
+                            <td>${item.Comentario || 'Sin comentario'}</td>
+                        `;
+                        tablaComentarios.appendChild(fila);
+                    });
+                }
+            } catch (error) {
+                console.error('Error al obtener los comentarios:', error);
+                tablaComentarios.innerHTML = `<tr><td colspan="2" class="text-center">Error al cargar comentarios</td></tr>`;
+            }
+        }
+
+    </script>
+
     </script>
 
 </body>

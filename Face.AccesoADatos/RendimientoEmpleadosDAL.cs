@@ -1,4 +1,5 @@
 ﻿using Face.EntidadesDeNegocio;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,34 @@ namespace Face.AccesoADatos
             {
                 return await context.RendimientoEmpleados
                     .Where(r => r.EmpleadosId == empleadoId)
+                    .ToListAsync();
+            }
+        }
+        public static async Task CalcularRendimientoAsync(int empleadoId, DateTime fechaInicio, DateTime fechaFin)
+        {
+            using (var bdContext = new BDContexto())
+            {
+                var sql = "EXEC SP_CalcularRendimientoEmpleados @EmpleadoId, @FechaInicio, @FechaFin";
+                var parameters = new[]
+                {
+                    new SqlParameter("@EmpleadoId", empleadoId),
+                    new SqlParameter("@FechaInicio", fechaInicio),
+                    new SqlParameter("@FechaFin", fechaFin)
+                };
+
+                await bdContext.Database.ExecuteSqlRawAsync(sql, parameters);
+            }
+        }
+
+        // Obtener registros de rendimiento para un empleado y rango de fechas
+        public static async Task<List<RendimientoEmpleados>> ObtenerPorEmpleadoYRangoAsync(int empleadoId, DateTime fechaInicio, DateTime fechaFin)
+        {
+            using (var bdContext = new BDContexto())
+            {
+                return await bdContext.RendimientoEmpleados
+                    .Where(r => r.EmpleadosId == empleadoId &&
+                                r.FechaInicio >= fechaInicio &&
+                                r.FechaFin <= fechaFin)
                     .ToListAsync();
             }
         }

@@ -10,7 +10,7 @@ namespace Face.UserInterface.Controllers
     {
         EmpleadosBL empleadosBL = new EmpleadosBL();
         HorariosBL horariosBL = new HorariosBL();
-        // GET: HorariosController
+
         public async Task<IActionResult> Index(Horarios horarios = null)
         {
             if (horarios == null)
@@ -49,13 +49,12 @@ namespace Face.UserInterface.Controllers
         {
             try
             {
-                // Lógica para crear el horario
+
                 int result = await horariosBL.CrearAsync(horarios);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-                // En caso de error, recarga los empleados y muestra el error
                 ViewBag.Error = ex.Message;
                 var horario = await empleadosBL.ObtenerTodosAsync();
                 ViewBag.Empleados = horario;
@@ -65,7 +64,6 @@ namespace Face.UserInterface.Controllers
 
        
 
-        // GET: HorariosController/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
             var horario = await horariosBL.ObtenerPorIdAsync(new Horarios { Id = id });
@@ -77,7 +75,7 @@ namespace Face.UserInterface.Controllers
             return View(horario);
         }
 
-        // POST: HorariosController/Edit/5
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Horarios pHorarios)
@@ -99,14 +97,13 @@ namespace Face.UserInterface.Controllers
             return View(pHorarios);
         }
 
-        // GET: HorariosController/Delete/5
+
         public async Task<ActionResult> Delete(int id)
         {
             var horarios = await horariosBL.ObtenerPorIdAsync(new Horarios { Id = id });
             return View(horarios);
         }
 
-        // POST: LibrosController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id, Horarios horarios)
@@ -116,7 +113,7 @@ namespace Face.UserInterface.Controllers
                 var horario = await horariosBL.ObtenerPorIdAsync(new Horarios { Id = id });
                 if (horario == null)
                 {
-                    return NotFound();  // Si no se encuentra el empleado, retorna NotFound
+                    return NotFound();
                 }
                 int result = await horariosBL.EliminarAsync(horario);
                 return RedirectToAction(nameof(Index));

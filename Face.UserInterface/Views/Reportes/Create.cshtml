@@ -1,24 +1,36 @@
 ﻿@model Face.EntidadesDeNegocio.Reportes
+
 @{
-    ViewData["Title"] = "Generar Reporte de Empleado";
+    ViewData["Title"] = "Crear Reporte";
 }
 
-<h2>Generar Reporte para @ViewBag.EmpleadoNombre</h2>
+<div class="container mt-5">
+    <h2 class="text-center">@ViewData["Title"]</h2>
+    <p class="text-center">Genera un reporte para el empleado: <strong>@ViewBag.EmpleadoNombre</strong></p>
 
-<form asp-action="Create">
-    <input type="hidden" asp-for="EmpleadosId" />
+    <form asp-action="Create" method="post">
+        <div class="form-group mb-3">
+            <label for="FechaInicio">Fecha de Inicio</label>
+            <input asp-for="FechaInicio" class="form-control" type="date" />
+            <span asp-validation-for="FechaInicio" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label for="FechaFin">Fecha de Fin</label>
+            <input asp-for="FechaFin" class="form-control" type="date" />
+            <span asp-validation-for="FechaFin" class="text-danger"></span>
+        </div>
+        <input type="hidden" asp-for="EmpleadosId" value="@ViewBag.EmpleadoId" />
 
-    <div class="form-group">
-        <label asp-for="FechaInicio"></label>
-        <input asp-for="FechaInicio" class="form-control" type="date" />
-        <span asp-validation-for="FechaInicio" class="text-danger"></span>
-    </div>
+        <button type="submit" class="btn btn-primary w-100">Generar Reporte</button>
+    </form>
 
-    <div class="form-group">
-        <label asp-for="FechaFin"></label>
-        <input asp-for="FechaFin" class="form-control" type="date" />
-        <span asp-validation-for="FechaFin" class="text-danger"></span>
-    </div>
+    <a asp-action="Index" asp-route-empleadoId="@ViewBag.EmpleadoId" class="btn btn-secondary w-100 mt-3">Cancelar</a>
+</div>
 
-    <button type="submit" class="btn btn-primary">Generar Reporte</button>
-</form>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Optional: Usar un date picker mejorado si lo deseas
+        flatpickr("input[type=date]");
+    </script>
+}

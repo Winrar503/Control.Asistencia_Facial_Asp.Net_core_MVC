@@ -180,6 +180,9 @@
                                             <a asp-action="CapturarFotos" asp-route-empleadoId="@item.Id" class="btn btn-sm btn-outline-secondary mx-1" title="Capturar Fotos">
                                                 <i class="fas fa-camera"></i>
                                             </a>
+                                            <a asp-controller="Reportes" asp-action="Index" asp-route-empleadoId="@item.Id" class="btn btn-sm btn-outline-warning mx-1" title="Ver Reportes">
+                                                <i class="fas fa-file-alt"></i>
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>

@@ -1,21 +1,27 @@
 ﻿@model Face.EntidadesDeNegocio.Reportes
+
 @{
     ViewData["Title"] = "Eliminar Reporte";
 }
 
-<h2>Eliminar Reporte</h2>
+<div class="container mt-5">
+    <h2 class="text-center text-danger">@ViewData["Title"]</h2>
+    <p class="text-center">¿Estás seguro de que deseas eliminar este reporte?</p>
 
-<div class="alert alert-danger">
-    <p>¿Estás seguro de que deseas eliminar este reporte?</p>
-    <p><strong>Fecha de Inicio:</strong> @Model.FechaInicio.ToShortDateString()</p>
-    <p><strong>Fecha de Fin:</strong> @Model.FechaFin.ToShortDateString()</p>
-    <p><strong>Resumen:</strong> @Model.Resumen</p>
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Empleado: @Model.Empleados.Nombre</h5>
+            <p class="card-text">
+                <strong>Rango de Fechas:</strong> @Model.FechaInicio.ToShortDateString() - @Model.FechaFin.ToShortDateString()<br />
+                <strong>Resumen:</strong> @Model.Resumen
+            </p>
+        </div>
+    </div>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger w-100 mt-3">Confirmar Eliminación</button>
+    </form>
+
+    <a asp-action="Index" asp-route-empleadoId="@Model.EmpleadosId" class="btn btn-secondary w-100 mt-3">Cancelar</a>
 </div>
-
-<form asp-action="DeleteConfirmed">
-    <input type="hidden" asp-for="Id" />
-    <input type="hidden" asp-for="EmpleadosId" />
-
-    <button type="submit" class="btn btn-danger">Eliminar</button>
-    <a asp-action="Index" asp-route-empleadoId="@Model.EmpleadosId" class="btn btn-secondary">Cancelar</a>
-</form>

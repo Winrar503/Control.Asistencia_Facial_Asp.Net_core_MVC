@@ -19,5 +19,14 @@ namespace Face.LogicaDeNegocio
         {
             return await RendimientoEmpleadosDAL.ObtenerRendimientoPorEmpleadoAsync(empleadoId);
         }
+        public async Task CalcularRendimientoAsync(int empleadoId, DateTime fechaInicio, DateTime fechaFin)
+        {
+            await RendimientoEmpleadosDAL.CalcularRendimientoAsync(empleadoId, fechaInicio, fechaFin);
+        }
+
+        public async Task<List<RendimientoEmpleados>> ObtenerPorEmpleadoYRangoAsync(int empleadoId, DateTime fechaInicio, DateTime fechaFin)
+        {
+            return await RendimientoEmpleadosDAL.ObtenerPorEmpleadoYRangoAsync(empleadoId, fechaInicio, fechaFin);
+        }
     }
 }

@@ -1,33 +1,44 @@
-﻿@model IEnumerable<Face.EntidadesDeNegocio.Reportes>
+﻿@model List<Face.EntidadesDeNegocio.Reportes>
+
 @{
-    ViewData["Title"] = "Reportes de Empleado";
+    ViewData["Title"] = "Reportes";
 }
 
-<h2>Reportes de @ViewBag.EmpleadoNombre</h2>
+<div class="container mt-5">
+    <h2 class="text-center">@ViewData["Title"]</h2>
+    <p class="text-center">Listado de reportes para el empleado: <strong>@ViewBag.EmpleadoNombre</strong></p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Fecha de Inicio</th>
-            <th>Fecha de Fin</th>
-            <th>Resumen</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var reporte in Model)
-        {
+    <table class="table table-striped mt-4">
+        <thead class="table-dark">
             <tr>
-                <td>@reporte.FechaInicio.ToShortDateString()</td>
-                <td>@reporte.FechaFin.ToShortDateString()</td>
-                <td>@reporte.Resumen</td>
-                <td>
-                    <a asp-action="DescargarPDF" asp-route-id="@reporte.Id" class="btn btn-secondary">Descargar PDF</a>
-                    <a asp-action="Delete" asp-route-id="@reporte.Id" class="btn btn-danger">Eliminar</a>
-                </td>
+                <th>Rango de Fechas</th>
+                <th>Resumen</th>
+                <th>Acciones</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @if (Model.Count == 0)
+            {
+                <tr>
+                    <td colspan="3" class="text-center">No hay reportes generados para este empleado.</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var reporte in Model)
+                {
+                    <tr>
+                        <td>@reporte.FechaInicio.ToShortDateString() - @reporte.FechaFin.ToShortDateString()</td>
+                        <td>@reporte.Resumen</td>
+                        <td>
+                            <a asp-action="DescargarPDF" asp-route-id="@reporte.Id" class="btn btn-success btn-sm">Descargar PDF</a>
+                            <a asp-action="Delete" asp-route-id="@reporte.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
 
-<a asp-action="Create" asp-route-empleadoId="@ViewBag.EmpleadoId" class="btn btn-primary">Generar Nuevo Reporte</a>
+    <a asp-controller="Empleados" asp-action="Index" class="btn btn-secondary w-100 mt-3">Volver a Empleados</a>
+</div>

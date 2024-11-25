@@ -25,10 +25,6 @@ namespace Face.EntidadesDeNegocio
         [Display(Name = "Email")]
         [MaxLength(255, ErrorMessage = "El largo máximo es 255 caracteres")]
         public string Email { get; set; }
-        //[Required(ErrorMessage = "El cargo es requerido")]
-        //[Display(Name = "Cargo")]
-        //[MaxLength(100, ErrorMessage = "El largo maximo es 100 caracteres")]
-        //public string Cargo { get; set; } 
         [Required(ErrorMessage = "El numero telefonico es requerido")]
         [Display(Name = "Telefono")]
         public string Telefono { get; set; }

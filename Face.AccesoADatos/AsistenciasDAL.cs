@@ -115,9 +115,11 @@ namespace Face.AccesoADatos
             using (var bdContexto = new BDContexto())
             {
                 return await bdContexto.Asistencias
-                    .Include(a => a.Empleados)
+                    .Include(a => a.Empleados) // Incluye la relación con Empleados
                     .ToListAsync();
             }
         }
+
+
     }
 }

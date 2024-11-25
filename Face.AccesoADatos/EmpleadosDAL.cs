@@ -150,8 +150,8 @@ namespace Face.AccesoADatos
             using (var bdContexto = new BDContexto())
             {
                 return await bdContexto.Empleados
-                    .Include(e => e.Cargo) // Relación con Cargo
-                    .Include(e => e.Fotos) // Relación con Fotos
+                    .Include(e => e.Cargo) 
+                    .Include(e => e.Fotos)
                     .ToListAsync();
             }
 

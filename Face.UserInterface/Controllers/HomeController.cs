@@ -32,19 +32,36 @@ namespace Face.UserInterface.Controllers
             });
         }
 
+        //[HttpGet]
+        //public async Task<IActionResult> ObtenerComentarios()
+        //{
+        //    var comentarios = await _asistenciasBL.ObtenerTodosConRelacionesAsync();
+
+        //    var datos = comentarios.Select(c => new
+        //    {
+        //        Empleado = c.Empleados != null ? c.Empleados.Nombre : "Desconocido",
+        //        Comentario = !string.IsNullOrEmpty(c.Comentarios) ? c.Comentarios : "Sin comentario"
+        //    }).ToList();
+
+        //    return Json(datos);
+        //}
         [HttpGet]
         public async Task<IActionResult> ObtenerComentarios()
         {
-            var comentarios = await _asistenciasBL.ObtenerTodosConRelacionesAsync();
+            var asistencias = await _asistenciasBL.ObtenerTodosConRelacionesAsync();
 
-            var datos = comentarios.Select(c => new
-            {
-                Empleado = c.Empleados != null ? c.Empleados.Nombre : "Desconocido",
-                Comentario = !string.IsNullOrEmpty(c.Comentarios) ? c.Comentarios : "Sin comentario"
-            }).ToList();
+            var datos = asistencias
+                .Where(a => !string.IsNullOrEmpty(a.Comentarios))
+                .Select(a => new
+                {
+                    Empleado = a.Empleados != null ? a.Empleados.Nombre : "Desconocido",
+                    Comentario = !string.IsNullOrEmpty(a.Comentarios) ? a.Comentarios : "Sin comentario"
+                })
+                .ToList();
 
             return Json(datos);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> GuardarComentario([FromBody] ComentarioDto comentarioDto)
@@ -102,12 +119,12 @@ namespace Face.UserInterface.Controllers
         {
             var asistencias = await _asistenciasBL.ObtenerTodosAsync();
             var asistenciasPorMes = asistencias
-                .Where(a => a.Fecha.Year == DateTime.Now.Year) // Filtrar asistencias del año actual
+                .Where(a => a.Fecha.Year == DateTime.Now.Year) 
                 .GroupBy(a => a.Fecha.Month)
                 .Select(g => new { Mes = g.Key, Total = g.Count() })
                 .ToDictionary(g => g.Mes, g => g.Total);
 
-            // Rellenar los meses faltantes con 0 asistencias
+
             var asistenciasMensuales = Enumerable.Range(1, 12).Select(m => asistenciasPorMes.ContainsKey(m) ? asistenciasPorMes[m] : 0).ToArray();
 
             return Json(asistenciasMensuales);
