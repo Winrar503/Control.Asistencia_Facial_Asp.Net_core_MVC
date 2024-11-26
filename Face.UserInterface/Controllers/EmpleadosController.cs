@@ -13,6 +13,7 @@ using System.Drawing.Imaging;
 
 namespace Face.UserInterface.Controllers
 {
+
     public class EmpleadosController : Controller
     {
         EmpleadosBL empleadosBL = new EmpleadosBL();
@@ -21,32 +22,6 @@ namespace Face.UserInterface.Controllers
         ReportesBL reportesBL = new ReportesBL();
         FotosBL fotosBL = new FotosBL();
         CargosBL cargosBL = new CargosBL();
-
-        //public async Task<IActionResult> Index(Empleados empleados = null)
-        //{
-        //    if (empleados == null)
-        //        empleados = new Empleados();
-        //    if (empleados.Top_Aux == 0)
-        //        empleados.Top_Aux = 10;
-        //    else if (empleados.Top_Aux == -1)
-        //        empleados.Top_Aux = 0;
-
-        //    var empleado = await empleadosBL.BuscarAsync(empleados);
-        //    foreach (var empleadoss in empleado)
-        //    {
-        //        empleadoss.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(empleadoss.Id);
-        //        empleadoss.Cargo = await cargosBL.ObtenerPorIdAsync(empleadoss.CargoId);
-        //    }
-        //    var asistencias = await asistenciasBL.ObtenerTodosAsync();
-        //    var horarios = await horariosBL.ObtenerTodosAsync();
-        //    var fotos = await fotosBL.ObtenerTodosAsync();
-        //    var cargos = await cargosBL.ObtenerTodosAsync();
-        //    var reportes = await reportesBL.ObtenerTodosAsync();
-
-        //    ViewBag.TotalCargos = cargos.Count;
-        //    ViewBag.Top = empleados.Top_Aux;
-        //    return View(empleado);
-        //}
 
         public async Task<IActionResult> Index(int? cargoId, Empleados empleados = null)
         {

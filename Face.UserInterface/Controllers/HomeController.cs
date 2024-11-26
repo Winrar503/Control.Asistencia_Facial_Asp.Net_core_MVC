@@ -32,19 +32,6 @@ namespace Face.UserInterface.Controllers
             });
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> ObtenerComentarios()
-        //{
-        //    var comentarios = await _asistenciasBL.ObtenerTodosConRelacionesAsync();
-
-        //    var datos = comentarios.Select(c => new
-        //    {
-        //        Empleado = c.Empleados != null ? c.Empleados.Nombre : "Desconocido",
-        //        Comentario = !string.IsNullOrEmpty(c.Comentarios) ? c.Comentarios : "Sin comentario"
-        //    }).ToList();
-
-        //    return Json(datos);
-        //}
         [HttpGet]
         public async Task<IActionResult> ObtenerComentarios()
         {
@@ -92,10 +79,17 @@ namespace Face.UserInterface.Controllers
             public string Comentario { get; set; }
         }
 
-        public IActionResult Inicio()
+        public async Task<IActionResult> Inicio()
         {
+
+            var empleados = await _empleadosBL.ObtenerTodosAsync();
+
+
+            ViewBag.HayEmpleados = empleados.Any();
+
             return View();
         }
+
 
         public IActionResult Index()
         {
@@ -141,7 +135,15 @@ namespace Face.UserInterface.Controllers
 
             return Json(distribucionPorCargo);
         }
+        public async Task<IActionResult> Dashboard()
+        {
+
+            var empleados = await _empleadosBL.ObtenerTodosAsync();
 
 
+            ViewBag.HayEmpleados = empleados.Any();
+
+            return View();
+        }
     }
 }

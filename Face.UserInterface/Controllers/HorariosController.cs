@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Face.UserInterface.Controllers
 {
+
     public class HorariosController : Controller
     {
         EmpleadosBL empleadosBL = new EmpleadosBL();

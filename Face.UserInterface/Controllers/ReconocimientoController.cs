@@ -64,18 +64,97 @@ namespace Face.UserInterface.Controllers
             }
         }
 
+        //private async Task RegistrarAsistencia(int empleadoId)
+        //{
+        //    var ahora = DateTime.Now;
+        //    var tipo = ahora.Hour < 12 ? "Entrada" : "Salida";
+
+
+        //    var horario = await horariosBL.ObtenerTodosAsync();
+        //    var empleadoHorario = horario.FirstOrDefault(h => h.EmpleadosId == empleadoId);
+
+        //    string comentarios = "";
+        //    string estadoReconocimiento = "Exitoso";
+
+
+        //    var nuevaAsistencia = new Asistencias
+        //    {
+        //        EmpleadosId = empleadoId,
+        //        Fecha = ahora,
+        //        Tipo = tipo,
+        //        EstadoReconocimiento = estadoReconocimiento
+        //    };
+
+        //    if (empleadoHorario != null)
+        //    {
+        //        var horaEntradaProgramada = empleadoHorario.HoraEntrada;
+        //        var horaSalidaProgramada = empleadoHorario.HoraSalida;
+
+        //        if (tipo == "Entrada")
+        //        {
+        //            if (ahora.TimeOfDay <= horaEntradaProgramada + TimeSpan.FromMinutes(10))
+        //            {
+
+        //                comentarios = "Entrada puntual";
+        //            }
+        //            else if (ahora.TimeOfDay > horaEntradaProgramada + TimeSpan.FromMinutes(10))
+        //            {
+
+        //                comentarios = "Entrada tardía";
+        //            }
+        //        }
+        //        else if (tipo == "Salida")
+        //        {
+        //            if (ahora.TimeOfDay > horaSalidaProgramada + TimeSpan.FromHours(1))
+        //            {
+
+        //                comentarios = "Salida con horas extras";
+        //                var horasExtras = (ahora.TimeOfDay - horaSalidaProgramada).TotalHours;
+        //                nuevaAsistencia.Comentarios = comentarios;
+        //                nuevaAsistencia.HorasExtras = Math.Round((decimal)horasExtras, 2); 
+        //            }
+        //            else
+        //            {
+        //                comentarios = "Salida puntual";
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+
+        //        comentarios = "Horario no definido";
+        //        estadoReconocimiento = "Fallido";
+        //    }
+        //    nuevaAsistencia.Comentarios = comentarios;
+        //    await asistenciasBL.CrearAsync(nuevaAsistencia);
+        //}
+        private async Task ActualizarEstadoEmpleado(int empleadoId, string tipo)
+        {
+            var empleado = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = empleadoId });
+            if (empleado != null)
+            {
+                if (tipo == "Entrada")
+                {
+                    empleado.Estado = true; // Activo
+                }
+                else if (tipo == "Salida")
+                {
+                    empleado.Estado = false; // Inactivo
+                }
+                await empleadosBL.ModificarAsync(empleado);
+            }
+        }
+
         private async Task RegistrarAsistencia(int empleadoId)
         {
             var ahora = DateTime.Now;
             var tipo = ahora.Hour < 12 ? "Entrada" : "Salida";
-
 
             var horario = await horariosBL.ObtenerTodosAsync();
             var empleadoHorario = horario.FirstOrDefault(h => h.EmpleadosId == empleadoId);
 
             string comentarios = "";
             string estadoReconocimiento = "Exitoso";
-
 
             var nuevaAsistencia = new Asistencias
             {
@@ -94,12 +173,10 @@ namespace Face.UserInterface.Controllers
                 {
                     if (ahora.TimeOfDay <= horaEntradaProgramada + TimeSpan.FromMinutes(10))
                     {
-
                         comentarios = "Entrada puntual";
                     }
                     else if (ahora.TimeOfDay > horaEntradaProgramada + TimeSpan.FromMinutes(10))
                     {
-
                         comentarios = "Entrada tardía";
                     }
                 }
@@ -107,11 +184,10 @@ namespace Face.UserInterface.Controllers
                 {
                     if (ahora.TimeOfDay > horaSalidaProgramada + TimeSpan.FromHours(1))
                     {
-
                         comentarios = "Salida con horas extras";
                         var horasExtras = (ahora.TimeOfDay - horaSalidaProgramada).TotalHours;
                         nuevaAsistencia.Comentarios = comentarios;
-                        nuevaAsistencia.HorasExtras = Math.Round((decimal)horasExtras, 2); 
+                        nuevaAsistencia.HorasExtras = Math.Round((decimal)horasExtras, 2);
                     }
                     else
                     {
@@ -121,12 +197,16 @@ namespace Face.UserInterface.Controllers
             }
             else
             {
-
                 comentarios = "Horario no definido";
                 estadoReconocimiento = "Fallido";
             }
+
             nuevaAsistencia.Comentarios = comentarios;
             await asistenciasBL.CrearAsync(nuevaAsistencia);
+
+            // Actualizar el estado del empleado
+            await ActualizarEstadoEmpleado(empleadoId, tipo);
         }
+
     }
 }

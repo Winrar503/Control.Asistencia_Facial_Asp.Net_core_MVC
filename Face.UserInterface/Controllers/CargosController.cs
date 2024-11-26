@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Face.UserInterface.Controllers
 {
+
     public class CargosController : Controller
     {
         private readonly CargosBL _cargosBL = new CargosBL();

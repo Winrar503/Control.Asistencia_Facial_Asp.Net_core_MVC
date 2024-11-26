@@ -119,7 +119,5 @@ namespace Face.AccesoADatos
                     .ToListAsync();
             }
         }
-
-
     }
 }
