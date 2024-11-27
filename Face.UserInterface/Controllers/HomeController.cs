@@ -191,6 +191,12 @@ namespace Face.UserInterface.Controllers
                 return stringWriter.GetStringBuilder().ToString();
             }
         }
+        [HttpGet]
+        public async Task<IActionResult> VerificarEmpleados()
+        {
+            var totalEmpleados = (await _empleadosBL.ObtenerTodosAsync()).Count;
+            return Json(new { hayEmpleados = totalEmpleados > 0 });
+        }
 
 
     }

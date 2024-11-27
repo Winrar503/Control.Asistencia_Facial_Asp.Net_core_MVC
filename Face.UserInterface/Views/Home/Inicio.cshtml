@@ -192,12 +192,9 @@
         </div>
 
         <div class="action-buttons">
-            <button class="btn-modern" onclick="mostrarReporte()">Ver Reporte Completo</button>
+            <button class="btn-modern" onclick="window.location.href='/ReporteGeneral'">Ver Reporte Completo</button>
             <button class="btn-modern" onclick="window.location.href='/Home/Manual'">Ver Manual</button>
-
-
         </div>
-
         <div class="row mb-4">
             <div class="col-md-6">
                 <div class="chart-container">
@@ -233,21 +230,52 @@
     </div>
 
     <script>
-
-                   document.addEventListener('DOMContentLoaded', async function () {
+        document.addEventListener('DOMContentLoaded', async function () {
             try {
+                const empleadosResponse = await fetch('/Home/VerificarEmpleados');
+                const empleadosData = await empleadosResponse.json();
+
+                if (empleadosData.hayEmpleados) {
+                    Swal.fire({
+                        title: 'Empleados registrados detectados',
+                        text: '¿Quieres comenzar el reconocimiento facial o tomar asistencias?',
+                        icon: 'info',
+                        showCancelButton: true,
+                        confirmButtonText: 'Sí, comenzar',
+                        cancelButtonText: 'Cancelar',
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                            window.location.href = '/Reconocimiento';
+                        } else {
+                            Swal.fire('Acción cancelada', 'Puedes iniciar manualmente cuando lo desees.', 'info');
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: '¡Atención!',
+                        text: 'No hay empleados registrados. Por favor, registra empleados para comenzar.',
+                        icon: 'warning',
+                        confirmButtonText: 'Registrar empleados',
+                        showCancelButton: true,
+                        cancelButtonText: 'Cerrar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                            window.location.href = '/Empleados/Crear';
+                        }
+                    });
+                }
 
                 const metricsResponse = await fetch('/Home/GetDashboardMetrics');
                 const metrics = await metricsResponse.json();
-
-                const totalCargos = metrics.totalCargos || 0; 
-
-                console.log("Total de cargos:", totalCargos);
+                const totalCargos = metrics.totalCargos || 0;
 
                 if (totalCargos === 0) {
                     Swal.fire({
                         title: '¡Atención!',
-                        text: 'No hay cargos registrados. Para poder crear empleados etc debes de crear primero cargos',
+                        text: 'No hay cargos registrados. Para poder crear empleados, debes registrar primero cargos.',
                         icon: 'warning',
                         showCancelButton: true,
                         confirmButtonText: 'Crear Cargo',
@@ -259,7 +287,8 @@
                     });
                 }
             } catch (error) {
-                console.error("Error al verificar los cargos:", error);
+                console.error('Error al verificar los datos:', error);
+                Swal.fire('Error', 'Ocurrió un problema al cargar los datos del sistema.', 'error');
             }
         });
 
@@ -333,17 +362,6 @@
         obtenerDatos();
         setInterval(obtenerDatos, 5000);
 
-        function mostrarReporte() {
-            alert('Función de reporte en desarrollo...');
-        }
-
-        function nuevaFuncionalidad() {
-            alert('Nueva funcionalidad próximamente...');
-        }
-
-        obtenerDatos();
-        setInterval(obtenerDatos, 5000);
-
         async function actualizarTablaComentarios() {
             try {
                 const response = await fetch('/Home/ObtenerComentarios');
@@ -368,7 +386,7 @@
                 tablaComentarios.innerHTML = `<tr><td colspan="2" class="text-center">Error al cargar comentarios</td></tr>`;
             }
         }
-
     </script>
+
 </body>
 </html>
