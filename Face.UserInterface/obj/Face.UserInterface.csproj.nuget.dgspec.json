@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj": {}
+    "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj": {
+    "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj",
+        "projectUniqueName": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj",
         "projectName": "Face.AccesoADatos",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\obj\\",
+        "projectPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj",
+        "packagesPath": "C:\\Users\\arosa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\arosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
+              "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
+                "projectPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
               }
             }
           }
@@ -47,9 +42,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -120,25 +114,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
+    "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
+        "projectUniqueName": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
         "projectName": "Face.EntidadesDeNegocio",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\obj\\",
+        "projectPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
+        "packagesPath": "C:\\Users\\arosa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\arosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -146,7 +136,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -163,9 +152,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -236,25 +224,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj": {
+    "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
+        "projectUniqueName": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
         "projectName": "Face.LogicaDeNegocio",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\obj\\",
+        "projectPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
+        "packagesPath": "C:\\Users\\arosa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\arosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -262,18 +246,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj"
+              "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj": {
+                "projectPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
+              "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
+                "projectPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
               }
             }
           }
@@ -286,9 +269,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -359,25 +341,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj": {
+    "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj",
+        "projectUniqueName": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj",
         "projectName": "Face.UserInterface",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\obj\\",
+        "projectPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj",
+        "packagesPath": "C:\\Users\\arosa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\arosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -385,18 +363,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
+              "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
+                "projectPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj"
+              "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj": {
+                "projectPath": "C:\\Users\\arosa\\OneDrive\\Escritorio\\AsistenciaProyect\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj"
               }
             }
           }
@@ -409,9 +386,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -485,7 +461,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

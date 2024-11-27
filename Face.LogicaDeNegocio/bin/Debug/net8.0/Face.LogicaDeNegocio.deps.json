@@ -2862,10 +2862,7 @@
           "itext7.pdfhtml": "6.0.0"
         },
         "runtime": {
-          "Face.AccesoADatos.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Face.AccesoADatos.dll": {}
         }
       },
       "Face.EntidadesDeNegocio/1.0.0": {
@@ -2884,10 +2881,7 @@
           "itext7.pdfhtml": "6.0.0"
         },
         "runtime": {
-          "Face.EntidadesDeNegocio.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Face.EntidadesDeNegocio.dll": {}
         }
       }
     }

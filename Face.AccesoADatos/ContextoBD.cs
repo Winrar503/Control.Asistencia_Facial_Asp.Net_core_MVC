@@ -21,9 +21,9 @@ namespace Face.AccesoADatos
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Darwin
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-G786A4S\SQLEXPRESS;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");
+            //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-G786A4S\SQLEXPRESS;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");
             //Adrian
-            //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-F5QN69J\SQLEXPRESS01;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-F5QN69J\SQLEXPRESS01;Initial Catalog=ReconocimientoFacial;Integrated Security=True; encrypt = false; trustServerCertificate = True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
