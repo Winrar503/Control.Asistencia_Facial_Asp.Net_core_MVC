@@ -10,6 +10,7 @@ using Emgu.CV.Structure;
 using System.Drawing; 
 using System.IO;
 using System.Drawing.Imaging;
+using iText.Kernel.Geom;
 
 namespace Face.UserInterface.Controllers
 {
@@ -23,47 +24,94 @@ namespace Face.UserInterface.Controllers
         FotosBL fotosBL = new FotosBL();
         CargosBL cargosBL = new CargosBL();
 
-        public async Task<IActionResult> Index(int? cargoId, Empleados empleados = null)
+        //public async Task<IActionResult> Index(int? cargoId, Empleados empleados = null)
+        //{
+
+        //    if (empleados == null)
+        //        empleados = new Empleados();
+        //    if (empleados.Top_Aux == 0)
+        //        empleados.Top_Aux = 10;
+        //    else if (empleados.Top_Aux == -1)
+        //        empleados.Top_Aux = 0;
+
+
+        //    List<Empleados> empleado;
+
+        //    if (cargoId == null || cargoId == 0)
+        //    {
+
+        //        empleado = await empleadosBL.ObtenerTodosAsync();
+        //    }
+        //    else
+        //    {
+
+        //        empleado = await empleadosBL.BuscarAsync(new Empleados { CargoId = cargoId.Value });
+
+        //        if (empleado == null || !empleado.Any())
+        //        {
+        //            empleado = new List<Empleados>();
+        //        }
+        //    }
+
+        //    foreach (var empleadoss in empleado)
+        //    {
+        //        empleadoss.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(empleadoss.Id);
+        //        empleadoss.Cargo = await cargosBL.ObtenerPorIdAsync(empleadoss.CargoId);
+        //    }
+
+        //    var cargos = await cargosBL.ObtenerTodosAsync();
+        //    ViewBag.Cargos = cargos; 
+        //    ViewBag.CargoSeleccionado = cargoId ?? 0; 
+        //    ViewBag.TotalCargos = cargos.Count;
+        //    ViewBag.Top = empleados.Top_Aux; 
+        //    return View(empleado);
+        //}
+
+        public async Task<IActionResult> Index(int? cargoId, int page = 1, int pageSize = 5, Empleados empleadosFiltros = null)
         {
 
-            if (empleados == null)
-                empleados = new Empleados();
-            if (empleados.Top_Aux == 0)
-                empleados.Top_Aux = 10;
-            else if (empleados.Top_Aux == -1)
-                empleados.Top_Aux = 0;
+            var empleadosFiltro = new Empleados();
+            if (empleadosFiltro.Top_Aux == 0)
+                empleadosFiltro.Top_Aux = 10;
 
+            List<Empleados> empleados;
 
-            List<Empleados> empleado;
-
+            // Filtrar empleados por cargo si se especifica un cargoId
             if (cargoId == null || cargoId == 0)
             {
-
-                empleado = await empleadosBL.ObtenerTodosAsync();
+                empleados = await empleadosBL.ObtenerTodosAsync();
             }
             else
             {
-
-                empleado = await empleadosBL.BuscarAsync(new Empleados { CargoId = cargoId.Value });
-
-                if (empleado == null || !empleado.Any())
+                empleados = await empleadosBL.BuscarAsync(new Empleados { CargoId = cargoId.Value });
+                if (empleados == null || !empleados.Any())
                 {
-                    empleado = new List<Empleados>();
+                    empleados = new List<Empleados>();
                 }
             }
 
-            foreach (var empleadoss in empleado)
+            // Paginación
+            var totalEmpleados = empleados.Count; // Total de empleados sin paginación
+            empleados = empleados.Skip((page - 1) * pageSize).Take(pageSize).ToList(); // Aplica paginación
+
+            // Cargar relaciones (Fotos y Cargos) solo para empleados paginados
+            foreach (var empleado in empleados)
             {
-                empleadoss.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(empleadoss.Id);
-                empleadoss.Cargo = await cargosBL.ObtenerPorIdAsync(empleadoss.CargoId);
+                empleado.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(empleado.Id);
+                empleado.Cargo = await cargosBL.ObtenerPorIdAsync(empleado.CargoId);
             }
 
+            // Obtener lista de cargos para filtros
             var cargos = await cargosBL.ObtenerTodosAsync();
-            ViewBag.Cargos = cargos; 
-            ViewBag.CargoSeleccionado = cargoId ?? 0; 
-            ViewBag.TotalCargos = cargos.Count;
-            ViewBag.Top = empleados.Top_Aux; 
-            return View(empleado);
+            ViewBag.Cargos = cargos;
+            ViewBag.CargoSeleccionado = cargoId ?? 0;
+
+            // Datos para la paginación en la vista
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalEmpleados / pageSize); // Total de páginas
+            ViewBag.CurrentPage = page; // Página actual
+            ViewBag.PageSize = pageSize; // Tamaño de página
+
+            return View(empleados);
         }
 
 

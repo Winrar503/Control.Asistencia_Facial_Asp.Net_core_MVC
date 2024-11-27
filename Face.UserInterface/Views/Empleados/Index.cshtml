@@ -14,8 +14,8 @@
 <div class="container-fluid py-5">
     <!-- Encabezado -->
     <header class="text-center mb-5">
-        <h1 class="display-4 fw-bold text-gradient mb-2">Gestión de Talento</h1>
-        <p class="lead text-muted">Optimiza tu equipo con nuestra plataforma de gestión avanzada</p>
+        <h1 class="display-4 fw-bold text-gradient mb-2">Gestión de Empleado</h1>
+        <p class="lead text-muted">Optimiza tu equipo de trabajo</p>
     </header>
 
     <!-- Panel de control -->
@@ -188,6 +188,25 @@
                                 </tr>
                             }
                         </tbody>
+
+                        <nav class="mt-4">
+                            <ul class="pagination justify-content-center">
+
+                                <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                                    <a class="page-link" asp-action="Index" asp-route-cargoId="@ViewBag.CargoSeleccionado" asp-route-page="@(ViewBag.CurrentPage - 1)">Anterior</a>
+                                </li>
+                                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                                {
+                                    <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                                        <a class="page-link" asp-action="Index" asp-route-cargoId="@ViewBag.CargoSeleccionado" asp-route-page="@i">@i</a>
+                                    </li>
+                                }
+                                <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                                    <a class="page-link" asp-action="Index" asp-route-cargoId="@ViewBag.CargoSeleccionado" asp-route-page="@(ViewBag.CurrentPage + 1)">Siguiente</a>
+                                </li>
+                            </ul>
+                        </nav>
+
                     </table>
                 </div>
             }
@@ -225,5 +244,19 @@
     .hover-row:hover {
         background-color: #f8f9fa;
         transition: 0.3s;
+    }
+   @*  Diseño para paginacion *@
+    .pagination .page-item.active .page-link {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        color: white;
+    }
+
+    .pagination .page-item .page-link {
+        color: #0d6efd;
+    }
+
+    .pagination .page-item.disabled .page-link {
+        color: #6c757d;
     }
 </style>

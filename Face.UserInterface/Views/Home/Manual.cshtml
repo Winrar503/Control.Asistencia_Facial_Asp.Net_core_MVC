@@ -1,0 +1,291 @@
+﻿@{
+    ViewData["Title"] = "Manual de Usuario";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Usuario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+
+    <style>
+        .manual-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2, h3 {
+            color: #4a90e2;
+        }
+
+        .manual-section {
+            margin-bottom: 30px;
+        }
+
+            .manual-section img {
+                max-width: 100%;
+                margin-top: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+        .manual-index ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .manual-index ul li {
+                margin: 5px 0;
+            }
+
+                .manual-index ul li a {
+                    text-decoration: none;
+                    color: #4a90e2;
+                }
+
+                    .manual-index ul li a:hover {
+                        text-decoration: underline;
+                    }
+    </style>
+</head>
+<body>
+    <div class="manual-container">
+        <h1 class="text-center">Manual de Usuario</h1>
+        <hr>
+
+        <!-- Índice -->
+        <div class="manual-index">
+            <h2>Índice</h2>
+            <ul>
+                <li><a href="#intro">1. Introducción</a></li>
+                <li><a href="#requisitos">2. Acceder a la App</a></li>
+                <li><a href="#instalacion">3. Pagina principal</a></li>
+                <li><a href="#acceso">4.Cargos</a></li>
+                <li><a href="#interfaz">5.Empleados</a></li>
+                <li><a href="#funcionalidades">6.Horarios</a></li>
+                <li><a href="#problemas">7.Reconocimiento facial</a></li>
+                <li><a href="#soporte">8.Asistencia.</a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <!-- Secciones del Manual -->
+        <div id="intro" class="manual-section">
+            <h2>1. Introducción</h2>
+            <p>
+                Bienvenido a <strong>WinFaceTrack</strong>. Este manual tiene como objetivo guiarte en el uso de nuestra herramienta, explicando paso a paso sus funcionalidades y características principales.
+            </p>
+        </div>
+        <div id="requisitos" class="manual-section">
+            <h2>2. Acceder a la App</h2>
+            <p>
+                De inicio te daremos la bienvenida, te espera nuestra bienvenida d la siguiente manera:
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 132315.png")" alt="Ejemplo de instalación">
+            </p>
+            <ol>
+                <li>Al querer simplemente inciar la <strong>App</strong> precione el boton de inicio que da al principio</li>
+                <li>si desea navegar en la pagina principal puede dezplasarce hacia abajo<br /></li>
+
+                <li>podras ir observando la informacion de nuestra <strong>App</strong>, sobre que se trata y poquito mas.</li>
+            </ol>
+        </div>
+        <div id="instalacion" class="manual-section">
+            <h2>3. Pagina principal</h2>
+            <p>
+                Para acceder a la aplicación, sigue estos pasos:
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 133407.png")" alt="Ejemplo de instalación">
+
+
+            </p>
+            <ol>
+                <li>Al precionar el boton de inicio, te dara una ventana donde te espera una alerta que dice que debes de crear un cargo</li>
+                <li>si noq quieres crearlo simplemente precione <strong>Aceptar</strong> y podras navegar explorando la app </li>
+                <li>Pero si de una vez crearas un cargo para poder empezar a crear empleados preciona  <strong>Crear cargo</strong> <br /></li>
+                <li><br />⚠️Nota: cargo significa lo puestos de trabajo que abra en la empresa por ejemplo (Seguridad)<br /></li>
+                <li><br />Si preciono aceptar simpletemente navegaras entre las ventanas.</li>
+
+            </ol>
+        </div>
+        <div id="acceso" class="manual-section">
+            <h2>4.Cargos</h2>
+            <p>
+                Si en lo anterior preciono <strong>Crear cargos</strong> Tendra que aparecerle una ventana como esta:
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 135110.png")" alt="Ejemplo de instalación">
+            </p>
+            <ul>
+                <li>En esta parte tu debes crear un cargo,por ende debes precionar donde dice <strong>Crear Nuevo Cargo</strong></li>
+                <li>Tiene que aparecerte una ventana como esta:</li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 135814.png")" alt="Ejemplo de instalación">
+                <li>
+                    <br />Precionas guardar y listo, tendrias tu primer cargo creado luego volvera a la venta del principio
+                    donde tu podras ver con exito tu cargo guardado por elemplo sera un cargo(puesto) SEGURIDAD, deberia aparecerte ese puesto creado
+                    en tu lista; esto es para un cargo, tu empresa debe tener muchos cargos(Puestos de trabajo) por ende debes agregar todos los puesto necesarios disponibles
+                </li>
+            </ul>
+        </div>
+
+
+        <div id="interfaz" class="manual-section">
+            <h2>5.Empleados</h2>
+            <p>
+                Al precionar empleados, debe aparcerte una vista como esta:
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 140920.png")" alt="Ejemplo de instalación">
+            </p>
+            <ul>
+                <li>
+                    Aca te mostrara un menu detallado de un; Total de empleados, Empleados activos,
+                    promedio de edades y cargos unicos. Aca es dode empezamos a agreagar empleados.
+                </li>
+                <li>
+                    <br />En esta parte tu debes crear un empleado, debes empezar a agregar a tus empleados que estaran trabajando en dicha empresa,
+                    para eso debes preionar<strong>Nuevo Empleado</strong>
+                </li>
+                <li>Tiene que aparecerte una ventana como esta:</li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 135814.png")" alt="Ejemplo de instalación">
+                <li>
+                    <br />Llena el formulario con los datos del empleado, i preciona guardar, al hacer eso deberia
+                    deberia aparecerte un empleado, en la ventana como esta:
+                </li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 143644.png")" alt="Ejemplo de instalación">
+
+                <li>
+                    Al volver a la ventana de empleados debes poder ver con exito ya un empleado creado
+                    con toda su informacion, deberia apareceerte de esta manera:
+                </li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 143048.png")" alt="Ejemplo de instalación">
+                <li>
+                    al empleado creado debe aparcerle las acciones 5 botones, en los cuales tu podras:
+                    editar al empleado, Eliminar al empleado(Si lo despides), Ver la informacion completa
+                    del empleado, Ver reportes de empleado y tomarle fotos.
+                </li>
+                <li>
+                    <br />Para poder guardar fotos de los empleados y hacer que despues le tomes asistencia
+                    debes de tomarle 3 fotos, para ello debes precionar el boton que te enseño acontinuacion:
+                </li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 144058.png")" alt="Ejemplo de instalación">
+                <li>Donde nos mostrara una ventana como esta;</li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 144405.png")" alt="Ejemplo de instalación">
+                <li>
+                    Donde nos dara el nombre del empleado, y nos dara las instrucciones para
+                    poder tomar la foto de manera correcta.<br />
+                    si bajamos un poquio mas podremos ver que al haber capturado las fotos abajo
+                    abajo nos aparcera las fotos de los 3 angulos tomados, donde al tomar las 3 de manera correcta
+                    nos desbloqueara un boton donde diga <strong>Guardar fotos</strong>
+                    :
+                </li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 144550.png")" alt="Ejemplo de instalación">
+
+                <li>
+                    Al precionar <strong>Guardar fotos</strong> deberia aparecer ya
+                    la foto en la lista de de los empleados, asgindado a los empleados,
+                    de esas 3 fotos tomara la del cenntro y automaticamente la pondra de
+                    perfil y lo mostrara de la siguiente manera:
+                </li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 145828.png")" alt="Ejemplo de instalación">
+                <li>
+                    Los demas botones presente en lo del empelado seraii para poder editar
+                    la inforamcion del empleado, poder elimanar a el empleado y ver su reporte, es decir ver su
+                    rendimiento semanalmente, explora tu y descubrel!!.
+                </li>
+            </ul>
+        </div>
+
+
+        <div id="funcionalidades" class="manual-section">
+            <h2>6.Horarios</h2>
+            <p>
+                Luego de haber creado los empleados con su respectiva informacion y fotos
+                tenemos que proceder  a crear los horarios, seria en la ventana siguiente:
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 150436.png")" alt="Ejemplo de instalación">
+            </p>
+            <ul>
+                <li>En esta parte tu debes crear un horario para el emppleado,por ende debes precionar donde dice <strong>Crear Nuevo horario</strong></li>
+                <li>Tiene que aparecerte una ventana como esta:</li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 150730.png")" alt="Ejemplo de instalación">
+                <li>
+                    <br />ahi en esa ventana donde dice empleaddo, das clic izquiero y automatiamente
+                    debe aparecerte una lista de los empleados creados
+                    selelcionas el horario de entrada y de salida y Precionas Craer y listo.
+                    Debe dirigirte a la lista del principio donde nos mostrara la lista de horarios con su
+                    respetivo empleado:
+                </li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 150745.png")" alt="Ejemplo de instalación">
+
+            </ul>
+        </div>
+
+        <div id="problemas" class="manual-section">
+            <h2>7.Reconocimiento facial</h2>
+            <p>
+                Esta parte es donde ya tomas la asitencia de manera auotmatica, al precionar reconocer deberia
+                mostrarte una ventana como esta:
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 151525.png")" alt="Ejemplo de instalación">
+            </p>
+            <ul>
+                <li>
+                    En esta parte tu debes de posicionarte enfrente de la camara, donde
+                    te reconocera, te dara tu nombre y te abilitara un nuevo campo automatico en donde
+                </li>
+                <li>Tiene que aparecerte una ventana como esta:</li>
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 151620.png")" alt="Ejemplo de instalación">
+                <li>
+                    <br />ahi en esa ventana donde donde dice comentario sera opcional, eso esta ahi por ejemplo
+                    un empleado llega tarde y quiere justificar su entrada tardia, debe justificar el por que
+                    llego tarde, eso sera por si llega tarde y de añadira a su reporte
+                    de lo contrairop no habria problemas, pasado 15segundo si nadie pone un coemntario
+                    automaticamente el sistema te manda a la ventana de inicio donde seguira tomando asistencias.
+                </li>
+            </ul>
+        </div>
+        <div id="soporte" class="manual-section">
+            <h2>8.Asistencia.</h2>
+            <p>
+                Esta parte es donde ya abra creado una asistencia attomaticmanente, deberia aparcerte una venta como esta:
+                <img src="@Url.Content("~/img/Captura de pantalla 2024-11-26 173220.png")" alt="Ejemplo de instalación">
+            </p>
+            <ul>
+                <li>
+                    <br />En esta parte ya te da la asitencia del empleado, a la hora que se registro
+                    de entrada, que si su hora es las 7:30 am de entrada, tiene 10 minutos de gracia
+                    para poder refistrarse y que el sistema no lo tome como entrada tardia, igual la hora de salida
+                    una 1h de gracia, es decir si el empleado tiene su hora de salida a las 16:30 pm, y se registra
+                    a las 17:31pm el sistema lo toma como hora extra, dando cuantas horas y minutos se a tardado de su salida
+                    pero si sale en elapso de esa hora lo toma como salida puntual, hay mas funcionalidades que las cual
+                    tu como usuario debes de descubri, suerte y bendiciones para ti y tu empresa
+                </li>
+            </ul>
+        </div>
+
+        <div id="soporte" class="manual-section">
+            <h2>Contacto y Soporte</h2>
+            <p>
+                Si tienes algún problema o pregunta, contáctanos:
+            </p>
+            <ul>
+                <li>Email: darwinalexis611@gmail.com</li>
+                <li>Teléfono: +503 7627-2675</li>
+                <li>Horario de Atención: Lunes a jueves, 8:00 AM a 6:00 PM y viernes de  8:00 AM a 4:30 PM</li>
+            </ul>
+        </div>
+        <footer class="text-center mt-5">
+            <p>&copy; 2024 [...]. Todos los derechos reservados.</p>
+        </footer>
+        
+
+
+        <a href="/Home/DescargarManualPdf" class="btn btn-primary rounded-pill shadow-sm">
+            Descargar PDF
+        </a>
+
+        <button onclick="window.location.href='/Home/Inicio'" class="btn btn-primary">Volver al Inicio</button>
+    </div>
+</body>
+</html> 

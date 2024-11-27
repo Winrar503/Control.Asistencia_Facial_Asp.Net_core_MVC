@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "W/EIPaiDJpDnmuTS3hiJvi7e+TVGyWQlPZBtLB9akQQ=",
+  "Hash": "eaehYvIFHNUYRGDgNjSLvYoSVq9McCSVLvPzyHL2DuQ=",
   "Source": "Face.UserInterface",
   "BasePath": "_content/Face.UserInterface",
   "Mode": "Default",
@@ -183,6 +183,468 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 073103.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 073103#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "exw8y3r5x5",
+      "Integrity": "spaw/gfWEZQu051KB0JBlod+HaQTRyxhl682GjwUqtU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 073103.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 132315.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 132315#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a2hqaylnpm",
+      "Integrity": "4voBFmmoH8oNf6KMZNisi17C2VvEKS3PPTFe0M4RyPg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 132315.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 133407.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 133407#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qfh9xl2jl7",
+      "Integrity": "htXxsO571K5RZzGDmpoTvCKkv1I/YCXtAQ40nDRYkg0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 133407.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 135110.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 135110#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wjp5g1vvbn",
+      "Integrity": "nHTcdfbwoOtmLUdo++GpveAi+EIwRUoP3gr4CaZ7XMw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 135110.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 135814.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 135814#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w0nmpejdao",
+      "Integrity": "ED/3M1Cu3OgdPe1GYt1tz4JYtPVw5Xtyh/C86xsLd0U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 135814.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 140920.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 140920#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a6vspflnzb",
+      "Integrity": "0vFncHwSD94z8Sk3LVzpGrAHg4HNKAbXkoGqDrcbFjg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 140920.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 143048.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 143048#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8uggipo0f7",
+      "Integrity": "QI8HXXwmdQ8Euz0T+GOGQLTOH92YvICfx/tDkRzptp4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 143048.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 143644.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 143644#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xqzwxhtg2f",
+      "Integrity": "Bw6v7L9GnwzrEGjal5d6szWMjP5v7G94cWXsPvT43mY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 143644.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144058.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 144058#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uiqahmbbvj",
+      "Integrity": "xt3SGU67BE85VFwWDUKRvTmNJoLEcz0sXEJz5HxRaUo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 144058.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144405.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 144405#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b1cupqqij3",
+      "Integrity": "keYdHBENQWyiugpzd7vrUNHgAbUTPghZfiw2pdY8iRk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 144405.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144425.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 144425#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yw4syg6zyc",
+      "Integrity": "4smk8oaaGQM00G3nU2oNiRgExy6AqX7EbMZPqdByThA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 144425.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144550.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 144550#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d5ktrp7a2h",
+      "Integrity": "vwVfpIgS01mxv1RypLztMTh1s0u4uywkj/OpKw0OaAE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 144550.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144655.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 144655#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ixz9rceope",
+      "Integrity": "JqlkqOk0zngJ8qTSGrM/JlclrQ4tti0C9x94uq2gR/k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 144655.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144741.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 144741#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1ninh8is5v",
+      "Integrity": "Ha94KHqXfFYGCpdrGRlKCFkkFaKHqgdLaHNv4Oc1+O4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 144741.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144803.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 144803#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "agpvob7xkr",
+      "Integrity": "mmaSl2QJftY312og/BApJMmwnxcdSDRXzw2Og0TjsII=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 144803.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 145828.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 145828#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bzy36weua9",
+      "Integrity": "13ktjidAcHE/U/JR60wlHrVXUvDSirhAO+KzW/FZ+kM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 145828.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 150436.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 150436#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z84fqpmink",
+      "Integrity": "QwFSg7m+pyR5vku83a5swe7dhJ8WMGXIY8OYApgnsYE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 150436.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 150730.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 150730#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bv80jlxizi",
+      "Integrity": "5yMz2JFkWihLRt+blfwz57jMblU47Mtd2uxippCm9so=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 150730.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 150745.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 150745#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x9c7luigxu",
+      "Integrity": "5cY63lJ4d3dT9uAAQnCVJ0NZQBLpqh8U1pnWw7clykg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 150745.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 151525.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 151525#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jyte35rz0b",
+      "Integrity": "KxYiZzPcoH5wzPsjLN6QZtAqjJ8aMc13SBS/4daFUjs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 151525.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 151620.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 151620#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ue2e9q2q14",
+      "Integrity": "tvR2g16KTxIQfrK7ftT38CuUAprE7Mpa+WCnhJ3qgC8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 151620.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 173220.png",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "img/Captura de pantalla 2024-11-26 173220#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8x8m8mvvw5",
+      "Integrity": "rKb32p8QN/VBC3/ufRF/zDWZNUNsypxw5fZpzFTJMZM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 173220.png"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\js\\site.js",
@@ -2057,6 +2519,1810 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 073103.exw8y3r5x5.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 073103.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "117055"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"spaw/gfWEZQu051KB0JBlod+HaQTRyxhl682GjwUqtU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 13:31:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "exw8y3r5x5"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 073103.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-spaw/gfWEZQu051KB0JBlod+HaQTRyxhl682GjwUqtU="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 073103.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 073103.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "117055"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"spaw/gfWEZQu051KB0JBlod+HaQTRyxhl682GjwUqtU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 13:31:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-spaw/gfWEZQu051KB0JBlod+HaQTRyxhl682GjwUqtU="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 132315.a2hqaylnpm.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 132315.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "223322"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4voBFmmoH8oNf6KMZNisi17C2VvEKS3PPTFe0M4RyPg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 19:23:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a2hqaylnpm"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 132315.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4voBFmmoH8oNf6KMZNisi17C2VvEKS3PPTFe0M4RyPg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 132315.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 132315.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "223322"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4voBFmmoH8oNf6KMZNisi17C2VvEKS3PPTFe0M4RyPg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 19:23:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4voBFmmoH8oNf6KMZNisi17C2VvEKS3PPTFe0M4RyPg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 133407.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 133407.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "116521"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"htXxsO571K5RZzGDmpoTvCKkv1I/YCXtAQ40nDRYkg0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 19:34:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-htXxsO571K5RZzGDmpoTvCKkv1I/YCXtAQ40nDRYkg0="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 133407.qfh9xl2jl7.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 133407.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "116521"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"htXxsO571K5RZzGDmpoTvCKkv1I/YCXtAQ40nDRYkg0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 19:34:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qfh9xl2jl7"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 133407.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-htXxsO571K5RZzGDmpoTvCKkv1I/YCXtAQ40nDRYkg0="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 135110.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 135110.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69733"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nHTcdfbwoOtmLUdo++GpveAi+EIwRUoP3gr4CaZ7XMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 19:51:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nHTcdfbwoOtmLUdo++GpveAi+EIwRUoP3gr4CaZ7XMw="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 135110.wjp5g1vvbn.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 135110.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69733"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nHTcdfbwoOtmLUdo++GpveAi+EIwRUoP3gr4CaZ7XMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 19:51:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wjp5g1vvbn"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 135110.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nHTcdfbwoOtmLUdo++GpveAi+EIwRUoP3gr4CaZ7XMw="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 135814.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 135814.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56920"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ED/3M1Cu3OgdPe1GYt1tz4JYtPVw5Xtyh/C86xsLd0U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 19:58:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ED/3M1Cu3OgdPe1GYt1tz4JYtPVw5Xtyh/C86xsLd0U="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 135814.w0nmpejdao.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 135814.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56920"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ED/3M1Cu3OgdPe1GYt1tz4JYtPVw5Xtyh/C86xsLd0U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 19:58:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w0nmpejdao"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 135814.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ED/3M1Cu3OgdPe1GYt1tz4JYtPVw5Xtyh/C86xsLd0U="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 140920.a6vspflnzb.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 140920.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "102597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0vFncHwSD94z8Sk3LVzpGrAHg4HNKAbXkoGqDrcbFjg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:09:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a6vspflnzb"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 140920.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0vFncHwSD94z8Sk3LVzpGrAHg4HNKAbXkoGqDrcbFjg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 140920.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 140920.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "102597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0vFncHwSD94z8Sk3LVzpGrAHg4HNKAbXkoGqDrcbFjg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:09:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0vFncHwSD94z8Sk3LVzpGrAHg4HNKAbXkoGqDrcbFjg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 143048.8uggipo0f7.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 143048.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "127555"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QI8HXXwmdQ8Euz0T+GOGQLTOH92YvICfx/tDkRzptp4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:30:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8uggipo0f7"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 143048.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QI8HXXwmdQ8Euz0T+GOGQLTOH92YvICfx/tDkRzptp4="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 143048.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 143048.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "127555"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QI8HXXwmdQ8Euz0T+GOGQLTOH92YvICfx/tDkRzptp4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:30:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QI8HXXwmdQ8Euz0T+GOGQLTOH92YvICfx/tDkRzptp4="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 143644.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 143644.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175600"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Bw6v7L9GnwzrEGjal5d6szWMjP5v7G94cWXsPvT43mY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:36:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Bw6v7L9GnwzrEGjal5d6szWMjP5v7G94cWXsPvT43mY="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 143644.xqzwxhtg2f.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 143644.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175600"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Bw6v7L9GnwzrEGjal5d6szWMjP5v7G94cWXsPvT43mY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:36:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xqzwxhtg2f"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 143644.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Bw6v7L9GnwzrEGjal5d6szWMjP5v7G94cWXsPvT43mY="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144058.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144058.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131861"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xt3SGU67BE85VFwWDUKRvTmNJoLEcz0sXEJz5HxRaUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:41:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xt3SGU67BE85VFwWDUKRvTmNJoLEcz0sXEJz5HxRaUo="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144058.uiqahmbbvj.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144058.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131861"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xt3SGU67BE85VFwWDUKRvTmNJoLEcz0sXEJz5HxRaUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:41:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uiqahmbbvj"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 144058.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xt3SGU67BE85VFwWDUKRvTmNJoLEcz0sXEJz5HxRaUo="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144405.b1cupqqij3.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144405.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "93624"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"keYdHBENQWyiugpzd7vrUNHgAbUTPghZfiw2pdY8iRk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:44:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b1cupqqij3"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 144405.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-keYdHBENQWyiugpzd7vrUNHgAbUTPghZfiw2pdY8iRk="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144405.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144405.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "93624"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"keYdHBENQWyiugpzd7vrUNHgAbUTPghZfiw2pdY8iRk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:44:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-keYdHBENQWyiugpzd7vrUNHgAbUTPghZfiw2pdY8iRk="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144425.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144425.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "62036"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4smk8oaaGQM00G3nU2oNiRgExy6AqX7EbMZPqdByThA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:44:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4smk8oaaGQM00G3nU2oNiRgExy6AqX7EbMZPqdByThA="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144425.yw4syg6zyc.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144425.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "62036"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4smk8oaaGQM00G3nU2oNiRgExy6AqX7EbMZPqdByThA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:44:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yw4syg6zyc"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 144425.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4smk8oaaGQM00G3nU2oNiRgExy6AqX7EbMZPqdByThA="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144550.d5ktrp7a2h.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144550.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "546345"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vwVfpIgS01mxv1RypLztMTh1s0u4uywkj/OpKw0OaAE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:46:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d5ktrp7a2h"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 144550.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vwVfpIgS01mxv1RypLztMTh1s0u4uywkj/OpKw0OaAE="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144550.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144550.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "546345"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vwVfpIgS01mxv1RypLztMTh1s0u4uywkj/OpKw0OaAE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:46:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vwVfpIgS01mxv1RypLztMTh1s0u4uywkj/OpKw0OaAE="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144655.ixz9rceope.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144655.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "152154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JqlkqOk0zngJ8qTSGrM/JlclrQ4tti0C9x94uq2gR/k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:47:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ixz9rceope"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 144655.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JqlkqOk0zngJ8qTSGrM/JlclrQ4tti0C9x94uq2gR/k="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144655.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144655.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "152154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JqlkqOk0zngJ8qTSGrM/JlclrQ4tti0C9x94uq2gR/k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:47:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JqlkqOk0zngJ8qTSGrM/JlclrQ4tti0C9x94uq2gR/k="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144741.1ninh8is5v.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144741.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66799"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ha94KHqXfFYGCpdrGRlKCFkkFaKHqgdLaHNv4Oc1+O4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:47:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1ninh8is5v"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 144741.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ha94KHqXfFYGCpdrGRlKCFkkFaKHqgdLaHNv4Oc1+O4="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144741.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144741.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66799"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ha94KHqXfFYGCpdrGRlKCFkkFaKHqgdLaHNv4Oc1+O4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:47:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ha94KHqXfFYGCpdrGRlKCFkkFaKHqgdLaHNv4Oc1+O4="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144803.agpvob7xkr.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144803.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35568"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mmaSl2QJftY312og/BApJMmwnxcdSDRXzw2Og0TjsII=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:48:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "agpvob7xkr"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 144803.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mmaSl2QJftY312og/BApJMmwnxcdSDRXzw2Og0TjsII="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 144803.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 144803.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35568"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mmaSl2QJftY312og/BApJMmwnxcdSDRXzw2Og0TjsII=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:48:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mmaSl2QJftY312og/BApJMmwnxcdSDRXzw2Og0TjsII="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 145828.bzy36weua9.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 145828.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "152694"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"13ktjidAcHE/U/JR60wlHrVXUvDSirhAO+KzW/FZ+kM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bzy36weua9"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 145828.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-13ktjidAcHE/U/JR60wlHrVXUvDSirhAO+KzW/FZ+kM="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 145828.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 145828.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "152694"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"13ktjidAcHE/U/JR60wlHrVXUvDSirhAO+KzW/FZ+kM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 20:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-13ktjidAcHE/U/JR60wlHrVXUvDSirhAO+KzW/FZ+kM="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 150436.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 150436.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QwFSg7m+pyR5vku83a5swe7dhJ8WMGXIY8OYApgnsYE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:04:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QwFSg7m+pyR5vku83a5swe7dhJ8WMGXIY8OYApgnsYE="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 150436.z84fqpmink.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 150436.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QwFSg7m+pyR5vku83a5swe7dhJ8WMGXIY8OYApgnsYE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:04:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z84fqpmink"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 150436.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QwFSg7m+pyR5vku83a5swe7dhJ8WMGXIY8OYApgnsYE="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 150730.bv80jlxizi.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 150730.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45746"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5yMz2JFkWihLRt+blfwz57jMblU47Mtd2uxippCm9so=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:07:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bv80jlxizi"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 150730.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5yMz2JFkWihLRt+blfwz57jMblU47Mtd2uxippCm9so="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 150730.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 150730.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45746"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5yMz2JFkWihLRt+blfwz57jMblU47Mtd2uxippCm9so=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:07:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5yMz2JFkWihLRt+blfwz57jMblU47Mtd2uxippCm9so="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 150745.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 150745.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34037"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5cY63lJ4d3dT9uAAQnCVJ0NZQBLpqh8U1pnWw7clykg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:07:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5cY63lJ4d3dT9uAAQnCVJ0NZQBLpqh8U1pnWw7clykg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 150745.x9c7luigxu.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 150745.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34037"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5cY63lJ4d3dT9uAAQnCVJ0NZQBLpqh8U1pnWw7clykg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:07:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x9c7luigxu"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 150745.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5cY63lJ4d3dT9uAAQnCVJ0NZQBLpqh8U1pnWw7clykg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 151525.jyte35rz0b.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 151525.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KxYiZzPcoH5wzPsjLN6QZtAqjJ8aMc13SBS/4daFUjs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:15:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jyte35rz0b"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 151525.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KxYiZzPcoH5wzPsjLN6QZtAqjJ8aMc13SBS/4daFUjs="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 151525.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 151525.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KxYiZzPcoH5wzPsjLN6QZtAqjJ8aMc13SBS/4daFUjs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:15:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KxYiZzPcoH5wzPsjLN6QZtAqjJ8aMc13SBS/4daFUjs="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 151620.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 151620.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38557"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tvR2g16KTxIQfrK7ftT38CuUAprE7Mpa+WCnhJ3qgC8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:16:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tvR2g16KTxIQfrK7ftT38CuUAprE7Mpa+WCnhJ3qgC8="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 151620.ue2e9q2q14.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 151620.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38557"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tvR2g16KTxIQfrK7ftT38CuUAprE7Mpa+WCnhJ3qgC8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 21:16:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ue2e9q2q14"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 151620.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tvR2g16KTxIQfrK7ftT38CuUAprE7Mpa+WCnhJ3qgC8="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 173220.8x8m8mvvw5.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 173220.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133982"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rKb32p8QN/VBC3/ufRF/zDWZNUNsypxw5fZpzFTJMZM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 23:32:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8x8m8mvvw5"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Captura de pantalla 2024-11-26 173220.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rKb32p8QN/VBC3/ufRF/zDWZNUNsypxw5fZpzFTJMZM="
+        }
+      ]
+    },
+    {
+      "Route": "img/Captura de pantalla 2024-11-26 173220.png",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 173220.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133982"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rKb32p8QN/VBC3/ufRF/zDWZNUNsypxw5fZpzFTJMZM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 Nov 2024 23:32:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rKb32p8QN/VBC3/ufRF/zDWZNUNsypxw5fZpzFTJMZM="
         }
       ]
     },

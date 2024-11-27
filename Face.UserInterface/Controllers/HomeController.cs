@@ -4,6 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Face.EntidadesDeNegocio;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using iText.Html2pdf;
+using iText.Kernel.Pdf;
+
+
 
 namespace Face.UserInterface.Controllers
 {
@@ -13,6 +20,8 @@ namespace Face.UserInterface.Controllers
         private readonly EmpleadosBL _empleadosBL = new EmpleadosBL();
         private readonly AsistenciasBL _asistenciasBL = new AsistenciasBL();
         private readonly ILogger<HomeController> _logger;
+        private readonly ICompositeViewEngine _viewEngine;
+
 
         [HttpGet]
         public async Task<IActionResult> GetDashboardMetrics()
@@ -49,7 +58,6 @@ namespace Face.UserInterface.Controllers
             return Json(datos);
         }
 
-
         [HttpPost]
         public async Task<IActionResult> GuardarComentario([FromBody] ComentarioDto comentarioDto)
         {
@@ -59,7 +67,6 @@ namespace Face.UserInterface.Controllers
             {
                 return Json(new { success = false, message = "Empleado no encontrado" });
             }
-
             var asistencia = new Asistencias
             {
                 EmpleadosId = empleado.Id,
@@ -81,15 +88,10 @@ namespace Face.UserInterface.Controllers
 
         public async Task<IActionResult> Inicio()
         {
-
-            var empleados = await _empleadosBL.ObtenerTodosAsync();
-
-
-            ViewBag.HayEmpleados = empleados.Any();
-
+            var cargos = await _cargosBL.ObtenerTodosAsync();
+            ViewBag.HayCargos = cargos != null && cargos.Count > 0;
             return View();
         }
-
 
         public IActionResult Index()
         {
@@ -107,7 +109,6 @@ namespace Face.UserInterface.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-
         [HttpGet]
         public async Task<IActionResult> GetAsistenciasMensuales()
         {
@@ -117,8 +118,6 @@ namespace Face.UserInterface.Controllers
                 .GroupBy(a => a.Fecha.Month)
                 .Select(g => new { Mes = g.Key, Total = g.Count() })
                 .ToDictionary(g => g.Mes, g => g.Total);
-
-
             var asistenciasMensuales = Enumerable.Range(1, 12).Select(m => asistenciasPorMes.ContainsKey(m) ? asistenciasPorMes[m] : 0).ToArray();
 
             return Json(asistenciasMensuales);
@@ -137,13 +136,62 @@ namespace Face.UserInterface.Controllers
         }
         public async Task<IActionResult> Dashboard()
         {
-
-            var empleados = await _empleadosBL.ObtenerTodosAsync();
-
-
-            ViewBag.HayEmpleados = empleados.Any();
-
+            var cantidadCargos = await _cargosBL.ObtenerCantidadAsync();
+            ViewBag.HayCargos = cantidadCargos > 0;
             return View();
         }
+
+        public HomeController(ICompositeViewEngine viewEngine)
+        {
+            _viewEngine = viewEngine;
+        }
+
+        public IActionResult Manual()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult DescargarManualPdf()
+        {
+            string htmlContent = RenderViewToString("Manual");
+
+            using (var memoryStream = new MemoryStream())
+            {
+                PdfWriter writer = new PdfWriter(memoryStream);
+                PdfDocument pdf = new PdfDocument(writer);
+                ConverterProperties properties = new ConverterProperties();
+
+                HtmlConverter.ConvertToPdf(htmlContent, pdf, properties);
+                pdf.Close();
+                return File(memoryStream.ToArray(), "application/pdf", "ManualDeUsuario.pdf");
+            }
+        }
+        private string RenderViewToString(string viewName)
+        {
+            using (var stringWriter = new StringWriter())
+            {
+                var viewResult = _viewEngine.FindView(ControllerContext, viewName, false);
+
+                if (!viewResult.Success)
+                {
+                    throw new FileNotFoundException($"La vista '{viewName}' no fue encontrada.");
+                }
+
+                var viewContext = new ViewContext(
+                    ControllerContext,
+                    viewResult.View,
+                    ViewData,
+                    TempData,
+                    stringWriter,
+                    new HtmlHelperOptions()
+                );
+
+                viewResult.View.RenderAsync(viewContext).Wait();
+                return stringWriter.GetStringBuilder().ToString();
+            }
+        }
+
+
     }
 }

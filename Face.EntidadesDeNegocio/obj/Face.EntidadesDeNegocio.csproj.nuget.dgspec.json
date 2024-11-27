@@ -51,6 +51,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BouncyCastle": {
+              "target": "Package",
+              "version": "[1.8.9, )"
+            },
             "Emgu.CV": {
               "target": "Package",
               "version": "[4.9.0.5494, )"
@@ -83,9 +87,17 @@
               "target": "Package",
               "version": "[4.3.0, )"
             },
-            "iTextSharp": {
+            "itext7": {
               "target": "Package",
-              "version": "[5.5.13.4, )"
+              "version": "[9.0.0, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "itext7.pdfhtml": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

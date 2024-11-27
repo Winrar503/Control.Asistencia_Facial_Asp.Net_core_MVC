@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Dashboard Mejorado";
+    var hayEmpleados = ViewBag.Cargos as bool? ?? false;
 }
 
 <!DOCTYPE html>
@@ -134,45 +135,15 @@
     </style>
 </head>
 <body>
-
-    @model bool
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Obtener el valor de ViewBag.HayEmpleados desde el servidor
-            const hayEmpleados = @((ViewBag.HayEmpleados != null && (bool)ViewBag.HayEmpleados) ? "true" : "false");
-
-            // Mostrar alerta si no hay empleados registrados
-            if (hayEmpleados === "false") {
-                Swal.fire({
-                    title: '¡Atención!',
-                    text: 'No hay empleados registrados. Por favor, cree un cargo antes de continuar.',
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: 'Crear Cargo',
-                    cancelButtonText: 'Aceptar'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        // Redirigir a la vista de creación de cargos
-                        window.location.href = '/Cargos/Create';
-                    }
-                });
-            }
-        });
-    </script>
-
-
-
-
-
     <div class="dashboard-container">
-        <!-- Header -->
+
         <div class="dashboard-header">
             <h1>Informacion General</h1>
             <p>Controla tu plataforma con datos y gráficos dinámicos.</p>
+            
         </div>
 
-        <!-- Métricas Principales -->
+
         <div class="row text-center mb-5">
             <div class="col-md-3">
                 <a asp-controller="Empleados" asp-action="Index" class="text-decoration-none">
@@ -220,13 +191,13 @@
             </div>
         </div>
 
-        <!-- Botones de Acción -->
         <div class="action-buttons">
             <button class="btn-modern" onclick="mostrarReporte()">Ver Reporte Completo</button>
-            <button class="btn-modern" onclick="nuevaFuncionalidad()">Nueva Función</button>
+            <button class="btn-modern" onclick="window.location.href='/Home/Manual'">Ver Manual</button>
+
+
         </div>
 
-        <!-- Gráficos -->
         <div class="row mb-4">
             <div class="col-md-6">
                 <div class="chart-container">
@@ -242,7 +213,6 @@
             </div>
         </div>
 
-        <!-- Tabla de Registros de Comentarios -->
         <div class="table-container mt-3">
             <h4 class="mb-4">Tabla de Comentarios</h4>
             <table class="table table-striped table-hover">
@@ -264,9 +234,37 @@
 
     <script>
 
+                   document.addEventListener('DOMContentLoaded', async function () {
+            try {
+
+                const metricsResponse = await fetch('/Home/GetDashboardMetrics');
+                const metrics = await metricsResponse.json();
+
+                const totalCargos = metrics.totalCargos || 0; 
+
+                console.log("Total de cargos:", totalCargos);
+
+                if (totalCargos === 0) {
+                    Swal.fire({
+                        title: '¡Atención!',
+                        text: 'No hay cargos registrados. Para poder crear empleados etc debes de crear primero cargos',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Crear Cargo',
+                        cancelButtonText: 'Aceptar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '/Cargos/Index';
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error("Error al verificar los cargos:", error);
+            }
+        });
+
         async function obtenerDatos() {
             try {
-                // Métricas principales
                 const metricsResponse = await fetch('/Home/GetDashboardMetrics');
                 const metrics = await metricsResponse.json();
 
@@ -275,12 +273,10 @@
                 document.getElementById('totalCargos').innerText = metrics.totalCargos;
                 document.getElementById('totalComentarios').innerText = metrics.totalComentarios;
 
-                // Asistencias Mensuales
                 const asistenciasResponse = await fetch('/Home/GetAsistenciasMensuales');
                 const asistenciasMensuales = await asistenciasResponse.json();
                 actualizarAsistenciasChart(asistenciasMensuales);
 
-                // Distribución de Empleados
                 const empleadosResponse = await fetch('/Home/GetDistribucionEmpleados');
                 const distribucionEmpleados = await empleadosResponse.json();
                 actualizarEmpleadosChart(distribucionEmpleados);
@@ -335,8 +331,7 @@
         }
 
         obtenerDatos();
-        setInterval(obtenerDatos, 5000); // Actualizar cada 5 segundos
-
+        setInterval(obtenerDatos, 5000);
 
         function mostrarReporte() {
             alert('Función de reporte en desarrollo...');
@@ -355,8 +350,7 @@
                 const comentarios = await response.json();
 
                 const tablaComentarios = document.getElementById('tablaComentarios');
-                tablaComentarios.innerHTML = ''; // Limpiar tabla
-
+                tablaComentarios.innerHTML = '';
                 if (comentarios.length === 0) {
                     tablaComentarios.innerHTML = `<tr><td colspan="2" class="text-center">No hay comentarios disponibles</td></tr>`;
                 } else {
@@ -376,8 +370,5 @@
         }
 
     </script>
-
-    </script>
-
 </body>
 </html>

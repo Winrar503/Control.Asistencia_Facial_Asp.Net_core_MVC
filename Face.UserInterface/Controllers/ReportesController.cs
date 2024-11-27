@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using System.IO;
 
 namespace Face.UserInterface.Controllers
@@ -138,54 +136,54 @@ namespace Face.UserInterface.Controllers
         //        return File(memoryStream.ToArray(), "application/pdf", $"Reporte_{reporte.Empleados.Nombre}.pdf");
         //    }
         //}
-        public async Task<IActionResult> DescargarPDF(int id)
-        {
-            var reporte = await _reportesBL.ObtenerPorIdAsync(new Reportes { Id = id });
-            if (reporte == null) return NotFound("Reporte no encontrado.");
+        //public async Task<IActionResult> DescargarPDF(int id)
+        //{
+        //    var reporte = await _reportesBL.ObtenerPorIdAsync(new Reportes { Id = id });
+        //    if (reporte == null) return NotFound("Reporte no encontrado.");
 
-            using (var memoryStream = new MemoryStream())
-            {
-                var doc = new Document(PageSize.A4, 25, 25, 30, 30);
-                var writer = PdfWriter.GetInstance(doc, memoryStream);
-                writer.CloseStream = false;
+        //    using (var memoryStream = new MemoryStream())
+        //    {
+        //        var doc = new Document(PageSize.A4, 25, 25, 30, 30);
+        //        var writer = PdfWriter.GetInstance(doc, memoryStream);
+        //        writer.CloseStream = false;
 
-                doc.Open();
+        //        doc.Open();
 
-                // Título del documento
-                var titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
-                var textFont = FontFactory.GetFont(FontFactory.HELVETICA, 12);
-                doc.Add(new Paragraph("Reporte de Asistencias", titleFont));
-                doc.Add(new Paragraph($"Empleado: {reporte.Empleados.Nombre}", textFont));
-                doc.Add(new Paragraph($"Rango de Fechas: {reporte.FechaInicio:yyyy-MM-dd} - {reporte.FechaFin:yyyy-MM-dd}", textFont));
-                doc.Add(new Paragraph(" "));
+        //        // Título del documento
+        //        var titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
+        //        var textFont = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+        //        doc.Add(new Paragraph("Reporte de Asistencias", titleFont));
+        //        doc.Add(new Paragraph($"Empleado: {reporte.Empleados.Nombre}", textFont));
+        //        doc.Add(new Paragraph($"Rango de Fechas: {reporte.FechaInicio:yyyy-MM-dd} - {reporte.FechaFin:yyyy-MM-dd}", textFont));
+        //        doc.Add(new Paragraph(" "));
 
-                // Resumen del reporte
-                doc.Add(new Paragraph("Resumen del Rendimiento:", titleFont));
-                doc.Add(new Paragraph(reporte.Resumen, textFont));
-                doc.Add(new Paragraph(" "));
+        //        // Resumen del reporte
+        //        doc.Add(new Paragraph("Resumen del Rendimiento:", titleFont));
+        //        doc.Add(new Paragraph(reporte.Resumen, textFont));
+        //        doc.Add(new Paragraph(" "));
 
-                // Tabla de detalles
-                PdfPTable table = new PdfPTable(3);
-                table.WidthPercentage = 100;
-                table.AddCell("Fecha");
-                table.AddCell("Tipo");
-                table.AddCell("Estado");
+        //        // Tabla de detalles
+        //        PdfPTable table = new PdfPTable(3);
+        //        table.WidthPercentage = 100;
+        //        table.AddCell("Fecha");
+        //        table.AddCell("Tipo");
+        //        table.AddCell("Estado");
 
-                // Aquí podrías iterar sobre una lista de asistencias y agregar filas
-                var asistencias = await _asistenciasBL.ObtenerTodosAsync();
-                foreach (var asistencia in asistencias.Where(a => a.EmpleadosId == reporte.EmpleadosId && a.Fecha >= reporte.FechaInicio && a.Fecha <= reporte.FechaFin))
-                {
-                    table.AddCell(asistencia.Fecha.ToString("yyyy-MM-dd"));
-                    table.AddCell(asistencia.Tipo);
-                    table.AddCell(asistencia.EstadoReconocimiento);
-                }
+        //        // Aquí podrías iterar sobre una lista de asistencias y agregar filas
+        //        var asistencias = await _asistenciasBL.ObtenerTodosAsync();
+        //        foreach (var asistencia in asistencias.Where(a => a.EmpleadosId == reporte.EmpleadosId && a.Fecha >= reporte.FechaInicio && a.Fecha <= reporte.FechaFin))
+        //        {
+        //            table.AddCell(asistencia.Fecha.ToString("yyyy-MM-dd"));
+        //            table.AddCell(asistencia.Tipo);
+        //            table.AddCell(asistencia.EstadoReconocimiento);
+        //        }
 
-                doc.Add(table);
-                doc.Close();
+        //        doc.Add(table);
+        //        doc.Close();
 
-                return File(memoryStream.ToArray(), "application/pdf", $"Reporte_{reporte.Empleados.Nombre}.pdf");
-            }
-        }
+        //        return File(memoryStream.ToArray(), "application/pdf", $"Reporte_{reporte.Empleados.Nombre}.pdf");
+        //    }
+        //}
 
 
         // Eliminar reporte

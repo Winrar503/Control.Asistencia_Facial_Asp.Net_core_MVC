@@ -70,6 +70,14 @@ namespace Face.AccesoADatos
             }
         }
 
+
+        //public static async Task<int> ObtenerCantidadAsync()
+        //{
+        //    using (var dbContext = new BDContexto())
+        //    {
+        //        return await dbContext.Cargos.CountAsync();
+        //    }
+        //}
         public static async Task<int> ObtenerCantidadAsync()
         {
             using (var dbContext = new BDContexto())
@@ -77,6 +85,7 @@ namespace Face.AccesoADatos
                 return await dbContext.Cargos.CountAsync();
             }
         }
+
 
         public static async Task<List<Cargo>> ObtenerTodosConRelacionesAsync()
         {
@@ -87,5 +96,7 @@ namespace Face.AccesoADatos
                     .ToListAsync();
             }
         }
+        
+
     }
 }

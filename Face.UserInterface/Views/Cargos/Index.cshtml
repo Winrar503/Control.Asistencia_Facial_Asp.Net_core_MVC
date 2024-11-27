@@ -1,28 +1,327 @@
-﻿@model IEnumerable<Face.EntidadesDeNegocio.Cargo>
+﻿@* @model IEnumerable<Face.EntidadesDeNegocio.Cargo>
 
-<h1>Gestión de Cargos</h1>
-<a asp-action="Crear" class="btn btn-success">Crear Nuevo Cargo</a>
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Fecha de Creación</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var cargo in Model)
-        {
-            <tr>
-                <td>@cargo.Id</td>
-                <td>@cargo.Nombre</td>
-                <td>@cargo.FechaCreacion.ToString("dd/MM/yyyy")</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@cargo.Id" class="btn btn-primary btn-sm">Editar</a>
-                    <a asp-action="Delete" asp-route-id="@cargo.Id" class="btn btn-danger btn-sm">Eliminar</a>
-                </td>
-            </tr>
+<div class="container py-5">
+    <!-- Título y botón para crear -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="text-primary fw-bold">Gestión de Cargos</h1>
+        <a asp-action="Crear" class="btn btn-success btn-lg rounded-pill shadow">
+            <i class="fas fa-plus me-2"></i> Crear Nuevo Cargo
+        </a>
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <div class="input-group mb-4">
+        <input type="text" id="buscarCargo" class="form-control shadow-sm rounded-pill" placeholder="Buscar por nombre...">
+        <button class="btn btn-primary rounded-pill ms-2 shadow">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+
+    <!-- Tabla de cargos -->
+    <div class="table-responsive rounded shadow-sm">
+        <table class="table table-bordered align-middle table-hover">
+            <thead class="table-primary text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Fecha de Creación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCargos">
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-muted">No hay cargos registrados.</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var cargo in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@cargo.Id</td>
+                            <td>@cargo.Nombre</td>
+                            <td>@cargo.FechaCreacion.ToString("dd/MM/yyyy")</td>
+                            <td class="text-center">
+                                <a asp-action="Edit" asp-route-id="@cargo.Id" class="btn btn-primary btn-sm rounded-pill shadow-sm">
+                                    <i class="fas fa-edit me-1"></i> Editar
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@cargo.Id" class="btn btn-danger btn-sm rounded-pill shadow-sm">
+                                    <i class="fas fa-trash me-1"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Paginación -->
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link rounded-pill shadow-sm">Anterior</a>
+            </li>
+            <li class="page-item"><a class="page-link rounded-pill shadow-sm" href="#">1</a></li>
+            <li class="page-item"><a class="page-link rounded-pill shadow-sm" href="#">2</a></li>
+            <li class="page-item"><a class="page-link rounded-pill shadow-sm" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link rounded-pill shadow-sm" href="#">Siguiente</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<style>
+    /* Fondo claro */
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Botones elegantes */
+    .btn-lg {
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .btn-lg:hover {
+            transform: scale(1.05);
         }
-    </tbody>
-</table>
+
+    .btn-sm {
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .btn-sm:hover {
+            transform: scale(1.1);
+        }
+
+    /* Tabla estilizada */
+    .table {
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+        background: #fff;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #dee2e6;
+    }
+
+    /* Estilo de la paginación */
+    .pagination .page-link {
+        font-weight: bold;
+        color: #007bff;
+        border: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .pagination .page-link:hover {
+            background-color: #007bff;
+            color: white;
+        }
+</style>
+
+<script>
+    // Filtro dinámico para la búsqueda
+    document.getElementById('buscarCargo').addEventListener('input', function () {
+        const term = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#tablaCargos tr');
+        rows.forEach(row => {
+            const nombre = row.cells[1]?.innerText.toLowerCase();
+            row.style.display = nombre && nombre.includes(term) ? '' : 'none';
+        });
+    });
+</script>
+ *@
+ @model IEnumerable<Face.EntidadesDeNegocio.Cargo>
+
+<div class="container py-5">
+    <!-- Título y botón para crear -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="text-primary fw-bold">Gestión de Cargos</h1>
+        <a asp-action="Crear" class="btn btn-success btn-lg rounded-pill shadow">
+            <i class="fas fa-plus me-2"></i> Crear Nuevo Cargo
+        </a>
+    </div>
+
+    <!-- Barra de búsqueda y acciones adicionales -->
+    <div class="d-flex flex-wrap mb-4 gap-3">
+        <input type="text" id="buscarCargo" class="form-control shadow-sm rounded-pill flex-grow-1" placeholder="Buscar por nombre...">
+        <button class="btn btn-primary rounded-pill shadow" id="exportarCargos">
+            <i class="fas fa-file-export me-2"></i> Exportar CSV
+        </button>
+        <button class="btn btn-warning rounded-pill shadow" id="importarCargos">
+            <i class="fas fa-file-import me-2"></i> Importar CSV
+        </button>
+        <button class="btn btn-info rounded-pill shadow" id="generarReporte">
+            <i class="fas fa-chart-bar me-2"></i> Generar Reporte
+        </button>
+    </div>
+
+    <!-- Tabla de cargos -->
+    <div class="table-responsive rounded shadow-sm">
+        <table class="table table-bordered align-middle table-hover">
+            <thead class="table-primary text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Fecha de Creación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCargos">
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-muted">No hay cargos registrados.</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var cargo in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@cargo.Id</td>
+                            <td>@cargo.Nombre</td>
+                            <td>@cargo.FechaCreacion.ToString("dd/MM/yyyy")</td>
+                            <td class="text-center">
+                                <a asp-action="Edit" asp-route-id="@cargo.Id" class="btn btn-primary btn-sm rounded-pill shadow-sm">
+                                    <i class="fas fa-edit me-1"></i> Editar
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@cargo.Id" class="btn btn-danger btn-sm rounded-pill shadow-sm">
+                                    <i class="fas fa-trash me-1"></i> Eliminar
+                                </a>
+                                <button class="btn btn-secondary btn-sm rounded-pill shadow-sm" onclick="verDetalles(@cargo.Id)">
+                                    <i class="fas fa-info-circle me-1"></i> Ver Detalles
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Paginación -->
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link rounded-pill shadow-sm">Anterior</a>
+            </li>
+            <li class="page-item"><a class="page-link rounded-pill shadow-sm" href="#">1</a></li>
+            <li class="page-item"><a class="page-link rounded-pill shadow-sm" href="#">2</a></li>
+            <li class="page-item"><a class="page-link rounded-pill shadow-sm" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link rounded-pill shadow-sm" href="#">Siguiente</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<style>
+    /* Fondo claro */
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Botones elegantes */
+    .btn-lg {
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .btn-lg:hover {
+            transform: scale(1.05);
+        }
+
+    .btn-sm {
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .btn-sm:hover {
+            transform: scale(1.1);
+        }
+
+    /* Tabla estilizada */
+    .table {
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+        background: #fff;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #dee2e6;
+    }
+
+    /* Estilo de la paginación */
+    .pagination .page-link {
+        font-weight: bold;
+        color: #007bff;
+        border: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .pagination .page-link:hover {
+            background-color: #007bff;
+            color: white;
+        }
+</style>
+
+<script>
+    // Filtro dinámico para la búsqueda
+    document.getElementById('buscarCargo').addEventListener('input', function () {
+        const term = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#tablaCargos tr');
+        rows.forEach(row => {
+            const nombre = row.cells[1]?.innerText.toLowerCase();
+            row.style.display = nombre && nombre.includes(term) ? '' : 'none';
+        });
+    });
+
+    // Funcionalidades adicionales
+    document.getElementById('exportarCargos').addEventListener('click', function () {
+        alert('Función de exportar cargos aún no implementada.');
+    });
+
+    document.getElementById('importarCargos').addEventListener('click', function () {
+        alert('Función de importar cargos aún no implementada.');
+    });
+
+    document.getElementById('generarReporte').addEventListener('click', function () {
+        alert('Función de generar reporte aún no implementada.');
+    });
+
+    function verDetalles(id) {
+        alert(`Mostrando detalles del cargo con ID: ${id}`);
+    }
+</script>

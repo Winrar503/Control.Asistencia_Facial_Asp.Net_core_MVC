@@ -1,12 +1,75 @@
 ﻿@model Face.EntidadesDeNegocio.Cargo
 
-<h1>Crear Nuevo Cargo</h1>
-<form asp-action="Crear">
-    <div class="form-group">
-        <label asp-for="Nombre"></label>
-        <input asp-for="Nombre" class="form-control" />
-        <span asp-validation-for="Nombre" class="text-danger"></span>
+<div class="container py-5">
+    <!-- Encabezado -->
+    <div class="text-center mb-4">
+        <h1 class="text-primary fw-bold">Crear Nuevo Cargo</h1>
+        <p class="text-muted">Rellena el formulario para agregar un nuevo cargo a la plataforma</p>
     </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
-<a asp-action="Index" class="btn btn-secondary">Volver</a>
+
+    <!-- Formulario -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-lg border-0 rounded">
+                <div class="card-body p-4">
+                    <form asp-action="Crear">
+                        <!-- Campo Nombre -->
+                        <div class="form-group mb-4">
+                            <label asp-for="Nombre" class="form-label fw-semibold">Nombre del Cargo</label>
+                            <input asp-for="Nombre" class="form-control form-control-lg shadow-sm rounded-pill" placeholder="Ejemplo: Gerente de Ventas" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 shadow">
+                                <i class="fas fa-arrow-left me-2"></i> Volver
+                            </a>
+                            <button type="submit" class="btn btn-primary rounded-pill px-4 shadow">
+                                <i class="fas fa-save me-2"></i> Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Fondo suave */
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .form-control {
+        height: 50px;
+        padding: 10px 15px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+    .card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #495057;
+    }
+</style>

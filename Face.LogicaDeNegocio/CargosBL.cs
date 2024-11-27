@@ -39,10 +39,11 @@ namespace Face.LogicaDeNegocio
         {
             return await CargosDAL.ObtenerCantidadAsync();
         }
+
+
         public async Task<List<Cargo>> ObtenerTodosConRelacionesAsync()
         {
             return await CargosDAL.ObtenerTodosConRelacionesAsync();
         }
-
     }
 }

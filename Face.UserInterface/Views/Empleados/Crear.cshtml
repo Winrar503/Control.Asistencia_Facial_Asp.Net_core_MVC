@@ -1,4 +1,4 @@
-﻿@model Face.EntidadesDeNegocio.Empleados
+﻿@* @model Face.EntidadesDeNegocio.Empleados
 @using Face.EntidadesDeNegocio
 
 @{
@@ -110,4 +110,182 @@
             e.target.value = value;
         });
     </script>
+} *@
+@model Face.EntidadesDeNegocio.Empleados
+@using Face.EntidadesDeNegocio
+@{
+    ViewData["Title"] = "Crear";
+    List<Asistencias> asistencias = ViewBag.Asistencias as List<Asistencias>;
+    List<Reportes> reportes = ViewBag.Reportes as List<Reportes>;
+    List<Horarios> horarios = ViewBag.Horarios as List<Horarios>;
+    List<Fotos> fotos = ViewBag.Fotos as List<Fotos>;
 }
+
+<div class="container py-5">
+    <!-- Encabezado -->
+    <div class="text-center mb-5">
+        <h1 class="text-gradient fw-bold">Registrar Nuevo Empleado</h1>
+        <p class="text-muted fs-5">Completa los campos con la información del empleado para guardarlo en la plataforma.</p>
+    </div>
+
+    <!-- Formulario -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-body p-5 bg-light-gradient">
+                    <h4 class="card-title text-center text-secondary mb-4">Detalles del Empleado</h4>
+                    <form asp-action="Crear">
+                        <!-- Validación -->
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger shadow-sm" role="alert" style="display: none;"></div>
+
+                        <!-- Nombre -->
+                        <div class="form-group mb-4">
+                            <label asp-for="Nombre" class="form-label fw-bold">Nombre</label>
+                            <input asp-for="Nombre" class="form-control form-control-lg shadow rounded-pill" placeholder="Ej. Juan Pérez" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+
+                        <!-- Edad y Cargo -->
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label asp-for="Edad" class="form-label fw-bold">Edad</label>
+                                <input asp-for="Edad" class="form-control form-control-lg shadow rounded-pill" placeholder="Ej. 30" />
+                                <span asp-validation-for="Edad" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label asp-for="CargoId" class="form-label fw-bold">Cargo</label>
+                                <select asp-for="CargoId" class="form-control form-control-lg shadow rounded-pill">
+                                    <option value="">Seleccionar Cargo</option>
+                                    @foreach (var cargo in ViewBag.Cargos)
+                                    {
+                                        <option value="@cargo.Id">@cargo.Nombre</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="CargoId" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group mb-4">
+                            <label asp-for="Email" class="form-label fw-bold">Email</label>
+                            <input asp-for="Email" type="email" class="form-control form-control-lg shadow rounded-pill" placeholder="Ej. ejemplo@gmail.com" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <!-- Teléfono y Estado -->
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label asp-for="Telefono" class="form-label fw-bold">Teléfono</label>
+                                <input asp-for="Telefono" class="form-control form-control-lg shadow rounded-pill" placeholder="Ej. 1234-5678" />
+                                <span asp-validation-for="Telefono" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label asp-for="Estado" class="form-label fw-bold">Estado</label>
+                                <select asp-for="Estado" class="form-control form-control-lg shadow rounded-pill">
+                                    <option value="true">Activo</option>
+                                    <option value="false">Inactivo</option>
+                                </select>
+                                <span asp-validation-for="Estado" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Fecha de Registro -->
+                        <div class="form-group mb-4">
+                            <label asp-for="FechaRegistro" class="form-label fw-bold">Fecha de Registro</label>
+                            <input asp-for="FechaRegistro" type="date" class="form-control form-control-lg shadow rounded-pill" />
+                            <span asp-validation-for="FechaRegistro" class="text-danger"></span>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <a asp-action="Index" class="btn btn-outline-dark px-5 py-2 rounded-pill shadow">
+                                <i class="fas fa-arrow-left me-2"></i> Volver
+                            </a>
+                            <button type="submit" class="btn btn-gradient px-5 py-2 rounded-pill shadow">
+                                <i class="fas fa-save me-2"></i> Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Fondo general */
+    body {
+        background-color: #f4f5f7;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Títulos y Encabezados */
+    h1.text-gradient {
+        font-size: 2.8rem;
+        font-weight: bold;
+        background: linear-gradient(90deg, #4e54c8, #8f94fb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Fondo del formulario */
+    .bg-light-gradient {
+        background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    }
+
+    /* Campos del formulario */
+    .form-control-lg {
+        height: 50px;
+        padding: 10px 15px;
+        border: 2px solid #e0e0e0;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .form-control-lg:focus {
+            border-color: #4e54c8;
+            box-shadow: 0 0 10px rgba(78, 84, 200, 0.5);
+        }
+
+    /* Botones */
+    .btn-gradient {
+        background: linear-gradient(90deg, #4e54c8, #8f94fb);
+        color: #fff;
+        border: none;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    }
+
+        .btn-gradient:hover {
+            background: linear-gradient(90deg, #8f94fb, #4e54c8);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(78, 84, 200, 0.3);
+        }
+
+    .btn-outline-dark {
+        color: #343a40;
+        border: 2px solid #343a40;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .btn-outline-dark:hover {
+            background-color: #343a40;
+            color: white;
+            box-shadow: 0 5px 15px rgba(52, 58, 64, 0.2);
+        }
+
+    /* Tarjeta del formulario */
+    .card {
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script>
+    // Validación dinámica para el campo Teléfono
+    document.getElementById("Telefono").addEventListener("input", function (e) {
+        var value = e.target.value.replace(/\D/g, ""); // Remover caracteres no numéricos
+        if (value.length > 4) {
+            value = value.slice(0, 4) + "-" + value.slice(4);
+        }
+        e.target.value = value;
+    });
+</script>
