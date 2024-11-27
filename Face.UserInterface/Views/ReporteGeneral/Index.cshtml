@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Reporte General";
+    ViewData["Title"] = "Reporte General Mejorado";
     var totalEmpleados = ViewBag.TotalEmpleados;
     var empleadosActivos = ViewBag.EmpleadosActivos;
     var totalAsistencias = ViewBag.TotalAsistencias;
@@ -10,63 +10,83 @@
 }
 
 <div class="container my-5">
-    <h1 class="text-center mb-4 text-primary" style="font-weight: bold; font-size: 3.5rem;">Reporte General del Sistema</h1>
-    <p class="text-center text-muted mb-5" style="font-size: 1.2rem;">Visualización de métricas clave y gráficos interactivos</p>
-
-    <!-- Tarjetas de métricas generales -->
-    <div class="row text-center mb-5">
-        <div class="col-md-4">
-            <div class="card shadow-lg border-0 bg-light">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">Total Empleados</h5>
-                    <p class="display-4 text-dark fw-bold">@totalEmpleados</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-lg border-0 bg-light">
-                <div class="card-body">
-                    <h5 class="card-title text-success">Empleados Activos</h5>
-                    <p class="display-4 text-dark fw-bold">@empleadosActivos</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-lg border-0 bg-light">
-                <div class="card-body">
-                    <h5 class="card-title text-info">Total Cargos</h5>
-                    <p class="display-4 text-dark fw-bold">@totalCargos</p>
-                </div>
-            </div>
+    <!-- Header -->
+    <div class="text-center">
+        <h1 class="display-4 text-primary fw-bold">Reporte General del Sistema</h1>
+        <p class="lead text-muted">Una vista detallada de métricas clave con gráficas y exportaciones</p>
+        <div class="my-4">
+            <a href="/ReporteGeneral/DescargarReportePdf" class="btn btn-outline-primary btn-lg">
+                <i class="fas fa-file-pdf"></i> Descargar PDF
+            </a>
+            <button class="btn btn-outline-success btn-lg" onclick="exportarExcel()">
+                <i class="fas fa-file-excel"></i> Exportar Excel
+            </button>
         </div>
     </div>
 
-    <!-- Gráficos -->
-    <div class="row mb-5">
-        <div class="col-md-6">
-            <div class="card shadow-lg border-0">
-                <div class="card-body">
-                    <h5 class="text-center mb-4">Distribución de Empleados por Cargo</h5>
-                    <canvas id="chartCargos"></canvas>
+    <!-- Tabs para métricas, gráficas y comentarios -->
+    <ul class="nav nav-pills my-4 justify-content-center" id="tabReportes" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" id="tab-metricas-tab" data-bs-toggle="tab" data-bs-target="#tab-metricas" role="tab">Métricas</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="tab-graficas-tab" data-bs-toggle="tab" data-bs-target="#tab-graficas" role="tab">Gráficas</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="tab-comentarios-tab" data-bs-toggle="tab" data-bs-target="#tab-comentarios" role="tab">Comentarios</button>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- Tab: Métricas -->
+        <div class="tab-pane fade show active" id="tab-metricas" role="tabpanel">
+            <div class="row text-center">
+                <!-- Tarjetas -->
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="text-primary">Total Empleados</h5>
+                            <p class="display-5 fw-bold">@totalEmpleados</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="text-success">Empleados Activos</h5>
+                            <p class="display-5 fw-bold">@empleadosActivos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="text-info">Total Cargos</h5>
+                            <p class="display-5 fw-bold">@totalCargos</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card shadow-lg border-0">
-                <div class="card-body">
-                    <h5 class="text-center mb-4">Resumen de Asistencias</h5>
+
+        <!-- Tab: Gráficas -->
+        <div class="tab-pane fade" id="tab-graficas" role="tabpanel">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="text-center">Distribución de Empleados por Cargo</h5>
+                    <canvas id="chartCargos"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="text-center">Resumen de Asistencias</h5>
                     <canvas id="chartAsistencias"></canvas>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Tabla con comentarios -->
-    <div class="card shadow-lg border-0 mt-5">
-        <div class="card-body">
-            <h4 class="mb-4 text-primary">Comentarios de Asistencias</h4>
-            <table class="table table-striped">
-                <thead class="table-dark">
+        <!-- Tab: Comentarios -->
+        <div class="tab-pane fade" id="tab-comentarios" role="tabpanel">
+            <table class="table table-bordered">
+                <thead class="bg-dark text-white">
                     <tr>
                         <th>Empleado</th>
                         <th>Comentario</th>
@@ -74,53 +94,45 @@
                 </thead>
                 <tbody id="tablaComentarios">
                     <tr>
-                        <td colspan="2" class="text-center">Cargando comentarios...</td>
+                        <td colspan="2" class="text-center">Cargando datos...</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-    <!-- Botón para descargar el reporte -->
-    <div class="text-center mt-5">
-        <a href="/ReporteGeneral/DescargarReportePdf" class="btn btn-primary btn-lg rounded-pill">
-            <i class="fas fa-download"></i> Descargar Reporte en PDF
-        </a>
-    </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const datosPorCargo = @Html.Raw(Json.Serialize(datosPorCargo));
-        const ctxCargos = document.getElementById('chartCargos').getContext('2d');
-        const ctxAsistencias = document.getElementById('chartAsistencias').getContext('2d');
 
-        // Gráfico de Empleados por Cargo
-        new Chart(ctxCargos, {
-            type: 'pie',
+        // Gráfico: Distribución de Empleados por Cargo
+        new Chart(document.getElementById('chartCargos'), {
+            type: 'doughnut',
             data: {
                 labels: datosPorCargo.map(d => d.Cargo),
                 datasets: [{
                     data: datosPorCargo.map(d => d.TotalEmpleados),
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
                 }]
-            },
-            options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+            }
         });
 
-        // Gráfico de Resumen de Asistencias
-        new Chart(ctxAsistencias, {
+        // Gráfico: Resumen de Asistencias
+        new Chart(document.getElementById('chartAsistencias'), {
             type: 'bar',
             data: {
                 labels: ['Exitosas', 'Fallidas', 'Totales'],
                 datasets: [{
-                    label: 'Asistencias',
                     data: [@asistenciasExitosas, @asistenciasFallidas, @totalAsistencias],
-                    backgroundColor: ['#28a745', '#dc3545', '#007bff']
+                    backgroundColor: ['#28a745', '#dc3545', '#007bff'],
                 }]
-            },
-            options: { responsive: true, scales: { y: { beginAtZero: true } } }
+            }
         });
     });
+
+    function exportarExcel() {
+        // Lógica para descargar los datos en formato Excel
+        alert('Función de exportación aún en desarrollo.');
+    }
 </script>
