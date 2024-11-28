@@ -1300,3 +1300,11 @@ C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_A
 C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\itext.html2pdf.dll
 C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\arosa\OneDrive\Escritorio\AsistenciaProyect\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\System.Private.Windows.Core.dll
+C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\EPPlus.dll
+C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\EPPlus.Interfaces.dll
+C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\EPPlus.System.Drawing.dll
+C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Admin\Desktop\Universy\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.UserInterface\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

@@ -103,36 +103,91 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+       document.addEventListener('DOMContentLoaded', function () {
+        // Datos obtenidos desde el backend
         const datosPorCargo = @Html.Raw(Json.Serialize(datosPorCargo));
+        const asistenciasExitosas = @asistenciasExitosas;
+        const asistenciasFallidas = @asistenciasFallidas;
+        const totalAsistencias = @totalAsistencias;
 
-        // Gráfico: Distribución de Empleados por Cargo
-        new Chart(document.getElementById('chartCargos'), {
-            type: 'doughnut',
+        // Configuración para el gráfico de "Distribución de Empleados por Cargo"
+        const ctxCargos = document.getElementById('chartCargos').getContext('2d');
+        new Chart(ctxCargos, {
+            type: 'pie',
             data: {
-                labels: datosPorCargo.map(d => d.Cargo),
+                labels: datosPorCargo.map(d => d.Cargo), // Etiquetas (nombres de los cargos)
                 datasets: [{
-                    data: datosPorCargo.map(d => d.TotalEmpleados),
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                    label: 'Empleados por Cargo',
+                    data: datosPorCargo.map(d => d.TotalEmpleados), // Datos (número de empleados)
+                    backgroundColor: [
+                        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'
+                    ], // Colores personalizados
+                    hoverOffset: 4
                 }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                const total = datosPorCargo[tooltipItem.dataIndex].TotalEmpleados;
+                                return `${tooltipItem.label}: ${total} empleados`;
+                            }
+                        }
+                    }
+                }
             }
         });
 
-        // Gráfico: Resumen de Asistencias
-        new Chart(document.getElementById('chartAsistencias'), {
+        // Configuración para el gráfico de "Resumen de Asistencias"
+        const ctxAsistencias = document.getElementById('chartAsistencias').getContext('2d');
+        new Chart(ctxAsistencias, {
             type: 'bar',
             data: {
                 labels: ['Exitosas', 'Fallidas', 'Totales'],
                 datasets: [{
-                    data: [@asistenciasExitosas, @asistenciasFallidas, @totalAsistencias],
-                    backgroundColor: ['#28a745', '#dc3545', '#007bff'],
+                    label: 'Cantidad de Asistencias',
+                    data: [asistenciasExitosas, asistenciasFallidas, totalAsistencias],
+                    backgroundColor: ['#28a745', '#dc3545', '#007bff'], // Colores para las barras
+                    borderColor: ['#28a745', '#dc3545', '#007bff'], // Borde de las barras
+                    borderWidth: 1
                 }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Número de Asistencias'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Tipos de Asistencias'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return `${tooltipItem.label}: ${tooltipItem.raw} asistencias`;
+                            }
+                        }
+                    }
+                }
             }
         });
     });
 
-    function exportarExcel() {
-        // Lógica para descargar los datos en formato Excel
-        alert('Función de exportación aún en desarrollo.');
-    }
 </script>

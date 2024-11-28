@@ -23,13 +23,20 @@ namespace Face.UserInterface.Controllers
         private readonly ICompositeViewEngine _viewEngine;
 
 
-        [HttpGet]
         public async Task<IActionResult> GetDashboardMetrics()
         {
-            var totalEmpleados = (await _empleadosBL.ObtenerTodosAsync()).Count;
-            var totalAsistencias = (await _asistenciasBL.ObtenerTodosAsync()).Count;
-            var totalCargos = await _cargosBL.ObtenerCantidadAsync();
-            var totalComentarios = (await _asistenciasBL.ObtenerTodosAsync())
+            var totalEmpleadosTask = _empleadosBL.ObtenerTodosAsync();
+            var totalAsistenciasTask = _asistenciasBL.ObtenerTodosAsync();
+            var totalCargosTask = _cargosBL.ObtenerCantidadAsync();
+
+            await Task.WhenAll(totalEmpleadosTask, totalAsistenciasTask, totalCargosTask);
+
+            var totalEmpleados = totalEmpleadosTask.Result.Count;
+            var totalAsistencias = totalAsistenciasTask.Result.Count;
+            var totalCargos = totalCargosTask.Result;
+
+            // Calcular total de comentarios registrados
+            var totalComentarios = totalAsistenciasTask.Result
                 .Count(a => !string.IsNullOrEmpty(a.Comentarios));
 
             return Json(new
@@ -37,9 +44,11 @@ namespace Face.UserInterface.Controllers
                 totalEmpleados,
                 totalAsistencias,
                 totalCargos,
-                totalComentarios
+                totalComentarios // Incluir comentarios registrados
             });
         }
+
+
 
         [HttpGet]
         public async Task<IActionResult> ObtenerComentarios()
@@ -123,23 +132,46 @@ namespace Face.UserInterface.Controllers
             return Json(asistenciasMensuales);
         }
 
+        //[HttpGet]
+        //public async Task<IActionResult> GetDistribucionEmpleados()
+        //{
+        //    var empleados = await _empleadosBL.ObtenerTodosConRelacionesAsync();
+        //    var distribucionPorCargo = empleados
+        //        .GroupBy(e => e.Cargo?.Nombre ?? "Sin Cargo")
+        //        .Select(g => new { Cargo = g.Key, Total = g.Count() })
+        //        .ToDictionary(g => g.Cargo, g => g.Total);
+
+        //    return Json(distribucionPorCargo);
+        //}
         [HttpGet]
         public async Task<IActionResult> GetDistribucionEmpleados()
         {
+            // Obtener todos los cargos
+            var cargos = await _cargosBL.ObtenerTodosAsync();
+
+            // Obtener todos los empleados con sus relaciones
             var empleados = await _empleadosBL.ObtenerTodosConRelacionesAsync();
-            var distribucionPorCargo = empleados
-                .GroupBy(e => e.Cargo?.Nombre ?? "Sin Cargo")
-                .Select(g => new { Cargo = g.Key, Total = g.Count() })
-                .ToDictionary(g => g.Cargo, g => g.Total);
+
+            // Crear la distribución por cargo, asegurando que todos los cargos estén representados
+            var distribucionPorCargo = cargos
+                .Select(cargo => new
+                {
+                    Cargo = cargo.Nombre,
+                    Total = empleados.Count(e => e.CargoId == cargo.Id) // Contar empleados asignados al cargo
+                })
+                .ToDictionary(d => d.Cargo, d => d.Total);
 
             return Json(distribucionPorCargo);
         }
+
+
         public async Task<IActionResult> Dashboard()
         {
             var cantidadCargos = await _cargosBL.ObtenerCantidadAsync();
             ViewBag.HayCargos = cantidadCargos > 0;
             return View();
         }
+
 
         public HomeController(ICompositeViewEngine viewEngine)
         {

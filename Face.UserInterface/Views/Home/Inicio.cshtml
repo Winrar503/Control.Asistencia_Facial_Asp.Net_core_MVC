@@ -204,7 +204,7 @@
             </div>
             <div class="col-md-6">
                 <div class="chart-container">
-                    <div class="chart-title">Distribución de Empleados</div>
+                    <div class="chart-title">Distribución de Cargos</div>
                     <canvas id="empleadosChart"></canvas>
                 </div>
             </div>
@@ -337,15 +337,61 @@
             });
         }
 
-        function actualizarEmpleadosChart(data) {
+        // function actualizarEmpleadosChart(data) {
+        //     const ctx2 = document.getElementById('empleadosChart').getContext('2d');
+        //     new Chart(ctx2, {
+        //         type: 'doughnut',
+        //         data: {
+        //             labels: Object.keys(data),
+        //             datasets: [{
+        //                 data: Object.values(data),
+        //                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40']
+        //             }]
+        //         },
+        //         options: {
+        //             responsive: true,
+        //             plugins: {
+        //                 legend: {
+        //                     position: 'top',
+        //                 }
+        //             }
+        //         }
+        //     });
+        // }
+
+                  function actualizarEmpleadosChart(data) {
             const ctx2 = document.getElementById('empleadosChart').getContext('2d');
-            new Chart(ctx2, {
+
+            // Lista de colores predefinidos
+            const colorPalette = [
+                '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40',
+                '#F77737', '#C2185B', '#00BCD4', '#8E44AD', '#2ECC71', '#E74C3C'
+            ];
+
+            // Extraer etiquetas (nombres de los cargos) y valores (número de empleados)
+            const labels = Object.keys(data);
+            const values = Object.values(data);
+
+            // Generar colores dinámicos basados en la cantidad de cargos
+            const colors = labels.map((_, index) => colorPalette[index % colorPalette.length]);
+
+            // Verificar los datos en la consola
+            console.log("Datos para la gráfica de empleados:", { labels, values, colors });
+
+            // Si ya existe un gráfico, destruirlo antes de crear uno nuevo
+            if (window.empleadosChartInstance) {
+                window.empleadosChartInstance.destroy();
+            }
+
+            // Crear el gráfico
+            window.empleadosChartInstance = new Chart(ctx2, {
                 type: 'doughnut',
                 data: {
-                    labels: Object.keys(data),
+                    labels: labels, // Etiquetas (nombres de los cargos)
                     datasets: [{
-                        data: Object.values(data),
-                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40']
+                        data: values, // Datos (número de empleados)
+                        backgroundColor: colors, // Colores asignados
+                        hoverOffset: 4
                     }]
                 },
                 options: {
@@ -353,6 +399,15 @@
                     plugins: {
                         legend: {
                             position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    const cargo = tooltipItem.label;
+                                    const empleados = tooltipItem.raw;
+                                    return `${cargo}: ${empleados} empleados`;
+                                }
+                            }
                         }
                     }
                 }

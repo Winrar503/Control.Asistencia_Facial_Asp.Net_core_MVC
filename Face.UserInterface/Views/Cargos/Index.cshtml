@@ -179,7 +179,7 @@
         <table class="table table-bordered align-middle table-hover">
             <thead class="table-primary text-center">
                 <tr>
-                    <th>ID</th>
+                    @* <th>ID</th> *@
                     <th>Nombre</th>
                     <th>Fecha de Creación</th>
                     <th>Acciones</th>
@@ -197,19 +197,19 @@
                     @foreach (var cargo in Model)
                     {
                         <tr>
-                            <td class="text-center">@cargo.Id</td>
+                            @* <td class="text-center">@cargo.Id</td> *@
                             <td>@cargo.Nombre</td>
                             <td>@cargo.FechaCreacion.ToString("dd/MM/yyyy")</td>
                             <td class="text-center">
-                                <a asp-action="Edit" asp-route-id="@cargo.Id" class="btn btn-primary btn-sm rounded-pill shadow-sm">
+                               @*  <a asp-action="Edit" asp-route-id="@cargo.Id" class="btn btn-primary btn-sm rounded-pill shadow-sm">
                                     <i class="fas fa-edit me-1"></i> Editar
-                                </a>
+                                </a> *@
                                 <a asp-action="Delete" asp-route-id="@cargo.Id" class="btn btn-danger btn-sm rounded-pill shadow-sm">
                                     <i class="fas fa-trash me-1"></i> Eliminar
                                 </a>
-                                <button class="btn btn-secondary btn-sm rounded-pill shadow-sm" onclick="verDetalles(@cargo.Id)">
+                                @* <button class="btn btn-secondary btn-sm rounded-pill shadow-sm" onclick="verDetalles(@cargo.Id)">
                                     <i class="fas fa-info-circle me-1"></i> Ver Detalles
-                                </button>
+                                </button> *@
                             </td>
                         </tr>
                     }

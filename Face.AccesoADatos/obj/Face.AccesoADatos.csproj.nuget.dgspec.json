@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[1.8.9, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.5.1, )"
+            },
             "Emgu.CV": {
               "target": "Package",
               "version": "[4.9.0.5494, )"
@@ -174,6 +178,10 @@
             "BouncyCastle": {
               "target": "Package",
               "version": "[1.8.9, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.5.1, )"
             },
             "Emgu.CV": {
               "target": "Package",
