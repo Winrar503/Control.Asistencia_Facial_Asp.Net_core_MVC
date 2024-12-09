@@ -9,14 +9,11 @@ namespace Face.UserInterface.Controllers
     public class CargosController : Controller
     {
         private readonly CargosBL _cargosBL = new CargosBL();
-
         public async Task<IActionResult> Index()
         {
             var cargos = await _cargosBL.ObtenerTodosConRelacionesAsync();
             return View(cargos);
         }
-
-
         public IActionResult Crear()
         {
             return View();

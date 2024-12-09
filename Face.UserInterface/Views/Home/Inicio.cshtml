@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 
     <style>
@@ -138,51 +139,51 @@
         <div class="dashboard-header">
             <h1>Informacion General</h1>
             <p>Controla tu plataforma con datos y gráficos dinámicos.</p>
-            
+
         </div>
         <div class="row text-center mb-5">
             <div class="col-md-3">
                 <a asp-controller="Empleados" asp-action="Index" class="text-decoration-none">
-                <div class="metric-card">
-                    <div>
-                        <h5>Total de Empleados</h5>
-                        <p id="totalEmpleados">0</p>
+                    <div class="metric-card">
+                        <div>
+                            <h5>Total de Empleados</h5>
+                            <p id="totalEmpleados">0</p>
+                        </div>
+                        <i class="fas fa-users metric-icon"></i>
                     </div>
-                    <i class="fas fa-users metric-icon"></i>
-                </div>
                 </a>
             </div>
             <div class="col-md-3">
                 <a asp-controller="Asistencias" asp-action="Index" class="text-decoration-none">
-                <div class="metric-card">
-                    <div>
-                        <h5>Total de Asistencias</h5>
-                        <p id="totalAsistencias">0</p>
+                    <div class="metric-card">
+                        <div>
+                            <h5>Total de Asistencias</h5>
+                            <p id="totalAsistencias">0</p>
+                        </div>
+                        <i class="fas fa-check-circle metric-icon"></i>
                     </div>
-                    <i class="fas fa-check-circle metric-icon"></i>
-                </div>
                 </a>
             </div>
             <div class="col-md-3">
                 <div class="metric-card">
-                     <a asp-controller="Asistencias" asp-action="Index" class="text-decoration-none">
-                    <div>
-                        <h5>Comentarios Registrados</h5>
-                        <p id="totalComentarios">0</p>
-                    </div>
+                    <a asp-controller="Asistencias" asp-action="Index" class="text-decoration-none">
+                        <div>
+                            <h5>Comentarios Registrados</h5>
+                            <p id="totalComentarios">0</p>
+                        </div>
                     </a>
                     <i class="fas fa-comment-alt metric-icon"></i>
                 </div>
             </div>
             <div class="col-md-3">
                 <a asp-controller="Cargos" asp-action="Index" class="text-decoration-none">
-                <div class="metric-card">
-                    <div>
-                        <h5>Total de Cargos</h5>
-                        <p id="totalCargos">0</p>
+                    <div class="metric-card">
+                        <div>
+                            <h5>Total de Cargos</h5>
+                            <p id="totalCargos">0</p>
+                        </div>
+                        <i class="fas fa-briefcase metric-icon"></i>
                     </div>
-                    <i class="fas fa-briefcase metric-icon"></i>
-                </div>
                 </a>
             </div>
         </div>
@@ -190,6 +191,39 @@
             <button class="btn-modern" onclick="window.location.href='/ReporteGeneral'">Ver Reporte Completo</button>
             <button class="btn-modern" onclick="window.location.href='/Home/Manual'">Ver Manual</button>
         </div>
+
+
+
+
+
+        <!-- Botón para abrir el chat -->
+        <div class="text-center mb-4">
+            <button class="btn-modern" onclick="abrirChat()">Abrir Chat</button>
+        </div>
+
+        <!-- Modal del Chat -->
+        <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="chatModalLabel">Consulta Interactiva</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="chatBox" style="max-height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 10px;"></div>
+                        <div class="mt-3">
+                            <input id="chatInput" type="text" class="form-control" placeholder="Escribe tu pregunta...">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-modern" onclick="enviarPregunta()">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="row mb-4">
             <div class="col-md-6">
                 <div class="chart-container">
@@ -223,6 +257,48 @@
         </div>
     </div>
     <script>
+                    function abrirChat() {
+            const chatModal = new bootstrap.Modal(document.getElementById('chatModal'));
+            chatModal.show();
+        }
+
+        async function enviarPregunta() {
+            const pregunta = document.getElementById('chatInput').value.trim();
+            if (!pregunta) {
+                alert('Escribe una pregunta antes de enviar.');
+                return;
+            }
+
+            const chatBox = document.getElementById('chatBox');
+            chatBox.innerHTML += `<div><strong>Tú:</strong> ${pregunta}</div>`;
+
+            try {
+                const response = await fetch('/Chat/ProcesarPregunta', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(pregunta)
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    chatBox.innerHTML += `<div><strong>Sistema:</strong> ${data.Respuesta}</div>`;
+                } else {
+                    chatBox.innerHTML += `<div><strong>Sistema:</strong> Error en el servidor.</div>`;
+                }
+            } catch (error) {
+                chatBox.innerHTML += `<div><strong>Sistema:</strong> Ocurrió un error al procesar tu pregunta.</div>`;
+                console.error('Error al procesar la pregunta:', error);
+            }
+
+            chatBox.scrollTop = chatBox.scrollHeight;
+            document.getElementById('chatInput').value = '';
+        }
+
+
+
+
+
+
         document.addEventListener('DOMContentLoaded', async function () {
             try {
                 const empleadosResponse = await fetch('/Home/VerificarEmpleados');
@@ -347,7 +423,7 @@
                     labels: labels,
                     datasets: [{
                         data: values,
-                        backgroundColor: colors, 
+                        backgroundColor: colors,
                         hoverOffset: 4
                     }]
                 },

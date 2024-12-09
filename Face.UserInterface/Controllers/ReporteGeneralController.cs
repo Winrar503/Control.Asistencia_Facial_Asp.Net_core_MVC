@@ -24,36 +24,8 @@ namespace Face.UserInterface.Controllers
             cargosBL = cargosBL;
         }
 
-        //public async Task<IActionResult> Index()
-        //{
-        //    // Obtener métricas generales
-        //    var totalEmpleados = (await empleadosBL.ObtenerTodosAsync()).Count;
-        //    var empleadosActivos = (await empleadosBL.ObtenerTodosAsync()).Count(e => e.Estado);
-        //    var totalAsistencias = (await asistenciasBL.ObtenerTodosAsync()).Count;
-        //    var asistenciasExitosas = (await asistenciasBL.ObtenerTodosAsync()).Count(a => a.EstadoReconocimiento == "Exitoso");
-        //    var asistenciasFallidas = (await asistenciasBL.ObtenerTodosAsync()).Count(a => a.EstadoReconocimiento == "Fallido");
-        //    var totalCargos = (await cargosBL.ObtenerTodosAsync()).Count;
-
-        //    var datosPorCargo = (await empleadosBL.ObtenerTodosConRelacionesAsync())
-        //        .GroupBy(e => e.Cargo?.Nombre ?? "Sin Cargo")
-        //        .Select(g => new { Cargo = g.Key, TotalEmpleados = g.Count() })
-        //        .ToList();
-
-        //    // Pasar datos al modelo de la vista
-        //    ViewBag.TotalEmpleados = totalEmpleados;
-        //    ViewBag.EmpleadosActivos = empleadosActivos;
-        //    ViewBag.TotalAsistencias = totalAsistencias;
-        //    ViewBag.AsistenciasExitosas = asistenciasExitosas;
-        //    ViewBag.AsistenciasFallidas = asistenciasFallidas;
-        //    ViewBag.TotalCargos = totalCargos;
-        //    ViewBag.DatosPorCargo = datosPorCargo;
-
-        //    return View();
-        //}
-
         public async Task<IActionResult> Index()
         {
-            // Obtener métricas generales
             var totalEmpleados = (await empleadosBL.ObtenerTodosAsync()).Count;
             var empleadosActivos = (await empleadosBL.ObtenerTodosAsync()).Count(e => e.Estado);
             var totalAsistencias = (await asistenciasBL.ObtenerTodosAsync()).Count;
@@ -65,8 +37,6 @@ namespace Face.UserInterface.Controllers
                 .GroupBy(e => e.Cargo?.Nombre ?? "Sin Cargo")
                 .Select(g => new { Cargo = g.Key, TotalEmpleados = g.Count() })
                 .ToList();
-
-            // Pasar datos al modelo de la vista
             ViewBag.TotalEmpleados = totalEmpleados;
             ViewBag.EmpleadosActivos = empleadosActivos;
             ViewBag.TotalAsistencias = totalAsistencias;
@@ -102,7 +72,6 @@ namespace Face.UserInterface.Controllers
         public IActionResult DescargarReportePdf()
         {
             string htmlContent = RenderViewToString("Index");
-
             using (var memoryStream = new MemoryStream())
             {
                 PdfWriter writer = new PdfWriter(memoryStream);
@@ -113,7 +82,6 @@ namespace Face.UserInterface.Controllers
                 return File(memoryStream.ToArray(), "application/pdf", "ReporteGeneral.pdf");
             }
         }
-
         private string RenderViewToString(string viewName)
         {
             using (var stringWriter = new StringWriter())

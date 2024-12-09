@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Face.UserInterface.Controllers
 {
-
     public class AsistenciasController : Controller
     {
         AsistenciasBL asistenciasBL = new AsistenciasBL();

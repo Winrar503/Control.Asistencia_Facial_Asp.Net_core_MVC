@@ -15,8 +15,6 @@ namespace Face.UserInterface.Controllers
         private readonly EmpleadosBL _empleadosBL = new EmpleadosBL();
         private readonly AsistenciasBL _asistenciasBL = new AsistenciasBL();
         private readonly RendimientoEmpleadosBL _rendimientoEmpleadosBL = new RendimientoEmpleadosBL();
-
-        // Generar reporte y mostrar vista de creación
         public async Task<IActionResult> Create(int empleadoId)
         {
             var empleado = await _empleadosBL.ObtenerPorIdAsync(new Empleados { Id = empleadoId });
@@ -36,17 +34,8 @@ namespace Face.UserInterface.Controllers
             {
                 return View(reporte);
             }
-            // Calcular rendimiento usando el procedimiento almacenado
             await _rendimientoEmpleadosBL.CalcularRendimientoAsync(reporte.EmpleadosId, reporte.FechaInicio, reporte.FechaFin);
-
-            // Obtener datos del rendimiento generado
             var rendimiento = await _rendimientoEmpleadosBL.ObtenerPorEmpleadoYRangoAsync(reporte.EmpleadosId, reporte.FechaInicio, reporte.FechaFin);
-
-            //if (rendimiento == null || !rendimiento.Any())
-            //{
-            //    ModelState.AddModelError("", "No se encontraron datos de rendimiento para el rango seleccionado.");
-            //    return View(reporte);
-            //}
             if (!rendimiento.Any())
             {
                 Console.WriteLine($"No se encontraron datos de rendimiento para el empleado {reporte.EmpleadosId} entre {reporte.FechaInicio} y {reporte.FechaFin}");
@@ -58,44 +47,30 @@ namespace Face.UserInterface.Controllers
                     Console.WriteLine($"Rendimiento encontrado: Asistencias Totales = {r.AsistenciasTotales}, Ausencias = {r.Ausencias}");
                 }
             }
-
-
-            // Crear resumen detallado
             reporte.Resumen = $"Total de Asistencias: {rendimiento.Sum(r => r.AsistenciasTotales)}, " +
                               $"Asistencias Tardías: {rendimiento.Sum(r => r.AsistenciasTardias)}, " +
                               $"Asistencias Exitosas: {rendimiento.Sum(r => r.AsistenciasExitosas)}, " +
                               $"Ausencias: {rendimiento.Sum(r => r.Ausencias)}.";
-
-            // Guardar el reporte
             await _reportesBL.CrearAsync(reporte);
             return RedirectToAction("Index", new { empleadoId = reporte.EmpleadosId });
         }
-
-        // Listar reportes por empleado
         public async Task<IActionResult> Index(int empleadoId)
         {
-            // Verifica si el empleadoId es válido
             if (empleadoId <= 0)
             {
                 return NotFound("ID de empleado inválido.");
             }
-
             var empleado = await _empleadosBL.ObtenerPorIdAsync(new Empleados { Id = empleadoId });
-
-            // Depuración: Verifica si el empleado se encontró
             if (empleado == null)
             {
                 return NotFound("Empleado no encontrado.");
             }
-
             var reportes = (await _reportesBL.ObtenerTodosAsync())
                 .Where(r => r.EmpleadosId == empleadoId)
                 .ToList();
 
             ViewBag.EmpleadoNombre = empleado.Nombre;
             ViewBag.EmpleadoId = empleadoId;
-
-            // Depuración: Verifica si hay reportes para el empleado
             if (!reportes.Any())
             {
                 ViewBag.ErrorMessage = "No hay reportes generados para este empleado.";
@@ -103,8 +78,6 @@ namespace Face.UserInterface.Controllers
 
             return View(reportes);
         }
-
-
         // Descargar reporte en PDF
         //public async Task<IActionResult> DescargarPDF(int id)
         //{
@@ -194,7 +167,6 @@ namespace Face.UserInterface.Controllers
 
             return View(reporte);
         }
-
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

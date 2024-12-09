@@ -229,7 +229,5 @@ namespace Face.UserInterface.Controllers
             var totalEmpleados = (await _empleadosBL.ObtenerTodosAsync()).Count;
             return Json(new { hayEmpleados = totalEmpleados > 0 });
         }
-
-
     }
 }
