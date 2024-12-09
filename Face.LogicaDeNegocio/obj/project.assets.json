@@ -12247,11 +12247,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
       "projectName": "Face.LogicaDeNegocio",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -12273,11 +12273,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj"
+            "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
+            "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj"
             }
           }
         }

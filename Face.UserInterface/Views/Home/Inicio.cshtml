@@ -1,10 +1,8 @@
 ﻿@using Face.EntidadesDeNegocio
-
 @{
     ViewData["Title"] = "Dashboard Mejorado";
     var hayEmpleados = ViewBag.Cargos as bool? ?? false;
 }
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -142,8 +140,6 @@
             <p>Controla tu plataforma con datos y gráficos dinámicos.</p>
             
         </div>
-
-
         <div class="row text-center mb-5">
             <div class="col-md-3">
                 <a asp-controller="Empleados" asp-action="Index" class="text-decoration-none">
@@ -190,7 +186,6 @@
                 </a>
             </div>
         </div>
-
         <div class="action-buttons">
             <button class="btn-modern" onclick="window.location.href='/ReporteGeneral'">Ver Reporte Completo</button>
             <button class="btn-modern" onclick="window.location.href='/Home/Manual'">Ver Manual</button>
@@ -209,7 +204,6 @@
                 </div>
             </div>
         </div>
-
         <div class="table-container mt-3">
             <h4 class="mb-4">Tabla de Comentarios</h4>
             <table class="table table-striped table-hover">
@@ -228,7 +222,6 @@
             </table>
         </div>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', async function () {
             try {
@@ -267,7 +260,6 @@
                         }
                     });
                 }
-
                 const metricsResponse = await fetch('/Home/GetDashboardMetrics');
                 const metrics = await metricsResponse.json();
                 const totalCargos = metrics.totalCargos || 0;
@@ -291,7 +283,6 @@
                 Swal.fire('Error', 'Ocurrió un problema al cargar los datos del sistema.', 'error');
             }
         });
-
         async function obtenerDatos() {
             try {
                 const metricsResponse = await fetch('/Home/GetDashboardMetrics');
@@ -336,61 +327,27 @@
                 }
             });
         }
-
-        // function actualizarEmpleadosChart(data) {
-        //     const ctx2 = document.getElementById('empleadosChart').getContext('2d');
-        //     new Chart(ctx2, {
-        //         type: 'doughnut',
-        //         data: {
-        //             labels: Object.keys(data),
-        //             datasets: [{
-        //                 data: Object.values(data),
-        //                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40']
-        //             }]
-        //         },
-        //         options: {
-        //             responsive: true,
-        //             plugins: {
-        //                 legend: {
-        //                     position: 'top',
-        //                 }
-        //             }
-        //         }
-        //     });
-        // }
-
-                  function actualizarEmpleadosChart(data) {
+        function actualizarEmpleadosChart(data) {
             const ctx2 = document.getElementById('empleadosChart').getContext('2d');
 
-            // Lista de colores predefinidos
             const colorPalette = [
                 '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40',
                 '#F77737', '#C2185B', '#00BCD4', '#8E44AD', '#2ECC71', '#E74C3C'
             ];
-
-            // Extraer etiquetas (nombres de los cargos) y valores (número de empleados)
             const labels = Object.keys(data);
             const values = Object.values(data);
-
-            // Generar colores dinámicos basados en la cantidad de cargos
             const colors = labels.map((_, index) => colorPalette[index % colorPalette.length]);
-
-            // Verificar los datos en la consola
             console.log("Datos para la gráfica de empleados:", { labels, values, colors });
-
-            // Si ya existe un gráfico, destruirlo antes de crear uno nuevo
             if (window.empleadosChartInstance) {
                 window.empleadosChartInstance.destroy();
             }
-
-            // Crear el gráfico
             window.empleadosChartInstance = new Chart(ctx2, {
                 type: 'doughnut',
                 data: {
-                    labels: labels, // Etiquetas (nombres de los cargos)
+                    labels: labels,
                     datasets: [{
-                        data: values, // Datos (número de empleados)
-                        backgroundColor: colors, // Colores asignados
+                        data: values,
+                        backgroundColor: colors, 
                         hoverOffset: 4
                     }]
                 },
@@ -413,7 +370,6 @@
                 }
             });
         }
-
         obtenerDatos();
         setInterval(obtenerDatos, 5000);
 
@@ -421,7 +377,6 @@
             try {
                 const response = await fetch('/Home/ObtenerComentarios');
                 const comentarios = await response.json();
-
                 const tablaComentarios = document.getElementById('tablaComentarios');
                 tablaComentarios.innerHTML = '';
                 if (comentarios.length === 0) {
@@ -442,6 +397,5 @@
             }
         }
     </script>
-
 </body>
 </html>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
         "projectName": "Face.EntidadesDeNegocio",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\Face.EntidadesDeNegocio.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.EntidadesDeNegocio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

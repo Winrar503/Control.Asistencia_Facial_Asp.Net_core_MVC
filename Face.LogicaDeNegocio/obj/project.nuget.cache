@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9idtI0ozkIY=",
+  "dgSpecHash": "8YMSSHqN4wE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Universy\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.LogicaDeNegocio\\Face.LogicaDeNegocio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
