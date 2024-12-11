@@ -17,6 +17,121 @@
 
 
     <style>
+        /* body {
+            background: #f7f8fc;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .dashboard-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            .dashboard-header h1 {
+                font-size: 3rem;
+                color: #4a90e2;
+                font-weight: bold;
+            }
+
+            .dashboard-header p {
+                font-size: 1.2rem;
+                color: #666;
+            }
+
+        .metric-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 15px;
+            background: #fff;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .metric-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .metric-card h5 {
+                font-size: 1.3rem;
+                font-weight: bold;
+            }
+
+            .metric-card p {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+
+        .metric-icon {
+            font-size: 3rem;
+            color: #4a90e2;
+        }
+
+        .chart-container {
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #4a90e2;
+        }
+
+        .table-container {
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .btn-modern {
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 20px;
+            background: #4a90e2;
+            color: #fff;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+        }
+
+            .btn-modern:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(74, 144, 226, 0.6);
+            }
+
+        .action-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        table {
+            color: #333;
+        }
+
+            table thead {
+                background: #4a90e2;
+                color: #fff;
+            } */
+        /* Diseño existente */
         body {
             background: #f7f8fc;
             color: #333;
@@ -131,6 +246,193 @@
                 background: #4a90e2;
                 color: #fff;
             }
+
+        /* Nuevos estilos para el botón flotante del chat */
+        .chat-button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        ul {
+            position: relative;
+            display: flex;
+            gap: 25px;
+        }
+
+            ul li {
+                position: relative;
+                list-style: none;
+                width: 60px;
+                height: 60px;
+                background: #fff;
+                border-radius: 60px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                transition: 0.5s;
+            }
+
+                ul li:hover {
+                    width: 180px;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+                }
+
+                ul li::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 60px;
+                    background: linear-gradient(45deg, #56CCF2, #2F80ED);
+                    opacity: 0;
+                    transition: 0.5s;
+                }
+
+                ul li:hover::before {
+                    opacity: 1;
+                }
+
+                ul li::after {
+                    content: "";
+                    position: absolute;
+                    top: 10px;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 60px;
+                    background: linear-gradient(45deg, #56CCF2, #2F80ED);
+                    transition: 0.5s;
+                    filter: blur(15px);
+                    z-index: -1;
+                    opacity: 0;
+                }
+
+                ul li:hover::after {
+                    opacity: 0.5;
+                }
+
+                ul li .icon {
+                    color: #777;
+                    font-size: 1.75em;
+                    transition: 0.5s;
+                    transition-delay: 0.25s;
+                }
+
+                ul li:hover .icon {
+                    transform: scale(0);
+                    color: #fff;
+                    transition-delay: 0s;
+                }
+
+                ul li span {
+                    position: absolute;
+                }
+
+                ul li .title {
+                    color: #fff;
+                    font-size: 1.1em;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    transform: scale(0);
+                    transition: 0.5s;
+                    transition-delay: 0s;
+                }
+
+                ul li:hover .title {
+                    transform: scale(1);
+                    transition-delay: 0.25s;
+                }
+
+        /* Nuevos estilos para el modal de chat */
+        .card-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .card-header .img-avatar {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 20px;
+                background-color: #333;
+            }
+
+            .card-header .text-chat {
+                color: black;
+                font-size: 20px;
+            }
+
+        .card-body {
+            flex: 1;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        .messages-container {
+            padding: 15px;
+        }
+
+        .message-box {
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+        }
+
+            .message-box.left {
+                background-color: #f1f1f1;
+                color: black;
+            }
+
+            .message-box.right {
+                background-color: #333;
+                color: #fff;
+            }
+
+        .message-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+            .message-input .message-send {
+                flex: 1;
+                padding: 10px;
+                border: none;
+                border-radius: 10px;
+            }
+
+            .message-input .button-send {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 10px;
+                font-size: 13px;
+            }
+
+                .message-input .button-send:hover {
+                    background-color: #f1f1f1;
+                    color: #333;
+                }
+
     </style>
 </head>
 <body>
@@ -196,34 +498,36 @@
 
 
 
-        <!-- Botón para abrir el chat -->
-        <div class="text-center mb-4">
-            <button class="btn-modern" onclick="abrirChat()">Abrir Chat</button>
+
+        <div class="chat-button-container">
+            <ul>
+                <li onclick="abrirChat()" style="--i:#56CCF2;--j:#2F80ED;">
+                    <span class="icon">💬</span>
+                    <span class="title">Chat</span>
+                </li>
+            </ul>
         </div>
 
         <!-- Modal del Chat -->
         <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="chatModalLabel">Consulta Interactiva</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="chatBox" style="max-height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 10px;"></div>
-                        <div class="mt-3">
-                            <input id="chatInput" type="text" class="form-control" placeholder="Escribe tu pregunta...">
+                    <div class="card-container">
+                        <div class="card-header">
+                            <div class="img-avatar"></div>
+                            <div class="text-chat">Consulta Interactiva</div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn-modern" onclick="enviarPregunta()">Enviar</button>
+                        <div class="card-body">
+                            <div class="messages-container" id="chatBox"></div>
+                            <div class="message-input">
+                                <textarea id="chatInput" class="message-send" placeholder="Escribe tu pregunta..."></textarea>
+                                <button class="button-send" onclick="enviarPregunta()">Enviar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
         <div class="row mb-4">
             <div class="col-md-6">
                 <div class="chart-container">
@@ -257,7 +561,7 @@
         </div>
     </div>
     <script>
-                    function abrirChat() {
+        function abrirChat() {
             const chatModal = new bootstrap.Modal(document.getElementById('chatModal'));
             chatModal.show();
         }
@@ -265,12 +569,12 @@
         async function enviarPregunta() {
             const pregunta = document.getElementById('chatInput').value.trim();
             if (!pregunta) {
-                alert('Escribe una pregunta antes de enviar.');
+                alert('Por favor escribe una pregunta.');
                 return;
             }
 
             const chatBox = document.getElementById('chatBox');
-            chatBox.innerHTML += `<div><strong>Tú:</strong> ${pregunta}</div>`;
+            chatBox.innerHTML += `<div class="message-box left"><p>${pregunta}</p></div>`;
 
             try {
                 const response = await fetch('/Chat/ProcesarPregunta', {
@@ -281,24 +585,17 @@
 
                 if (response.ok) {
                     const data = await response.json();
-                    chatBox.innerHTML += `<div><strong>Sistema:</strong> ${data.Respuesta}</div>`;
+                    chatBox.innerHTML += `<div class="message-box right"><p>${data.Respuesta}</p></div>`;
                 } else {
-                    chatBox.innerHTML += `<div><strong>Sistema:</strong> Error en el servidor.</div>`;
+                    chatBox.innerHTML += `<div class="message-box right"><p>Error en el servidor.</p></div>`;
                 }
             } catch (error) {
-                chatBox.innerHTML += `<div><strong>Sistema:</strong> Ocurrió un error al procesar tu pregunta.</div>`;
-                console.error('Error al procesar la pregunta:', error);
+                chatBox.innerHTML += `<div class="message-box right"><p>Error al conectarse al servidor.</p></div>`;
             }
 
             chatBox.scrollTop = chatBox.scrollHeight;
             document.getElementById('chatInput').value = '';
         }
-
-
-
-
-
-
         document.addEventListener('DOMContentLoaded', async function () {
             try {
                 const empleadosResponse = await fetch('/Home/VerificarEmpleados');
