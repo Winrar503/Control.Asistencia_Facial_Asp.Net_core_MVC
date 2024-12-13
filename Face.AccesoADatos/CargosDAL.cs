@@ -39,7 +39,6 @@ namespace Face.AccesoADatos
                 return 0;
             }
         }
-
         public static async Task<int> EliminarAsync(Cargo cargo)
         {
             using (var dbContext = new BDContexto())
@@ -53,6 +52,20 @@ namespace Face.AccesoADatos
                 return 0;
             }
         }
+
+        //public static async Task<int> EliminarAsync(Cargo cargo)
+        //{
+        //    using (var dbContext = new BDContexto())
+        //    {
+        //        var cargoDB = await dbContext.Cargos.FindAsync(cargo.Id);
+        //        if (cargoDB != null)
+        //        {
+        //            dbContext.Cargos.Remove(cargoDB);
+        //            return await dbContext.SaveChangesAsync();
+        //        }
+        //        return 0;
+        //    }
+        //}
 
         public static async Task<Cargo> ObtenerPorIdAsync(int id)
         {

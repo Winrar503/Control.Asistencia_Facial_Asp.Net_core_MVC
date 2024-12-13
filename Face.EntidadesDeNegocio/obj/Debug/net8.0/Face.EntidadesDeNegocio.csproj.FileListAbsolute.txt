@@ -75,3 +75,16 @@ C:\Users\Admin\Desktop\Universy\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\
 C:\Users\Admin\Desktop\Universy\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\refint\Face.EntidadesDeNegocio.dll
 C:\Users\Admin\Desktop\Universy\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.pdb
 C:\Users\Admin\Desktop\Universy\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\ref\Face.EntidadesDeNegocio.dll
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.deps.json
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\bin\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.sourcelink.json
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.dll
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\refint\Face.EntidadesDeNegocio.dll
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\Face.EntidadesDeNegocio.pdb
+C:\Users\Admin\Desktop\Programing\.Net\Control.Asistencia_Facial_Asp.Net_core_MVC\Face.EntidadesDeNegocio\obj\Debug\net8.0\ref\Face.EntidadesDeNegocio.dll

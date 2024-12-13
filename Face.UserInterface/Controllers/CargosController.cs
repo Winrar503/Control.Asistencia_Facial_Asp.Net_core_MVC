@@ -63,15 +63,34 @@ namespace Face.UserInterface.Controllers
             return View(cargo);
         }
 
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    var cargo = new Cargo { Id = id };
+        //    await _cargosBL.EliminarAsync(cargo);
+        //    return RedirectToAction(nameof(Index));
+        //}
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [Route("Cargos/DeleteConfirmed/{id}")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cargo = new Cargo { Id = id };
-            await _cargosBL.EliminarAsync(cargo);
-            return RedirectToAction(nameof(Index));
-        }
+            try
+            {
+                var cargo = await _cargosBL.ObtenerPorIdAsync(id); // Obtén el cargo
+                if (cargo == null)
+                {
+                    return Json(new { success = false, message = "El cargo no fue encontrado." });
+                }
 
+                await _cargosBL.EliminarAsync(cargo); // Elimina el cargo
+                return Json(new { success = true, message = "Cargo eliminado correctamente." });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Error al eliminar el cargo.", details = ex.Message });
+            }
+        }
 
     }
 }

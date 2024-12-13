@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wGZY1GGE19g=",
+  "dgSpecHash": "sw3JPOd67Zk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Universy\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.AccesoADatos\\Face.AccesoADatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
