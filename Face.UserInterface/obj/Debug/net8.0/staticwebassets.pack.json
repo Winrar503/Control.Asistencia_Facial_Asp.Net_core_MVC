@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Face.UserInterface.8gd879hbos.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\cargo.css",
+      "PackagePath": "staticwebassets\\css\\cargo.css"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\empleado\\index.css",
       "PackagePath": "staticwebassets\\css\\empleado\\index.css"
     },

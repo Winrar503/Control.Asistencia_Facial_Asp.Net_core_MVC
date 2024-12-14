@@ -48,7 +48,6 @@
                             <td>@cargo.Nombre</td>
                             <td>@cargo.FechaCreacion.ToString("dd/MM/yyyy")</td>
                             <td class="text-center">
-                                <!-- Botón para abrir el modal -->
                                 <button class="btn btn-danger btn-sm rounded-pill shadow-sm"
                                         onclick="abrirModalEliminar(@cargo.Id, '@cargo.Nombre', '@cargo.FechaCreacion.ToString("dd/MM/yyyy")')">
                                     <i class="fas fa-trash me-1"></i> Eliminar
@@ -64,26 +63,30 @@
     <!-- Modal de Confirmación para Eliminar -->
     <div class="modal fade" id="modalEliminarCargo" tabindex="-1" aria-labelledby="modalEliminarCargoLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content shadow-lg">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="modalEliminarCargoLabel">
-                        <i class="fas fa-exclamation-circle me-2"></i> Confirmar Eliminación
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-content shadow-lg rounded-2xl">
+                <div class="modal-body text-center p-4 flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="w-12 h-12 flex items-center text-black mx-auto"
+                         viewBox="0 0 20 20"
+                         fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                    <h2 class="text-xl font-bold py-4 text-black">¿Estás seguro?</h2>
+                    <p class="text-sm text-black px-4">
+                        ¿Realmente deseas eliminar este cargo? Esta acción no se puede deshacer.
+                    </p>
                 </div>
-                <div class="modal-body text-center">
-                    <p class="fw-bold">¿Estás seguro de que deseas eliminar este cargo?</p>
-                    <p class="text-muted">Esta acción no se puede deshacer.</p>
-                    <dl class="row justify-content-center">
-                        <dt class="col-sm-4">Nombre:</dt>
-                        <dd class="col-sm-8 text-primary" id="nombreCargo"></dd>
-                        <dt class="col-sm-4">Fecha de Creación:</dt>
-                        <dd class="col-sm-8 text-primary" id="fechaCargo"></dd>
-                    </dl>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" id="confirmarEliminar">Eliminar</button>
+                <div class="p-2 mt-2 text-center space-x-1">
+                    <button class="btn-cancelar mb-2 px-5 py-2 text-sm shadow-sm font-medium tracking-wider rounded-full hover:shadow-lg transition ease-in duration-300"
+                            data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button id="confirmarEliminar"
+                            class="btn-confirmar px-5 py-2 text-sm shadow-sm font-medium tracking-wider rounded-full hover:shadow-lg transition ease-in duration-300">
+                        Confirmar
+                    </button>
                 </div>
             </div>
         </div>
@@ -102,34 +105,6 @@
             </li>
         </ul>
     </nav>
-    <!-- Tarjeta de mensaje de éxito -->
-   @*  <div id="successMessage" class="card d-none position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 1050;">
-        <svg class="wave" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,256L11.4,240C22.9,224,46,192,69,192C91.4,192,114,224,137,234.7C160,245,183,235,206,213.3C228.6,192,251,160,274,149.3C297.1,139,320,149,343,181.3C365.7,213,389,267,411,282.7C434.3,299,457,277,480,250.7C502.9,224,526,192,549,181.3C571.4,171,594,181,617,208C640,235,663,277,686,256C708.6,235,731,149,754,122.7C777.1,96,800,128,823,165.3C845.7,203,869,245,891,224C914.3,203,937,117,960,112C982.9,107,1006,181,1029,197.3C1051.4,213,1074,171,1097,144C1120,117,1143,107,1166,133.3C1188.6,160,1211,224,1234,218.7C1257.1,213,1280,139,1303,133.3C1325.7,128,1349,192,1371,192C1394.3,192,1417,128,1429,96L1440,64L1440,320L1428.6,320C1417.1,320,1394,320,1371,320C1348.6,320,1326,320,1303,320C1280,320,1257,320,1234,320C1211.4,320,1189,320,1166,320C1142.9,320,1120,320,1097,320C1074.3,320,1051,320,1029,320C1005.7,320,983,320,960,320C937.1,320,914,320,891,320C868.6,320,846,320,823,320C800,320,777,320,754,320C731.4,320,709,320,686,320C662.9,320,640,320,617,320C594.3,320,571,320,549,320C525.7,320,503,320,480,320C457.1,320,434,320,411,320C388.6,320,366,320,343,320C320,320,297,320,274,320C251.4,320,229,320,206,320C182.9,320,160,320,137,320C114.3,320,91,320,69,320C45.7,320,23,320,11,320L0,320Z"
-                  fill-opacity="1"></path>
-        </svg>
-
-        <div class="icon-container">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 512 512"
-                 class="icon">
-                <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"></path>
-            </svg>
-        </div>
-        <div class="message-text-container">
-            <p class="message-text">Eliminado con éxito</p>
-            <p class="sub-text">El cargo ha sido eliminado correctamente</p>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg"
-             viewBox="0 0 15 15"
-             class="cross-icon"
-             onclick="ocultarMensaje()">
-            <path fill="currentColor"
-                  d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 0L7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816Z"></path>
-        </svg>
-    </div> *@
-
-
     <div id="successMessage" class="success-container d-none">
         <div class="success-content">
             <div class="success-icon">
@@ -139,13 +114,8 @@
             <p class="success-message">El cargo ha sido eliminado correctamente.</p>
         </div>
     </div>
-
 </div>
-
 <style>
-
-
-    /* Fondo claro */
     body {
         background-color: #f8f9fa;
         font-family: 'Poppins', sans-serif;
@@ -155,52 +125,40 @@
         font-weight: bold;
         color: #333;
     }
-
-    /* Botones elegantes */
     .btn-lg {
         font-size: 1.2rem;
         font-weight: bold;
         transition: transform 0.2s ease-in-out;
     }
-
         .btn-lg:hover {
             transform: scale(1.05);
         }
-
     .btn-sm {
         font-size: 0.9rem;
         font-weight: bold;
         transition: all 0.3s ease-in-out;
     }
-
         .btn-sm:hover {
             transform: scale(1.1);
         }
-
-    /* Tabla estilizada */
     .table {
         border-collapse: collapse;
         margin-bottom: 1rem;
         background: #fff;
     }
-
     .table-hover tbody tr:hover {
         background-color: #f1f1f1;
     }
-
     .table-bordered th,
     .table-bordered td {
         border: 1px solid #dee2e6;
     }
-
-    /* Estilo de la paginación */
     .pagination .page-link {
         font-weight: bold;
         color: #007bff;
         border: none;
         transition: all 0.3s ease-in-out;
     }
-
         .pagination .page-link:hover {
             background-color: #007bff;
             color: white;
@@ -208,90 +166,61 @@
 </style>
 <script>
     let cargoSeleccionado = null;
-
-    // Función para abrir el modal de confirmación
-    function abrirModalEliminar(id, nombre, fechaCreacion) {
-        cargoSeleccionado = id; // Guardar el ID del cargo
-        document.getElementById('nombreCargo').textContent = nombre; // Mostrar el nombre del cargo
-        document.getElementById('fechaCargo').textContent = fechaCreacion; // Mostrar la fecha del cargo
-        const modal = new bootstrap.Modal(document.getElementById('modalEliminarCargo'));
-        modal.show();
+    function abrirModalEliminar(id) {
+      cargoSeleccionado = id;
+      const modal = new bootstrap.Modal(document.getElementById('modalEliminarCargo'));
+      modal.show();
     }
-
-    // Función para mostrar el mensaje de éxito
-    function mostrarMensajeExito() {
-        const messageCard = document.getElementById('successMessage');
-        messageCard.classList.remove('d-none'); // Mostrar la alerta
-        setTimeout(() => {
-            messageCard.classList.add('d-none'); // Ocultar después de 3 segundos
-        }, 3000);
-    }
-
-    // Función para ocultar la alerta manualmente
-    function ocultarMensaje() {
-        const messageCard = document.getElementById('successMessage');
-        messageCard.classList.add('d-none');
-    }
-
-    // Función para confirmar la eliminación del cargo
     document.getElementById('confirmarEliminar').addEventListener('click', async function () {
-        if (cargoSeleccionado) {
-            try {
-                const response = await fetch(`/Cargos/DeleteConfirmed/${cargoSeleccionado}`, {
-                    method: 'POST',
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest', // Agrega este header si usas validación CSRF
-                    },
-                });
-
-                const result = await response.json();
-                if (result.success) {
-                    // Eliminar la fila de la tabla
-                    document.querySelector(`#filaCargo-${cargoSeleccionado}`).remove();
-                    mostrarMensajeExito();
-
-                    // Cerrar el modal después de eliminar
-                    const modal = bootstrap.Modal.getInstance(document.getElementById('modalEliminarCargo'));
-                    modal.hide();
-                } else {
-                    alert(`Error: ${result.message}`);
-                    console.error(result.details || "No hay detalles adicionales del error.");
-                }
-            } catch (error) {
-                console.error("Error al intentar eliminar el cargo:", error);
-                alert("Hubo un problema al intentar eliminar el cargo.");
-            }
+      if (cargoSeleccionado) {
+        try {
+          const response = await fetch(`/Cargos/DeleteConfirmed/${cargoSeleccionado}`, {
+            method: 'POST',
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest',
+            },
+          });
+          const result = await response.json();
+          if (result.success) {
+            document.querySelector(`#filaCargo-${cargoSeleccionado}`).remove();
+            mostrarMensajeExito();
+            const modal = bootstrap.Modal.getInstance(document.getElementById('modalEliminarCargo'));
+            modal.hide();
+          } else {
+            alert(`Error: ${result.message}`);
+            console.error(result.details || 'No hay detalles adicionales del error.');
+          }
+        } catch (error) {
+          console.error('Error al intentar eliminar el cargo:', error);
+          alert('Hubo un problema al intentar eliminar el cargo.');
         }
+      }
     });
-
-
-    // Función de paginación (opcional, basado en tu ejemplo)
+    function mostrarMensajeExito() {
+      const messageCard = document.getElementById('successMessage');
+      messageCard.classList.remove('d-none');
+      setTimeout(() => {
+        messageCard.classList.add('d-none');
+      }, 3000);
+    }
     const cargosPorPagina = 5;
     let paginaActual = 1;
     const tablaCargos = document.querySelector('#tablaCargos');
     const filas = Array.from(tablaCargos.querySelectorAll('tr'));
-
     function mostrarPagina(pagina) {
-        filas.forEach(fila => (fila.style.display = 'none')); // Oculta todas las filas
-
-        // Muestra solo las filas de la página actual
+        filas.forEach(fila => (fila.style.display = 'none'));
         const inicio = (pagina - 1) * cargosPorPagina;
         const fin = inicio + cargosPorPagina;
 
         filas.slice(inicio, fin).forEach(fila => {
             fila.style.display = '';
         });
-
         actualizarPaginacion();
     }
-
     function actualizarPaginacion() {
         const totalPaginas = Math.ceil(filas.length / cargosPorPagina);
         const paginacion = document.querySelector('.pagination');
-
         paginacion.innerHTML = '';
-
-        // Botón anterior
         const botonAnterior = document.createElement('li');
         botonAnterior.className = `page-item ${paginaActual === 1 ? 'disabled' : ''}`;
         botonAnterior.innerHTML = `<a class="page-link rounded-pill shadow-sm">Anterior</a>`;
@@ -302,8 +231,6 @@
             }
         });
         paginacion.appendChild(botonAnterior);
-
-        // Botones de página
         for (let i = 1; i <= totalPaginas; i++) {
             const botonPagina = document.createElement('li');
             botonPagina.className = `page-item ${paginaActual === i ? 'active' : ''}`;
@@ -314,8 +241,6 @@
             });
             paginacion.appendChild(botonPagina);
         }
-
-        // Botón siguiente
         const botonSiguiente = document.createElement('li');
         botonSiguiente.className = `page-item ${paginaActual === totalPaginas ? 'disabled' : ''}`;
         botonSiguiente.innerHTML = `<a class="page-link rounded-pill shadow-sm">Siguiente</a>`;
@@ -327,8 +252,6 @@
         });
         paginacion.appendChild(botonSiguiente);
     }
-
-    // Inicializa la paginación al cargar la página
     document.addEventListener('DOMContentLoaded', () => {
         mostrarPagina(1);
     });

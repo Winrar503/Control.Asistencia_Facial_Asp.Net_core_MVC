@@ -113,5 +113,27 @@ namespace Face.UserInterface.Controllers
                 return View(asistenciaBd);
             }
         }
+
+        [HttpPost]
+        [Route("Asistencias/DeleteConfirmed/{id}")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            try
+            {
+                var asistencia = await asistenciasBL.ObtenerPorIdAsync(new Asistencias { Id = id });
+                if (asistencia == null)
+                {
+                    return Json(new { success = false, message = "La asistencia no fue encontrada." });
+                }
+
+                int result = await asistenciasBL.EliminarAsync(asistencia);
+                return Json(new { success = true, message = "Asistencia eliminada correctamente." });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Error al eliminar la asistencia.", details = ex.Message });
+            }
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0laRkYReOdTFdVQQgv3g8dCD85h76gjAdCsX3ueMeLE=",
+  "Hash": "mCKMx+aTSVrZdZIC30F3LHXxGu6dGJlO5YqG0JKiin0=",
   "Source": "Face.UserInterface",
   "BasePath": "_content/Face.UserInterface",
   "Mode": "Default",
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Face.UserInterface.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\cargo.css",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "css/cargo#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jd1nke1kmo",
+      "Integrity": "Sf23ESjFC0aezrBk8wTuN+1Nn1Bm3AS6v/4jd8w88xs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\cargo.css"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\empleado\\index.css",
@@ -1866,6 +1887,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/cargo.css",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\cargo.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1732"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Sf23ESjFC0aezrBk8wTuN+1Nn1Bm3AS6v/4jd8w88xs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Dec 2024 20:50:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Sf23ESjFC0aezrBk8wTuN+1Nn1Bm3AS6v/4jd8w88xs="
+        }
+      ]
+    },
+    {
+      "Route": "css/cargo.jd1nke1kmo.css",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\cargo.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1732"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Sf23ESjFC0aezrBk8wTuN+1Nn1Bm3AS6v/4jd8w88xs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Dec 2024 20:50:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jd1nke1kmo"
+        },
+        {
+          "Name": "label",
+          "Value": "css/cargo.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Sf23ESjFC0aezrBk8wTuN+1Nn1Bm3AS6v/4jd8w88xs="
+        }
+      ]
+    },
     {
       "Route": "css/empleado/index.4z4p5l07qy.css",
       "AssetFile": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\empleado\\index.css",
