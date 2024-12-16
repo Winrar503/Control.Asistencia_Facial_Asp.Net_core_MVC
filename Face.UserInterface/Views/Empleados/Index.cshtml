@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+       @*  <div class="col-md-3">
             <div class="card border-0 shadow-sm">
                 <div class="card-body text-center">
                     <i class="fas fa-user-check fa-3x text-success mb-3"></i>
@@ -37,7 +37,17 @@
                     <p class="card-text display-6 fw-bold">@Model.Count(e => e.Estado)</p>
                 </div>
             </div>
+        </div> *@
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm card-hover" onclick="abrirModalEstado()" style="cursor: pointer;">
+                <div class="card-body text-center">
+                    <i class="fas fa-user-check fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Empleados Activos</h5>
+                    <p class="card-text display-6 fw-bold">@Model.Count(e => e.Estado)</p>
+                </div>
+            </div>
         </div>
+     
         <div class="col-md-3">
             <div class="card border-0 shadow-sm">
                 <div class="card-body text-center">
@@ -50,7 +60,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card border-0 shadow-sm">
+            <div class="card border-0 shadow-sm  card-hover">
                 <a asp-controller="Cargos" asp-action="Index" class="text-decoration-none">
                     <div class="card-body text-center">
                         <i class="fas fa-briefcase fa-3x text-info mb-3"></i>
@@ -133,7 +143,7 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr class="hover-row">
+                                <tr id="filaEmpleado-@item.Id" class="hover-row">
                                     <td class="py-3 px-4">
                                         <div class="d-flex align-items-center">
                                             @{
@@ -159,11 +169,15 @@
                                         <span class="badge bg-light text-dark">@item.Cargo?.Nombre</span>
                                     </td>
                                     <td class="py-3 px-4">@item.Telefono</td>
+
+
                                     <td class="py-3 px-4">
                                         <span class="badge rounded-pill @(item.Estado ? "bg-success-subtle text-success" : "bg-danger-subtle text-danger")">
                                             @(item.Estado ? "Activo" : "Inactivo")
                                         </span>
                                     </td>
+
+
                                     <td class="py-3 px-4">@item.FechaRegistro.ToString("dd MMM, yyyy")</td>
                                     <td class="py-3 px-4">
                                         <div class="d-flex justify-content-center">
@@ -173,38 +187,88 @@
                                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info mx-1" title="Detalles">
                                                 <i class="fas fa-eye"></i>
                                             </a>
-                                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger mx-1" title="Eliminar">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
                                             <a asp-action="CapturarFotos" asp-route-empleadoId="@item.Id" class="btn btn-sm btn-outline-secondary mx-1" title="Capturar Fotos">
                                                 <i class="fas fa-camera"></i>
                                             </a>
                                             <a asp-controller="Reportes" asp-action="Index" asp-route-empleadoId="@item.Id" class="btn btn-sm btn-outline-warning mx-1" title="Ver Reportes">
                                                 <i class="fas fa-file-alt"></i>
                                             </a>
+                                            <button onclick="abrirModalEliminar(@item.Id)" class="btn btn-sm btn-outline-danger mx-1" title="Eliminar">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
                             }
                         </tbody>
-                        @* Diseño para paginacion *@
-                        @* <nav class="mt-4">
-                            <ul class="pagination justify-content-center">
+                        <!-- Modal para empleados activos/inactivos -->
+                        <div class="modal fade" id="modalEstadoEmpleados" tabindex="-1" aria-labelledby="modalEstadoEmpleadosLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content" id="modalDraggable">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalEstadoEmpleadosLabel">Estado de Empleados</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Empleados Activos</h6>
+                                                <ul class="list-group">
+                                                    @foreach (var item in Model.Where(e => e.Estado))
+                                                    {
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            @item.Nombre
+                                                            <span class="badge bg-success">Activo</span>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h6>Empleados Inactivos</h6>
+                                                <ul class="list-group">
+                                                    @foreach (var item in Model.Where(e => !e.Estado))
+                                                    {
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            @item.Nombre
+                                                            <span class="badge bg-danger">Inactivo</span>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
-                                    <a class="page-link" asp-action="Index" asp-route-cargoId="@ViewBag.CargoSeleccionado" asp-route-page="@(ViewBag.CurrentPage - 1)">Anterior</a>
-                                </li>
-                                @for (int i = 1; i <= ViewBag.TotalPages; i++)
-                                {
-                                    <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
-                                        <a class="page-link" asp-action="Index" asp-route-cargoId="@ViewBag.CargoSeleccionado" asp-route-page="@i">@i</a>
-                                    </li>
-                                }
-                                <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
-                                    <a class="page-link" asp-action="Index" asp-route-cargoId="@ViewBag.CargoSeleccionado" asp-route-page="@(ViewBag.CurrentPage + 1)">Siguiente</a>
-                                </li>
-                            </ul>
-                        </nav> *@
+
+                        <!-- Modal de Confirmación -->
+                        <div class="modal fade" id="modalEliminarEmpleado" tabindex="-1" aria-labelledby="modalEliminarEmpleadoLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content shadow-lg rounded-2xl">
+                                    <div class="modal-body text-center p-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-red-600 mx-auto" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                        </svg>
+                                        <h2 class="text-xl font-bold py-4">¿Estás seguro?</h2>
+                                        <p class="text-sm text-gray-700 px-4">Esta acción no se puede deshacer.</p>
+                                    </div>
+                                    <div class="p-4 text-center space-x-2">
+                                        <button class="px-4 py-2 bg-gray-200 text-gray-600 rounded-full" data-bs-dismiss="modal">Cancelar</button>
+                                        <button id="confirmarEliminarEmpleado" class="px-4 py-2 bg-red-600 text-white rounded-full">Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mensaje de Éxito -->
+                        <div id="successMessage" class="alert alert-success alert-dismissible fade show d-none position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 1050;" role="alert">
+                            <strong>¡Éxito!</strong> El empleado se eliminó correctamente.
+                            <button type="button" class="btn-close" onclick="ocultarMensaje()" aria-label="Close"></button>
+                        </div>
 
                     </table>
                 </div>
@@ -258,4 +322,95 @@
     .pagination .page-item.disabled .page-link {
         color: #6c757d;
     } */
+
+    .card-hover {
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
 </style>
+
+<script>
+     function abrirModalEstado() {
+        const modal = new bootstrap.Modal(document.getElementById('modalEstadoEmpleados'));
+        modal.show();
+    }
+
+    // Hacer el modal arrastrable
+    const modalDraggable = document.getElementById('modalDraggable');
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    modalDraggable.addEventListener('mousedown', function (e) {
+        isDragging = true;
+        offsetX = e.clientX - modalDraggable.getBoundingClientRect().left;
+        offsetY = e.clientY - modalDraggable.getBoundingClientRect().top;
+        modalDraggable.style.position = 'absolute';
+        modalDraggable.style.zIndex = '1055'; // Asegurarse de que esté encima
+        document.addEventListener('mousemove', moveModal);
+    });
+
+    document.addEventListener('mouseup', function () {
+        if (isDragging) {
+            isDragging = false;
+            document.removeEventListener('mousemove', moveModal);
+        }
+    });
+
+    function moveModal(e) {
+        if (isDragging) {
+            modalDraggable.style.left = `${e.clientX - offsetX}px`;
+            modalDraggable.style.top = `${e.clientY - offsetY}px`;
+        }
+    }
+
+
+     let empleadoSeleccionado = null;
+
+    function abrirModalEliminar(id) {
+        empleadoSeleccionado = id;
+        const modal = new bootstrap.Modal(document.getElementById('modalEliminarEmpleado'));
+        modal.show();
+    }
+
+    document.getElementById('confirmarEliminarEmpleado').addEventListener('click', async function () {
+        if (empleadoSeleccionado) {
+            try {
+                const response = await fetch(`/Empleados/DeleteConfirmed/${empleadoSeleccionado}`, {
+                    method: 'POST',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    document.querySelector(`#filaEmpleado-${empleadoSeleccionado}`).remove();
+                    mostrarMensajeExito();
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('modalEliminarEmpleado'));
+                    modal.hide();
+                } else {
+                    alert(result.message || 'Error al eliminar el empleado.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Ocurrió un error inesperado.');
+            }
+        }
+    });
+
+    function mostrarMensajeExito() {
+        const messageCard = document.getElementById('successMessage');
+        messageCard.classList.remove('d-none');
+        setTimeout(() => {
+            messageCard.classList.add('d-none');
+        }, 3000);
+    }
+
+    function ocultarMensaje() {
+        const messageCard = document.getElementById('successMessage');
+        messageCard.classList.add('d-none');
+    }
+</script>

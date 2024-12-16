@@ -1,16 +1,6 @@
-﻿using Face.AccesoADatos;
-using Face.EntidadesDeNegocio;
+﻿using Face.EntidadesDeNegocio;
 using Face.LogicaDeNegocio;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Emgu.CV;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Structure;
-using System.Drawing; 
-using System.IO;
-using System.Drawing.Imaging;
-using iText.Kernel.Geom;
 
 namespace Face.UserInterface.Controllers
 {
@@ -211,6 +201,32 @@ namespace Face.UserInterface.Controllers
                 return View(empleadoDb);
             }
         }
+        [HttpPost]
+        [Route("Empleados/DeleteConfirmed/{id}")]
+        public async Task<IActionResult> DeleteConfirmedJson(int id)
+        {
+            try
+            {   var empleado = await empleadosBL.ObtenerPorIdAsync(new Empleados { Id = id });
+                if (empleado == null)
+                {
+                    return Json(new { success = false, message = "El empleado no fue encontrado en la base de datos." });
+                }
+                int result = await empleadosBL.EliminarAsync(empleado);
+                if (result > 0)
+                {
+                    return Json(new { success = true, message = "Empleado eliminado correctamente." });
+                }
+                else
+                {
+                    return Json(new { success = false, message = "No se pudo eliminar el empleado. Inténtalo de nuevo." });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Error al eliminar el empleado.", details = ex.Message });
+            }
+        }
+
 
         public async Task<IActionResult> CapturarFotos(int empleadoId)
         {
