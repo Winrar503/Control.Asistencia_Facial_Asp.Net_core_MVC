@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>jd1nke1kmo</Fingerprint>
-      <Integrity>Sf23ESjFC0aezrBk8wTuN+1Nn1Bm3AS6v/4jd8w88xs=</Integrity>
+      <Fingerprint>4mgvlpppz3</Fingerprint>
+      <Integrity>3G4WIRil2hlRNvyxTXTu3u3n3Ffxg7R8VHIWslke61o=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\cargo.css'))</OriginalItemSpec>

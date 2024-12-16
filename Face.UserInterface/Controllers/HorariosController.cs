@@ -126,5 +126,33 @@ namespace Face.UserInterface.Controllers
                 return View(horariosBd);
             }
         }
+        [HttpPost]
+        [Route("Horarios/DeleteConfirmed/{id}")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            try
+            {
+                var horario = await horariosBL.ObtenerPorIdAsync(new Horarios { Id = id });
+                if (horario == null)
+                {
+                    return Json(new { success = false, message = "El horario no fue encontrado." });
+                }
+
+                int result = await horariosBL.EliminarAsync(horario);
+                if (result > 0)
+                {
+                    return Json(new { success = true, message = "Horario eliminado correctamente." });
+                }
+                else
+                {
+                    return Json(new { success = false, message = "Error al eliminar el horario." });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Error al eliminar el horario.", details = ex.Message });
+            }
+        }
+
     }
 }
