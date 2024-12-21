@@ -57,54 +57,16 @@ namespace Face.UserInterface.Controllers
             return View(empleado);
         }
 
-        //public async Task<IActionResult> Index(int? cargoId, int page = 1, int pageSize = 5, Empleados empleadosFiltros = null)
+        //public async Task<IActionResult> Details(int id)
         //{
-
-        //    var empleadosFiltro = new Empleados();
-        //    if (empleadosFiltro.Top_Aux == 0)
-        //        empleadosFiltro.Top_Aux = 10;
-
-        //    List<Empleados> empleados;
-
-        //    // Filtrar empleados por cargo si se especifica un cargoId
-        //    if (cargoId == null || cargoId == 0)
+        //    var empleado = await empleadosBL.ObtenerPorIdConRelacionesAsync(id);
+        //    if (empleado == null)
         //    {
-        //        empleados = await empleadosBL.ObtenerTodosAsync();
-        //    }
-        //    else
-        //    {
-        //        empleados = await empleadosBL.BuscarAsync(new Empleados { CargoId = cargoId.Value });
-        //        if (empleados == null || !empleados.Any())
-        //        {
-        //            empleados = new List<Empleados>();
-        //        }
+        //        return NotFound();
         //    }
 
-        //    // Paginación
-        //    var totalEmpleados = empleados.Count; // Total de empleados sin paginación
-        //    empleados = empleados.Skip((page - 1) * pageSize).Take(pageSize).ToList(); // Aplica paginación
-
-        //    // Cargar relaciones (Fotos y Cargos) solo para empleados paginados
-        //    foreach (var empleado in empleados)
-        //    {
-        //        empleado.Fotos = await fotosBL.ObtenerPorEmpleadoIdAsync(empleado.Id);
-        //        empleado.Cargo = await cargosBL.ObtenerPorIdAsync(empleado.CargoId);
-        //    }
-
-        //    // Obtener lista de cargos para filtros
-        //    var cargos = await cargosBL.ObtenerTodosAsync();
-        //    ViewBag.Cargos = cargos;
-        //    ViewBag.CargoSeleccionado = cargoId ?? 0;
-
-        //    // Datos para la paginación en la vista
-        //    ViewBag.TotalPages = (int)Math.Ceiling((double)totalEmpleados / pageSize); // Total de páginas
-        //    ViewBag.CurrentPage = page; // Página actual
-        //    ViewBag.PageSize = pageSize; // Tamaño de página
-
-        //    return View(empleados);
+        //    return View(empleado);
         //}
-
-
         public async Task<IActionResult> Details(int id)
         {
             var empleado = await empleadosBL.ObtenerPorIdConRelacionesAsync(id);
@@ -113,8 +75,21 @@ namespace Face.UserInterface.Controllers
                 return NotFound();
             }
 
-            return View(empleado);
+            return Json(new
+            {
+                nombre = empleado.Nombre,
+                email = empleado.Email,
+                telefono = empleado.Telefono,
+                edad = empleado.Edad,
+                estado = empleado.Estado ? "Activo" : "Inactivo",
+                fechaRegistro = empleado.FechaRegistro.ToString("dd MMMM, yyyy"),
+                cargo = empleado.Cargo?.Nombre ?? "Sin Cargo",
+                foto = empleado.Fotos != null && empleado.Fotos.Any()
+                    ? Convert.ToBase64String(empleado.Fotos.First().Foto)
+                    : ""
+            });
         }
+
         public async Task<IActionResult> Crear()
         {
             ViewBag.Cargos = await cargosBL.ObtenerTodosAsync(); 
