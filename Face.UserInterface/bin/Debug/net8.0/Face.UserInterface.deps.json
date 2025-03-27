@@ -2930,7 +2930,7 @@
         },
         "runtime": {
           "Face.AccesoADatos.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -2953,7 +2953,7 @@
         },
         "runtime": {
           "Face.EntidadesDeNegocio.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -2978,7 +2978,7 @@
         },
         "runtime": {
           "Face.LogicaDeNegocio.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

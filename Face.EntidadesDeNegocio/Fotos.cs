@@ -16,7 +16,6 @@ namespace Face.EntidadesDeNegocio
         [ForeignKey("Empleados")]
         public int EmpleadosId { get; set; }
         public byte[] Foto { get; set; }
-        // Agregamos la propiedad NombreFoto
         public string NombreFoto { get; set; }
 
 

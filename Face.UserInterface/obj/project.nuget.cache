@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Rgk0zdHPgtI=",
+  "dgSpecHash": "RrfHhKPj+js=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\Face.UserInterface.csproj",
   "expectedPackageFiles": [
@@ -243,34 +243,10 @@
   ],
   "logs": [
     {
-      "code": "NU1902",
+      "code": "NU1900",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"BouncyCastle\" 1.8.9 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-8xfc-gm6g-vgpv",
-      "libraryId": "BouncyCastle",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"BouncyCastle\" 1.8.9 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-m44j-cfrm-g8qc",
-      "libraryId": "BouncyCastle",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"BouncyCastle\" 1.8.9 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-v435-xc8x-wvr9",
-      "libraryId": "BouncyCastle",
-      "targetGraphs": [
-        "net8.0"
-      ]
+      "message": "Error al obtener los datos de vulnerabilidad del paquete: No se puede cargar el índice de servicio del origen https://api.nuget.org/v3/index.json."
     },
     {
       "code": "NU1701",
