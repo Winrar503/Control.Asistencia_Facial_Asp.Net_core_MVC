@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9nOcHONAUSwXXM8wn1wBYUWi3tUMqdJMZBQZHhApbnQ=",
+  "Hash": "e21iAu+gn2CO9UtrelXmgsmhmy4lqnsGVmjXmkRpxfI=",
   "Source": "Face.UserInterface",
   "BasePath": "_content/Face.UserInterface",
   "Mode": "Default",
@@ -120,6 +120,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\home.css"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\opciones.css",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "css/opciones#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xup9keoomv",
+      "Integrity": "1wiSISw6M4yhm/0G1vDr9elkSwVAi7GBO1PHydIrYiQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\opciones.css"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\output.css",
@@ -666,6 +687,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Captura de pantalla 2024-11-26 173220.png"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\js\\opciones.js",
+      "SourceId": "Face.UserInterface",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\",
+      "BasePath": "_content/Face.UserInterface",
+      "RelativePath": "js/opciones#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "j1m31godt6",
+      "Integrity": "VzMOZ5uZu+YCuGUNcttypaoWXtAll298EzHfsGITDuQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\opciones.js"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\js\\site.js",
@@ -2130,6 +2172,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-lxbGY37uwefPBuSPU/iYlj6Pc+Uq/c7Gq6Qkp3dhtME="
+        }
+      ]
+    },
+    {
+      "Route": "css/opciones.css",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\opciones.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8521"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1wiSISw6M4yhm/0G1vDr9elkSwVAi7GBO1PHydIrYiQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 19:34:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1wiSISw6M4yhm/0G1vDr9elkSwVAi7GBO1PHydIrYiQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/opciones.xup9keoomv.css",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\opciones.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8521"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1wiSISw6M4yhm/0G1vDr9elkSwVAi7GBO1PHydIrYiQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 19:34:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xup9keoomv"
+        },
+        {
+          "Name": "label",
+          "Value": "css/opciones.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1wiSISw6M4yhm/0G1vDr9elkSwVAi7GBO1PHydIrYiQ="
         }
       ]
     },
@@ -4426,6 +4550,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-rKb32p8QN/VBC3/ufRF/zDWZNUNsypxw5fZpzFTJMZM="
+        }
+      ]
+    },
+    {
+      "Route": "js/opciones.j1m31godt6.js",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\js\\opciones.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3640"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VzMOZ5uZu+YCuGUNcttypaoWXtAll298EzHfsGITDuQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 19:34:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "j1m31godt6"
+        },
+        {
+          "Name": "label",
+          "Value": "js/opciones.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VzMOZ5uZu+YCuGUNcttypaoWXtAll298EzHfsGITDuQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/opciones.js",
+      "AssetFile": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\js\\opciones.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3640"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VzMOZ5uZu+YCuGUNcttypaoWXtAll298EzHfsGITDuQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 19:34:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VzMOZ5uZu+YCuGUNcttypaoWXtAll298EzHfsGITDuQ="
         }
       ]
     },

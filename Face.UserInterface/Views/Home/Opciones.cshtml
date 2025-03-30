@@ -1,0 +1,205 @@
+﻿@{
+    ViewData["Title"] = "Opciones automatico";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Attendance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="/css/opciones.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="header-content">
+                    <div>
+                        <h1 class="card-title">Attendance System</h1>
+                        <p class="card-description">Track and manage attendance records</p>
+                    </div>
+                    <button id="dateSelector" class="date-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="calendar-icon">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span id="selectedDate"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="actions-bar">
+                    <div class="search-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="search-icon">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" placeholder="Search attendees..." class="search-input">
+                    </div>
+                    <div class="buttons-container">
+                        <button class="btn btn-outline">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="btn-icon">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="8.5" cy="7" r="4"></circle>
+                                <line x1="20" y1="8" x2="20" y2="14"></line>
+                                <line x1="23" y1="11" x2="17" y2="11"></line>
+                            </svg>
+                            Add Person
+                        </button>
+                        <button class="btn btn-primary" id="markAttendanceBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="btn-icon">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                            Mark Attendance
+                        </button>
+                    </div>
+                </div>
+
+                <div id="attendanceFormContainer" class="attendance-form-container hidden">
+                    <div class="attendance-form">
+                        <button class="close-btn" id="closeFormBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+
+                        <h3 class="form-title">Mark Attendance</h3>
+                        <p class="form-subtitle" id="formDate"></p>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="person" class="form-label">Person</label>
+                                <select id="person" class="form-select">
+                                    <option value="">Select person</option>
+                                    <option value="john">John Doe</option>
+                                    <option value="jane">Jane Smith</option>
+                                    <option value="robert">Robert Johnson</option>
+                                    <option value="emily">Emily Davis</option>
+                                    <option value="michael">Michael Wilson</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time" class="form-label">Time</label>
+                                <input type="time" id="time" class="form-input" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Status</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="statusPresent" name="status" value="present" checked>
+                                    <label for="statusPresent">Present</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="statusLate" name="status" value="late">
+                                    <label for="statusLate">Late</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="statusAbsent" name="status" value="absent">
+                                    <label for="statusAbsent">Absent</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="statusRemote" name="status" value="remote">
+                                    <label for="statusRemote">Remote</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes" class="form-label">Notes</label>
+                            <textarea id="notes" class="form-textarea"
+                                      placeholder="Add any additional information here..." rows="3"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-outline" id="cancelBtn">Cancel</button>
+                            <button class="btn btn-primary" id="saveBtn">Save Attendance</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="attendanceTableContainer" class="table-container">
+                    <table class="attendance-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>Status</th>
+                                <th>Time</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-medium">John Doe</td>
+                                <td>EMP001</td>
+                                <td><span class="badge badge-present">Present</span></td>
+                                <td>09:15 AM</td>
+                                <td>On time</td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Jane Smith</td>
+                                <td>EMP002</td>
+                                <td><span class="badge badge-late">Late</span></td>
+                                <td>10:05 AM</td>
+                                <td>Traffic delay</td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Robert Johnson</td>
+                                <td>EMP003</td>
+                                <td><span class="badge badge-absent">Absent</span></td>
+                                <td>-</td>
+                                <td>Sick leave</td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Emily Davis</td>
+                                <td>EMP004</td>
+                                <td><span class="badge badge-present">Present</span></td>
+                                <td>08:55 AM</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Michael Wilson</td>
+                                <td>EMP005</td>
+                                <td><span class="badge badge-remote">Remote</span></td>
+                                <td>09:00 AM</td>
+                                <td>Working from home</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div>Showing 5 of 25 attendees</div>
+                <div id="lastUpdated">Last updated: --:-- --</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/js/opciones.js"></script>
+</body>
+
+</html>

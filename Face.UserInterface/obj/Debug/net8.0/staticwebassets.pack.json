@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\opciones.css",
+      "PackagePath": "staticwebassets\\css\\opciones.css"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\css\\output.css",
       "PackagePath": "staticwebassets\\css\\output.css"
     },
@@ -119,6 +123,10 @@
     {
       "Id": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\img\\Captura de pantalla 2024-11-26 173220.png",
       "PackagePath": "staticwebassets\\img\\Captura de pantalla 2024-11-26 173220.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\js\\opciones.js",
+      "PackagePath": "staticwebassets\\js\\opciones.js"
     },
     {
       "Id": "C:\\Users\\Admin\\Desktop\\Programing\\.Net\\Control.Asistencia_Facial_Asp.Net_core_MVC\\Face.UserInterface\\wwwroot\\js\\site.js",

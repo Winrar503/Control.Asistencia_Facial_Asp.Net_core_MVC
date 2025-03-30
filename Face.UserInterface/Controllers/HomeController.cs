@@ -182,6 +182,10 @@ namespace Face.UserInterface.Controllers
         {
             return View();
         }
+        public IActionResult Opciones()
+        {
+            return View();
+        }
 
         [HttpGet]
         public IActionResult DescargarManualPdf()
