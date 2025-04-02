@@ -131,18 +131,6 @@ namespace Face.UserInterface.Controllers
 
             return Json(asistenciasMensuales);
         }
-
-        //[HttpGet]
-        //public async Task<IActionResult> GetDistribucionEmpleados()
-        //{
-        //    var empleados = await _empleadosBL.ObtenerTodosConRelacionesAsync();
-        //    var distribucionPorCargo = empleados
-        //        .GroupBy(e => e.Cargo?.Nombre ?? "Sin Cargo")
-        //        .Select(g => new { Cargo = g.Key, Total = g.Count() })
-        //        .ToDictionary(g => g.Cargo, g => g.Total);
-
-        //    return Json(distribucionPorCargo);
-        //}
         [HttpGet]
         public async Task<IActionResult> GetDistribucionEmpleados()
         {

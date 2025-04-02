@@ -53,7 +53,7 @@ namespace Face.LogicaDeNegocio
 
         public async Task<List<Empleados>> ObtenerTodosConRelacionesAsync()
         {
-            return await EmpleadosDAL.ObtenerTodosConRelacionesAsync(); // Llamar directamente al método estático
+            return await EmpleadosDAL.ObtenerTodosConRelacionesAsync();
         }
 
 

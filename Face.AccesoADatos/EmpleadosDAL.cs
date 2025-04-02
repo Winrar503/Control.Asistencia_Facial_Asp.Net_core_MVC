@@ -35,6 +35,7 @@ namespace Face.AccesoADatos
                 if (empleadosBD != null)
                 {
                     empleadosBD.Nombre = pEmpleados.Nombre;
+                    empleadosBD.Dui = pEmpleados.Dui;
                     empleadosBD.Edad = pEmpleados.Edad;
                     empleadosBD.Email = pEmpleados.Email;
                     empleadosBD.Telefono = pEmpleados.Telefono;
@@ -125,15 +126,6 @@ namespace Face.AccesoADatos
                 return await query.ToListAsync();
             }
         }
-        //public static async Task<List<Empleados>> BuscarAsync(Empleados pEmpleados)
-        //{
-        //  using (var bdContexto = new BDContexto())
-        //    {
-        //        var select = bdContexto.Empleados.AsQueryable();
-        //        select = QuerySelect(select, pEmpleados);
-        //        return await select.ToListAsync();
-        //    }
-        //}
 
         public static async Task<Empleados> ObtenerPorNombreAsync(string nombre)
         {
@@ -143,7 +135,6 @@ namespace Face.AccesoADatos
                     .FirstOrDefaultAsync(e => e.Nombre == nombre);
             }
         }
-
 
         public static async Task<List<Empleados>> ObtenerTodosConRelacionesAsync()
         {

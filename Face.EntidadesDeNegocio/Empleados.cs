@@ -30,6 +30,7 @@ namespace Face.EntidadesDeNegocio
         public string Telefono { get; set; }
         [Display(Name = "Estado")]
         public bool Estado {  get; set; }
+        public string Dui {  get; set; }
         public DateTime FechaRegistro { get; set; }
 
         [ForeignKey("Cargo")]

@@ -57,16 +57,7 @@ namespace Face.UserInterface.Controllers
             return View(empleado);
         }
 
-        //public async Task<IActionResult> Details(int id)
-        //{
-        //    var empleado = await empleadosBL.ObtenerPorIdConRelacionesAsync(id);
-        //    if (empleado == null)
-        //    {
-        //        return NotFound();
-        //    }
 
-        //    return View(empleado);
-        //}
         public async Task<IActionResult> Details(int id)
         {
             var empleado = await empleadosBL.ObtenerPorIdConRelacionesAsync(id);
@@ -78,6 +69,7 @@ namespace Face.UserInterface.Controllers
             return Json(new
             {
                 nombre = empleado.Nombre,
+                dui = empleado.Dui,
                 email = empleado.Email,
                 telefono = empleado.Telefono,
                 edad = empleado.Edad,
