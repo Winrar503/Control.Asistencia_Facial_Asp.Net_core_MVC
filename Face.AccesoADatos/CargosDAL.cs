@@ -53,20 +53,6 @@ namespace Face.AccesoADatos
             }
         }
 
-        //public static async Task<int> EliminarAsync(Cargo cargo)
-        //{
-        //    using (var dbContext = new BDContexto())
-        //    {
-        //        var cargoDB = await dbContext.Cargos.FindAsync(cargo.Id);
-        //        if (cargoDB != null)
-        //        {
-        //            dbContext.Cargos.Remove(cargoDB);
-        //            return await dbContext.SaveChangesAsync();
-        //        }
-        //        return 0;
-        //    }
-        //}
-
         public static async Task<Cargo> ObtenerPorIdAsync(int id)
         {
             using (var dbContext = new BDContexto())
@@ -83,14 +69,6 @@ namespace Face.AccesoADatos
             }
         }
 
-
-        //public static async Task<int> ObtenerCantidadAsync()
-        //{
-        //    using (var dbContext = new BDContexto())
-        //    {
-        //        return await dbContext.Cargos.CountAsync();
-        //    }
-        //}
         public static async Task<int> ObtenerCantidadAsync()
         {
             using (var dbContext = new BDContexto())

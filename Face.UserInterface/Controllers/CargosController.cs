@@ -63,14 +63,7 @@ namespace Face.UserInterface.Controllers
             return View(cargo);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(int id)
-        //{
-        //    var cargo = new Cargo { Id = id };
-        //    await _cargosBL.EliminarAsync(cargo);
-        //    return RedirectToAction(nameof(Index));
-        //}
+       
         [HttpPost]
         [Route("Cargos/DeleteConfirmed/{id}")]
         public async Task<IActionResult> DeleteConfirmed(int id)
